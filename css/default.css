@@ -1,0 +1,308 @@
+@charset "utf-8";
+
+/* --------- RESET --------- */
+
+body,div,dl,dt,dd,ul,ol,li,p,
+h1,h2,h3,h4,h5,h6,
+th,
+td,
+pre,
+code,
+blockquote,
+form,fieldset,legend,input,textarea {
+margin:0;
+padding:0;
+}
+
+table {
+border-collapse:collapse;
+border-spacing:0;
+}
+
+fieldset,img {border:0;}
+
+address,caption,cite,code,dfn,em,th,var {
+font-style:normal;
+font-weight:normal;
+}
+
+li {list-style:none;}
+
+caption,th {text-align:left;}
+
+h1,h2,h3,h4,h5,h6 {
+font-size:100%;
+font-weight:normal;
+}
+
+q:before,q:after {content:'';}
+
+abbr,acronym {
+border:0;
+font-variant:normal;
+}
+
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+
+input,textarea,select {
+font-family:inherit;
+font-size:inherit;
+font-weight:inherit;
+}
+
+input,textarea,select {*font-size:100%;}
+
+legend {color:#000;}
+hr {display:none;}
+img {vertical-align:bottom;}
+
+
+/* --------- FONT --------- */
+
+body {
+
+
+*font-size:small;
+*font:x-small;
+	font-family: "メイリオ", arial, helvetica, clean, sans-serif;
+	font-size: 12px;
+	line-height: 1.8;
+	
+
+
+
+	color: #AB0E0E;
+	
+
+
+
+	background-color: #AD5151;
+}
+
+select,
+input,
+button,
+textarea {
+font:99% "メイリオ",arial,helvetica,clean,sans-serif;
+}
+
+table {
+font-size:inherit;
+font:100%;
+border-collapse:collapse;/*+*/
+border-spacing:0;/*+*/
+}
+
+pre,
+code,
+kbd,
+samp,
+tt {
+font-family:monospace;
+*font-size:108%;
+line-height:100%;
+}
+
+/*DEFAULT 18px*/
+/* *5.6 */
+/*.text10 { font-size:56%;}
+.text11 { font-size:61.6%;}
+.text12 { font-size:67.2%;}
+.text13 { font-size:72.8%;}
+.text14 { font-size:78.4%;}
+.text15 { font-size:84%;}
+.text16 { font-size:89.6%;}
+.text17 { font-size:95.2%;}
+.text18 { font-size:100%;}
+.text19 { font-size:106.4%;}
+.text20 { font-size:112%;}
+.text21 { font-size:117.6%;}
+.text22 { font-size:123.2%;}
+.text23 { font-size:128.8%;}
+.text24 { font-size:134.4%;}
+.text25 { font-size:140%;}
+.text26 { font-size:145.6%;}*/
+
+/*DEFAULT 16px*/
+/* *6.25 */
+/*.text10 { font-size:62.5%;}
+.text11 { font-size:68.75%;}
+.text12 { font-size:75%;}
+.text13 { font-size:81.25%;}
+.text14 { font-size:87.5%;}
+.text15 { font-size:100%;}
+.text16 { font-size:100.0%;}
+.text17 { font-size:106.25%;}
+.text18 { font-size:112.5%;}
+.text19 { font-size:118.75%;}
+.text20 { font-size:125%;}
+.text21 { font-size:131.25%;}
+.text22 { font-size:137.5%;}
+.text23 { font-size:143.75%;}
+.text24 { font-size:150%;}
+.text25 { font-size:156.25%;}
+.text26 { font-size:162.5%;}*/
+
+/*DEFAULT 15px*/
+/* *6.7 */
+/*.text10 { font-size:67%;}
+.text11 { font-size:73.7%;}
+.text12 { font-size:80.4%;}
+.text13 { font-size:87%;}
+.text14 { font-size:93.8%;}
+.text15 { font-size:100%;}
+.text16 { font-size:107.2%;}
+.text17 { font-size:113.9%;}
+.text18 { font-size:120.6%;}
+.text19 { font-size:127.3%;}
+.text20 { font-size:134%;}
+.text21 { font-size:140.7%;}
+.text22 { font-size:147.4%;}
+.text23 { font-size:154.1%;}
+.text24 { font-size:160.8%;}
+.text25 { font-size:167.5%;}
+.text26 { font-size:174.2%;}*/
+
+/*DEFAULT 14px*/
+/* *7.1 */
+/*.text10 { font-size:71%;}
+.text11 { font-size:78.1%;}
+.text12 { font-size:85.2%;}
+.text13 { font-size:92.3%;}
+.text14 { font-size:100%;}
+.text15 { font-size:106.5%;}
+.text16 { font-size:113.6%;}
+.text17 { font-size:120.7%;}
+.text18 { font-size:127.8%;}
+.text19 { font-size:134.9%;}
+.text20 { font-size:142%;}
+.text21 { font-size:149.1%;}
+.text22 { font-size:156.2%;}
+.text23 { font-size:163.3%;}
+.text24 { font-size:184.8%;}
+.text25 { font-size:177.5%;}
+.text26 { font-size:184.6%;}*/
+
+/*DEFAULT 13px*/
+/* *7.7 */
+/*
+.text10 { font-size:77%;}
+.text11 { font-size:85%;}
+.text12 { font-size:93%;}
+.text13 { font-size:100%;}
+.text14 { font-size:108%;}
+.text15 { font-size:116%;}
+.text16 { font-size:123.1%;}
+.text17 { font-size:131%;}
+.text18 { font-size:138.5%;}
+.text19 { font-size:146.5%;}
+.text20 { font-size:153.9%;}
+.text21 { font-size:161.6%;}
+.text22 { font-size:167%;}
+.text23 { font-size:174%;}
+.text24 { font-size:182%;}
+.text25 { font-size:189%;}
+.text26 { font-size:197%;}
+*/
+/*DEFAULT 12px*/
+/* *8.4 */
+
+.text10 { font-size:84%;}
+.text11 { font-size:92%;}
+.text12 { font-size:100%;}
+.text13 { font-size:109%;}
+.text14 { font-size:117%;}
+.text15 { font-size:125%;}
+.text16 { font-size:134%;}
+.text17 { font-size:142%;}
+.text18 { font-size:150%;}
+.text19 { font-size:159%;}
+.text20 { font-size:167%;}
+.text21 { font-size:175%;}
+.text22 { font-size:184%;}
+.text23 { font-size:192%;}
+.text24 { font-size:200%;}
+.text25 { font-size:209%;}
+.text26 { font-size:217%;}
+
+
+/*DEFAULT 11px*/
+/* *9.1 */
+/*
+.text10 { font-size:91%;}
+.text11 { font-size:100%;}
+.text12 { font-size:109%;}
+.text13 { font-size:118%;}
+.text14 { font-size:127%;}
+.text15 { font-size:137%;}
+.text16 { font-size:145%;}
+.text17 { font-size:154%;}
+.text18 { font-size:163%;}
+.text19 { font-size:172%;}
+.text20 { font-size:182%;}
+.text21 { font-size:191%;}
+.text22 { font-size:200%;}
+.text23 { font-size:209%;}
+.text24 { font-size:218%;}
+.text25 { font-size:227%;}
+.text26 { font-size:236%;}
+*/
+
+/*DEFAULT 10px*/
+/* *10 */
+/*
+.text10 { font-size:100%;}
+.text11 { font-size:110%;}
+.text12 { font-size:120%;}
+.text13 { font-size:130%;}
+.text14 { font-size:140%;}
+.text15 { font-size:150%;}
+.text16 { font-size:160%;}
+.text17 { font-size:170%;}
+.text18 { font-size:180%;}
+.text19 { font-size:190%;}
+.text20 { font-size:200%;}
+.text21 { font-size:210%;}
+.text22 { font-size:220%;}
+.text23 { font-size:230%;}
+.text24 { font-size:240%;}
+.text25 { font-size:250%;}
+.text26 { font-size:260%;}
+*/
+
+
+/* --------- FLASH --------- */
+.FlaInfo {
+width:100%;
+background-color:#FFFFFF;
+border:solid 1px #FF0000;
+}
+.FlaInfo p {
+color:#333333;
+margin:4px;
+display:block;
+}
+.FlaInfo a {
+color:#333333;
+text-decoration:underline;
+}
+
+
+/* --------- MODULE --------- */
+
+/*  clearfix  */
+.clearfix:before,
+.clearfix:after {content:"";display:table;}
+.clearfix:after {clear:both;}
+.clearfix {zoom:1;}
+
+
+/*  hide-object  */
+.hide {
+display:block;
+width:0;
+height:0;
+overflow:hidden;
+}
+/* --------- /MODULE --------- */

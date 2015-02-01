@@ -1,0 +1,150 @@
+@charset "utf-8";
+#head {
+	background-image: url(../images/headline.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 157px;
+}
+.headin {
+	width: 1084px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: 157px;
+}
+.headin h1 {
+	height: 191px;
+	width: 262px;
+	position: absolute;
+	left: -8px;
+	top: 0px;
+	z-index: 9998;
+}
+h1 a {
+	display: block;
+	height: 191px;
+	width: 262px;
+	background-image: url(../images/logo.png);
+}
+.uri {
+	background-image: url(../images/tp_uri.png);
+	height: 11px;
+	width: 154px;
+	position: absolute;
+	left: 755px;
+	top: 90px;
+}
+.uriTop {
+	background-image: url(../images/tp_uri.png);
+	height: 11px;
+	width: 154px;
+	position: absolute;
+	left: 865px;
+	top: 85px;
+}
+.tponair {
+	background-image: url(../images/onair.png);
+	height: 43px;
+	width: 391px;
+	position: absolute;
+	left: 633px;
+	top: 95px;
+	background-position:right top;
+	background-repeat:no-repeat;
+}
+.sbonair {
+	background-image: url(../images/sonair.png);
+	height: 36px;
+	width: 327px;
+	position: absolute;
+	left: 750px;
+	top: 107px;
+		background-position:left top;
+	background-repeat:no-repeat;
+}
+.nav {
+	background-image: url(../images/bg_nav.gif);
+	background-repeat: no-repeat;
+	background-position: center top;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1100;
+	/*width: 770px;*/
+	/*width:750px;*/
+	width:820px;
+}
+.nav li {
+	height: 85px;
+	width: 71px;
+	padding-left: 3px;
+	float: left;
+}
+.nav a {
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	display: block;
+	height: 75px;
+	width: 71px;
+}
+.nav1 a {
+	background-image: url(../images/nav1.gif);
+}
+.nav2 a {
+	background-image: url(../images/nav2.gif);
+}
+.nav3 a {
+	background-image: url(../images/nav3.gif);
+}
+.nav4 a {
+	background-image: url(../images/nav4.gif);
+}
+.nav5 a {
+	background-image: url(../images/nav5.gif);
+}
+.nav6 a {
+	background-image: url(../images/nav6.gif);
+}
+.nav7 a {
+	background-image: url(../images/nav7.gif);
+}
+.nav8 a {
+	background-image: url(../images/nav8.gif);
+}
+.nav8_2 a {
+	background-image: url(http://shirobako-anime.com/images/nav8.gif);
+	margin-top: -22px;
+}
+.nav9 a {
+	background-image: url(../images/nav9.gif);
+}
+.nav10 a {
+	background-image: url(../images/nav10.gif);
+}
+.nav11 a {
+	background-image: url(../images/nav11.gif);
+}
+#shead {
+	/* background-image: url(../images/headline.gif); */
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 90px;
+}
+.sheadin {
+	width: 1084px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	height: 90px;
+}
+.sheadin h1 {
+	height: 191px;
+	width: 262px;
+	position: absolute;
+	left: -8px;
+	top: 0px;
+	z-index: 50000;
+}
+.nav a.active{
+	height:85px;
+}
