@@ -5,34 +5,43 @@
 	background-position: center top;
 	height: 157px;
 }
-.headin {
+#shead {
+/*	 background-image: url(../images/logo.jpg); */
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 300px;
+    width: auto;
+    position: absolute;
+    left: 0px;
+}
+.sheadin {
 	width: 1084px;
 	margin-right: auto;
 	margin-left: auto;
 	position: relative;
-	height: 157px;
+	height: 90px;
 }
-.headin h1 {
-	height: 191px;
-	width: 262px;
+.sheadin h1 {
+    background-image: url(../images/logo.png);
+    height: 286px;
+    width: 247px;
 	position: absolute;
-	left: -8px;
-	top: 0px;
-	z-index: 9998;
+	left: 32px;
+    top: 9px;
+	z-index: 50000;
+      
 }
-h1 a {
-	display: block;
-	height: 191px;
-	width: 262px;
-	background-image: url(../images/logo.png);
+.sheadin h1:hover{
+    -webkit-animation: animate-stripes-logo 1s linear infinite;  
 }
+
 .uri {
-	background-image: url(../images/tp_uri.png);
-	height: 11px;
-	width: 154px;
+	background-image: url(../images/%E7%97%9B%E6%96%B0%E9%97%BB%E4%B8%BB%E9%A2%98%E7%AB%99.png);
+    height:39px; 
+    width:247px;
 	position: absolute;
-	left: 755px;
-	top: 90px;
+    left:319px;
+    top:33px;
 }
 .uriTop {
 	background-image: url(../images/tp_uri.png);
@@ -42,26 +51,24 @@ h1 a {
 	left: 865px;
 	top: 85px;
 }
-.tponair {
-	background-image: url(../images/onair.png);
-	height: 43px;
-	width: 391px;
+.uri2 {
+    background-image: url(../images/%E6%97%A5%E6%9C%ACACG%E6%9C%80in%E6%BD%AE%E6%B5%81%E7%AB%99.png);
+    height:33px;
+    width:277px;
 	position: absolute;
-	left: 633px;
-	top: 95px;
-	background-position:right top;
-	background-repeat:no-repeat;
+    left:298px; 
+    top:106px;
+    
 }
-.sbonair {
-	background-image: url(../images/sonair.png);
-	height: 36px;
-	width: 327px;
+.nvtop {
+    background-image: url(../images/nv_top.png);
+    height:99px;
+    width: 1600px;
 	position: absolute;
-	left: 750px;
-	top: 107px;
-		background-position:left top;
-	background-repeat:no-repeat;
+    left: 0px; 
+    top:0px;
 }
+
 .nav {
 	background-image: url(../images/bg_nav.gif);
 	background-repeat: no-repeat;
@@ -75,76 +82,135 @@ h1 a {
 	width:820px;
 }
 .nav li {
-	height: 85px;
-	width: 71px;
-	padding-left: 3px;
-	float: left;
+	height: auto;
+	width: auto;
 }
-.nav a {
-	background-repeat: no-repeat;
-	background-position: center bottom;
-	display: block;
-	height: 75px;
-	width: 71px;
+.nav a:hover {
+     -webkit-animation: gelatine .5s linear infinite;  
 }
 .nav1 a {
-	background-image: url(../images/nav1.gif);
+	background-image: url(../images/nv1.png);
+
+    height: 110px;
+    width: 110px;
+    position: absolute;
+	left: 487px;
+    top: 40px;
 }
+
 .nav2 a {
-	background-image: url(../images/nav2.gif);
+	background-image: url(../images/nv2.png);
+
+    height: 110px;
+    width: 110px;
+    position: absolute;
+	left: 607px;
+    top: 40px;
 }
+
 .nav3 a {
-	background-image: url(../images/nav3.gif);
+	background-image: url(../images/nv3.png);
+
+    height: 110px;
+    width: 110px;
+    position: absolute;
+	left: 727px;
+    top: 40px;
 }
 .nav4 a {
-	background-image: url(../images/nav4.gif);
+	background-image: url(../images/nv4.png);
+
+    height: 110px;
+    width: 110px;
+    position: absolute;
+	left: 847px;
+    top: 40px;
 }
 .nav5 a {
-	background-image: url(../images/nav5.gif);
+	background-image: url(../images/nv5.png);
+
+    height: 110px;
+    width: 110px;
+    position: absolute;
+	left: 967px;
+    top: 40px;
 }
-.nav6 a {
-	background-image: url(../images/nav6.gif);
-}
-.nav7 a {
-	background-image: url(../images/nav7.gif);
-}
-.nav8 a {
-	background-image: url(../images/nav8.gif);
-}
-.nav8_2 a {
-	background-image: url(http://shirobako-anime.com/images/nav8.gif);
-	margin-top: -22px;
-}
-.nav9 a {
-	background-image: url(../images/nav9.gif);
-}
-.nav10 a {
-	background-image: url(../images/nav10.gif);
-}
-.nav11 a {
-	background-image: url(../images/nav11.gif);
-}
-#shead {
-	 background-image: url(../images/logo.jpg); 
-	background-repeat: no-repeat;
-	background-position: center top;
-	height: 300px;
-}
-.sheadin {
-	width: 1084px;
-	margin-right: auto;
-	margin-left: auto;
-	position: relative;
-	height: 90px;
-}
-.sheadin h1 {
-	height: 191px;
-	width: 262px;
-	position: absolute;
-	left: -8px;
-	top: 0px;
-	z-index: 50000;
-}
+
+
 .nav a.active{
 	height:85px;
 }
+
+.navs {
+    background-image: url(../images/nv_before.png);
+
+    height: 130px;
+    width: 130px;
+    position: absolute;
+	left: 340px;
+    top: 24px;
+    -webkit-animation: animate-stripes 30s linear infinite;  
+
+       
+}
+.navs2 {
+    background-image: url(../images/nv_before.png);
+
+    height: 130px;
+    width: 130px;
+    position: absolute;
+	left: 1090px;
+    top: 24px;
+    -webkit-animation: animate-stripes 30s linear infinite;  
+
+       
+}
+
+ @-webkit-keyframes animate-stripes {    
+            0% {-webkit-transform: rotate(0deg);}   
+            100% {-webkit-transform: rotate(360deg);}    
+} 
+
+ @-webkit-keyframes animate-stripes-logo {    
+            0% {-webkit-transform: rotate(0deg);}   
+            25% {-webkit-transform: rotate(10deg);}    
+           50% {-webkit-transform: rotate(0deg);}   
+            75% {-webkit-transform: rotate(-10deg);}   
+            100% {-webkit-transform: rotate(0deg);}  
+} 
+
+
+@-webkit-keyframes gelatine{
+  from,to{
+    -webkit-transform:scale(1, 1);
+    transform:scale(1, 1)
+  }
+  25%{
+    -webkit-transform:scale(.9, 1.1);
+    transform:scale(.9, 1.1)
+  }
+  50%{
+    -webkit-transform:scale(1.1, .9);
+    transform:scale(1.1, .9)
+  }
+  75%{
+    -webkit-transform:scale(.95, 1.05);
+    transform:scale(.95, 1.05)
+  }
+  from,to{
+    -webkit-transform:scale(1, 1);
+    transform:scale(1, 1)
+  }
+  25%{
+    -webkit-transform:scale(.9, 1.1);
+    transform:scale(.9, 1.1)
+  }
+  50%{
+    -webkit-transform:scale(1.1, .9);
+    transform:scale(1.1, .9)
+  }75%{
+    -webkit-transform:scale(.95, 1.05);
+    transform:scale(.95, 1.05)
+  }
+}
+
