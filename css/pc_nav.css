@@ -27,11 +27,11 @@
 
 .sheadin h1 {
     background-image: url(../images/logo.png);
-    height: 286px;
-    width: 247px;
+    height:213px;
+    width: 184px;
     position: absolute;
-    left: 32px;
-    top: 9px;
+    left:70px;
+    top:23px;
     z-index: 50000;
 }
 
@@ -42,33 +42,25 @@
 /*      logo and title     */
 .uri {
     background-image: url(../images/%E7%97%9B%E6%96%B0%E9%97%BB%E4%B8%BB%E9%A2%98%E7%AB%99.png);
-    height: 39px;
-    width: 247px;
+    height: 45px;
+    width: 302px;
     position: absolute;
-    left: 319px;
-    top: 33px;
+    left: 359px;
+    top: 59px;
 }
 .uriTop {
-    background-image: url(../images/tp_uri.png);
-    height: 11px;
-    width: 154px;
+    background-image: url(../images/top_uri.png);
+    height: 10px;
+    width: 1600px;
     position: absolute;
-    left: 865px;
-    top: 85px;
-}
-.uri2 {
-    background-image: url(../images/%E6%97%A5%E6%9C%ACACG%E6%9C%80in%E6%BD%AE%E6%B5%81%E7%AB%99.png);
-    height: 33px;
-    width: 277px;
-    position: absolute;
-    left: 298px;
-    top: 106px;
+    left: 0px;
+    top: 5px;
 }
 
 /*nagivation*/
 .nvtop {
     background-image: url(../images/nv_top.png);
-    height: 99px;
+    height: 180px;
     width: 1600px;
     position: absolute;
     left: 0px;
@@ -79,8 +71,8 @@
     background-repeat: no-repeat;
     background-position: center top;
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 20px;
+    left: 750px;
     z-index: 1100;
     /*width: 770px;*/
     /*width:750px;*/
@@ -99,14 +91,14 @@
     text-align: center;
     text-shadow: #b4b4b4 2px 2px 2px;
     color: #f5f5f5;
-    font-size: 25px;
+    font-size: 20px;
     font-family: sans-serif;
     
     position: absolute;
     top: 110%;
-    bottom: -50%;
-    right: -5%;
-    left: -5%;
+    bottom: -70%;
+    right: -25%;
+    left: -25%;
 
     box-shadow: rgb(248,92,92) 2px 2px 2px;
     border-radius: 5% / 50%;
@@ -115,11 +107,11 @@
 
 .nav1 a {
     background-image: url(../images/nv1.png);
-    height: 110px;
-    width: 110px;
+    height: 66px;
+    width: 66px;
     position: absolute;
-    left: 487px;
-    top: 40px;
+    left: 90px;
+    top: 32px;
 } 
 .nav1 a:hover:after{
     content: '痛新闻';
@@ -129,11 +121,11 @@
 
 .nav2 a {
     background-image: url(../images/nv2.png);
-    height: 110px;
-    width: 110px;
+    height: 66px;
+    width: 66px;
     position: absolute;
-    left: 607px;
-    top: 40px;
+    left: 170px;
+    top: 32px;
 }
 .nav2 a:hover:after{
     content: '图片区';
@@ -143,11 +135,11 @@
 
 .nav3 a {
     background-image: url(../images/nv3.png);
-    height: 110px;
-    width: 110px;
+    height: 66px;
+    width: 66px;
     position: absolute;
-    left: 727px;
-    top: 40px;
+    left: 250px;
+    top: 32px;
 }
 .nav3 a:hover:after{
     content: '摄影区';
@@ -156,11 +148,11 @@
 
 .nav4 a {
     background-image: url(../images/nv4.png);
-    height: 110px;
-    width: 110px;
+    height: 66px;
+    width: 66px;
     position: absolute;
-    left: 847px;
-    top: 40px;
+    left: 330px;
+    top: 32px;
 }
 .nav4 a:hover:after{
     content: '人文旅游';
@@ -169,11 +161,11 @@
 
 .nav5 a {
     background-image: url(../images/nv5.png);
-    height: 110px;
-    width: 110px;
+    height: 66px;
+    width: 66px;
     position: absolute;
-    left: 967px;
-    top: 40px;
+    left: 410px;
+    top: 32px;
 }
 .nav5 a:hover:after{
     content: '关于我们';
@@ -182,20 +174,20 @@
 
 .navs {
     background-image: url(../images/nv_before.png);
-    height: 130px;
-    width: 130px;
+    height: 77px;
+    width: 77px;
     position: absolute;
-    left: 340px;
+    left: 490px;
     top: 24px;
     -webkit-animation: animate-stripes 30s linear infinite;
 }
 
 .navs2 {
     background-image: url(../images/nv_before.png);
-    height: 130px;
-    width: 130px;
+    height: 77px;
+    width: 77px;
     position: absolute;
-    left: 1090px;
+    left: 0px;
     top: 24px;
     -webkit-animation: animate-stripes 30s linear infinite;
 }
