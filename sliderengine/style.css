@@ -19,8 +19,8 @@
   height: 800px;
   width: 100%;
   margin-top: 10px;
-    top:-100px;
-    z-index: -1000;
+  top:-100px;
+ 
 }
 .csslider1 > .cs_anchor {
   display: none;

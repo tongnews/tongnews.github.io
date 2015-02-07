@@ -46,6 +46,7 @@
     position: absolute;
     left: 359px;
     top: 59px;
+    z-index: 100;
 }
 .uriTop {
     background-image: url(../images/top_uri.png);
