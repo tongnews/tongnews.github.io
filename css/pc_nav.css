@@ -7,8 +7,7 @@
 }
 
 #shead {
-    /*	 background-image: url(../images/logo.jpg); */
-    
+    background-image: url(../images/logo.jpg); 
     background-repeat: no-repeat;
     background-position: center top;
     height: 300px;
@@ -59,7 +58,8 @@
 
 /*nagivation*/
 .nvtop {
-    background-image: url(../images/nv_top.png);
+/*    background-image: url(../images/nv_top.png);*/
+    background-color: rgb(0.7,0.7,0.7,1);
     height: 180px;
     width: 1600px;
     position: absolute;
