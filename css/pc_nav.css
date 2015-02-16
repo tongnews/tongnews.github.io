@@ -7,22 +7,23 @@
 }
 
 #shead {
-    background-image: url(../images/logo.jpg); 
     background-repeat: no-repeat;
     background-position: center top;
-    height: 300px;
+    height: auto;
     width: auto;
     position: absolute;
     left: 0px;
 }
 
-.sheadin {
-    width: 1084px;
+.sheadin-container {
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
     position: relative;
     height: 90px;
 }
+
+/*      logo and title     */
 
 .sheadin h1 {
     background-image: url(../images/logo.png);
@@ -38,16 +39,17 @@
     -webkit-animation: animate-stripes-logo 1s linear infinite;
 }
 
-/*      logo and title     */
+
 .uri {
-    background-image: url(../images/%E7%97%9B%E6%96%B0%E9%97%BB%E4%B8%BB%E9%A2%98%E7%AB%99.png);
-    height: 45px;
-    width: 302px;
+    background-image: url(../images/title.png);
+    width: 287px;
+    height: 90px;
+    top: 20px;
+    left: 669px;
     position: absolute;
-    left: 359px;
-    top: 59px;
     z-index: 100;
 }
+
 .uriTop {
     background-image: url(../images/top_uri.png);
     height: 10px;
@@ -57,35 +59,71 @@
     top: 5px;
 }
 
-/*nagivation*/
-.nvtop {
-/*    background-image: url(../images/nv_top.png);*/
-    background-color: rgb(0.7,0.7,0.7,1);
-    height: 180px;
-    width: 1600px;
+.uriBottom {
+    background-image: url(../images/bot_uri.png);
+    height: 141px;
+    width: 100%;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0%;
+    top: 60px;
 }
-.nav {
-    background-image: url(../images/bg_nav.gif);
-    background-repeat: no-repeat;
-    background-position: center top;
+
+.uri_pet_1 {
+    background-image: url(../images/pet_1.png);
+    width: 129px;
+    height: 123px;
     position: absolute;
-    top: 20px;
-    left: 750px;
-    z-index: 1100;
+    top: 10px;
+    left: 206px;
+    z-index: -200;
+}
+
+.uri_pet_2 {
+    background-image: url(../images/pet_2.png);
+    width: 134px;
+    height: 108px;
+    position: absolute;
+    top: 18px;
+    left: 431px;
+    z-index: -200;
+}
+
+.uri_pet_3 {
+    background-image: url(../images/pet_3.png);
+    width: 135px;
+    height: 119px;
+    position: absolute;
+    top: 10px;
+    left: 1044px;
+    z-index: -200;
+}
+
+.uri_pet_4 {
+    background-image: url(../images/pet_2.png);
+    width: 134px;
+    height: 108px;
+    position: absolute;
+    top: 18px;
+    left: 1303px;
+    z-index: -200;
+}
+/*nagivation*/
+.nav {
+    top: 60px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
     /*width: 770px;*/
     /*width:750px;*/
-    
-    width: 820px;
+    width: 1298px;
+    z-index: 1100;
+
 }
 .nav li {
-    height: auto;
-    width: auto;
+    display: inline;
 }
 .nav a:hover {
-    -webkit-animation: gelatine .5s linear 1;
+/*    -webkit-animation: gelatine 5s linear 1;*/
 }
 .nav a:hover:after{
     content: '';
@@ -97,9 +135,9 @@
     
     position: absolute;
     top: 110%;
-    bottom: -70%;
-    right: -25%;
-    left: -25%;
+    bottom: -30%;
+    right: 5%;
+    left: 5%;
 
     box-shadow: rgb(248,92,92) 2px 2px 2px;
     border-radius: 5% / 50%;
@@ -108,88 +146,103 @@
 
 .nav1 a {
     background-image: url(../images/nv1.png);
-    height: 66px;
-    width: 66px;
+    height: 35px;
+    width: 177px;
     position: absolute;
-    left: 90px;
-    top: 32px;
+    left: 58px;
 } 
 .nav1 a:hover:after{
-    content: '痛新闻';
-    background:#00b7ee;
+    background:#be00ee;
 }
 
 
 .nav2 a {
     background-image: url(../images/nv2.png);
-    height: 66px;
-    width: 66px;
+    height: 35px;
+    width: 154px;
     position: absolute;
-    left: 170px;
-    top: 32px;
+    left: 250px;
 }
 .nav2 a:hover:after{
-    content: '图片区';
     background:#ee0070;
 }
 
 
 .nav3 a {
     background-image: url(../images/nv3.png);
-    height: 66px;
-    width: 66px;
+    height: 35px;
+    width: 154px;
     position: absolute;
-    left: 250px;
-    top: 32px;
+    left: 418px;
 }
 .nav3 a:hover:after{
-    content: '摄影区';
-    background:#00ee8c;
+    background:#be00ee;
 }
 
 .nav4 a {
     background-image: url(../images/nv4.png);
-    height: 66px;
-    width: 66px;
+    height: 35px;
+    width: 154px;
     position: absolute;
-    left: 330px;
-    top: 32px;
+    left: 587px;
+
 }
 .nav4 a:hover:after{
-    content: '人文旅游';
-    background:#eec400;
+    background:#ee0070;
 }
 
 .nav5 a {
     background-image: url(../images/nv5.png);
-    height: 66px;
-    width: 66px;
+    height: 35px;
+    width: 154px;
     position: absolute;
-    left: 410px;
-    top: 32px;
+    left: 755px;
 }
+
 .nav5 a:hover:after{
-    content: '关于我们';
+    background:#be00ee;
+}
+
+.nav6 a {
+    background-image: url(../images/nv6.png);
+    height: 35px;
+    width: 154px;
+    position: absolute;
+    left: 923px;
+}
+
+.nav6 a:hover:after{
+    background:#ee0070;
+}
+
+.nav7 a {
+    background-image: url(../images/nv7.png);
+    height: 35px;
+    width: 154px;
+    position: absolute;
+    left: 1092px;
+}
+
+.nav7 a:hover:after{
     background:#be00ee;
 }
 
 .navs {
     background-image: url(../images/nv_before.png);
-    height: 77px;
-    width: 77px;
+    height: 38px;
+    width: 40px;
     position: absolute;
-    left: 490px;
-    top: 24px;
+
+
     -webkit-animation: animate-stripes 30s linear infinite;
 }
 
 .navs2 {
     background-image: url(../images/nv_before.png);
-    height: 77px;
-    width: 77px;
+    height: 38px;
+    width: 40px;
     position: absolute;
-    left: 0px;
-    top: 24px;
+    left: 1258px;
     -webkit-animation: animate-stripes 30s linear infinite;
 }
 

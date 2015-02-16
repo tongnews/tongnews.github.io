@@ -29,116 +29,140 @@
     <script type="text/javascript" src="js/jQueryRotateCompressed.js"></script>
     <script type="text/javascript" src="js/jquery.nav.js"></script>
     <script type="text/javascript" src="js/jquery.sub.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/slider_style.css" />
+    <link rel="stylesheet" type="text/css" href="css/slider_custom.css" />
+    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="css/slider_styleNoJS.css" />
+    </noscript>
+
 </head>
 
 <body>
 
-    <div id="shead">
-        <div class="sheadin">
-            <!--        logo and title-->
-            <h1><span class="hide">Logo</span></h1>
-            <div class="nvtop"><span class="hide">Top Color Bar</span>
-            </div>
-            <div class="uri"><span class="hide">Title Big</span>
-            </div>
-            <div class="uriTop"><span class="hide">Title Big 2</span>
-            </div>
-            <!--        Navigation bar-->
-            <ul class="nav">
-                <div class="navs"><span class="hide">sakura</span>
-                </div>
-                <li class="nav1"><a href="news/"><span class="hide">bar1</span></a>
-                </li>
-                <li class="nav2"><a href="news/"><span class="hide">bar2</span></a>
-                </li>
-                <li class="nav3"><a href="news/"><span class="hide">bar3</span></a>
-                </li>
-                <li class="nav4"><a href="news/"><span class="hide">bar4</span></a>
-                </li>
-                <li class="nav5"><a href="news/"><span class="hide">bar5</span></a>
-                </li>
-                <div class="navs2"><span class="hide">sakura</span>
-                </div>
-            </ul>
+    <div class="sheadin-container">
+        <!--        logo and title-->
+        <!--        <h1><span class="hide">Logo</span></h1>-->
+        <div class="uri"><span class="hide">标题</span>
+        </div>
+        <div class="uriTop"><span class="hide">上阴影</span>
+        </div>
+        <div class="uriBottom"><span class="hide">心电图</span>
+        </div>
+
+        <div class="uri_pet_1"><span class="hide">p1</span>
+        </div>
+        <div class="uri_pet_2"><span class="hide">p2</span>
+        </div>
+        <div class="uri_pet_3"><span class="hide">p3</span>
+        </div>
+        <div class="uri_pet_4"><span class="hide">p4</span>
         </div>
     </div>
+
+
+    <!--        Navigation bar-->
+    <ul class="nav">
+        <div class="navs"><span class="hide">sakura</span>
+        </div>
+        <li class="nav1"><a href="news/"><span class="hide">bar1</span></a>
+        </li>
+        <li class="nav2"><a href="news/"><span class="hide">bar2</span></a>
+        </li>
+        <li class="nav3"><a href="news/"><span class="hide">bar3</span></a>
+        </li>
+        <li class="nav4"><a href="news/"><span class="hide">bar4</span></a>
+        </li>
+        <li class="nav5"><a href="news/"><span class="hide">bar5</span></a>
+        </li>
+        <li class="nav6"><a href="news/"><span class="hide">bar6</span></a>
+        </li>
+        <li class="nav7"><a href="news/"><span class="hide">bar7</span></a>
+        </li>
+        <div class="navs2"><span class="hide">sakura</span>
+        </div>
+    </ul>
+
+    <div class="container demo-2">
+        
+        <div class="slider_bk"><span class="hide">bk</span>
+        </div>
+        
+        <div id="slider" class="sl-slider-wrapper">
+
+            <div class="sl-slider">
+
+                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img bg-img-1"></div>
+                        <h2>A bene placito.</h2>
+                        <blockquote>
+                            <p>You have just dined, and however scrupulously the slaughterhouse is concealed in the graceful distance of miles, there is complicity.</p><cite>Ralph Waldo Emerson</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img bg-img-2"></div>
+                        <h2>Regula aurea.</h2>
+                        <blockquote>
+                            <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p><cite>Albert Schweitzer</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img bg-img-3"></div>
+                        <h2>Dum spiro, spero.</h2>
+                        <blockquote>
+                            <p>Thousands of people who say they 'love' animals sit down once or twice a day to enjoy the flesh of creatures who have been utterly</p><cite>Dame Jane Morris Goodall</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img bg-img-4"></div>
+                        <h2>Dum spiro, spero.</h2>
+                        <blockquote>
+                            <p>The human body has no more need for cows' milk than it does for dogs' milk, horses' milk, or giraffes' milk.</p><cite>Michael Klaper M.D.</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+                    <div class="sl-slide-inner">
+                        <div class="bg-img bg-img-5"></div>
+                        <h2>Acta Non Verba.</h2>
+                        <blockquote>
+                            <p>I think if you want to eat more meat you should kill it yourself and eat it raw so that you are not blinded by the hypocrisy of having it processed for you.</p><cite>Margi Clarke</cite>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <!-- /sl-slider -->
+
+            <nav id="nav-dots" class="nav-dots">
+                <span class="nav-dot-current"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </nav>
+
+        </div>
+
+    </div>
+    <!-- /slider-wrapper -->
+
 
     <div id="sb_footend">
         <hr />
     </div>
-    
-    <!-- Start cssSlider.com -->
-	<link rel="stylesheet" href="sliderengine/style.css">
-	<!--[if IE]><link rel="stylesheet" href="sliderengine/ie.css"><![endif]-->
-	<!--[if lte IE 9]><script type="text/javascript" src="sliderengine/ie.js"></script><![endif]-->
-	
 
-	<div class='csslider1 autoplay '>
-		<input name="cs_anchor1" id='cs_slide1_0' type="radio" class='cs_anchor slide' >
-		<input name="cs_anchor1" id='cs_slide1_1' type="radio" class='cs_anchor slide' >
-		<input name="cs_anchor1" id='cs_slide1_2' type="radio" class='cs_anchor slide' >
-		<input name="cs_anchor1" id='cs_play1' type="radio" class='cs_anchor' checked>
-		<input name="cs_anchor1" id='cs_pause1_0' type="radio" class='cs_anchor pause'>
-		<input name="cs_anchor1" id='cs_pause1_1' type="radio" class='cs_anchor pause'>
-		<input name="cs_anchor1" id='cs_pause1_2' type="radio" class='cs_anchor pause'>
-		
-		<ul>
-			<li class="cs_skeleton">
-				<img src="data1/images/img_2204.jpg" style="width: 100%;">
-			</li>
-			<li class='num0 img slide'>
-				<img src='data1/images/img_2204.jpg' alt='IMG_2204' title='IMG_2204' />
-			</li>
-			<li class='num1 img slide'>
-				<img src='data1/images/img_0216.jpg' alt='IMG_0216' title='IMG_0216' />
-			</li>
-			<li class='num2 img slide'>
-				<img src='data1/images/13.jpg' alt='图片13' title='图片13' />
-			</li>
-		
-		</ul>
-		<a class="cs_lnk" href="http://cssslider.com">image slider</a>
-		<div class='cs_description'>
-			<label class='num0'>
-				<span class="cs_title"><span class="cs_wrapper">IMG_2204</span></span>
-				
-			</label>
-			<label class='num1'>
-				<span class="cs_title"><span class="cs_wrapper">IMG_0216</span></span>
-				
-			</label>
-			<label class='num2'>
-				<span class="cs_title"><span class="cs_wrapper">图片13</span></span>
-				
-			</label>
-		</div>
-		<div class='cs_play_pause'>
-			<label class='cs_play' for='cs_play1'><span><i></i></span></label>
-			<label class='cs_pause num0' for='cs_pause1_0'><span><i></i></span></label>
-			<label class='cs_pause num1' for='cs_pause1_1'><span><i></i></span></label>
-			<label class='cs_pause num2' for='cs_pause1_2'><span><i></i></span></label>
-			
-		</div>
-		
-		
-		<div class='cs_bullets'>
-			<label class='num0' for='cs_slide1_0'>
-				<span class='cs_point'></span>
-				<span class='cs_thumb'><img src='data1/tooltips/img_2204.jpg' alt='IMG_2204' title='IMG_2204' /></span>
-			</label>
-			<label class='num1' for='cs_slide1_1'>
-				<span class='cs_point'></span>
-				<span class='cs_thumb'><img src='data1/tooltips/img_0216.jpg' alt='IMG_0216' title='IMG_0216' /></span>
-			</label>
-			<label class='num2' for='cs_slide1_2'>
-				<span class='cs_point'></span>
-				<span class='cs_thumb'><img src='data1/tooltips/13.jpg' alt='图片13' title='图片13' /></span>
-			</label>
-		</div>
-		
-		</div>
-		<!-- End cssSlider.com -->
-    
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
@@ -155,6 +179,78 @@
         ga('send', 'pageview');
     </script>
 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="js/jquery.slitslider.js"></script>
+    <script type="text/javascript">
+        $(function () {
+
+            var Page = (function () {
+
+                var $nav = $('#nav-dots > span'),
+                    slitslider = $('#slider').slitslider({
+                        onBeforeChange: function (slide, pos) {
+
+                            $nav.removeClass('nav-dot-current');
+                            $nav.eq(pos).addClass('nav-dot-current');
+
+                        }
+                    }),
+
+                    init = function () {
+
+                        initEvents();
+
+                    },
+                    initEvents = function () {
+
+                        $nav.each(function (i) {
+
+                            $(this).on('click', function (event) {
+
+                                var $dot = $(this);
+
+                                if (!slitslider.isActive()) {
+
+                                    $nav.removeClass('nav-dot-current');
+                                    $dot.addClass('nav-dot-current');
+
+                                }
+
+                                slitslider.jump(i + 1);
+                                return false;
+
+                            });
+
+                        });
+
+                    };
+
+                return {
+                    init: init
+                };
+
+            })();
+
+            Page.init();
+
+            /**
+             * Notes:
+             *
+             * example how to add items:
+             */
+
+            /*
+				
+				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
+				
+				// call the plugin's add method
+				ss.add($items);
+
+				*/
+
+        });
+    </script>
 </body>
 
 </html>
