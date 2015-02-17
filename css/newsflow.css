@@ -1,0 +1,35 @@
+
+.news_body {
+    top:500px;
+/*    background: #ffe6e6;*/
+    height: 500px;
+    width: 70%;
+    margin: auto;
+    position: relative;
+}
+
+.post_container {
+    height: 500px;
+    width: 50%;
+    left: 15%;
+    margin-top: 80px; 
+    position: absolute;
+}
+
+.post_container img {
+    display: inline-block;
+    width：40%;  
+    height: 40%;
+    margin: 20px;
+}
+
+
+.post_shower {
+    left: 14%;
+    margin-top: 30px; 
+    width: 801px;
+    height: 50px;
+    position: absolute;
+    background: url(images/../images/zuixinshipin.png);
+    transform: scale(0.9,0.9);
+}
