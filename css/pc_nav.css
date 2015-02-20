@@ -120,7 +120,7 @@
     /*width:750px;*/
     width: 1298px;
     z-index: 1100;
-    transform:scale(1,1);
+    transform:scale(0.9,0.9);
 
 }
 .nav li {

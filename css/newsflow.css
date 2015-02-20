@@ -1,6 +1,6 @@
 
 .news_body {
-    top:500px;
+    top:480px;
 /*    background: #ffe6e6;*/
     height: 500px;
     width: 70%;
@@ -10,34 +10,33 @@
 
 .post_container {
     height: 800px;
-    width: 50%;
-    left: 15%;
+    width: 70%;
     margin-top: 80px; 
     position: absolute;
 }
 
 .post_container img {
     display: inline-block;
-    width：40%;  
-    height: 25%;
+ 
+    height: 22%;
     margin: 20px;
 }
 
 
 .post_shower {
-    left: 14%;
     margin-top: 30px; 
+    left: -5%;
     width: 801px;
     height: 50px;
     position: absolute;
     background: url(images/../images/zuixinshipin.png);
-    transform: scale(0.9,0.9);
+    transform: scale(0.8,0.8);
 }
 
 .weibo_container {
     height: 750px;
-    width: 20%;
+    width: 28%;
     left: 65%;
-    margin-top: 40px; 
+    margin-top: 20px; 
     position: absolute;
 }
