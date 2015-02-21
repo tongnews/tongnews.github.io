@@ -21,12 +21,6 @@
     margin-left: auto;
     position: relative;
     height: 130px;
-    transform:scale(0.75);
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    transform: scale(0.75);
 }
 
 /*      logo and title     */
@@ -48,10 +42,10 @@
 
 .uri {
     background-image: url(../images/title.png);
-    width: 287px;
-    height: 90px;
+    width: 215px;
+    height: 68px;
     top: 20px;
-    left: 40%;
+    left: 42%;
     position: absolute;
     z-index: 100;
 }
@@ -76,41 +70,41 @@
 
 .uri_pet_1 {
     background-image: url(../images/pet_1.png);
-    width: 129px;
-    height: 123px;
+    width: 97px;
+    height: 92px;
     position: absolute;
     top: 10px;
-    left: 10%;
+    left: 16%;
     z-index: -200;
 }
 
 .uri_pet_2 {
     background-image: url(../images/pet_2.png);
-    width: 134px;
-    height: 108px;
+    width: 101px;
+    height: 81px;
     position: absolute;
     top: 18px;
-    left: 25%;
+    left: 30%;
     z-index: -200;
 }
 
 .uri_pet_3 {
     background-image: url(../images/pet_3.png);
-    width: 135px;
-    height: 119px;
+    width: 101px;
+    height: 89px;
     position: absolute;
     top: 10px;
-    left: 65%;
+    left: 62%;
     z-index: -200;
 }
 
 .uri_pet_4 {
     background-image: url(../images/pet_2.png);
-    width: 134px;
-    height: 108px;
+    width: 101px;
+    height: 81px;
     position: absolute;
     top: 18px;
-    left: 80%;
+    left: 75%;
     z-index: -200;
 }
 /*nagivation*/
