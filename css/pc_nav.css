@@ -16,11 +16,11 @@
 }
 
 .sheadin-container {
-    width: 100%;
+    width: 1127px;
     margin-right: auto;
     margin-left: auto;
     position: relative;
-    height: 130px;
+    height: 110px;
 }
 
 /*      logo and title     */
@@ -42,10 +42,10 @@
 
 .uri {
     background-image: url(../images/title.png);
-    width: 215px;
-    height: 68px;
+    width: 279px;
+    height: 87px;
     top: 20px;
-    left: 42%;
+    left: 62px;
     position: absolute;
     z-index: 100;
 }
@@ -107,23 +107,36 @@
     left: 75%;
     z-index: -200;
 }
+
+.dokileft{
+    background: url(../images/dokidoki.png);
+    position: absolute;
+    right:1123px;
+    height: 134px;
+    width: 240px;
+    top: -41px;
+    z-index: -100;
+}
+
+.dokiright{
+    background: url(../images/dokidoki2.png);
+    position: absolute;
+    left:1111px;
+    height: 134px;
+    width: 250px;
+    top: -41px;
+    z-index: -100;
+}
 /*nagivation*/
 .nav {
-    top: 10px;
+    top: 24px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
     /*width: 770px;*/
     /*width:750px;*/
-    width: 1298px;
+    width: 1127px;
     z-index: 1100;
-    transform:scale(0.9);
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    transform: scale(0.9);
-
 }
 .nav li {
     display: inline;
@@ -140,46 +153,44 @@
     font-family: sans-serif;
     
     position: absolute;
-    top: 110%;
-    bottom: -30%;
-    right: 5%;
-    left: 5%;
-
-    box-shadow: rgb(248,92,92) 2px 2px 2px;
+    height: 11px;
+    width: 143px;
+    top: -2px;
+/*    box-shadow: rgb(248,92,92) 2px 2px 2px;*/
     border-radius: 5% / 50%;
 }
 
 
 .nav1 a {
     background-image: url(../images/nv1.png);
-    height: 35px;
-    width: 177px;
-    position: absolute;
-    left: 58px;
+    width: 164px;
+    height: 41px;
+    display: inline-block;
 } 
 .nav1 a:hover:after{
     background:#be00ee;
+    width: 164px;
 }
 
 
 .nav2 a {
     background-image: url(../images/nv2.png);
-    height: 35px;
-    width: 154px;
-    position: absolute;
-    left: 250px;
+    width: 143px;
+    height: 41px;
+    display: inline-block;
+    margin-left: 13px;
 }
 .nav2 a:hover:after{
-    background:#ee0070;
+    background: #fb6686;
 }
 
 
 .nav3 a {
     background-image: url(../images/nv3.png);
-    height: 35px;
-    width: 154px;
-    position: absolute;
-    left: 418px;
+    width: 143px;
+    height: 41px;
+    display: inline-block;
+    margin-left: 13px;
 }
 .nav3 a:hover:after{
     background:#be00ee;
@@ -187,22 +198,22 @@
 
 .nav4 a {
     background-image: url(../images/nv4.png);
-    height: 35px;
-    width: 154px;
-    position: absolute;
-    left: 587px;
-
+    width: 143px;
+    height: 41px;
+    display: inline-block;
+    margin-left: 14px;
 }
+
 .nav4 a:hover:after{
-    background:#ee0070;
+    background:#fb6686;
 }
 
 .nav5 a {
     background-image: url(../images/nv5.png);
-    height: 35px;
-    width: 154px;
-    position: absolute;
-    left: 755px;
+    width: 143px;
+    height: 41px;
+    display: inline-block;
+    margin-left: 13px;
 }
 
 .nav5 a:hover:after{
@@ -211,45 +222,43 @@
 
 .nav6 a {
     background-image: url(../images/nv6.png);
-    height: 35px;
-    width: 154px;
-    position: absolute;
-    left: 923px;
+    width: 143px;
+    height: 41px;
+    display: inline-block;
+    margin-left: 13px;
 }
 
 .nav6 a:hover:after{
-    background:#ee0070;
+    background:#fb6686;
+    width: 144px;
 }
 
 .nav7 a {
     background-image: url(../images/nv7.png);
-    height: 35px;
-    width: 154px;
-    position: absolute;
-    left: 1092px;
+    width: 143px;
+    height: 41px;
+    display: inline-block;
+    margin-left: 13px;
 }
 
 .nav7 a:hover:after{
     background:#be00ee;
+    width: 144px;
 }
 
 .navs {
     background-image: url(../images/nv_before.png);
-    height: 38px;
-    width: 40px;
+    width: 48px;
+    height: 45px;
     position: absolute;
-
-
+    top: 59px;
     -webkit-animation: animate-stripes 30s linear infinite;
 }
 
-.navs2 {
-    background-image: url(../images/nv_before.png);
-    height: 38px;
-    width: 40px;
-    position: absolute;
-    left: 1258px;
-    -webkit-animation: animate-stripes 30s linear infinite;
+.uniborder{
+    border-style: solid;
+    border-width: 1px;
+    border-color:#fb6686;
 }
 
 @-webkit-keyframes animate-stripes {
@@ -314,3 +323,4 @@
         transform: scale(.95, 1.05)
     }
 }
+

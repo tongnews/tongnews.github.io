@@ -1,42 +1,100 @@
 
 .news_body {
-    top:480px;
+    top:70px;
 /*    background: #ffe6e6;*/
     height: 500px;
-    width: 70%;
+    width: 1122px;
     margin: auto;
     position: relative;
 }
 
 .post_container {
     height: 800px;
-    width: 70%;
-    margin-top: 80px; 
+    width: 690px;
+    margin-top: 40px; 
     position: absolute;
 }
 
-.post_container img {
+.post_cell img {
     display: inline-block;
- 
-    height: 22%;
-    margin: 20px;
+    height: 130px;
 }
 
+.post_cell blockquote {
+    display: inline-block;
+    width: 480px;
+    height: 130px;
+}
+
+.post_cell h2 {
+    margin-top: 5px;
+    display: inline-block;;
+    font-size: 20px;
+    color: #4081d9;
+}
+
+.post_cell p {
+    display: inline-block;;
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 14px;
+    color: #2e2e2e;
+}
+
+.post_cell{
+    width: 684px;
+    height: 130px;
+    display: block;
+    margin-top: 18px;
+    background-color: rgba(255, 255, 255, 0.96);
+}
+
+.postslider{
+    width: 654px;
+    height: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    display: block;
+    background: url(../images/postslider.png);
+}
 
 .post_shower {
-    margin-top: 30px; 
-    left: -5%;
-    width: 801px;
-    height: 50px;
+    left: 0px;
+    width: 691px;
+    height: 39px;
     position: absolute;
-    background: url(images/../images/zuixinshipin.png);
-    transform: scale(0.8,0.8);
+    background: url(../images/zuixintougao.png);
 }
 
 .weibo_container {
     height: 750px;
-    width: 28%;
-    left: 65%;
-    margin-top: 20px; 
+    width: 376px;
+    right: 0;
+    margin-top: 60px; 
     position: absolute;
+}
+
+.weibo_shower {
+    right: 0px;
+    width: 376px;
+    height: 39px;
+    position: absolute;
+    background: url(../images/zuixindongtai.png);
+}
+
+.rank_shower {
+    right: 0px;
+    width: 376px;
+    height: 39px;
+    top: 870px;
+    position: absolute;
+    background: url(../images/rankshower.png);
+}
+.rank_contianer {
+    right: 0px;
+    top: 940px;
+    width: 371px;
+    height: 365px;
+    position: absolute;
+    background: #fff;
 }
