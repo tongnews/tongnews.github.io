@@ -28,23 +28,27 @@
 
 .post_cell h2 {
     margin-top: 5px;
-    display: inline-block;;
-    font-size: 20px;
+    display: inline-block;
+    font-size: 15px;
     color: #4081d9;
+    font-family: '微软雅黑';
+    margin-left:10px;
 }
 
 .post_cell p {
     display: inline-block;;
     margin-left:10px;
     margin-right:10px;
-    font-size: 14px;
+    font-size: 13px;
     color: #2e2e2e;
+    font-family: '微软雅黑'；
 }
 
 .post_cell{
     width: 684px;
     height: 130px;
     display: block;
+    position: relative;
     margin-top: 18px;
     background-color: rgba(255, 255, 255, 0.96);
 }
@@ -56,6 +60,27 @@
     margin-top: 10px;
     display: block;
     background: url(../images/postslider.png);
+}
+
+.prevPostPage{
+    width: 48px;
+    height: 48px;
+    margin-top: 10px; 
+    left: 0px; 
+    position: absolute;
+    background: url(../images/arrow-18-48-left.png);
+    cursor:pointer;
+}
+
+
+.nextPostPage{
+    width: 48px;
+    height: 48px;
+    margin-top: 10px; 
+    right: 0px; 
+    position: absolute;
+    background: url(../images/arrow-18-48.png);
+    cursor:pointer;
 }
 
 .post_shower {
@@ -97,4 +122,44 @@
     height: 365px;
     position: absolute;
     background: #fff;
+}
+
+
+.float_video_ply {
+    background: #fff;
+    position: fixed;
+    width: 600px;
+    height: 480px;
+    right: 50px;
+	bottom: 50px;
+    background: #fff;
+    z-index: 1000;
+    display: 
+}
+
+.float_video_ply iframe{
+    width: 600px;
+    height: 480px;
+}
+
+.index_float_video_ply_close {
+    right: -24px;
+    top: -1px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url(../images/close-window-24.png);
+    cursor:pointer;
+    z-index: 1000;
+}
+
+.float_video_link {
+    right: 10px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: url(../images/tv-16.png);
+    cursor:pointer;
+    z-index: 1000;
 }

@@ -24,5 +24,16 @@ function ReSizePic(ThisPic,RePicWidth){
     ThisPic.height = TrueHeight / Multiple;  //图片显示的可视高度
 }
 
+Array.prototype.contains = function(element){
+    return this.indexOf(element) > -1;
+};
+
+function pageScroll() {
+    window.scrollBy(0,-800);
+    scrolldelay = setTimeout('pageScroll()',1000);
+    if(document.documentElement.scrollTop==0) clearTimeout(scrolldelay);
+}
+
+
 //e.g.
 //<img src="http://img208.poco.cn/mypoco/myphoto/20110702/19/56945956201107021915139206804535901_001.jpg" onload="ReSizePic(this);">

@@ -3,21 +3,23 @@
  */
 
 
+var $postCount=7, $pageNum=1;
+
 $(document).ready(function () {
     console.log("Starting JSON POSTS engine!");
     updateSlides();
-    updatePosts();
-
+    updatePosts($postCount,$pageNum);
     var postid = (parseInt(getUrlParam("id"), 8) - 100000) / 9;
     console.log(postid);
     console.log((postid * 9 + 100000).toString(8));
+                                 
 });
 
 var baseurl="http://54.92.122.102/wordpress/";
 
-function updatePosts() {
+function updatePosts(postCount,pageNum) {
 
-    var questurl = baseurl.concat("?json=get_category_posts&category_slug=post");
+    var questurl = baseurl.concat("?json=get_category_posts&category_slug=post&count="+postCount+"&page="+pageNum);
     var $post_container = $('#index_post_container'),
     $post_cells = $post_container.find('.post_cell');
     //ajax for get recent post
@@ -30,18 +32,34 @@ function updatePosts() {
         },
         success: function (response) {
             
-            //console.log(response);
-            
-            var $post_counts = 7;
+            console.log(response);
 
-            for (var i = 0; i < $post_counts; i++) {
+            for (var i = 0; i < postCount; i++) {
                 //replace title
-                $post_cells.eq(i).find('h2').text(response.posts[0].title);
+                $post_cells.eq(i).find('h2').text(response.posts[i].title);
                 //replace intro
-                $post_cells.eq(i).find('p').text(response.posts[0].custom_fields.intro[0].substring(1, 87).concat("..."));
-                var $tbnlurl = response.posts[0].attachments[0].images.thumbnail.url;
+                $post_cells.eq(i).find('p').text(response.posts[i].custom_fields.intro[0].substring(1, 87).concat("..."));
+                var $tbnlurl = response.posts[i].attachments[0].images.thumbnail.url;
                 $post_cells.eq(i).find('img').attr('src', $tbnlurl);
+                
+                //check if it is a video
+                var $postCategories=response.posts[i].categories;
+                for (var j = 0; j < $postCategories.length ; j++){
+                    if($postCategories[j].slug=="video"){
+                        var $video_link=response.posts[i].custom_fields.video_link[0];
+                        $("<div class='float_video_link' ref='"+$video_link+"'></div>").insertAfter(                                  $post_cells.eq(i).find('p'))
+                        break;
+                    }
+                }
             }
+            
+            //control click event of float video button
+            $('.float_video_link').click(function () {
+                console.log($(this).attr('ref'));
+                $('#index_float_video_ply').find('iframe').replaceWith($(this).attr('ref'));
+                $('#index_float_video_ply').find('iframe').eq(0).attr("style","");
+                $('#index_float_video_ply').attr("style","");
+            });
         }
 
     });
@@ -86,6 +104,24 @@ function updateSlides() {
 
 }
 
+$('.index_float_video_ply_close').click(function () {
+    console.log($(this).attr('ref'));
+    $('#index_float_video_ply').find('iframe').replaceWith('<iframe></iframe>');
+    $('#index_float_video_ply').attr("style", "width:0px; height:0px; overflow:hidden;");
+});
+
+$('.nextPostPage').click(function () {
+        $pageNum=$pageNum+1;
+        updatePosts($postCount,$pageNum);
+        pageScroll()
+});
+
+$('.prevPostPage').click(function () {
+        $pageNum=$pageNum-1;
+        if($pageNum<1)$pageNum=1;
+        updatePosts($postCount,$pageNum);
+        pageScroll()
+});
 
 //---------------------------------json tutorial---------------------------------------
 //    <p id="demo"></p>
