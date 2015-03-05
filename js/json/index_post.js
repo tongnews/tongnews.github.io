@@ -18,10 +18,11 @@ $(document).ready(function () {
 var baseurl="http://54.92.122.102/wordpress/";
 
 function updatePosts(postCount,pageNum) {
-
+    $('.loading_cover').attr("style", "");
     var questurl = baseurl.concat("?json=get_category_posts&category_slug=post&count="+postCount+"&page="+pageNum);
     var $post_container = $('#index_post_container'),
     $post_cells = $post_container.find('.post_cell');
+    
     //ajax for get recent post
     $.ajax({
         url: questurl,
@@ -36,9 +37,11 @@ function updatePosts(postCount,pageNum) {
 
             for (var i = 0; i < postCount; i++) {
                 //replace title
-                $post_cells.eq(i).find('h2').text(response.posts[i].title);
+                $post_cells.eq(i).find('h2').text(response.posts[i].title.substring(0,31));
+                //replace info
+                $post_cells.eq(i).find('h3').text("By "+response.posts[i].author.nickname+" 日期: "+response.posts[i].date.substring(0,10)+"  浏览量： "+response.posts[i].custom_fields.viewer_count[0]);
                 //replace intro
-                $post_cells.eq(i).find('p').text(response.posts[i].custom_fields.intro[0].substring(1, 87).concat("..."));
+                $post_cells.eq(i).find('p').text(response.posts[i].custom_fields.intro[0].substring(1, 105).concat("..."));
                 var $tbnlurl = response.posts[i].attachments[0].images.thumbnail.url;
                 $post_cells.eq(i).find('img').attr('src', $tbnlurl);
                 
@@ -47,7 +50,7 @@ function updatePosts(postCount,pageNum) {
                 for (var j = 0; j < $postCategories.length ; j++){
                     if($postCategories[j].slug=="video"){
                         var $video_link=response.posts[i].custom_fields.video_link[0];
-                        $("<div class='float_video_link' ref='"+$video_link+"'></div>").insertAfter(                                  $post_cells.eq(i).find('p'))
+                        $("<div class='float_video_link' ref='"+$video_link+"' post_id="+response.posts[i].id+"></div>").insertAfter(                                 $post_cells.eq(i).find('p'))
                         break;
                     }
                 }
@@ -55,11 +58,28 @@ function updatePosts(postCount,pageNum) {
             
             //control click event of float video button
             $('.float_video_link').click(function () {
+                var questurl = baseurl.concat("?json=view_post&id="+$(this).attr('post_id'));
+                //ajax for get recent post
+                $.ajax({
+                    url: questurl,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    data: {
+                        format: "json"
+                    },
+                    success: function (response) {
+                        console.log("！");
+                        console.log(response);
+                    }
+                });
+                
                 console.log($(this).attr('ref'));
                 $('#index_float_video_ply').find('iframe').replaceWith($(this).attr('ref'));
                 $('#index_float_video_ply').find('iframe').eq(0).attr("style","");
                 $('#index_float_video_ply').attr("style","");
             });
+            
+            $('.loading_cover').attr("style", "width:0px; height:0px; overflow:hidden;");
         }
 
     });
@@ -105,7 +125,6 @@ function updateSlides() {
 }
 
 $('.index_float_video_ply_close').click(function () {
-    console.log($(this).attr('ref'));
     $('#index_float_video_ply').find('iframe').replaceWith('<iframe></iframe>');
     $('#index_float_video_ply').attr("style", "width:0px; height:0px; overflow:hidden;");
 });
