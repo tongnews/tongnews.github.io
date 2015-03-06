@@ -4,12 +4,13 @@
 
 
 var $postCount=7, $pageNum=1;
+var $rankCount=5;
 
 $(document).ready(function () {
     console.log("Starting JSON POSTS engine!");
     updateSlides();
     updatePosts($postCount,$pageNum);
-    updateRank(5);
+    updateRank($rankCount);
     var postid = (parseInt(getUrlParam("id"), 8) - 100000) / 9;
     console.log(postid);
     console.log((postid * 9 + 100000).toString(8));
@@ -145,7 +146,7 @@ $('.prevPostPage').click(function () {
         pageScroll()
 });
 
-function updateRank(postCount){
+function updateRank(rankCount){
     var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
     var $rank_container = $('#index_rank_contianer'),
     $rank_cells = $rank_container.find('.rank_cell');
@@ -163,14 +164,42 @@ function updateRank(postCount){
             console.log(response);
             
             //set post basic title info and other
-            for (var i = 0; i < postCount; i++) {
+            for (var i = 0; i < rankCount; i++) {
                 //replace title
                 $rank_cells.eq(i).find('h2').text(response.posts[i].post_title.substring(0,31));
                 $("<div class='ref_id' post_id="+response.posts[i].ID+"></div>").insertAfter(                                 $rank_cells.eq(i).find('h2'))
+                console.log(response.posts[i].ID)   
+                get_rank_image(response.posts[i].ID,$rank_cells.eq(i));
             }
         }
     });
 }
+
+function get_rank_image(posts_id,rank_cell){
+    var questurl = baseurl.concat("?json=get_post&id="+posts_id);
+    //ajax for add viewer_count for this post
+    $.ajax({
+        url: questurl,
+        jsonp: "callback",
+        dataType: "jsonp",
+        data: {
+            format: "json"
+        },
+        success: function (response) {
+            //console.log(response);
+            var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
+            rank_cell.find('img').attr('src', $tbnlurl);
+        }
+    });
+
+}
+
+$('.rank_cell').hover(function () {
+    for (var i = 0; i < $rankCount; i++) {
+        $('#index_rank_contianer').find('.rank_cell').eq(i).find('img').attr('style', "width:0px; height:0px; overflow:hidden;");
+    }
+    $(this).find('img').attr('style', "");
+});
 
 //---------------------------------json tutorial---------------------------------------
 //    <p id="demo"></p>
