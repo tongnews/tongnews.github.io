@@ -45,6 +45,9 @@ function updatePosts(postCount,pageNum) {
                 var $tbnlurl = response.posts[i].attachments[0].images.thumbnail.url;
                 $post_cells.eq(i).find('img').attr('src', $tbnlurl);
                 
+                //remove addional attribute
+                $post_cells.eq(i).find(".float_video_link").remove();
+                
                 //check if it is a video
                 var $postCategories=response.posts[i].categories;
                 for (var j = 0; j < $postCategories.length ; j++){
