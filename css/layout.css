@@ -961,9 +961,7 @@ a {
 #aboutNav li {
 	float:left;
 }
-#aboutNav li.nav1 {
-	margin-right:12px;
-}
+
 #aboutNav li a {
 	width:200px;
 	height:50px;

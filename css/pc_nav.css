@@ -111,11 +111,10 @@
 .dokileft{
     background: url(../images/dokidoki.png);
     position: absolute;
-    left:-240px;
-    height: 134px;
+    left: -240px;
+    height: 140px;
+    top: -40px;
     width: 240px;
-    margin-top: -80px;
-    z-index: -100;
 }
 
 .dokiright{
@@ -127,20 +126,18 @@
     top: -41px;
     z-index: -100;
 }
+
 /*nagivation*/
 .nav {
     top: 24px;
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    /*width: 770px;*/
-    /*width:750px;*/
     width: 1127px;
+    height: auto;
     z-index: 100;
 }
-.nav li {
-    display: inline;
-}
+
 .nav a:hover {
 /*    -webkit-animation: gelatine 5s linear 1;*/
 }
@@ -160,12 +157,14 @@
     border-radius: 5% / 50%;
 }
 
-
+.nav1, .nav2, .nav3, .nav4, .nav5, .nav6, .nav7 {
+    display: inline-block;
+}
 .nav1 a {
     background-image: url(../images/nv1.png);
     width: 164px;
     height: 41px;
-    display: inline-block;
+    display: block;
 } 
 .nav1 a:hover:after{
     background:#be00ee;
@@ -177,7 +176,7 @@
     background-image: url(../images/nv2.png);
     width: 143px;
     height: 41px;
-    display: inline-block;
+    display: block;
     margin-left: 13px;
 }
 .nav2 a:hover:after{
