@@ -9,6 +9,7 @@ $(document).ready(function () {
     console.log("Starting JSON POSTS engine!");
     updateSlides();
     updatePosts($postCount,$pageNum);
+    updateRank(5);
     var postid = (parseInt(getUrlParam("id"), 8) - 100000) / 9;
     console.log(postid);
     console.log((postid * 9 + 100000).toString(8));
@@ -33,8 +34,7 @@ function updatePosts(postCount,pageNum) {
         },
         success: function (response) {
             
-            console.log(response);
-
+            //set post basic title info and other
             for (var i = 0; i < postCount; i++) {
                 //replace title
                 $post_cells.eq(i).find('h2').text(response.posts[i].title.substring(0,31));
@@ -59,7 +59,7 @@ function updatePosts(postCount,pageNum) {
             //control click event of float video button
             $('.float_video_link').click(function () {
                 var questurl = baseurl.concat("?json=view_post&id="+$(this).attr('post_id'));
-                //ajax for get recent post
+                //ajax for add viewer_count for this post
                 $.ajax({
                     url: questurl,
                     jsonp: "callback",
@@ -68,12 +68,11 @@ function updatePosts(postCount,pageNum) {
                         format: "json"
                     },
                     success: function (response) {
-                        console.log("！");
-                        console.log(response);
+                        console.log("viewing post "+response.post.title);
                     }
                 });
-                
-                console.log($(this).attr('ref'));
+                //connect to post video frame
+                //console.log($(this).attr('ref'));
                 $('#index_float_video_ply').find('iframe').replaceWith($(this).attr('ref'));
                 $('#index_float_video_ply').find('iframe').eq(0).attr("style","");
                 $('#index_float_video_ply').attr("style","");
@@ -85,8 +84,6 @@ function updatePosts(postCount,pageNum) {
     });
 
 }
-
-
 
 
 function updateSlides() {
@@ -124,11 +121,14 @@ function updateSlides() {
 
 }
 
+
+//control the post video type close
 $('.index_float_video_ply_close').click(function () {
     $('#index_float_video_ply').find('iframe').replaceWith('<iframe></iframe>');
     $('#index_float_video_ply').attr("style", "width:0px; height:0px; overflow:hidden;");
 });
 
+//control the post
 $('.nextPostPage').click(function () {
         $pageNum=$pageNum+1;
         updatePosts($postCount,$pageNum);
@@ -141,6 +141,33 @@ $('.prevPostPage').click(function () {
         updatePosts($postCount,$pageNum);
         pageScroll()
 });
+
+function updateRank(postCount){
+    var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
+    var $rank_container = $('#index_rank_contianer'),
+    $rank_cells = $rank_container.find('.rank_cell');
+    
+    //ajax for get recent post
+    $.ajax({
+        url: questurl,
+        jsonp: "callback",
+        dataType: "jsonp",
+        data: {
+            format: "json"
+        },
+        success: function (response) {
+            
+            console.log(response);
+            
+            //set post basic title info and other
+            for (var i = 0; i < postCount; i++) {
+                //replace title
+                $rank_cells.eq(i).find('h2').text(response.posts[i].post_title.substring(0,31));
+                $("<div class='ref_id' post_id="+response.posts[i].ID+"></div>").insertAfter(                                 $rank_cells.eq(i).find('h2'))
+            }
+        }
+    });
+}
 
 //---------------------------------json tutorial---------------------------------------
 //    <p id="demo"></p>

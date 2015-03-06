@@ -9,7 +9,7 @@
 }
 
 .post_container {
-    height: 800px;
+    height: auto;
     width: 690px;
     margin-top: 40px; 
     position: absolute;
@@ -60,7 +60,7 @@
     display: block;
     position: relative;
     margin-top: 18px;
-    background-color: rgba(255, 255, 255, 0.96);
+    background-color: rgba(255, 255, 255, 0.86);
 }
 
 .postslider{
@@ -130,24 +130,6 @@
     background: url(../images/zuixindongtai.png);
 }
 
-.rank_shower {
-    right: 0px;
-    width: 376px;
-    height: 39px;
-    top: 870px;
-    position: absolute;
-    background: url(../images/rankshower.png);
-}
-.rank_contianer {
-    right: 0px;
-    top: 940px;
-    width: 371px;
-    height: 365px;
-    position: absolute;
-    background: #fff;
-}
-
-
 .float_video_ply {
     background: #fff;
     position: fixed;
@@ -185,4 +167,58 @@
     background: url(../images/tv-16.png);
     cursor:pointer;
     z-index: 1000;
+}
+
+.rank_shower {
+    right: 0px;
+    width: 376px;
+    height: 39px;
+    top: 870px;
+    position: absolute;
+    background: url(../images/rankshower.png);
+}
+.rank_contianer {
+    right: 0px;
+    top: 940px;
+    width: 371px;
+    height: auto;
+    position: absolute;
+    background:  rgba(255, 255, 255, 0.86);
+}
+
+.rank_cell{
+    width: 371px;
+    height: auto;
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.rank_cell img {
+    display: inline-block;
+    width: 195px;
+}
+
+.rank_cell blockquote {
+    display: inline-block;
+    margin-left: 5px;
+    width: 361px;
+    height: auto;
+    border-style: none none solid none;
+    border-bottom: 2px dotted #fb6686;
+}
+.rank_cell h1 {
+    display: inline;
+    font-size: 15px;
+    color: #fb6686;
+    font-family: '微软雅黑';
+    margin-left:5px;
+}
+
+.rank_cell h2 {
+    display: inline;
+    font-size: 15px;
+    color: #4081d9;
+    font-family: '微软雅黑';
+    overflow: hidden;
 }
