@@ -112,6 +112,7 @@
     background: url(../images/dokidoki.png);
     position:absolute;
     left: -240px;
+    top: -40px;
     height: 140px;
     width: 240px;
 }
@@ -128,8 +129,8 @@
 
 /*nagivation*/
 .nav {
-    top: 24px;
     position: relative;
+    margin-top: 24px;
     margin-left: auto;
     margin-right: auto;
     width: 1127px;
@@ -140,6 +141,7 @@
 .nav a:hover {
 /*    -webkit-animation: gelatine 5s linear 1;*/
 }
+
 .nav a:hover:after{
     content: '';
     text-align: center;
