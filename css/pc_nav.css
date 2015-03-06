@@ -111,10 +111,10 @@
 .dokileft{
     background: url(../images/dokidoki.png);
     position: absolute;
-    right:1123px;
+    left:-240px;
     height: 134px;
     width: 240px;
-    top: -41px;
+    margin-top: -40px;
     z-index: -100;
 }
 
