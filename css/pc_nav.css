@@ -114,9 +114,8 @@
     left:-240px;
     height: 134px;
     width: 240px;
-    margin-top: -40px;
+    margin-top: -80px;
     z-index: -100;
-    overflow:auto;
 }
 
 .dokiright{
@@ -137,7 +136,7 @@
     /*width: 770px;*/
     /*width:750px;*/
     width: 1127px;
-    z-index: 1100;
+    z-index: 100;
 }
 .nav li {
     display: inline;
