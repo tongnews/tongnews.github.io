@@ -327,3 +327,11 @@
 
 
 
+
+.content_container {
+    width: 1300px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    height: auto;
+}
