@@ -112,9 +112,9 @@
     background: url(../images/dokidoki.png);
     position:absolute;
     left: -240px;
+    height: 134px;
+    width: 250px;
     margin-top: -41px;
-    height: 140px;
-    width: 240px;
     z-index: -1;
 }
 
