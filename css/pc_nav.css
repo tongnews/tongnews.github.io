@@ -112,19 +112,20 @@
     background: url(../images/dokidoki.png);
     position:absolute;
     left: -240px;
-    top: -40px;
+    margin-top: -41px;
     height: 140px;
     width: 240px;
+    z-index: -1;
 }
 
 .dokiright{
     background: url(../images/dokidoki2.png);
     position: absolute;
-    left:1111px;
+    right:-240px;
     height: 134px;
     width: 250px;
-    top: -41px;
-    z-index: -100;
+    margin-top: -98px;
+    z-index: -1;
 }
 
 /*nagivation*/
