@@ -15,15 +15,21 @@
     display: block;
 }
 
-.tongpost_container img {
-    display: inline-block;
-    width: 195px;
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .tongpost_container blockquote {
     display: inline-block;
     width: 1132px;
     height: auto;
+}
+
+.tongpost_container a{
+    pointer-events: none;
+    cursor: default;
 }
 
 .tongpost_container h2 {
@@ -46,7 +52,7 @@
 }
 
 .tongpost_container p {
-    display: inline-block;
+    display: block;
     margin-left:20px;
     margin-right:10px;
     font-size: 17px;

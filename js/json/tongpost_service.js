@@ -29,6 +29,7 @@ $(document).ready(function () {
                 $tongpost_container.find('p').text(response.post.custom_fields.intro[0]);
                 //                var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
                 //                $tongpost_container.find('img').attr('src', $tbnlurl);
+                $(response.post.content).insertAfter($tongpost_container.find('p'));
                 
                 var $postCategories = response.post.categories;
                 for (var j = 0; j < $postCategories.length; j++) {

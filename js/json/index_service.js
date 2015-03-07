@@ -7,6 +7,7 @@ var $postCount=7, $pageNum=1;
 var $rankCount=5;
 var baseurl=getBaseUrl();
 
+var $curCount=0,$maxPages=0;
 var $fly_video_right=20;
     
 $(document).ready(function () {
@@ -35,8 +36,12 @@ function updatePosts(postCount,pageNum) {
         },
         success: function (response) {
             
+            $curCount=response.count;
+            $maxPages=response.pages;
+            
             //set post basic title info and other
-            for (var i = 0; i < postCount; i++) {
+            for (var i = 0; i < $curCount; i++) {
+                $post_cells.eq(i).attr("style", "");
                 //replace title
                 $post_cells.eq(i).find('a').text(response.posts[i].title.substring(0,31));
                 $post_cells.eq(i).find('a').attr("href","tongpost.html?id="+encodeId(response.posts[i].id));
@@ -59,6 +64,10 @@ function updatePosts(postCount,pageNum) {
                         break;
                     }
                 }
+            }
+            
+            for (var i = $curCount; i < postCount; i++) {
+                $post_cells.eq(i).attr("style", "width:0px; height:0px; overflow:hidden;");
             }
             
             //control click event of float video button
@@ -93,15 +102,24 @@ function updatePosts(postCount,pageNum) {
 //control the post
 $('.nextPostPage').click(function () {
         $pageNum=$pageNum+1;
+        if($pageNum>=($maxPages-1)){
+            $pageNum=$maxPages;
+            $('.nextPostPage').attr("style", "width:0px; height:0px; overflow:hidden;");
+        }
+        $('.prevPostPage').attr("style", "");
         updatePosts($postCount,$pageNum);
-        pageScroll()
+        pageScroll();
 });
 
 $('.prevPostPage').click(function () {
         $pageNum=$pageNum-1;
-        if($pageNum<1)$pageNum=1;
+        if($pageNum<=1){
+            $pageNum=1;
+            $('.prevPostPage').attr("style", "width:0px; height:0px; overflow:hidden;");
+        }
+        $('.nextPostPage').attr("style", "");
         updatePosts($postCount,$pageNum);
-        pageScroll()
+        pageScroll();
 });
 
 function updateSlides() {
