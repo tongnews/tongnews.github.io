@@ -81,17 +81,26 @@
         </div>
 
         <div id="tongpost_body" class="tongpost_body uniborder">
-            <div id="tongpost_container" class="tongpost_container">
+            <div id="tongpost_container" class="tongpost_container" onclick='DisplayCoord(event)'>
                 <img>
                 <blockquote>
                     <h2></h2>
                     <h3></h3>
                     <p></p>
                 </blockquote>
+                <div id="floating_cursor" class="floating_cursor"></div>
+                
+                <div class="rollingcomment_container">
+                    <div class="end"></div>
+                </div>
             </div>
+            
         </div>
         
-        
+        <div class="rollingcomment_input uniborder">
+            <input type="text" id="comment_input">
+            <h1 id="comment_submit">发送弹幕</h1>
+        </div>
     </div>
 
     <!--

@@ -4,7 +4,7 @@
     height: auto;
     width: 1132px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     position: relative;
 }
 
@@ -46,7 +46,7 @@
 }
 
 .tongpost_container p {
-    display: inline-block;;
+    display: inline-block;
     margin-left:20px;
     margin-right:10px;
     font-size: 17px;
@@ -55,7 +55,7 @@
 }
 
 .tongpost_container iframe {
-    display: block;;
+    display: block;
     width: 1000px;
     height: 560px;
     margin-top: 20px;
@@ -65,3 +65,45 @@
     border-style: solid solid solid solid;
     border: 4px dotted #a2a2a2;
 }
+
+.rollingcomment_input{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    background: rgba(255, 255, 255, 0.66);
+    width: 690px;
+    height: 30px;
+}
+
+.rollingcomment_input input{
+    display: inline;
+    margin: 5px;
+    width: 600px;
+}
+
+.rollingcomment_input h1{
+    margin: 5px;
+    display: inline-block;
+    font-size: 12px;
+    color: #fb6686;
+    font-family: '微软雅黑';
+    cursor:pointer;
+}
+
+.rollingcomment_container h3{
+    position: absolute;
+    padding-left: 5px;  
+    padding-right: 5px;  
+    font-size: 12px;
+    color: #fff;
+    font-family: '微软雅黑';
+    background: rgba(251, 102, 134, 0.67);
+}
+
+.floating_cursor{
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    background: #fb6686;
+}
+

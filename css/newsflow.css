@@ -21,10 +21,18 @@
 }
 
 .post_cell a {
-    position: absolute;
-    left: 195px;
-    height: 40px;
-    width: 305px;
+    margin-top: 5px;
+    display: block;
+    font-size: 15px;
+    color: #4081d9;
+    font-family: '微软雅黑';
+    margin-left:3px;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.post_cell a:hover{
+     color: #d940b0;
 }
 
 .post_cell blockquote {
@@ -165,6 +173,17 @@
     z-index: 1000;
 }
 
+.index_float_video_ply_move {
+    right: -24px;
+    top: 25px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url(../images/resize-7-24.png);
+    cursor:pointer;
+    z-index: 1000;
+}
+
 .float_video_link {
     right: 10px;
     top: 10px;
@@ -215,8 +234,8 @@
     height: auto;
     border-style: none none solid none;
     border-bottom: 2px dotted #fb6686;
-    cursor: pointer;
 }
+
 .rank_cell h1 {
     display: inline;
     font-size: 15px;
@@ -225,9 +244,14 @@
     margin-left:5px;
 }
 
-.rank_cell h2 {
+.rank_cell a {
     display: inline;
     font-size: 15px;
     color: #4081d9;
     font-family: '微软雅黑';
+    text-decoration: none;
+}
+
+.rank_cell a:hover{
+     color: #d940b0;
 }

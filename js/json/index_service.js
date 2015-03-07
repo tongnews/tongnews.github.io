@@ -7,8 +7,11 @@ var $postCount=7, $pageNum=1;
 var $rankCount=5;
 var baseurl=getBaseUrl();
 
+var $fly_video_right=20;
+    
 $(document).ready(function () {
     //console.log("Starting JSON POSTS engine!");
+    addSliderMoveListeners();
     updateSlides();
     updatePosts($postCount,$pageNum);
     updateRank($rankCount);                            
@@ -35,8 +38,8 @@ function updatePosts(postCount,pageNum) {
             //set post basic title info and other
             for (var i = 0; i < postCount; i++) {
                 //replace title
-                $post_cells.eq(i).find('h2').text(response.posts[i].title.substring(0,31));
-                $("<a href=tongpost.html?id="+encodeId(response.posts[i].id)+"></a>").insertBefore($post_cells.eq(i).find('h2'));
+                $post_cells.eq(i).find('a').text(response.posts[i].title.substring(0,31));
+                $post_cells.eq(i).find('a').attr("href","tongpost.html?id="+encodeId(response.posts[i].id));
                 //replace info
                 $post_cells.eq(i).find('h3').text("By "+response.posts[i].author.nickname+" 日期: "+response.posts[i].date.substring(0,10)+"  浏览量： "+response.posts[i].custom_fields.viewer_count[0]);
                 //replace intro
@@ -77,7 +80,7 @@ function updatePosts(postCount,pageNum) {
                 //console.log($(this).attr('ref'));
                 $('#index_float_video_ply').find('iframe').replaceWith($(this).attr('ref'));
                 $('#index_float_video_ply').find('iframe').eq(0).attr("style","");
-                $('#index_float_video_ply').attr("style","");
+                $('#index_float_video_ply').attr("style", "right: "+$fly_video_right);
             });
             
             $('.loading_cover').attr("style", "width:0px; height:0px; overflow:hidden;");
@@ -87,6 +90,19 @@ function updatePosts(postCount,pageNum) {
 
 }
 
+//control the post
+$('.nextPostPage').click(function () {
+        $pageNum=$pageNum+1;
+        updatePosts($postCount,$pageNum);
+        pageScroll()
+});
+
+$('.prevPostPage').click(function () {
+        $pageNum=$pageNum-1;
+        if($pageNum<1)$pageNum=1;
+        updatePosts($postCount,$pageNum);
+        pageScroll()
+});
 
 function updateSlides() {
 
@@ -130,19 +146,24 @@ $('.index_float_video_ply_close').click(function () {
     $('#index_float_video_ply').attr("style", "width:0px; height:0px; overflow:hidden;");
 });
 
-//control the post
-$('.nextPostPage').click(function () {
-        $pageNum=$pageNum+1;
-        updatePosts($postCount,$pageNum);
-        pageScroll()
-});
+//control the post video type move
+function addSliderMoveListeners(){
+    document.getElementById('index_float_video_ply_move').addEventListener('mousedown', mouseDown, false);
+    window.addEventListener('mouseup', mouseUp, false);
+}
+function mouseUp()
+{
+    window.removeEventListener('mousemove', divMove, true);
+}
+function mouseDown(e){
+  window.addEventListener('mousemove', divMove, true);
+}
+function divMove(e){
+  var div = document.getElementById('index_float_video_ply');
+  div.style.right = screen.width+20-e.clientX + 'px';
+  $fly_video_right = div.style.right ;
+}
 
-$('.prevPostPage').click(function () {
-        $pageNum=$pageNum-1;
-        if($pageNum<1)$pageNum=1;
-        updatePosts($postCount,$pageNum);
-        pageScroll()
-});
 
 function updateRank(rankCount){
     var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
@@ -164,8 +185,9 @@ function updateRank(rankCount){
             //set post basic title info and other
             for (var i = 0; i < rankCount; i++) {
                 //replace title
-                $rank_cells.eq(i).find('h2').text(response.posts[i].post_title.substring(0,31));
-                $("<div class='ref_id' post_id="+response.posts[i].ID+"></div>").insertAfter(                                 $rank_cells.eq(i).find('h2'))
+                $rank_cells.eq(i).find('a').text(response.posts[i].post_title.substring(0,31));
+                $rank_cells.eq(i).find('a').attr("href","tongpost.html?id="+encodeId(response.posts[i].ID));
+                $("<div class='ref_id' post_id="+response.posts[i].ID+"></div>").insertAfter(                                 $rank_cells.eq(i).find('a'))
                 console.log(response.posts[i].ID)   
                 get_rank_image(response.posts[i].ID,$rank_cells.eq(i));
             }
