@@ -75,7 +75,7 @@
     display: block;
     position: relative;
     margin-top: 18px;
-    background-color: rgba(255, 255, 255, 0.86);
+    background-color: rgba(255, 255, 255, 0.76);
 }
 
 .postslider{
@@ -184,6 +184,16 @@
     z-index: 1000;
 }
 
+.index_float_video_ply_move_cover{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255, 255, 255, 0.66);
+    z-index: 1200;
+}
+
 .float_video_link {
     right: 10px;
     top: 10px;
@@ -192,7 +202,7 @@
     position: absolute;
     background: url(../images/tv-16.png);
     cursor:pointer;
-    z-index: 1000;
+    z-index: 200;
 }
 
 .rank_shower {
@@ -209,7 +219,7 @@
     width: 371px;
     height: auto;
     position: absolute;
-    background:  rgba(255, 255, 255, 0.86);
+    background:  rgba(255, 255, 255, 0.76);
 }
 
 .rank_cell{

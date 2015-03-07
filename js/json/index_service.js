@@ -154,9 +154,11 @@ function addSliderMoveListeners(){
 function mouseUp()
 {
     window.removeEventListener('mousemove', divMove, true);
+    $('#index_float_video_ply_move_cover').attr("style", "width:0px; height:0px; overflow:hidden;");
 }
 function mouseDown(e){
   window.addEventListener('mousemove', divMove, true);
+  $('#index_float_video_ply_move_cover').attr("style", "");
 }
 function divMove(e){
   var div = document.getElementById('index_float_video_ply');
