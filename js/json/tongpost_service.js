@@ -89,8 +89,16 @@ function DisplayCoord(event) {
 }
 
 $('#comment_submit').click(function () {
-    var $float_comment="[" + $mp_x + "," + $mp_y + "]" + document.getElementById('comment_input').value + "$";
-    var questurl = baseurl.concat("?json=add_float_comment&id="+$tongpost_id+"&comment="+$float_comment);
+    if ($mp_x == 0) {
+        alert("请鼠标单击选择弹幕位置~")
+        return;
+    }
+    if (document.getElementById('comment_input').value == "") {
+        alert("快填写弹幕吧~")
+        return;
+    }
+    var $float_comment = "[" + $mp_x + "," + $mp_y + "]" + document.getElementById('comment_input').value + "$";
+    var questurl = baseurl.concat("?json=add_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
     $.ajax({
         url: questurl,
         jsonp: "callback",
@@ -102,6 +110,17 @@ $('#comment_submit').click(function () {
             console.log(response);
         }
     });
-    
     document.getElementById('comment_input').value = "";
+    
+    //add a comment to screen
+    var comments = $float_comment;
+    var cmarray = comments.split('$');
+    for (var i = 0; i < (cmarray.length - 1); i++) {
+        cmsubarray = cmarray[i].split(']');
+        coord2 = cmsubarray[0].substring(1);
+        coordxy = coord2.split(",");
+        console.log(cmsubarray[1]);
+        $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($('#tongpost_container').find('.end'));
+    }
+    
 });
