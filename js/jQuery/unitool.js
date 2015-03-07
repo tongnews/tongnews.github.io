@@ -1,3 +1,8 @@
+
+function getBaseUrl(){
+    return "http://54.92.122.102/wordpress/";
+}
+
 function getUrlParam(sParam)
 {
     var sPageURL = window.location.search.substring(1);
@@ -34,6 +39,13 @@ function pageScroll() {
     if(document.documentElement.scrollTop==0) clearTimeout(scrolldelay);
 }
 
+function encodeId(postid){
+    return (postid * 9 + 100000).toString(8);
+}
 
+function decodeIdfromAddr(){
+    var postid = (parseInt(getUrlParam("id"), 8) - 100000) / 9;
+    return postid;
+}
 //e.g.
 //<img src="http://img208.poco.cn/mypoco/myphoto/20110702/19/56945956201107021915139206804535901_001.jpg" onload="ReSizePic(this);">

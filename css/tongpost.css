@@ -1,0 +1,67 @@
+.tongpost_body {
+    top:40px;
+    background: rgba(255, 255, 255, 0.66);
+    height: auto;
+    width: 1132px;
+    margin: auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.tongpost_container {
+    height: auto;
+    width: 1132px;
+    margin-top: 0px; 
+    display: block;
+}
+
+.tongpost_container img {
+    display: inline-block;
+    width: 195px;
+}
+
+.tongpost_container blockquote {
+    display: inline-block;
+    width: 1132px;
+    height: auto;
+}
+
+.tongpost_container h2 {
+    margin-top: 5px;
+    display: block;
+    font-size: 32px;
+    color: #fb6686;
+    font-family: '微软雅黑';
+    margin-left:3px;
+    overflow: hidden;
+}
+
+.tongpost_container h3 {
+    margin-top: 2px;
+    display: block;
+    font-size: 21px;
+    color: #4081d9;
+    font-family: '微软雅黑';
+    margin-left:20px;
+}
+
+.tongpost_container p {
+    display: inline-block;;
+    margin-left:20px;
+    margin-right:10px;
+    font-size: 17px;
+    color: #2e2e2e;
+    font-family: '微软雅黑'；
+}
+
+.tongpost_container iframe {
+    display: block;;
+    width: 1000px;
+    height: 560px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-right: auto;
+    border-style: solid solid solid solid;
+    border: 4px dotted #a2a2a2;
+}

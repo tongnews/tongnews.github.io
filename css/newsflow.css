@@ -20,6 +20,13 @@
     width: 195px;
 }
 
+.post_cell a {
+    position: absolute;
+    left: 195px;
+    height: 40px;
+    width: 305px;
+}
+
 .post_cell blockquote {
     display: inline-block;
     width: 480px;

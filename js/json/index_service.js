@@ -5,19 +5,16 @@
 
 var $postCount=7, $pageNum=1;
 var $rankCount=5;
+var baseurl=getBaseUrl();
 
 $(document).ready(function () {
-    console.log("Starting JSON POSTS engine!");
+    //console.log("Starting JSON POSTS engine!");
     updateSlides();
     updatePosts($postCount,$pageNum);
-    updateRank($rankCount);
-    var postid = (parseInt(getUrlParam("id"), 8) - 100000) / 9;
-    console.log(postid);
-    console.log((postid * 9 + 100000).toString(8));
-                                 
+    updateRank($rankCount);                            
 });
 
-var baseurl="http://54.92.122.102/wordpress/";
+
 
 function updatePosts(postCount,pageNum) {
     $('.loading_cover').attr("style", "");
@@ -39,6 +36,7 @@ function updatePosts(postCount,pageNum) {
             for (var i = 0; i < postCount; i++) {
                 //replace title
                 $post_cells.eq(i).find('h2').text(response.posts[i].title.substring(0,31));
+                $("<a href=tongpost.html?id="+encodeId(response.posts[i].id)+"></a>").insertBefore($post_cells.eq(i).find('h2'));
                 //replace info
                 $post_cells.eq(i).find('h3').text("By "+response.posts[i].author.nickname+" 日期: "+response.posts[i].date.substring(0,10)+"  浏览量： "+response.posts[i].custom_fields.viewer_count[0]);
                 //replace intro
@@ -54,7 +52,7 @@ function updatePosts(postCount,pageNum) {
                 for (var j = 0; j < $postCategories.length ; j++){
                     if($postCategories[j].slug=="video"){
                         var $video_link=response.posts[i].custom_fields.video_link[0];
-                        $("<div class='float_video_link' ref='"+$video_link+"' post_id="+response.posts[i].id+"></div>").insertAfter(                                 $post_cells.eq(i).find('p'))
+                        $("<div class='float_video_link' ref='"+$video_link+"' post_id="+response.posts[i].id+"></div>").insertAfter(                                 $post_cells.eq(i).find('p'));
                         break;
                     }
                 }
