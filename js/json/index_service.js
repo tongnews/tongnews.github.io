@@ -150,12 +150,19 @@ function updateSlides() {
                 $slide_cells.eq(i).find('.bg-img-'.concat(i+1)).css(
                     'background-image', 'url('+$tbnlurl+')'
                 );
+                var att = document.createAttribute("ref");       
+                att.value = response.posts[0].custom_fields.linkaddr[0];                       
+                $slide_cells.eq(i).find('.bg-img-'.concat(i+1))[0].setAttributeNode(att);
             }
         }
 
     });
 
 }
+
+$('.bg-img').click(function () {
+        window.location.href = $(this).attr('ref');
+});
 
 
 //control the post video type close
@@ -200,7 +207,7 @@ function updateRank(rankCount){
         },
         success: function (response) {
             
-            console.log(response);
+            //console.log(response);
             
             //set post basic title info and other
             for (var i = 0; i < rankCount; i++) {
@@ -208,7 +215,7 @@ function updateRank(rankCount){
                 $rank_cells.eq(i).find('a').text(response.posts[i].post_title.substring(0,31));
                 $rank_cells.eq(i).find('a').attr("href","tongpost.html?id="+encodeId(response.posts[i].ID));
                 $("<div class='ref_id' post_id="+response.posts[i].ID+"></div>").insertAfter(                                 $rank_cells.eq(i).find('a'))
-                console.log(response.posts[i].ID)   
+                //console.log(response.posts[i].ID)   
                 get_rank_image(response.posts[i].ID,$rank_cells.eq(i));
             }
         }
