@@ -17,18 +17,6 @@ function getUrlParam(sParam)
     }
 }
 
-function ReSizePic(ThisPic,RePicWidth){
-
-    //============以下代码请勿修改==================================
-
-    var TrueWidth = ThisPic.width;    //图片实际宽度
-    var TrueHeight = ThisPic.height;  //图片实际高度
-    var Multiple = TrueWidth / RePicWidth;  //图片缩小(放大)的倍数
-
-    ThisPic.width = RePicWidth;  //图片显示的可视宽度
-    ThisPic.height = TrueHeight / Multiple;  //图片显示的可视高度
-}
-
 Array.prototype.contains = function(element){
     return this.indexOf(element) > -1;
 };
@@ -40,12 +28,13 @@ function pageScroll() {
 }
 
 function encodeId(postid){
-    return (postid * 9 + 100000).toString(8);
+    return encodedString = Base64.encode(postid+12345);
 }
 
 function decodeIdfromAddr(){
-    var postid = (parseInt(getUrlParam("id"), 8) - 100000) / 9;
+    var postid = Base64.decode(getUrlParam("id"))-12345;
     return postid;
 }
+
 //e.g.
 //<img src="http://img208.poco.cn/mypoco/myphoto/20110702/19/56945956201107021915139206804535901_001.jpg" onload="ReSizePic(this);">
