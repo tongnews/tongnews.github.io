@@ -51,6 +51,15 @@
     margin-left:20px;
 }
 
+.tongpost_container li {
+    margin-top: 2px;
+    display: block;
+    font-size: 21px;
+    color: #4081d9;
+    font-family: '微软雅黑';
+    margin-left:20px;
+}
+
 .tongpost_container p {
     display: block;
     margin-left:20px;

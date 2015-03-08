@@ -51,10 +51,10 @@
     overflow: hidden;
 }
 
-.post_cell h3 {
+.post_cell li {
     margin-top: 2px;
-    display: block;
-    font-size: 11px;
+    display: inline;
+    font-size: 12px;
     color: #9f9f9f;
     font-family: '微软雅黑';
     margin-left:10px;

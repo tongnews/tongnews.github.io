@@ -24,7 +24,12 @@ $(document).ready(function () {
                 var $tongpost_container = $('#tongpost_container');
                 $tongpost_container.find('h2').text(response.post.title);
                 //replace info
-                $tongpost_container.find('h3').text("By " + response.post.author.nickname + " 日期: " + response.post.date + "  浏览量： " + response.post.custom_fields.viewer_count[0]);
+                try {
+                    var flt_comment_count = response.post.custom_fields.float_comment[0].split('$').length - 1;
+                } catch (err) {
+                    var flt_comment_count = 0;
+                }
+                $tongpost_container.find('li')[0].innerHTML = "<i class='fa fa-pencil fa-fw'></i>&nbsp;" + response.post.author.nickname + " <i class='fa fa-clock-o fa-fw'></i>&nbsp;" + response.post.date.substring(0, 10) + " <i class='fa fa-eye fa-fw'></i>&nbsp;" + response.post.custom_fields.viewer_count[0] + " <i class='fa fa-comment fa-fw'></i>&nbsp;" + flt_comment_count;
                 //replace intro
                 $tongpost_container.find('p').text(response.post.custom_fields.intro[0]);
                 //                var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
