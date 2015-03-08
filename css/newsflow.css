@@ -179,8 +179,8 @@
     width: 24px;
     height: 24px;
     position: absolute;
-    background: url(../images/resize-7-24.png);
     cursor:pointer;
+    color: #fb6686;
     z-index: 1000;
 }
 
@@ -202,7 +202,7 @@
     position: absolute;
     background: url(../images/tv-16.png);
     cursor:pointer;
-    z-index: 200;
+    z-index: 500;
 }
 
 .rank_shower {
