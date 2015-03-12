@@ -16,8 +16,10 @@
 }
 
 .post_cell img {
-    display: inline-block;
+    display: inline;
     width: 195px;
+    height: 150px;
+    background-clip: content-box;
 }
 
 .post_cell a {
@@ -38,7 +40,7 @@
 .post_cell blockquote {
     display: inline-block;
     width: 480px;
-    height: 130px;
+    height: 150px;
 }
 
 .post_cell h2 {
@@ -60,6 +62,26 @@
     margin-left:10px;
 }
 
+.post_cell .tag{
+    display: inline;
+    font-size: 12px;
+    color: #fff;
+    font-family: '微软雅黑';
+    background: rgba(251, 102, 134, 0.87);
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left:10px;
+    cursor:default;
+}
+
+.post_cell tags{
+    margin-top: 1px; 
+    display: block;
+}
+
 .post_cell p {
     display: inline-block;;
     margin-left:10px;
@@ -71,7 +93,7 @@
 
 .post_cell{
     width: 684px;
-    height: 130px;
+    height: 150px;
     display: block;
     position: relative;
     margin-top: 18px;

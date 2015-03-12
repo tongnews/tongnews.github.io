@@ -28,13 +28,28 @@ function pageScroll() {
 }
 
 function encodeId(postid){
-    return encodedString = Base64.encode(postid+12345);
+    
+    //console.log(postid);
+    var x = postid;
+    var y = x.toString();
+    var z = y.split("").reverse().join("");
+    z=z.concat(y);
+    var aa = Number(z);
+    var encod=aa^942857;
+    //console.log(encod);
+    return encod;
+    
+    //return encodedString = Base64.encode(postid+12345);
 }
 
 function decodeIdfromAddr(){
-    var postid = Base64.decode(getUrlParam("id"))-12345;
-    return postid;
+    
+    var x=getUrlParam("id")^942857;
+    var y = x.toString(); 
+    var z = y.substring(y.length/2);
+    //console.log(Number(z));
+    return Number(z);
+    
+    //var postid = Base64.decode(getUrlParam("id"))-12345;
+    //return postid;
 }
-
-//e.g.
-//<img src="http://img208.poco.cn/mypoco/myphoto/20110702/19/56945956201107021915139206804535901_001.jpg" onload="ReSizePic(this);">

@@ -71,6 +71,14 @@ function updatePosts(postCount, pageNum) {
                         break;
                     }
                 }
+                
+                //add tages into post
+                $post_cells.eq(i).find(".tag").remove();
+                var $postTags = response.posts[i].tags;
+                for (var j = 0; j < $postTags.length; j++) {
+                    $("<li class='tag'>"+$postTags[j].title+"</li>").insertBefore($post_cells.eq(i).find('#tagend'));
+                }
+                
             }
 
             for (var i = $curCount; i < postCount; i++) {

@@ -39,12 +39,19 @@ $(document).ready(function () {
                 for (var j = 0; j < $postCategories.length; j++) {
                     if ($postCategories[j].slug == "video") {
                         var $video_link = response.post.custom_fields.video_link[0];
-                        $($video_link).insertAfter($tongpost_container.find('p'));
+                        $($video_link).insertAfter($tongpost_container.find('.intro'));
                         $tongpost_container.find('iframe').attr("style", "");
                         break;
                     }
                 }
-
+                
+                //add tages into post
+                $tongpost_container.eq(i).find(".tag").remove();
+                var $postTags = response.post.tags;
+                for (var j = 0; j < $postTags.length; j++) {
+                    $("<li class='tag'>"+$postTags[j].title+"</li>").insertBefore($tongpost_container.find('#tagend'));
+                }
+                
                 //add comments
                 try {
                     var comments = response.post.custom_fields.float_comment[0];
@@ -57,7 +64,7 @@ $(document).ready(function () {
                         $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($tongpost_container.find('.end'));
                     }
                 } catch (err) {};
-
+                
             }
         });
     }
@@ -119,7 +126,7 @@ $('#comment_submit').click(function () {
         }
     });
     document.getElementById('comment_input').value = "";
-
+        
     //add a comment to screen
     var comments = $float_comment;
     var cmarray = comments.split('$');
