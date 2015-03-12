@@ -79,7 +79,10 @@
 
 .post_cell tags{
     margin-top: 1px; 
+    width: 480px;
+    height: 21px;
     display: block;
+    overflow: hidden;
 }
 
 .post_cell p {
