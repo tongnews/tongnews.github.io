@@ -3,6 +3,11 @@ function getBaseUrl(){
     return "http://54.92.122.102/wordpress/";
 }
 
+function getDomain(){
+    console.log(document.domain);
+    return document.domain;
+}
+
 function getUrlParam(sParam)
 {
     var sPageURL = window.location.search.substring(1);
@@ -15,6 +20,15 @@ function getUrlParam(sParam)
             return sParameterName[1];
         }
     }
+}
+
+var $videolinkpref="bilibili";
+
+function getVideoLinkref(){
+    return $videolinkpref;
+}
+function setVideoLinkref(ref){
+    $videolinkpref=ref;
 }
 
 Array.prototype.contains = function(element){
@@ -52,4 +66,22 @@ function decodeIdfromAddr(){
     
     //var postid = Base64.decode(getUrlParam("id"))-12345;
     //return postid;
+}
+
+function videorefanlayse(refstr){
+    var $linkstr=refstr.split("$");
+    var $videolink = [];
+    for (var i = 0; i < Math.max($linkstr.length,1); i++) { 
+        if($linkstr[i].indexOf("tudo")>-1){
+            $videolink["tudo"]=$linkstr[i];
+            $videolink["avaliable"]="tudo";
+            //console.log("this is tudo"+$linkstr[i]);
+        }
+        if($linkstr[i].indexOf("hdslb")>-1){
+            $videolink["bilibili"]=$linkstr[i];
+            $videolink["avaliable"]="bilibili";
+            //console.log("this is bilibili"+$linkstr[i]);
+        }
+    }
+    return $videolink;
 }

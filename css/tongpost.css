@@ -103,6 +103,18 @@
     border: 2px solid #a2a2a2;
 }
 
+.tongpost_container embed {
+    display: block;
+    width: 1000px;
+    height: 555px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    margin-right: auto;
+    border-style: solid solid solid solid;
+    border: 2px solid #a2a2a2;
+}
+
 .rollingcomment_input{
     position: fixed;
     left: 10px;

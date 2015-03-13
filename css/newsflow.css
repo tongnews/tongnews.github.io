@@ -187,6 +187,11 @@
     height: 480px;
 }
 
+.float_video_ply embed{
+    width: 600px;
+    height: 475px;
+}
+
 .index_float_video_ply_close {
     right: -24px;
     top: -1px;

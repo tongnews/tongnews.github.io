@@ -14,6 +14,7 @@ var $fly_video_right = 20;
 
 $(document).ready(function () {
     //console.log("Starting JSON POSTS engine!");
+    getDomain();
     addSliderMoveListeners();
     updateSlides();
     updatePosts($postCount, $pageNum);
@@ -101,9 +102,25 @@ function updatePosts(postCount, pageNum) {
                     }
                 });
                 //connect to post video frame
+                var $videolink=videorefanlayse($(this).attr('ref'));
                 //console.log($(this).attr('ref'));
-                $('#index_float_video_ply').find('iframe').replaceWith($(this).attr('ref'));
-                $('#index_float_video_ply').find('iframe').eq(0).attr("style", "");
+                var linktype=getVideoLinkref();
+                if (typeof $videolink[linktype] == 'undefined'){
+                    linktype=$videolink["avaliable"];
+                }
+                if(linktype=="tudo"){
+                    $('#index_float_video_ply').find('iframe').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
+                    $('#index_float_video_ply').find('embed').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
+                    $('#index_float_video_ply').find('iframe').replaceWith($videolink[linktype]);
+                    $('#index_float_video_ply').find('iframe').eq(0).attr("style", "");
+                }
+                if(linktype=="bilibili"){
+                    $('#index_float_video_ply').find('iframe').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
+                    $('#index_float_video_ply').find('embed').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
+                    $('#index_float_video_ply').find('embed').replaceWith($videolink[linktype]);
+                    $('#index_float_video_ply').find('embed').eq(0).attr("width", "");
+                    $('#index_float_video_ply').find('embed').eq(0).attr("height", "");
+                }
                 $('#index_float_video_ply').attr("style", "right: " + $fly_video_right);
             });
 

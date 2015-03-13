@@ -34,24 +34,35 @@ $(document).ready(function () {
                 //                var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
                 //                $tongpost_container.find('img').attr('src', $tbnlurl);
                 $(response.post.content).insertAfter($tongpost_container.find('p'));
-
                 var $postCategories = response.post.categories;
                 for (var j = 0; j < $postCategories.length; j++) {
                     if ($postCategories[j].slug == "video") {
-                        var $video_link = response.post.custom_fields.video_link[0];
-                        $($video_link).insertAfter($tongpost_container.find('.intro'));
-                        $tongpost_container.find('iframe').attr("style", "");
-                        break;
+                        var $videolink = videorefanlayse(response.post.custom_fields.video_link[0]);
+                        var linktype = getVideoLinkref();
+                        if (typeof $videolink[linktype] == 'undefined') {
+                            linktype = $videolink["avaliable"];
+                        }
+                        if (linktype == "tudo") {
+                            $($videolink[linktype]).insertAfter($tongpost_container.find('.intro'));
+                            $tongpost_container.find('iframe').attr("style", "");
+                            break;
+                        }
+                        if (linktype == "bilibili") {
+                            $('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">' + $videolink[linktype] + '</object>').insertAfter($tongpost_container.find('.intro'));
+                            $('#index_float_video_ply').find('embed').eq(0).attr("width", "");
+                            $('#index_float_video_ply').find('embed').eq(0).attr("height", "");
+                            break;
+                        }
                     }
                 }
-                
+
                 //add tages into post
                 $tongpost_container.eq(i).find(".tag").remove();
                 var $postTags = response.post.tags;
                 for (var j = 0; j < $postTags.length; j++) {
-                    $("<li class='tag'>"+$postTags[j].title+"</li>").insertBefore($tongpost_container.find('#tagend'));
+                    $("<li class='tag'>" + $postTags[j].title + "</li>").insertBefore($tongpost_container.find('#tagend'));
                 }
-                
+
                 //add comments
                 try {
                     var comments = response.post.custom_fields.float_comment[0];
@@ -64,7 +75,7 @@ $(document).ready(function () {
                         $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($tongpost_container.find('.end'));
                     }
                 } catch (err) {};
-                
+
             }
         });
     }
@@ -126,7 +137,7 @@ $('#comment_submit').click(function () {
         }
     });
     document.getElementById('comment_input').value = "";
-        
+
     //add a comment to screen
     var comments = $float_comment;
     var cmarray = comments.split('$');
