@@ -151,9 +151,10 @@
 
 .floating_cursor{
     position: absolute;
-    height: 24px;
-    width: 24px;
-    background: #fb6686;
+    height: auto;
+    width: auto;
+    color: #fb6686;
+    font-size: 12px;
 }
 
 #comment_switch{
