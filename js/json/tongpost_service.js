@@ -1,9 +1,10 @@
 var baseurl = getBaseUrl();
 var $tongpost_id = 0;
+var $commenton=1;
 
 $(document).ready(function () {
     console.log("Starting JSON POSTS engine for Tongpost!");
-
+    document.addEventListener("keydown", onCkeydown);
     $tongpost_id = decodeIdfromAddr();
 
     if (!isNaN($tongpost_id)) {
@@ -150,3 +151,31 @@ $('#comment_submit').click(function () {
     }
 
 });
+
+
+
+switchcomment=function () {
+    if($commenton==1){
+        $('#comment_switch').text('弹幕OFF');
+        $('#comment_switch').css("background","#acacac");
+        $('.rollingcomment_container').find('h3').css('color','rgba(0,0,0,0)');
+        $('.rollingcomment_container').find('h3').css('background','rgba(0,0,0,0)');
+        $commenton=0;
+    }else{
+        $('#comment_switch').text('弹幕ON');
+        $('#comment_switch').css("background","#fb6686");
+        $('.rollingcomment_container').find('h3').css('color','#fff');
+        $('.rollingcomment_container').find('h3').css('background','rgba(251, 102, 134, 0.67)');
+        $commenton=1;
+    }
+};
+
+$('#comment_switch').click(switchcomment);
+
+function onCkeydown(event)  {
+    //console.log(String.fromCharCode(event.keyCode) );
+    if (String.fromCharCode(event.keyCode) == "E") {
+        switchcomment();
+    }
+}
+    
