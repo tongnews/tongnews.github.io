@@ -102,7 +102,7 @@ function checkCookie() {
     //user handler
     var curcookie = getCookie();
     if (curcookie != -1) {
-        console.log("cookie " + curcookie);
+        //console.log("cookie " + curcookie);
         var questurl = getBaseUrl().concat("api/user/validate_auth_cookie/?cookie=" + curcookie);
         $.ajax({
             url: questurl,
@@ -112,8 +112,8 @@ function checkCookie() {
                 format: "json"
             },
             success: function (response) {
-                console.log('check_cookie');
-                console.log(response.valid);
+                //console.log('check_cookie');
+                //console.log(response.valid);
                 if (response.valid == true) {
                     var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + curcookie);
                     $.ajax({
@@ -128,7 +128,7 @@ function checkCookie() {
                         }
                     });
                 } else {
-                    console.log('not');
+                    //console.log('not');
                     $(".login_container").attr("style", "");
                 }
             }
@@ -139,6 +139,7 @@ function checkCookie() {
 }
 
 function sucessLogin(response) {
+    $(".login_container").attr("style", "width:0px; height:0px; overflow:hidden;");
     $(".logined_container").attr("style", "");
     managerLogin = true;
     document.getElementById("user_welcome").innerHTML = "欢迎您, 管理员 <" + response.nickname + ">";

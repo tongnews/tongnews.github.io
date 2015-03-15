@@ -21,6 +21,7 @@ $(document).ready(function () {
     updateRank($rankCount);
     
     //user management
+    createCookie("user","",14);
     checkCookie();
 
 });
@@ -289,7 +290,7 @@ $('.rank_cell').hover(function () {
 //user login
 $('.user_login').click(function () {
     var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
-    console.log(questurl);
+    $(this).css('background','rgba(102, 251, 154, 0.67)');
     $.ajax({
         url: questurl,
         jsonp: "callback",
@@ -298,10 +299,9 @@ $('.user_login').click(function () {
             format: "json"
         },
         success: function (response) {
-            console.log(response);
+            //console.log(response);
             if (response.status == "ok") {
                 createCookie("user", response.cookie, 14);
-                $(".user_container").attr("style", "width:0px; height:0px; overflow:hidden;");
                 var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
                 $.ajax({
                     url: questurl,
