@@ -1,10 +1,15 @@
 var baseurl = getBaseUrl();
 var $tongpost_id = 0;
-var $commenton=1;
+var $commenton = 1;
 
 $(document).ready(function () {
     console.log("Starting JSON POSTS engine for Tongpost!");
+
+    //user management
+    checkCookie();
+    //add event listener
     document.addEventListener("keydown", onCkeydown);
+    //pull post
     $tongpost_id = decodeIdfromAddr();
 
     if (!isNaN($tongpost_id)) {
@@ -75,6 +80,12 @@ $(document).ready(function () {
                         console.log(cmsubarray[1]);
                         $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($tongpost_container.find('.end'));
                     }
+                    //manager float event
+                    $('.flcomment').click(function () {
+                        if (getManagerlogin()){
+                            $(this).css('background','rgba(102, 251, 154, 0.67)');
+                         }
+                    });
                 } catch (err) {};
 
             }
@@ -154,28 +165,27 @@ $('#comment_submit').click(function () {
 
 
 
-switchcomment=function () {
-    if($commenton==1){
+switchcomment = function () {
+    if ($commenton == 1) {
         $('#comment_switch').text('弹幕OFF');
-        $('#comment_switch').css("background","#acacac");
-        $('.rollingcomment_container').find('h3').css('color','rgba(0,0,0,0)');
-        $('.rollingcomment_container').find('h3').css('background','rgba(0,0,0,0)');
-        $commenton=0;
-    }else{
+        $('#comment_switch').css("background", "#acacac");
+        $('.rollingcomment_container').find('h3').css('color', 'rgba(0,0,0,0)');
+        $('.rollingcomment_container').find('h3').css('background', 'rgba(0,0,0,0)');
+        $commenton = 0;
+    } else {
         $('#comment_switch').text('弹幕ON');
-        $('#comment_switch').css("background","#fb6686");
-        $('.rollingcomment_container').find('h3').css('color','#fff');
-        $('.rollingcomment_container').find('h3').css('background','rgba(251, 102, 134, 0.67)');
-        $commenton=1;
+        $('#comment_switch').css("background", "#fb6686");
+        $('.rollingcomment_container').find('h3').css('color', '#fff');
+        $('.rollingcomment_container').find('h3').css('background', 'rgba(251, 102, 134, 0.67)');
+        $commenton = 1;
     }
 };
 
 $('#comment_switch').click(switchcomment);
 
-function onCkeydown(event)  {
+function onCkeydown(event) {
     //console.log(String.fromCharCode(event.keyCode) );
     if (String.fromCharCode(event.keyCode) == "E") {
         switchcomment();
     }
 }
-    

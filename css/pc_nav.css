@@ -327,11 +327,37 @@
 
 
 
-
 .content_container {
     width: 1300px;
     margin-right: auto;
     margin-left: auto;
     position: relative;
     height: auto;
+}
+
+.user_container {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    margin-top: 0px;
+    margin-left: 820px;
+    padding: 2px 2px 2px 2px;
+}
+
+.user_container input{
+    display: inline;
+    width:64px;
+    border-style: solid solid solid solid;
+    border: 2px solid #de2fd8;
+}
+
+.user_container li{
+    border-radius: 4px;
+    display: inline;
+    cursor:pointer;
+    color: #fff;
+    font-family: '微软雅黑';
+    width:auto;
+    padding: 3px;
+    background: rgba(251, 102, 134, 0.93);
 }

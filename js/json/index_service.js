@@ -19,6 +19,10 @@ $(document).ready(function () {
     updateSlides();
     updatePosts($postCount, $pageNum);
     updateRank($rankCount);
+    
+    //user management
+    checkCookie();
+
 });
 
 
@@ -72,14 +76,14 @@ function updatePosts(postCount, pageNum) {
                         break;
                     }
                 }
-                
+
                 //add tages into post
                 $post_cells.eq(i).find(".tag").remove();
                 var $postTags = response.posts[i].tags;
                 for (var j = 0; j < $postTags.length; j++) {
-                    $("<li class='tag'>"+$postTags[j].title+"</li>").insertBefore($post_cells.eq(i).find('#tagend'));
+                    $("<li class='tag'>" + $postTags[j].title + "</li>").insertBefore($post_cells.eq(i).find('#tagend'));
                 }
-                
+
             }
 
             for (var i = $curCount; i < postCount; i++) {
@@ -102,19 +106,19 @@ function updatePosts(postCount, pageNum) {
                     }
                 });
                 //connect to post video frame
-                var $videolink=videorefanlayse($(this).attr('ref'));
+                var $videolink = videorefanlayse($(this).attr('ref'));
                 //console.log($(this).attr('ref'));
-                var linktype=getVideoLinkref();
-                if (typeof $videolink[linktype] == 'undefined'){
-                    linktype=$videolink["avaliable"];
+                var linktype = getVideoLinkref();
+                if (typeof $videolink[linktype] == 'undefined') {
+                    linktype = $videolink["avaliable"];
                 }
-                if(linktype=="tudo"){
+                if (linktype == "tudo") {
                     $('#index_float_video_ply').find('iframe').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
                     $('#index_float_video_ply').find('embed').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
                     $('#index_float_video_ply').find('iframe').replaceWith($videolink[linktype]);
                     $('#index_float_video_ply').find('iframe').eq(0).attr("style", "");
                 }
-                if(linktype=="bilibili"){
+                if (linktype == "bilibili") {
                     $('#index_float_video_ply').find('iframe').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
                     $('#index_float_video_ply').find('embed').eq(0).attr("style", "width:0px; height:0px; overflow:hidden;");
                     $('#index_float_video_ply').find('embed').replaceWith($videolink[linktype]);
