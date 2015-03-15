@@ -300,3 +300,17 @@ $('.rank_cell').hover(function () {
 //        q: "select title,abstract,url from search.news where query=\"cat\"",
 //        format: "json"
 //    },
+
+//ajax for get cookie
+//    var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=&password=");
+//    $.ajax({
+//        url: questurl,
+//        jsonp: "callback",
+//        dataType: "jsonp",
+//        data: {
+//            format: "json"
+//        },
+//        success: function (response) {
+//            console.log(response);
+//        }
+//    });
