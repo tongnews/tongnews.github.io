@@ -189,3 +189,38 @@ function onCkeydown(event) {
         switchcomment();
     }
 }
+
+//user login
+$('.user_login').click(function () {
+    var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
+    console.log(questurl);
+    $.ajax({
+        url: questurl,
+        jsonp: "callback",
+        dataType: "jsonp",
+        data: {
+            format: "json"
+        },
+        success: function (response) {
+            console.log(response);
+            if (response.status == "ok") {
+                createCookie("user", response.cookie, 14);
+                $(".user_container").attr("style", "width:0px; height:0px; overflow:hidden;");
+                var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
+                $.ajax({
+                    url: questurl,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    data: {
+                        format: "json"
+                    },
+                    success: function (response) {
+                        sucessLogin(response);
+                    }
+                });
+            } else {
+                alert("用户名或密码错误OwO");
+            }
+        }
+    });
+});
