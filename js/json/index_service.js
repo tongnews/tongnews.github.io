@@ -21,7 +21,7 @@ $(document).ready(function () {
     updateRank($rankCount);
     
     //user management
-    createCookie("user","",14);
+    //createCookie("user","",14);
     checkCookie();
 
 });
