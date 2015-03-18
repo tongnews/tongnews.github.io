@@ -580,9 +580,9 @@
 }
 .demo-2 {
     position: relative;
-    top: 20px;
     width: 1120px;
     margin: auto;
+    margin-top: 20px;
     height: 460px;
 }
 

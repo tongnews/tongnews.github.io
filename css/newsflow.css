@@ -1,46 +1,98 @@
 
-.news_body {
-    top:70px;
-/*    background: #ffe6e6;*/
-    height: 500px;
-    width: 1122px;
+.news_body_container {
+    width: 100%;
     margin: auto;
+    margin-top: 20px;
+    height: 100%;
     position: relative;
 }
 
-.post_container {
+.news_body {
+    width: 1127px;
+    margin: auto;
     height: auto;
-    width: 690px;
-    margin-top: 40px; 
-    position: absolute;
+    position: relative;
 }
 
+#first{
+    width: 100%;
+    float: left;
+    margin: 0px 0px 0px 0;
+}
+
+#second{
+    width: 380px;
+    position: absolute;
+    right: 0px;
+    margin: 0px 0px 0px 0;
+}
+
+.post_container {
+    padding-right: 435px;
+    height: auto;
+    width: auto;
+    position: relative;
+    margin-top: 30px; 
+}
+
+.post_cell{
+    width: 100%;
+    height: auto;
+    margin-top: 18px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+.post_warpper{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.loading_cover{
+    display: block;
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.66);
+    background-image: url(../images/ajax-loader.gif);
+    background-size: 30px;
+    background-position: 330px 200px;
+    background-repeat: no-repeat;
+    z-index: 2000;
+}
+
+
 .post_cell img {
-    display: inline;
+    position: absolute;
+    left: 0px;
     width: 195px;
-    height: 150px;
+    height: 100%;
     background-clip: content-box;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+.post_cell blockquote {
+    display: block;
+    width: auto;
+    padding-left: 195px;
+    min-height: 150px;
+    height: auto;
 }
 
 .post_cell a {
     margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: block;
     font-size: 15px;
     color: #4081d9;
     font-family: '微软雅黑';
-    margin-left:3px;
     text-decoration: none;
     overflow: hidden;
 }
 
 .post_cell a:hover{
      color: #d940b0;
-}
-
-.post_cell blockquote {
-    display: inline-block;
-    width: 480px;
-    height: 150px;
 }
 
 .post_cell h2 {
@@ -73,12 +125,15 @@
     padding-right: 4px;
     padding-top: 1px;
     padding-bottom: 1px;
-    margin-left:10px;
+    margin-left:0px;
+    margin-right:10px;
     cursor:default;
 }
 
 .post_cell tags{
     margin-top: 1px; 
+    margin-left: 10px;
+    margin-right: 10px;
     width: 480px;
     height: 21px;
     display: block;
@@ -94,30 +149,21 @@
     font-family: '微软雅黑'；
 }
 
-.post_cell{
-    width: 684px;
-    height: 150px;
-    display: block;
-    position: relative;
-    margin-top: 18px;
-    background-color: rgba(255, 255, 255, 0.76);
-}
-
 .postslider{
-    width: 654px;
+    width: 100%;
     height: 10px;
-    margin-left: 20px;
     margin-top: 10px;
     display: block;
+    background-repeat: no-repeat;
     background: url(../images/postslider.png);
 }
 
 .prevPostPage{
     width: 48px;
     height: 48px;
-    margin-top: 10px; 
-    left: 0px; 
-    position: absolute;
+    margin-top: 10px;
+    display: inline-block;
+    float:left; 
     background: url(../images/arrow-18-48-left.png);
     cursor:pointer;
 }
@@ -127,46 +173,31 @@
     width: 48px;
     height: 48px;
     margin-top: 10px; 
-    right: 0px; 
-    position: absolute;
+    float: right;
+    display: inline-block;
     background: url(../images/arrow-18-48.png);
     cursor:pointer;
 }
 
-.loading_cover{
-    position: absolute;
-    width: 100%;
-    height: 1400px;
-    top: 18px;
-    background-color: rgba(255, 255, 255, 0.66);
-    background-image: url(../images/ajax-loader.gif);
-    background-size: 30px;
-    background-position: 330px 200px;
-    background-repeat: no-repeat;
-    z-index: 2000;
-}
-
 .post_shower {
-    left: 0px;
-    width: 691px;
+    width: auto;
+    margin-right: 435px;
     height: 39px;
-    position: absolute;
     background: url(../images/zuixintougao.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .weibo_container {
-    height: 750px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 376px;
-    right: 0;
-    margin-top: 60px; 
-    position: absolute;
 }
 
 .weibo_shower {
-    right: 0px;
     width: 376px;
     height: 39px;
-    position: absolute;
     background: url(../images/zuixindongtai.png);
 }
 
@@ -236,19 +267,14 @@
 }
 
 .rank_shower {
-    right: 0px;
     width: 376px;
     height: 39px;
-    top: 570px;
-    position: absolute;
     background: url(../images/rankshower.png);
 }
 .rank_contianer {
-    right: 0px;
-    top: 640px;
+    margin-top: 30px;
     width: 371px;
     height: auto;
-    position: absolute;
     background:  rgba(255, 255, 255, 0.76);
 }
 
@@ -294,4 +320,84 @@
 
 .rank_cell a:hover{
      color: #d940b0;
+}
+
+
+@media only screen and (max-width: 1223px){
+    .news_body{
+        width: 85%;
+    }
+    
+    .post_cell img {
+        display: inline-block;
+        position: static;
+        float: left;
+        margin: 5px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        width: 45px;
+        height: 45px;
+        background-clip: content-box;
+        background-size: cover;
+        background-clip: border-box;
+    }
+    
+    .post_cell blockquote{
+        padding-left: 0px;
+        min-height: 0px;
+    }
+    
+    .post_cell a{
+        display: block;
+    }
+    
+    .post_cell tags{
+        margin-top: 1px; 
+        margin-left: 10px;
+        margin-right: 10px;
+        width: auto;
+        height: auto;
+        display: block;
+        overflow: none;
+    }
+    
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1223px){
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 766px){
+    #second{
+        display: none;
+    }
+    
+    .post_container {
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    
+    .post_cell blockquote{
+        padding-left: 0px;
+        min-height: 0px;
+    }
+    .post_container {
+        padding-right: 0px;
+    }
+    
+    #second{
+        display: block;
+        position: static;
+    }
+    
+    .weibo_container{
+        width: 90%;
+    } 
+    
+    .rank_cell,.rank_cell blockquote,.rank_contianer {
+        width: 90%;
+    }
+    
 }
