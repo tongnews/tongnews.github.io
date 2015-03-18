@@ -42,7 +42,10 @@ $(document).ready(function () {
                 $tongpost_container.find('p').text(response.post.custom_fields.intro[0]);
                 //                var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
                 //                $tongpost_container.find('img').attr('src', $tbnlurl);
-                $(response.post.content).insertAfter($tongpost_container.find('p'));
+
+                //insert content
+                $(response.post.content.toString().replace(getRegBaseUrl(), cdnurl)).insertAfter($tongpost_container.find('p'));
+
                 var $postCategories = response.post.categories;
                 for (var j = 0; j < $postCategories.length; j++) {
                     if ($postCategories[j].slug == "video") {
@@ -80,14 +83,14 @@ $(document).ready(function () {
                         cmsubarray = cmarray[i].split(']');
                         coord2 = cmsubarray[0].substring(1);
                         coordxy = coord2.split(",");
-                        console.log(cmsubarray[1]);
+                        //console.log(cmsubarray[1]);
                         $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($tongpost_container.find('.end'));
                     }
                     //manager float event
                     $('.flcomment').click(function () {
-                        if (getManagerlogin()){
-                            $(this).css('background','rgba(102, 251, 154, 0.67)');
-                         }
+                        if (getManagerlogin()) {
+                            $(this).css('background', 'rgba(102, 251, 154, 0.67)');
+                        }
                     });
                 } catch (err) {};
 
@@ -196,7 +199,7 @@ function onCkeydown(event) {
 //user login
 $('.user_login').click(function () {
     var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
-    $(this).css('background','rgba(102, 251, 154, 0.67)');
+    $(this).css('background', 'rgba(102, 251, 154, 0.67)');
     $.ajax({
         url: questurl,
         jsonp: "callback",
