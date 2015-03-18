@@ -5,8 +5,9 @@
 
 var $postCount = 7,
     $pageNum = 1;
-var $rankCount = 5;
+var $rankCount = 10;
 var baseurl = getBaseUrl();
+var cdnurl = getCDNUrl();
 
 var $curCount = 0,
     $maxPages = 0;
@@ -62,7 +63,7 @@ function updatePosts(postCount, pageNum) {
                 $post_cells.eq(i).find('li')[0].innerHTML = "<i class='fa fa-pencil fa-fw'></i>&nbsp;" + response.posts[i].author.nickname + " <i class='fa fa-clock-o fa-fw'></i>&nbsp;" + response.posts[i].date.substring(0, 10) + " <i class='fa fa-eye fa-fw'></i>&nbsp;" + response.posts[i].custom_fields.viewer_count[0] + " <i class='fa fa-comment fa-fw'></i>&nbsp;" + flt_comment_count;
                 //replace intro
                 $post_cells.eq(i).find('p').text(response.posts[i].custom_fields.intro[0].substring(1, 105).concat("..."));
-                var $tbnlurl = response.posts[i].attachments[0].images.thumbnail.url;
+                var $tbnlurl = response.posts[i].attachments[0].images.thumbnail.url.replace(baseurl, cdnurl);
                 $post_cells.eq(i).find('img').attr('src', $tbnlurl);
 
                 //remove addional attribute
@@ -183,7 +184,7 @@ function updateSlides() {
                 $slide_cells.eq(i).find('p').text(response.posts[0].title);
                 //replace intro
                 $slide_cells.eq(i).find('h2').text(response.posts[0].custom_fields.series[0]);
-                var $tbnlurl = response.posts[0].attachments[0].images.full.url;
+                var $tbnlurl = response.posts[0].attachments[0].images.full.url.replace(baseurl, cdnurl);
                 $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
                     'background-image', 'url(' + $tbnlurl + ')'
                 );
@@ -273,7 +274,7 @@ function get_rank_image(posts_id, rank_cell) {
         },
         success: function (response) {
             //console.log(response);
-            var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
+            var $tbnlurl = response.post.attachments[0].images.thumbnail.url.replace(baseurl, cdnurl);
             rank_cell.find('img').attr('src', $tbnlurl);
         }
     });
@@ -281,7 +282,7 @@ function get_rank_image(posts_id, rank_cell) {
 }
 
 $('.rank_cell').hover(function () {
-    for (var i = 0; i < $rankCount; i++) {
+    for (var i = 3; i < $rankCount; i++) {
         $('#index_rank_contianer').find('.rank_cell').eq(i).find('img').attr('style', "width:0px; height:0px; overflow:hidden;");
     }
     $(this).find('img').attr('style', "");

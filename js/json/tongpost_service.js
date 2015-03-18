@@ -1,4 +1,7 @@
 var baseurl = getBaseUrl();
+var cdnurl = getCDNUrl();
+var bkurl = getBkdomainUrl();
+
 var $tongpost_id = 0;
 var $commenton = 1;
 

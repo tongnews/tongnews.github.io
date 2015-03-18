@@ -2,6 +2,15 @@ function getBaseUrl() {
     return "http://54.92.122.102/wordpress/";
 }
 
+function getBkdomainUrl() {
+    return "http://bk.tongnews.org/wordpress/";
+}
+
+function getCDNUrl() {
+    return "http://7xi53n.com1.z0.glb.clouddn.com/";
+}
+
+
 function getDomain() {
     console.log(document.domain);
     return document.domain;
@@ -18,7 +27,7 @@ function getUrlParam(sParam) {
     }
 }
 
-var $videolinkpref = "bilibili";
+var $videolinkpref = "tudo";
 
 function getVideoLinkref() {
     return $videolinkpref;
