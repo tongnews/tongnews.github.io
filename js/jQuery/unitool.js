@@ -2,6 +2,10 @@ function getBaseUrl() {
     return "http://54.92.122.102/wordpress/";
 }
 
+function getRegBaseUrl() {
+    return /http:\/\/54.92.122.102\/wordpress\//g;
+}
+
 function getBkdomainUrl() {
     return "http://bk.tongnews.org/wordpress/";
 }
