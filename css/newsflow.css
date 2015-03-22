@@ -42,7 +42,7 @@
 }
 
 .post_cell_container{
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
     height: auto;
 }
@@ -192,7 +192,7 @@
 
 .weibo_container {
     height: auto;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-bottom: 30px;
     width: 100%;
 }
@@ -212,7 +212,7 @@
     background-repeat: no-repeat;
 }
 .rank_contianer {
-    margin-top: 30px;
+    margin-top: 20px;
     width: 100%;
     height: auto;
     background:  rgba(255, 255, 255, 0.76);
