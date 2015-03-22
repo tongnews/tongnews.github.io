@@ -32,7 +32,14 @@
 </head>
 
 <body>
-
+    
+    <div class="accsorsy_container">
+        <div id="scene">
+            <div class="layer" data-depth="0.80"><img src="images/a_01_S.png"></div>
+        </div>
+    </div>
+    
+    
     <!--    Title   -->
     <div class="title_container">
         <div class="sheadin-container container">
@@ -447,7 +454,14 @@
 
         });
     </script>
-
+    
+    <script src="js/jQuery/parallax-master/deploy/jquery.parallax.js"></script>
+	<script>
+	var $scene = $('#scene').parallax();       
+	</script>
+    
 </body>
 
+    
+    
 </html>

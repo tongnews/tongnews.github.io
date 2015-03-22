@@ -17,6 +17,13 @@ div{
     border-color:rgba(251, 102, 134, 0.83);
 }
 
+/*      acessary      */
+.accsorsy_container{
+    position: absolute;
+    left: 100px;
+    top: 600px;
+}
+
 /*      logo and title     */
 
 .title_container {
