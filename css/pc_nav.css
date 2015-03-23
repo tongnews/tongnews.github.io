@@ -24,6 +24,10 @@ div{
     top: 600px;
 }
 
+#a_01{
+    opacity: 0.9;
+}
+
 /*      logo and title     */
 
 .title_container {
