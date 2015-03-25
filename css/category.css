@@ -52,7 +52,7 @@
     float: left;
     width: 100%;
     max-width: 540px;
-    height: 195px;
+    height: 155px;
     margin-top: 18px;
     margin-left: 10px;
     margin-right: 10px;
@@ -63,14 +63,16 @@
 
 .loading_cover{
     display: block;
-    width: 100%;
-    height: 100%;   
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.66);
-    background-image: url(../images/ajax-loader.gif);
-    background-size: 30px;
-    background-position: 330px 200px;
-    background-repeat: no-repeat;
+      width: 1120px;
+      height: 40px;
+      bottom: 0px;
+      margin: auto;
+      position: fixed;
+      background-color: rgba(55, 55, 55, 0.16);
+      background-image: url(../images/ajax-loader.gif);
+      background-size: 20px;
+      background-position: 550px 10px;
+      background-repeat: no-repeat;
     z-index: 2000;
 }
 
@@ -186,85 +188,6 @@
     display: inline-block;
     background: url(../images/arrow-18-48.png);
     cursor:pointer;
-}
-
-#second{
-    width: 320px;
-    position: absolute;
-    right: 0px;
-    margin: 0px 0px 0px 0;
-    z-index: 100;
-}
-
-.weibo_container {
-    height: auto;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.weibo_shower {
-    width: 100%;
-    height: 39px;
-    background: url(../images/zuixindongtai.png);
-    background-repeat: no-repeat;
-}
-
-
-.rank_shower {
-    width: 100%;
-    height: 39px;
-    background: url(../images/rankshower.png);
-    background-repeat: no-repeat;
-}
-.rank_contianer {
-    margin-top: 20px;
-    width: 100%;
-    height: auto;
-    background:  rgba(255, 255, 255, 0.76);
-}
-
-.rank_cell{
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
-    margin-bottom: 5px;
-}
-
-.rank_cell img {
-    display: inline;
-    float: left;
-    margin: 2px 2px 2px -2px;
-    width: 95px;
-}
-
-.rank_cell blockquote {
-    display: inline-block;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: auto;
-    height: auto;
-    border-style: none none solid none;
-    border-bottom: 2px dotted #fb6686;
-}
-
-.rank_cell h1 {
-    display: inline;
-    font-size: 15px;
-    color: #fb6686;
-    margin-left:5px;
-}
-
-.rank_cell a {
-    display: inline;
-    font-size: 15px;
-    color: #4081d9;
-    text-decoration: none;
-}
-
-.rank_cell a:hover{
-     color: #d940b0;
 }
 
 .float_video_ply {
@@ -383,13 +306,6 @@
         padding-right: 0px;
     }
     
-    #second{
-        display: block;
-        position: static;
-        width: 100%;
-        margin: auto;
-    }
-    
     #first{
         margin-top: 20px;
     }
@@ -399,13 +315,6 @@
     
     .post_container {
         padding-right: 0px;
-    }
-    
-    #second{
-        display: block;
-        position: static;
-        width: 100%;
-        margin: auto;
     }
     
     #first{

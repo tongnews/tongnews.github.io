@@ -33,9 +33,9 @@
 
 <body>
     
-    <div class="accsorsy_container">
+    <div class="accsorsy_container"  data-stellar-ratio="1.2">
         <div id="scene">
-            <div class="layer" data-depth="0.80"><img id="a_01" src="images/a_01_S.png"></div>
+            <div class="layer" data-depth="0.60"><img id="a_01" src="images/a_01_S.png"></div>
         </div>
     </div>
     
@@ -78,15 +78,15 @@
             <div class="nav_content">
                 <div class="nav1"><a href="index.html"><span class="hide">bar1</span></a>
                 </div>
-                <div class="nav2"><a href="news/"><span class="hide">bar2</span></a>
+                <div class="nav2"><a href="category.html"><span class="hide">bar2</span></a>
                 </div>
-                <div class="nav3"><a href="news/"><span class="hide">bar3</span></a>
+                <div class="nav3"><a href="category.html"><span class="hide">bar3</span></a>
                 </div>
-                <div class="nav4"><a href="news/"><span class="hide">bar4</span></a>
+                <div class="nav4"><a href="category.html"><span class="hide">bar4</span></a>
                 </div>
-                <div class="nav5"><a href="news/"><span class="hide">bar5</span></a>
+                <div class="nav5"><a href="category.html"><span class="hide">bar5</span></a>
                 </div>
-                <div class="nav6"><a href="news/"><span class="hide">bar6</span></a>
+                <div class="nav6"><a href="category.html"><span class="hide">bar6</span></a>
                 </div>
                 <div class="nav7"><a href="news/"><span class="hide">bar7</span></a>
                 </div>
@@ -456,8 +456,35 @@
     </script>
     
     <script src="js/jQuery/parallax-master/deploy/jquery.parallax.js"></script>
-	<script>
-	var $scene = $('#scene').parallax();       
+	<script src="js/jQuery/parallex-scroll/jquery.stellar.min.js"></script>
+    <script>
+	    var $scene = $('#scene').parallax();       
+        $.stellar({
+              // 设置滚动的方向是“竖直方向”还是“水平方向”，或者两个方向都有
+//              horizontalScrolling: true, //默认水平方向开启滚动
+              verticalScrolling: true, //默认竖直方向开启滚动
+              // 设置全局偏移
+              horizontalOffset: 0, //默认水平偏移为0
+              verticalOffset: 0, //默认竖直偏移为0
+              // 窗口加载完毕或者改变大小时是否刷新滚动元素
+              responsive: false, //默认不刷新
+              // 设置滚动方式
+              // 可以选择 'scroll', 'position', 'margin' 或者 'transform'
+              // 或者 使用自己定义的 'scrollProperty' 插件.
+              scrollProperty: 'scroll', //默认为 'scroll'
+              // 设置定位方式
+              // 可以选择 'position' 或者 'transform'
+              // 或者 使用自己定义的 'positionProperty' 插件.
+              positionProperty: 'position', //默认为 'position'
+              // 设置两种滚动效果的开关
+              parallaxBackgrounds: true, //默认开启背景滚动
+              parallaxElements: true, //默认开启元素滚动
+              // 滚动元素滚动到视口（viewport）以外时是否隐藏
+              hideDistantElements: true, //默认为隐藏
+              // 自定义元素如何出现和消失
+              hideElement: function($elem) { $elem.hide(); },
+              showElement: function($elem) { $elem.show(); }
+            });
 	</script>
     
 </body>

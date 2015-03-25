@@ -202,6 +202,7 @@ $('.bg-img').click(function () {
     window.location.href = $(this).attr('ref');
 });
 
+//----------------------------------video ply---------------------
 
 //control the post video type close
 $('.index_float_video_ply_close').click(function () {
@@ -231,6 +232,8 @@ function divMove(e) {
     $fly_video_right = div.style.right;
 }
 
+
+//--------------------- rank ---------------------------------------------------
 
 function updateRank(rankCount) {
     var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
@@ -288,7 +291,7 @@ $('.rank_cell').hover(function () {
     $(this).find('img').attr('style', "");
 });
 
-//user login
+//----------------------------------     user login ----------------------------------------
 $('.user_login').click(function () {
     var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
     $(this).css('background','rgba(102, 251, 154, 0.67)');
