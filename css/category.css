@@ -1,0 +1,414 @@
+
+.news_body_container {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    height: 100%;
+    position: relative;
+}
+
+.news_body {
+    width: 1127px;
+    margin: auto;
+    height: auto;
+    position: relative;
+}
+
+#first{
+    width: 100%;
+    float: left;
+    margin: 0px 0px 0px 0;
+}
+
+.post_container {
+    padding-right: 0px;
+    height: auto;
+    width: auto;
+    position: relative; 
+}
+
+.post_warpper{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.post_shower {
+    width: auto;
+    height: 39px;
+    background: url(../images/zuixintougao.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.post_cell_container{
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    display: inline;
+}
+
+.post_cell{
+    float: left;
+    width: 100%;
+    max-width: 540px;
+    height: 195px;
+    margin-top: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+.loading_cover{
+    display: block;
+    width: 100%;
+    height: 100%;   
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.66);
+    background-image: url(../images/ajax-loader.gif);
+    background-size: 30px;
+    background-position: 330px 200px;
+    background-repeat: no-repeat;
+    z-index: 2000;
+}
+
+
+.post_cell img {
+    position: absolute;
+    left: 0px;
+    width: 195px;
+    height: 100%;
+    background-clip: content-box;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+.post_cell blockquote {
+    display: block;
+    width: auto;
+    padding-left: 195px;
+    min-height: 150px;
+    height: auto;
+}
+
+.post_cell a {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    display: block;
+    font-size: 15px;
+    color: #4081d9;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.post_cell a:hover{
+     color: #d940b0;
+}
+
+.post_cell h2 {
+    margin-top: 5px;
+    display: block;
+    font-size: 15px;
+    color: #4081d9;
+    margin-left:3px;
+    overflow: hidden;
+}
+
+.post_cell li {
+    margin-top: 2px;
+    display: inline;
+    font-size: 12px;
+    color: #9f9f9f;
+    margin-left:10px;
+}
+
+.post_cell .tag{
+    display: inline;
+    font-size: 12px;
+    color: #fff;
+    background: rgba(251, 102, 134, 0.87);
+    border-radius: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-left:0px;
+    margin-right:10px;
+    cursor:default;
+}
+
+.post_cell tags{
+    margin-top: 1px; 
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 100%;
+    height: 21px;
+    display: block;
+    overflow: hidden;
+}
+
+.post_cell p {
+    display: inline-block;;
+    margin-left:10px;
+    margin-right:10px;
+    font-size: 13px;
+    color: #2e2e2e;
+}
+
+.postslider{
+    width: 100%;
+    height: 10px;
+    margin-top: 10px;
+    display: block;
+    background-repeat: no-repeat;
+    background: url(../images/postslider.png);
+}
+
+.prevPostPage{
+    width: 48px;
+    height: 48px;
+    margin-top: 10px;
+    display: inline-block;
+    float:left; 
+    background: url(../images/arrow-18-48-left.png);
+    cursor:pointer;
+}
+
+
+.nextPostPage{
+    width: 48px;
+    height: 48px;
+    margin-top: 10px; 
+    float: right;
+    display: inline-block;
+    background: url(../images/arrow-18-48.png);
+    cursor:pointer;
+}
+
+#second{
+    width: 320px;
+    position: absolute;
+    right: 0px;
+    margin: 0px 0px 0px 0;
+    z-index: 100;
+}
+
+.weibo_container {
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.weibo_shower {
+    width: 100%;
+    height: 39px;
+    background: url(../images/zuixindongtai.png);
+    background-repeat: no-repeat;
+}
+
+
+.rank_shower {
+    width: 100%;
+    height: 39px;
+    background: url(../images/rankshower.png);
+    background-repeat: no-repeat;
+}
+.rank_contianer {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    background:  rgba(255, 255, 255, 0.76);
+}
+
+.rank_cell{
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.rank_cell img {
+    display: inline;
+    float: left;
+    margin: 2px 2px 2px -2px;
+    width: 95px;
+}
+
+.rank_cell blockquote {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+    height: auto;
+    border-style: none none solid none;
+    border-bottom: 2px dotted #fb6686;
+}
+
+.rank_cell h1 {
+    display: inline;
+    font-size: 15px;
+    color: #fb6686;
+    margin-left:5px;
+}
+
+.rank_cell a {
+    display: inline;
+    font-size: 15px;
+    color: #4081d9;
+    text-decoration: none;
+}
+
+.rank_cell a:hover{
+     color: #d940b0;
+}
+
+.float_video_ply {
+    background: #fff;
+    position: fixed;
+    width: 600px;
+    height: 480px;
+    right: 50px;
+	bottom: 50px;
+    background: #fff;
+    z-index: 1000;
+    display: 
+}
+
+.float_video_ply iframe{
+    width: 600px;
+    height: 480px;
+}
+
+.float_video_ply embed{
+    width: 600px;
+    height: 475px;
+}
+
+.index_float_video_ply_close {
+    right: -24px;
+    top: -1px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: url(../images/close-window-24.png);
+    cursor:pointer;
+    z-index: 1000;
+}
+
+.index_float_video_ply_move {
+    right: -24px;
+    top: 25px;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    cursor:pointer;
+    color: #fb6686;
+    z-index: 1000;
+}
+
+.index_float_video_ply_move_cover{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    background: rgba(255, 255, 255, 0.66);
+    z-index: 1200;
+}
+
+.float_video_link {
+    right: 10px;
+    top: 10px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: url(../images/tv-16.png);
+    cursor:pointer;
+    z-index: 500;
+}
+
+
+@media only screen and (max-width: 1223px){
+    .news_body{
+        width: 85%;
+    }
+    
+    .post_cell img {
+        display: inline-block;
+        position: static;
+        float: left;
+        margin: 5px;
+        margin-top: 5px;
+        margin-bottom: 0px;
+        width: 45px;
+        height: 45px;
+        background-clip: content-box;
+        background-size: cover;
+        background-clip: border-box;
+    }
+    
+    .post_cell blockquote{
+        padding-left: 0px;
+        min-height: 0px;
+    }
+    
+    .post_cell a{
+        display: block;
+    }
+    
+    .post_cell tags{
+        margin-top: 1px; 
+        margin-left: 10px;
+        margin-right: 10px;
+        width: auto;
+        height: auto;
+        display: block;
+        overflow: none;
+    }
+    
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1223px){
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 766px){
+    
+    .post_container {
+        padding-right: 0px;
+    }
+    
+    #second{
+        display: block;
+        position: static;
+        width: 100%;
+        margin: auto;
+    }
+    
+    #first{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    
+    .post_container {
+        padding-right: 0px;
+    }
+    
+    #second{
+        display: block;
+        position: static;
+        width: 100%;
+        margin: auto;
+    }
+    
+    #first{
+        margin-top: 20px;
+    }
+}
