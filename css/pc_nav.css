@@ -24,7 +24,26 @@ div{
     top: 600px;
 }
 
+.layer{
+    position:relative;
+}
+
 #a_01{
+/*    position:absolute;*/
+    opacity: 0.9;
+}
+
+#a_02{
+    position:absolute;
+    top:200px;
+    left: 1400px;
+    opacity: 0.9;
+}
+
+#a_03{
+    position:absolute;
+    left:-50px;
+    top: 700px;
     opacity: 0.9;
 }
 
