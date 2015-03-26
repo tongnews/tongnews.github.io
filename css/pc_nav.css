@@ -20,7 +20,7 @@ div{
 /*      acessary      */
 .accsorsy_container{
     position: absolute;
-    left: 100px;
+    left: 50px;
     top: 600px;
 }
 
@@ -36,13 +36,13 @@ div{
 #a_02{
     position:absolute;
     top:200px;
-    left: 1400px;
+    left: 1300px;
     opacity: 0.9;
 }
 
 #a_03{
     position:absolute;
-    left:-50px;
+    left: 20px;
     top: 700px;
     opacity: 0.9;
 }
