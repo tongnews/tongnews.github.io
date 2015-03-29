@@ -52,7 +52,7 @@
     height: auto;
     margin-top: 18px;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.76);
+    background-color: rgba(255, 255, 255, 0.95);
 }
 
 .loading_cover{
@@ -149,7 +149,7 @@
     margin-left:10px;
     margin-right:10px;
     font-size: 13px;
-    color: #2e2e2e;
+    color: #000000;
 }
 
 .postslider{

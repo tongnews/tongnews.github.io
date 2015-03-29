@@ -13,8 +13,29 @@ div{
 
 .uniborder{
     border-style: solid;
-    border-width: 1px;
+    border-width: 1px 0px 0 1px;
     border-color:rgba(251, 102, 134, 0.83);
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(251, 102, 134, 0.83);
+-moz-box-shadow: 1px 1px 1px 0px rgba(251, 102, 134, 0.83);
+box-shadow: 1px 1px 1px 0px rgba(251, 102, 134, 0.83);
+}
+
+.background-image {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: -1;
+
+  display: block;
+  background-image:url(../images/bk.jpg);
+  width: 100%;
+  height: 100%;
+
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
 }
 
 /*      acessary      */
