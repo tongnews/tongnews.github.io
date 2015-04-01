@@ -12,9 +12,12 @@ div{
 }
 
 .uniborder{
+/*
     border-style: solid;
     border-width: 1px;
     border-color:rgba(251, 102, 134, 0.83);
+*/
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
 }
 
 /*      acessary      */
