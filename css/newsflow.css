@@ -92,9 +92,9 @@
     margin-left: 10px;
     margin-right: 30px;
     display: block;
-    font-weight: 600;
+    font-weight: 100;
     font-size: 15px;
-    color: #003dc7;
+    color: #00a1e9;
     text-decoration: none;
     overflow: hidden;
 }
@@ -252,7 +252,7 @@
     display: inline;
     font-weight: 100;
     font-size: 15px;
-    color: #003dc7;
+    color: #00a1e9;
     text-decoration: none;
 }
 
@@ -395,7 +395,7 @@ div#whatsnew_parent li span.date {
   font-family: "Century Gothic", "Verdana", "Arial", "Helvetica", sans-serif;
   font-size: 120%;
   color: #00a1e9;
-  font-weight: bold;
+  font-weight: 100;
 }
 
 #mcs_container .dragger {
