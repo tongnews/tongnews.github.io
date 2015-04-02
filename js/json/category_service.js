@@ -48,7 +48,7 @@ function updatePosts(postCount, pageNum) {
                 postHtml.find('li')[0].innerHTML = "<i class='fa fa-pencil fa-fw'></i>&nbsp;" + response.posts[i].author.nickname + " <i class='fa fa-clock-o fa-fw'></i>&nbsp;" + response.posts[i].date.substring(0, 10) + " <i class='fa fa-eye fa-fw'></i>&nbsp;" + response.posts[i].custom_fields.viewer_count[0] + " <i class='fa fa-comment fa-fw'></i>&nbsp;" + flt_comment_count;
                 //replace intro
                 postHtml.find('p').text(response.posts[i].custom_fields.intro[0]);
-                var $tbnlurl = response.posts[i].attachments[0].images.thumbnail.url.replace(baseurl, cdnurl);
+                var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
                 postHtml.find('img').attr('src', $tbnlurl);
 
                 //remove addional attribute
