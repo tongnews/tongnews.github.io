@@ -8,6 +8,8 @@ var $commenton = 1;
 $(document).ready(function () {
     console.log("Starting JSON POSTS engine for Tongpost!");
 
+    console.log(document.getElementById('tongpost_container').getBoundingClientRect().right);
+    $('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().right -250 +'px');
     //user management
     checkCookie();
     //add event listener
@@ -126,7 +128,7 @@ function DisplayCoord(event) {
     oDiv = document.getElementById('tongpost_container');
     top = getY(oDiv);
     left = getX(oDiv);
-    $mp_x = (event.clientX - left + document.body.scrollLeft) - 2 + 200 + 'px';
+    $mp_x = (event.clientX - left + document.body.scrollLeft) - 2 + $('.menu_container').width() + 'px';
     $mp_y = (event.clientY - top + document.body.scrollTop) - 2 + 'px';
     console.log("("+$mp_x+","+$mp_y+")");
     $('#floating_cursor').attr("style", "left:" + $mp_x + ";top:" + $mp_y);
