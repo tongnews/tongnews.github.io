@@ -91,8 +91,13 @@
             </div>
         </div>
 
-        <div id="tongpost_body" class="tongpost_body uniborder">
-            <div id="tongpost_container" class="tongpost_container" onclick='DisplayCoord(event)'>
+        <div id="tongpost_body" class="tongpost_body">
+                    
+            <div class="menu_container">
+
+            </div>
+            
+            <div id="tongpost_container" class="tongpost_container uniborder" onclick='DisplayCoord(event)'>
                 <blockquote>
                     <h2></h2>
                     <li></li>
@@ -110,14 +115,18 @@
             </div>
 
         </div>
-
-        <div class="rollingcomment_input uniborder">
-            <input type="text" id="comment_input">
-            <h1 id="comment_submit">发送弹幕</h1>
-            <h1 id="comment_switch">弹幕ON</h1>
+    
+        <div class="rollingcomment_input">
+            <i class='fa fa-paint-brush' id="comment_icon"><a></a></i>
+            <div id="comment_extend" style="width:0px;height:0px;overflow:hidden;">
+                <input type="text" id="comment_input">
+                <h1 id="comment_submit">发送弹幕</h1>
+                <h1 id="comment_switch">弹幕ON</h1>
+            </div>
         </div>
     </div>
-
+        
+    
     <!--
     <div id="sb_footend">
         <hr />

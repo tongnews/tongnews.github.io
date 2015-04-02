@@ -126,9 +126,9 @@ function DisplayCoord(event) {
     oDiv = document.getElementById('tongpost_container');
     top = getY(oDiv);
     left = getX(oDiv);
-    $mp_x = (event.clientX - left + document.body.scrollLeft) - 2 + 'px';
+    $mp_x = (event.clientX - left + document.body.scrollLeft) - 2 + 200 + 'px';
     $mp_y = (event.clientY - top + document.body.scrollTop) - 2 + 'px';
-    //console.log("("+$mp_x+","+$mp_y+")");
+    console.log("("+$mp_x+","+$mp_y+")");
     $('#floating_cursor').attr("style", "left:" + $mp_x + ";top:" + $mp_y);
 }
 
@@ -195,6 +195,19 @@ function onCkeydown(event) {
         switchcomment();
     }
 }
+
+var $comment_extend_swith=0;
+$('#comment_icon').click(function () {
+    if($comment_extend_swith){
+        $('#comment_extend').attr("style","width:0px; height:0px; overflow:hidden;");
+        $comment_extend_swith=0;
+    }else{
+        $('#comment_extend').attr("style","");
+        $comment_extend_swith=1;
+    }
+    
+});
+
 
 //user login
 $('.user_login').click(function () {

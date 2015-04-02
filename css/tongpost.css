@@ -1,18 +1,27 @@
 .tongpost_body {
     top:40px;
-    background: rgba(255, 255, 255, 0.66);
+    background-color: rgba(216, 216, 216, 0.46);
     height: auto;
-    width: 1132px;
+    width:  1132px;
     margin: auto;
     margin-bottom: 70px;
     position: relative;
 }
 
+.menu_container{
+    width: 200px;
+    height: 2000px;
+    display: inline-block;
+    float: left;
+    vertical-align: top;
+
+}
+
 .tongpost_container {
     height: auto;
-    width: 1132px;
-    margin-top: 0px; 
-    display: block;
+    width: 920px;
+    display: inline-block;
+    background: url(../images/tongpost_bk.jpg);
 }
 
 .aligncenter {
@@ -23,29 +32,31 @@
 
 .tongpost_container blockquote {
     display: inline-block;
-    width: 1132px;
+    width: 630px;
     height: auto;
 }
 
 .tongpost_container a{
     pointer-events: none;
     cursor: default;
+    color: black;
 }
 
 .tongpost_container h2 {
     margin-top: 5px;
     display: block;
-    font-size: 32px;
+    font-size: 24px;
     color: #fb6686;
     font-family: '微软雅黑';
     margin-left:3px;
     overflow: hidden;
+    padding-left: 15px;
 }
 
 .tongpost_container h3 {
     margin-top: 2px;
     display: block;
-    font-size: 21px;
+    font-size: 18px;
     color: #4081d9;
     font-family: '微软雅黑';
     margin-left:20px;
@@ -54,8 +65,8 @@
 .tongpost_container li {
     margin-top: 2px;
     display: block;
-    font-size: 17px;
-    color: rgba(203, 70, 227, 0.85);
+    font-size: 14px;
+    color: rgba(126, 126, 126, 0.85);
     font-family: '微软雅黑';
     margin-left:20px;
 }
@@ -63,7 +74,7 @@
 
 .tongpost_container .tag{
     display: inline;
-    font-size: 17px;
+    font-size: 14px;
     color: #fff;
     font-family: '微软雅黑';
     background: rgba(203, 70, 227, 0.85);
@@ -117,22 +128,31 @@
 
 .rollingcomment_input{
     position: fixed;
-    left: 10px;
-    bottom: 10px;
-    background: rgba(255, 255, 255, 0.66);
-    width: 750px;
-    height: 30px;
+    left: 1090px;
+    bottom: 50px;
+    background: rgba(255, 255, 255, 0.0);
+    width: auto;
+    height: auto;
+}
+
+.rollingcomment_input i{
+    display: block;
+    font-size:36px;
+    margin: 5px;
+    color:rgba(251, 102, 134, 1);
+    cursor: pointer;
 }
 
 .rollingcomment_input input{
     display: inline;
     margin: 5px;
-    width: 600px;
+    width: 150px;
+    margin-bottom: 0px;
 }
 
 .rollingcomment_input h1{
     margin: 5px;
-    display: inline-block;
+    display: block;
     font-size: 12px;
     color: #fb6686;
     font-family: '微软雅黑';
@@ -157,6 +177,10 @@
     font-size: 12px;
 }
 
+#comment_extend{
+    width: auto;
+    height: auto;
+}
 #comment_switch{
     background: #fb6686;
     padding-left: 5px;
