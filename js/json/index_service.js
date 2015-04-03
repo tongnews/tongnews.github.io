@@ -282,7 +282,7 @@ function get_rank_image(posts_id, rank_cell) {
         },
         success: function (response) {
             //console.log(response);
-            var $tbnlurl = response.post.attachments[0].images.thumbnail.url.replace(baseurl, cdnurl);
+            var $tbnlurl = response.post.custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
             rank_cell.find('img').attr('src', $tbnlurl);
         }
     });
