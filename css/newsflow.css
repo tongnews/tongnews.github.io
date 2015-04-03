@@ -214,6 +214,7 @@
     width: 100%;
     height: auto;
     background:  rgba(255, 255, 255, 0.9);
+    padding-top: 5px;
 }
 
 .rank_cell{
@@ -226,7 +227,7 @@
 
 .rank_cell img {
     display: inline;
-    float: left;
+    float: right;
     margin: 2px 2px 2px -2px;
     width: 95px;
 }
@@ -244,8 +245,10 @@
 .rank_cell h1 {
     display: inline;
     font-size: 15px;
-    color: #fb6686;
-    margin-left:5px;
+    color: #FEFCFD;
+    margin-left: 2px;
+    padding: 1px 6px 0px 6px;
+    background-color: rgb(255, 96, 132);
 }
 
 .rank_cell a {
