@@ -3,6 +3,7 @@ var $postCount = 8,
 var $rankCount = 10;
 var baseurl = getBaseUrl();
 var cdnurl = getCDNUrl();
+var bkurl = getBkdomainUrl();
 
 var $curCount = 0,
     $maxPages = 0;
@@ -49,6 +50,8 @@ function updatePosts(postCount, pageNum) {
                 //replace intro
                 postHtml.find('p').text(response.posts[i].custom_fields.intro[0]);
                 var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+                $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
+                
                 postHtml.find('img').attr('src', $tbnlurl);
 
                 //remove addional attribute

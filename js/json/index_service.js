@@ -8,6 +8,7 @@ var $postCount = 7,
 var $rankCount = 10;
 var baseurl = getBaseUrl();
 var cdnurl = getCDNUrl();
+var bkurl = getBkdomainUrl();
 
 var $curCount = 0,
     $maxPages = 0;
@@ -64,6 +65,8 @@ function updatePosts(postCount, pageNum) {
                 //replace intro
                 $post_cells.eq(i).find('p').text(response.posts[i].custom_fields.intro[0]);
                 var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+                $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
+                
                 $post_cells.eq(i).find('img').attr('src', $tbnlurl);
 
                 //remove addional attribute
@@ -87,7 +90,9 @@ function updatePosts(postCount, pageNum) {
                 }
 
             }
-
+            
+            $('.loading_cover').attr("style", "width:0px; height:0px; overflow:hidden;");
+            
             for (var i = $curCount; i < postCount; i++) {
                 $post_cells.eq(i).attr("style", "width:0px; height:0px; overflow:hidden;");
             }
@@ -129,8 +134,8 @@ function updatePosts(postCount, pageNum) {
                 }
                 $('#index_float_video_ply').attr("style", "right: " + $fly_video_right);
             });
-
-            $('.loading_cover').attr("style", "width:0px; height:0px; overflow:hidden;");
+            
+            
         }
 
     });
