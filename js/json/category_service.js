@@ -13,7 +13,7 @@ $(document).ready(function () {
     addSliderMoveListeners();
 });
 
-
+//?json=get_tong_category_posts&category_slug=pilgrimage-post&count= +pageNum+ &cuskey=area&cusval=东京
 
 function updatePosts(postCount, pageNum) {
 

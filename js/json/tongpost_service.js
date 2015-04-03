@@ -6,10 +6,10 @@ var $tongpost_id = 0;
 var $commenton = 1;
 
 $(document).ready(function () {
+    
     console.log("Starting JSON POSTS engine for Tongpost!");
-
-    console.log(document.getElementById('tongpost_container').getBoundingClientRect().right);
     $('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().right -250 +'px');
+    
     //user management
     checkCookie();
     //add event listener
