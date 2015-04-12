@@ -69,9 +69,10 @@ function encodeId(postid) {
 function decodeIdfromAddr() {
 
     var x = getUrlParam("id") ^ 942857;
-    var y = x.toString();
+    var y = "0000000000"+x.toString();
+    y = y.substr(y.length-6);
     var z = y.substring(y.length / 2);
-    //console.log(Number(z));
+    //console.log(Number(x));
     return Number(z);
 
     //var postid = Base64.decode(getUrlParam("id"))-12345;
@@ -176,4 +177,9 @@ function readCookie(name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
+}
+
+function logTimeNow(text){
+    var time=new Date();
+    console.log(text+':'+time.getMinutes()+':'+time.getSeconds());
 }

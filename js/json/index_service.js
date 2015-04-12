@@ -18,9 +18,9 @@ $(document).ready(function () {
     //console.log("Starting JSON POSTS engine!");
     getDomain();
     addSliderMoveListeners();
-    updateSlides();
+    //updateSlides();
     updatePosts($postCount, $pageNum);
-    updateRank($rankCount);
+    //updateRank($rankCount);
     
     //user management
     //createCookie("user","",14);
@@ -37,6 +37,8 @@ function updatePosts(postCount, pageNum) {
         $post_cells = $post_container.find('.post_cell');
 
     //ajax for get recent post
+    logTimeNow('PostJSON start');
+    
     $.ajax({
         url: questurl,
         jsonp: "callback",
@@ -45,7 +47,9 @@ function updatePosts(postCount, pageNum) {
             format: "json"
         },
         success: function (response) {
-
+            
+            logTimeNow('PostJSON back');
+            
             $curCount = response.count;
             $maxPages = response.pages;
 
@@ -135,7 +139,7 @@ function updatePosts(postCount, pageNum) {
                 $('#index_float_video_ply').attr("style", "right: " + $fly_video_right);
             });
             
-            
+            logTimeNow('PostJSON end');
         }
 
     });
@@ -171,6 +175,9 @@ function updateSlides() {
     //ajax for get recent post
     var $slide_container = $('#sl-slider'),
         $slide_cells = $slide_container.find('.sl-slide');
+    
+    logTimeNow('SlideJSON start');
+    
     $.ajax({
         url: questurl,
         jsonp: "callback",
@@ -180,7 +187,7 @@ function updateSlides() {
         },
         success: function (response) {
 
-            //console.log(response);
+            logTimeNow('SlideJSON back');
 
             var $slide_counts = 5;
 
@@ -197,6 +204,8 @@ function updateSlides() {
                 att.value = response.posts[0].custom_fields.linkaddr[0];
                 $slide_cells.eq(i).find('.bg-img-'.concat(i + 1))[0].setAttributeNode(att);
             }
+            
+            logTimeNow('SlideJSON end');
         }
 
     });
@@ -244,7 +253,9 @@ function updateRank(rankCount) {
     var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
     var $rank_container = $('#index_rank_contianer'),
         $rank_cells = $rank_container.find('.rank_cell');
-
+    
+    logTimeNow('RankJSON start');
+    
     //ajax for get recent post
     $.ajax({
         url: questurl,
@@ -254,8 +265,8 @@ function updateRank(rankCount) {
             format: "json"
         },
         success: function (response) {
-
-            //console.log(response);
+            
+            logTimeNow('RankJSON back');
 
             //set post basic title info and other
             for (var i = 0; i < rankCount; i++) {
@@ -266,6 +277,8 @@ function updateRank(rankCount) {
                     //console.log(response.posts[i].ID)   
                 get_rank_image(response.posts[i].ID, $rank_cells.eq(i));
             }
+            
+            logTimeNow('RankJSON end');
         }
     });
 }
