@@ -53,27 +53,29 @@ function pageScroll() {
 
 function encodeId(postid) {
 
-    //console.log(postid);
-    var x = postid;
-    var y = x.toString();
-    var z = y.split("").reverse().join("");
-    z = z.concat(y);
-    var aa = Number(z);
-    var encod = aa ^ 942857;
-    //console.log(encod);
-    return encod;
-
+//    console.log(postid);
+//    var x = postid;
+//    var y = x.toString();
+//    var z = y.split("").reverse().join("");
+//    z = z.concat(y);
+//    var aa = Number(z);
+//    var encod = aa ^ 942857;
+//    //console.log(encod);
+//    return encod;
+    return postid;
     //return encodedString = Base64.encode(postid+12345);
 }
 
 function decodeIdfromAddr() {
 
-    var x = getUrlParam("id") ^ 942857;
-    var y = "0000000000"+x.toString();
-    y = y.substr(y.length-6);
-    var z = y.substring(y.length / 2);
-    //console.log(Number(x));
-    return Number(z);
+//    var x = getUrlParam("id") ^ 942857;
+//    var y = "0000000000"+x.toString();
+//    var y = y.substr(y.length-6);
+//    var z = y.substring(y.length / 2);
+//    console.log(y);
+//    console.log(Number(z));
+    
+    return Number(getUrlParam("id"));
 
     //var postid = Base64.decode(getUrlParam("id"))-12345;
     //return postid;
