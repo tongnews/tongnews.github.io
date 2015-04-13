@@ -18,9 +18,9 @@ $(document).ready(function () {
     //console.log("Starting JSON POSTS engine!");
     getDomain();
     addSliderMoveListeners();
-    //updateSlides();
+    updateSlides();
     updatePosts($postCount, $pageNum);
-    //updateRank($rankCount);
+    updateRank($rankCount);
     
     //user management
     //createCookie("user","",14);
@@ -32,7 +32,7 @@ $(document).ready(function () {
 
 function updatePosts(postCount, pageNum) {
     $('.loading_cover').attr("style", "");
-    var questurl = baseurl.concat("?json=get_category_posts&category_slug=post&count=" + postCount + "&page=" + pageNum);
+    var questurl = baseurl.concat("?json=get_category_posts_main&category_slug=post&count=" + postCount + "&page=" + pageNum);
     var $post_container = $('#index_post_container'),
         $post_cells = $post_container.find('.post_cell');
 
@@ -171,7 +171,7 @@ $('.prevPostPage').click(function () {
 
 function updateSlides() {
 
-    var questurl = baseurl.concat("?json=get_category_posts&category_slug=slide");
+    var questurl = baseurl.concat("?json=get_category_posts_indexslide&category_slug=slide");
     //ajax for get recent post
     var $slide_container = $('#sl-slider'),
         $slide_cells = $slide_container.find('.sl-slide');
