@@ -23,8 +23,9 @@ div{
 /*      acessary      */
 .accsorsy_container{
     position: absolute;
-    left: 50px;
-    top: 600px;
+    width:100%;
+    left: 0px;
+    top: 0px;
 }
 
 .layer{
@@ -32,23 +33,40 @@ div{
 }
 
 #a_01{
-/*    position:absolute;*/
-    opacity: 0.9;
+    position:absolute;
+    top:0px;
+    right:20px;
+    opacity: 0.7;
 }
 
 #a_02{
     position:absolute;
-    top:200px;
-    left: 1300px;
-    opacity: 0.9;
+    top:800px;
+    right: 10px;
+    opacity: 0.7;
 }
 
 #a_03{
     position:absolute;
     left: 20px;
-    top: 700px;
-    opacity: 0.9;
+    top: 1700px;
+    opacity: 0.7;
 }
+
+#a_04{
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity: 0.7;
+}
+
+#a_05{
+    position:absolute;
+    top:500px;
+    right:0px;
+    opacity: 0.7;
+}
+
 
 /*      logo and title     */
 
