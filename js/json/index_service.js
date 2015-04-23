@@ -90,7 +90,28 @@ function updatePosts(postCount, pageNum) {
                 $post_cells.eq(i).find(".tag").remove();
                 var $postTags = response.posts[i].tags;
                 for (var j = 0; j < $postTags.length; j++) {
-                    $("<li class='tag'>" + $postTags[j].title + "</li>").insertBefore($post_cells.eq(i).find('#tagend'));
+                    var tagstyle='style="background-color:#FD7C98"';
+                    switch ($postTags[j].group) {
+                      case "not assigned":
+                          tagstyle = 'style="background-color:#808080"';
+                          break;
+                      case "else":
+                          tagstyle = 'style="background-color:#FD7C98"';
+                          break;
+                      case "area":
+                          tagstyle = 'style="background-color:#ff7329"';
+                          break;
+                      case "origin":
+                          tagstyle = 'style="background-color:#bc7cfd"';
+                          break;
+                      case "character":
+                          tagstyle = 'style="background-color:#1ebbd0"';
+                          break;
+                      case "activity":
+                          tagstyle = 'style="background-color:#37d078"';
+                          break;
+                  };
+                    $("<li class='tag' "+tagstyle+">" + $postTags[j].title + "</li>").insertBefore($post_cells.eq(i).find('#tagend'));
                 }
 
             }
@@ -100,7 +121,27 @@ function updatePosts(postCount, pageNum) {
             for (var i = $curCount; i < postCount; i++) {
                 $post_cells.eq(i).attr("style", "width:0px; height:0px; overflow:hidden;");
             }
-
+            
+            //control click event of tag searching
+            //            get_tag_posts slug
+            //            get_search_results search
+            $('.tag').click(function () {
+                var questurl = baseurl.concat("?json=get_tag_posts&slug="+ $(this).text());
+                //ajax for add viewer_count for this post
+                $.ajax({
+                    url: questurl,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    data: {
+                        format: "json"
+                    },
+                    success: function (response) {
+                        console.log("search tag result:");
+                        console.log(response);
+                    }
+                });
+            });
+            
             //control click event of float video button
             $('.float_video_link').click(function () {
                 var questurl = baseurl.concat("?json=view_post&id=" + $(this).attr('post_id'));
