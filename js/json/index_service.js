@@ -15,6 +15,10 @@ var $curCount = 0,
 var $fly_video_right = 20;
 
 $(document).ready(function () {
+    
+    //custom scroll bar
+    scrollbarCustom();
+    
     //console.log("Starting JSON POSTS engine!");
     getDomain();
     addSliderMoveListeners();
@@ -25,10 +29,13 @@ $(document).ready(function () {
     //user management
     //createCookie("user","",14);
     checkCookie();
-
+    
+     
 });
 
-
+function scrollbarCustom(){
+    $(".customScrollBox").mCustomScrollbar();
+}
 
 function updatePosts(postCount, pageNum) {
     $('.loading_cover').attr("style", "");

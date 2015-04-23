@@ -382,7 +382,7 @@ div#whatsnew_parent {
 #mcs_container .customScrollBox {
   position: relative;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
 div#whatsnew_parent li {
@@ -408,20 +408,16 @@ div#whatsnew_parent li span.date {
   font-weight: 100;
 }
 
-#mcs_container .dragger {
-  position: absolute;
-  width: 5px;
-  height: 60px;
+._mCS_1 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
   background: #c7c7c7;
-  text-align: center;
-  line-height: 60px;
-  color: #666;
-  overflow: hidden;
-  cursor: pointer;
-  -moz-border-radius: 2px;
-  -khtml-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+    width:5px;
+
+}
+
+._mCS_1 .mCSB_scrollTools .mCSB_draggerRail{
+   background: #dedede; 
+    width:5px;
+    padding-right: 1px;
 }
 
 /*   responsive design    */
