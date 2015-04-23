@@ -268,6 +268,41 @@ div{
     background:#be00ee;
 }
 
+/* -----------------footer--------------*/
+.footer-bottom{
+  margin-top: 500px;
+background: url('../images/bgBottomFooter.jpg') repeat-x scroll 0 0 #FD7C98;
+  color: #f5f5f5;
+  font-size: 12px;
+  font-weight: 600;
+  width: 100%;
+  padding-bottom: 25px;
+  height: 48px;
+  text-transform: uppercase;
+}
+
+.inner-footer {
+  width: 1138px;
+  margin: auto;
+  padding: 35px 0;
+}
+
+.left{
+    float:left;
+}
+
+#footer-left a {
+  padding-left: 10px;
+  border-left: 1px solid #ffe0e6;
+  margin-left: 10px;
+  color: #ffe0e6;
+  text-decoration: none;
+}
+
+.footerCopyright {
+  float: right;
+  border-left: 0px!important;
+}
 
 /* responsive media */
 @media only screen and (max-width: 1224px){
