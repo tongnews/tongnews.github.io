@@ -95,7 +95,7 @@ function updatePosts(postCount, pageNum) {
                           tagstyle = 'style="background-color:#FD7C98"';
                           break;
                       case "area":
-                          tagstyle = 'style="background-color:#ff7329"';
+                          tagstyle = 'style="background-color:#rgb(255, 41, 181)"';
                           break;
                       case "origin":
                           tagstyle = 'style="background-color:#bc7cfd"';
