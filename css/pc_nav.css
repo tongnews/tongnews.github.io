@@ -135,31 +135,47 @@ div{
 }
 
 /*  user login  */
+.top_container{
+    position: relative;
+    width: 1130px;
+    margin: auto;
+    z-index: 200;
+}
+
 .user_container {
     width: auto;
     height: auto;
-    margin-top: 0px;
-    margin-left: 820px;
-    padding: 2px 2px 2px 2px;
+    float: right;
+    margin-top: -1px;
+    margin-left: 490px; 
 }
 
+.sginbox ,.loginbox,.loginBtbox, .signinBtbox{
+    display: inline-block;
+}
 .user_container input{
     display: inline;
     width:64px;
     border-style: solid solid solid solid;
-    border: 2px solid #de2fd8;
+    border: 1px solid #c3c3c3;
+}
+
+#user_signin{
+    background: rgba(219, 47, 206, 0.93);
 }
 
 .user_container li{
-    border-radius: 4px;
+    border-radius: 0px 0px 4px 4px;
     display: inline;
     cursor:pointer;
     color: #fff;
     font-family: '微软雅黑';
     width:auto;
-    padding: 3px;
+    padding: 2px;
     background: rgba(251, 102, 134, 0.93);
 }
+
+
 
 /*  nagivation  */
 .dokileft{

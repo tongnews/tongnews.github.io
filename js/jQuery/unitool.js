@@ -140,6 +140,7 @@ function checkCookie() {
                             format: "json"
                         },
                         success: function (response) {
+                            //console.log(response);
                             sucessLogin(response);
                         }
                     });
@@ -158,7 +159,7 @@ function sucessLogin(response) {
     $(".login_container").attr("style", "width:0px; height:0px; overflow:hidden;");
     $(".logined_container").attr("style", "");
     managerLogin = true;
-    document.getElementById("user_welcome").innerHTML = "欢迎您, 管理员 <" + response.nickname + ">";
+    document.getElementById("user_welcome").innerHTML = "&nbsp; 欢迎您 | " + response.nickname +"&nbsp;";
 }
 
 function createCookie(name, value, days) {
