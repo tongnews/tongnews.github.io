@@ -9,16 +9,31 @@ var $curCount = 0,
     $maxPages = 0;
 var $fly_video_right = 20;
 
+var $type="s"; //t for tag; s for search
+var $key="";
+
 $(document).ready(function () {
+        
+    $type = getUrlParam("type");
+    $key = getUrlParam("key");
     updatePosts($postCount, $pageNum);
     addSliderMoveListeners();
+
 });
 
 //?json=get_tong_category_posts&category_slug=pilgrimage-post&count= +pageNum+ &cuskey=area&cusval=东京
 
 function updatePosts(postCount, pageNum) {
-
-    var questurl = baseurl.concat("?json=get_category_posts&category_slug=post&count=" + postCount + "&page=" + pageNum);
+    
+    switch($type){
+        case "s":
+            var questurl = baseurl.concat("?json=get_search_results&search="+$key+"&count=" + postCount + "&page=" + pageNum);
+            break;
+        case "t":
+            var questurl = baseurl.concat("?json=get_tag_posts&slug="+$key+"&count=" + postCount + "&page=" + pageNum);
+            break;
+    }
+    
     //ajax for get recent post
     $.ajax({
         url: questurl,
@@ -71,12 +86,39 @@ function updatePosts(postCount, pageNum) {
                 postHtml.find(".tag").remove();
                 var $postTags = response.posts[i].tags;
                 for (var j = 0; j < $postTags.length; j++) {
-                    $("<li class='tag'>" + $postTags[j].title + "</li>").insertBefore(postHtml.find('#tagend'));
+                    var tagstyle='style="background-color:#FD7C98"';
+                    switch ($postTags[j].group) {
+                      case "not assigned":
+                          tagstyle = 'style="background-color:#808080"';
+                          break;
+                      case "else":
+                          tagstyle = 'style="background-color:#FD7C98"';
+                          break;
+                      case "area":
+                          tagstyle = 'style="background-color:#ff7329"';
+                          break;
+                      case "origin":
+                          tagstyle = 'style="background-color:#bc7cfd"';
+                          break;
+                      case "character":
+                          tagstyle = 'style="background-color:#1ebbd0"';
+                          break;
+                      case "activity":
+                          tagstyle = 'style="background-color:#37d078"';
+                          break;
+                  };
+                    $("<li class='tag' "+tagstyle+">" + $postTags[j].title + "</li>").insertBefore(postHtml.find('#tagend'));
                 }
+
                 
                 postHtml.appendTo('.post_cell_container');
             }
-
+            
+            //control click event of tag searching
+            $('.tag').click(function () {
+                  window.open('search.html?type=t&key='+$(this).text());
+            });
+            
             //control click event of float video button
             $('.float_video_link').click(function () {
                 var questurl = baseurl.concat("?json=view_post&id=" + $(this).attr('post_id'));

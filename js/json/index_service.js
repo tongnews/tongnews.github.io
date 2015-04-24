@@ -130,23 +130,8 @@ function updatePosts(postCount, pageNum) {
             }
             
             //control click event of tag searching
-            //            get_tag_posts slug
-            //            get_search_results search
             $('.tag').click(function () {
-                var questurl = baseurl.concat("?json=get_tag_posts&slug="+ $(this).text());
-                //ajax for add viewer_count for this post
-                $.ajax({
-                    url: questurl,
-                    jsonp: "callback",
-                    dataType: "jsonp",
-                    data: {
-                        format: "json"
-                    },
-                    success: function (response) {
-                        console.log("search tag result:");
-                        console.log(response);
-                    }
-                });
+                  window.open('search.html?type=t&key='+$(this).text());
             });
             
             //control click event of float video button
@@ -356,6 +341,16 @@ $('.rank_cell').hover(function () {
     }
     $(this).find('img').attr('style', "");
 });
+
+//---------------------------------- search button-------------------
+$('.search_button').click(function () {
+    if (document.getElementById('search_input').value == "") {
+        alert("请填写搜索内容~")
+        return;
+    }
+     window.open('search.html?type=s&key='+document.getElementById('search_input').value);
+});
+
 
 //----------------------------------     user login ----------------------------------------
 $('.user_login').click(function () {
