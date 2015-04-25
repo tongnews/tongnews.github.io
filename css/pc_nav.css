@@ -26,6 +26,7 @@ div{
     width:100%;
     left: 0px;
     top: 0px;
+    z-index: 0;
 }
 
 .layer{
@@ -35,20 +36,20 @@ div{
 #a_01{
     position:absolute;
     top:0px;
-    right:20px;
+    right:-200px;
     opacity: 0.7;
 }
 
 #a_02{
     position:absolute;
     top:800px;
-    right: 10px;
+    right: -240px;
     opacity: 0.7;
 }
 
 #a_03{
     position:absolute;
-    left: 20px;
+    left: -200px;
     top: 1700px;
     opacity: 0.7;
 }
@@ -56,14 +57,14 @@ div{
 #a_04{
     position:absolute;
     top:0px;
-    left:0px;
+    left:-250px;
     opacity: 0.7;
 }
 
 #a_05{
     position:absolute;
     top:500px;
-    right:0px;
+    right:-250px;
     opacity: 0.7;
 }
 
@@ -139,7 +140,6 @@ div{
     position: relative;
     width: 1130px;
     margin: auto;
-    z-index: 200;
 }
 
 .user_container {
@@ -148,6 +148,7 @@ div{
     float: right;
     margin-top: -1px;
     margin-left: 490px; 
+    z-index: 200;
 }
 
 .sginbox ,.loginbox,.loginBtbox, .signinBtbox{
