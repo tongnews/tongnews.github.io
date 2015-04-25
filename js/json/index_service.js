@@ -47,7 +47,7 @@ function updatePosts(postCount, pageNum) {
             format: "json"
         },
         success: function (response) {
-            postArranger(response,postCount,location.href.split("/").slice(-1)[0]);
+            postArranger(response,postCount,"index");
         }
 
     });

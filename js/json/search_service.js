@@ -41,7 +41,7 @@ function updatePosts(postCount, pageNum) {
             format: "json"
         },
         success: function (response) {
-            postArranger(response,postCount)
+            postArranger(response,postCount,"search")
         }
 
     });

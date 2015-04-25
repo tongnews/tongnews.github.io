@@ -194,7 +194,7 @@ function postArranger(response,postCount,source){
     $maxPages = response.pages;
 
     switch(source){
-            case "index.html":
+            case "index":
                 $(".post_cell_container").find(".post_cell").remove();
                 $(".post_cell_container").find(".postslider").remove();
                 break;

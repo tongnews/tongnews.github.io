@@ -26,7 +26,6 @@ div{
     width:100%;
     left: 0px;
     top: 0px;
-    z-index: 0;
 }
 
 .layer{
@@ -140,6 +139,15 @@ div{
     position: relative;
     width: 1130px;
     margin: auto;
+    z-index: 200;
+}
+
+.bk_accsorsy_container{
+    position: relative;
+    width: 1130px;
+    margin: auto;
+    height: 0px;
+    z-index: 0;
 }
 
 .user_container {
@@ -148,7 +156,6 @@ div{
     float: right;
     margin-top: -1px;
     margin-left: 490px; 
-    z-index: 200;
 }
 
 .sginbox ,.loginbox,.loginBtbox, .signinBtbox{
