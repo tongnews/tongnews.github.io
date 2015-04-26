@@ -225,6 +225,23 @@ $('.search_button').click(function () {
      window.open('search.html?type=s&key='+document.getElementById('search_input').value);
 });
 
+$(".sitemap_download").click(function () {
+    
+    var questurl = baseurl.concat("?json=get_recent_posts&count=999999&page=1");
+
+    //ajax for get recent post
+    $.ajax({
+        url: questurl,
+        jsonp: "callback",
+        dataType: "jsonp",
+        data: {
+            format: "json"
+        },
+        success: function (response) {
+           sitemapArranger(response)
+        }
+    });
+});
 
 //----------------------------------  user login ----------------------------------------
 $('.user_login').click(function () {
