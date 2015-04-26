@@ -18,7 +18,7 @@ function getDomain() {
     return document.domain;
 }
 function getUrlParam(sParam) {
-    var sPageURL = window.location.search.substring(1);
+    var sPageURL = window.location.hash.substr(2);
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++) {
         var sParameterName = sURLVariables[i].split('=');
@@ -211,7 +211,7 @@ function postArranger(response,postCount,source){
            
         //replace title
         postHtml.find('a').text(response.posts[i].title.substring(0, 31));
-        postHtml.find('a').attr("href", "tongpost.html?id=" + encodeId(response.posts[i].id));
+        postHtml.find('a').attr("href", "tongpost.html#!id=" + encodeId(response.posts[i].id));
         //replace info
         try {
             var flt_comment_count = response.posts[i].custom_fields.float_comment[0].split('$').length - 1;
@@ -377,7 +377,7 @@ function sitemapArranger(response){
         var postHtml=$('<div><a></a></div>');
         //replace title
         postHtml.find('a').text(response.posts[i].title.substring(0, 31));
-        postHtml.find('a').attr("href", "tongpost.html?id=" + encodeId(response.posts[i].id));
+        postHtml.find('a').attr("href", "tongpost.html#!id=" + encodeId(response.posts[i].id));
         postHtml.appendTo(sitemapHtml.find('.sitelinks'));
     }
     
