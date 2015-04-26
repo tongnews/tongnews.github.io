@@ -377,13 +377,13 @@ function sitemapArranger(response){
         var postHtml=$('<div><a></a></div>');
         //replace title
         postHtml.find('a').text(response.posts[i].title.substring(0, 31));
-        postHtml.find('a').attr("href", "www.tongnews.org/tongpost.html?id=" + encodeId(response.posts[i].id));
+        postHtml.find('a').attr("href", "tongpost.html?id=" + encodeId(response.posts[i].id));
         postHtml.appendTo(sitemapHtml.find('.sitelinks'));
     }
     
     //console.log(sitemapHtml.prop('outerHTML'));
     var blob = new Blob([sitemapHtml.prop('outerHTML')], {type: "text/html;charset=utf-8"});
-    saveAs(blob, "sitemap.html");
+    saveAs(blob, "sitemaplist.html");
     
 }
 
