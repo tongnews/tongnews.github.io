@@ -27,6 +27,12 @@ function getUrlParam(sParam) {
         }
     }
 }
+
+function getRewriteParam() {
+    var sParameter = window.location.pathname.substr(3);
+    return sParameter;
+}
+
 function encodeId(postid) {
 //    console.log(postid);
 //    var x = postid;
@@ -47,7 +53,12 @@ function decodeIdfromAddr() {
 //    var z = y.substring(y.length / 2);
 //    console.log(y);
 //    console.log(Number(z));
-    return Number(getUrlParam("id"));
+    var id=getUrlParam("id");
+    //console.log("post"+id);
+    if(typeof id == 'undefined'){
+        id=getRewriteParam();
+    }
+    return Number(id);
     //var postid = Base64.decode(getUrlParam("id"))-12345;
     //return postid;
 }
@@ -188,6 +199,14 @@ function logTimeNow(text){
 var $curCount = 0,
     $maxPages = 0;
 
+function urlrewrite(id){
+    if(getDomain()=="www.tongnews.org" || getDomain()=="tongnews.org"){
+        return "rr"+id;
+    }else{
+        return "tongpost.html#!id=" +id;
+    }
+}
+
 function postArranger(response,postCount,source){
     
     $curCount = response.count;
@@ -211,7 +230,9 @@ function postArranger(response,postCount,source){
            
         //replace title
         postHtml.find('a').text(response.posts[i].title.substring(0, 31));
-        postHtml.find('a').attr("href", "tongpost.html#!id=" + encodeId(response.posts[i].id));
+        
+
+        postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
         //replace info
         try {
             var flt_comment_count = response.posts[i].custom_fields.float_comment[0].split('$').length - 1;
@@ -375,7 +396,7 @@ function rankArranger(response, rankCount, source) {
     for (var i = 0; i < rankCount; i++) {
         //replace title
         $rank_cells.eq(i).find('a').text(response.posts[i].post_title.substring(0, 31));
-        $rank_cells.eq(i).find('a').attr("href", "tongpost.html#!id=" + encodeId(response.posts[i].ID));
+        $rank_cells.eq(i).find('a').attr("href", urlrewrite(encodeId(response.posts[i].ID)));
         $("<div class='ref_id' post_id=" + response.posts[i].ID + "></div>").insertAfter($rank_cells.eq(i).find('a'))
             //console.log(response.posts[i].ID)   
         get_rank_image(response.posts[i].ID, $rank_cells.eq(i));
