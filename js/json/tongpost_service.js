@@ -7,6 +7,9 @@ var $commenton = 1;
 
 $(document).ready(function () {
     
+    //nav footer function JS
+    baseJSload();
+    
     console.log("Starting JSON POSTS engine for Tongpost!");
     $('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().right -250 +'px');
     
@@ -33,6 +36,7 @@ $(document).ready(function () {
 
                 var $tongpost_container = $('#tongpost_container');
                 $tongpost_container.find('h2').text(response.post.title);
+                document.title=response.post.title;
                 //replace info
                 try {
                     var flt_comment_count = response.post.custom_fields.float_comment[0].split('$').length - 1;
@@ -101,7 +105,7 @@ $(document).ready(function () {
     }
 });
 
-//floating comment
+//------------------floating comment-----------------------
 function getX(obj) {
     var ParentObj = obj;
     var left = obj.offsetLeft;
@@ -171,8 +175,6 @@ $('#comment_submit').click(function () {
 
 });
 
-
-
 switchcomment = function () {
     if ($commenton == 1) {
         $('#comment_switch').text('弹幕OFF');
@@ -208,39 +210,4 @@ $('#comment_icon').click(function () {
         $comment_extend_swith=1;
     }
     
-});
-
-
-//user login
-$('.user_login').click(function () {
-    var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
-    $(this).css('background', 'rgba(102, 251, 154, 0.67)');
-    $.ajax({
-        url: questurl,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-            format: "json"
-        },
-        success: function (response) {
-            //console.log(response);
-            if (response.status == "ok") {
-                createCookie("user", response.cookie, 14);
-                var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
-                $.ajax({
-                    url: questurl,
-                    jsonp: "callback",
-                    dataType: "jsonp",
-                    data: {
-                        format: "json"
-                    },
-                    success: function (response) {
-                        sucessLogin(response);
-                    }
-                });
-            } else {
-                alert("用户名或密码错误OwO");
-            }
-        }
-    });
 });

@@ -5,7 +5,7 @@
     <meta name="description" content="痛新闻">
     <meta name="keywords" content="痛新闻,软软冰" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>痛新闻｜日本动漫文化最in潮流站</title>
+    <title>痛新闻｜搜索页</title>
     <meta name="viewport" content=" width=width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script type="text/javascript">
@@ -22,7 +22,7 @@
     <script src="js/jQuery/unitool.js"></script>
     <!--    CSS-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/newsflow.css"/>
+    <link rel="stylesheet" type="text/css" href="css/newsflow.css" />
     <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
     <noscript>
         <link rel="stylesheet" type="text/css" href="css/slider_styleNoJS.css" />
@@ -33,7 +33,46 @@
 
     <div class="content_container">
 
-        <!--    Title   -->
+        <!-- RRR Top Bar  (User)  -->
+        <div class="top_container">
+            <div class="user_container">
+                <div class="login_container" style="width:0px; height:0px; overflow:hidden;">
+
+                    <div class="sginbox" style="width:0px; height:0px; overflow:hidden;">
+                        <li>邮箱</li>
+                        <input type="text" id="user_sginin_email_input">
+                        <li>昵称</li>
+                        <input type="text" id="user_sginin_nickname_input">
+                        <li>密码</li>
+                        <input type="password" id="user_sginin_pass_input">
+                        <li>密码确认</li>
+                        <input type="password" id="user_sginin_pass_input2">
+                        <li class="user_signin_submit">提交</li>
+                    </div>
+
+                    <div class="loginbox">
+                        <li>用户名</li>
+                        <input type="text" id="user_name_input">
+                        <li>密码</li>
+                        <input type="password" id="user_pass_input">
+                    </div>
+
+                    <div class="loginBtbox">
+                        <li class="user_login" id="user_login">登陆</li>
+                    </div>
+
+                    <div class="signinBtbox">
+                        <li class="user_signin" id="user_signin">极速注册</li>
+                    </div>
+
+
+                </div>
+                <div class="logined_container" style="width:0px; height:0px; overflow:hidden;">
+                    <li id="user_welcome">欢迎</li>
+                </div>
+            </div>
+        </div>
+        <!--  RRR  Title   -->
         <div class="title_container">
             <div class="sheadin-container container">
                 <div class="title_content">
@@ -43,29 +82,17 @@
                     </div>
                     <div class="navs" style="left:360px"><span class="hide">sakura</span>
                     </div>
-
-                    <div class="user_container">
-                        <div class="login_container" style="width:0px; height:0px; overflow:hidden;">
-                            <li>用户名</li>
-                            <input type="text" id="user_name_input">
-                            <li>密码</li>
-                            <input type="password" id="user_pass_input">
-                            <li class="user_login">管理员登陆</li>
-                        </div>
-                        <div class="logined_container" style="width:0px; height:0px; overflow:hidden;">
-                            <li id="user_welcome">欢迎</li>
+                    <div class="search_container">
+                        <input id="search_input"></input>
+                        <div class="search_button"><i class="fa fa-search"></i>
                         </div>
                     </div>
 
                 </div>
-                <!--        logo and title-->
-                <!--        <h1><span class="hide">Logo</span></h1>-->
-
-                <!--        user login  -->
 
             </div>
         </div>
-        <!--   Navigation bar  -->
+        <!--  RRR Navigation bar  -->
         <div class="nav_container">
             <div class="nav container">
                 <div class="nav_content">
@@ -83,14 +110,14 @@
                     </div>
                     <div class="nav7"><a href="news/"><span class="hide">bar7</span></a>
                     </div>
-    <!--
-                    <div class="dokileft"></div>
-                    <div class="dokiright"></div>
-    -->
+                    <!--
+                <div class="dokileft"></div>
+                <div class="dokiright"></div>
+-->
                 </div>
             </div>
         </div>
-        
+
         <!--    news body-->
         <div class="news_body_container container">
             <div id="news_body container" class="news_body container">
@@ -111,7 +138,7 @@
         </div>
 
     </div>
-    
+
     <!--  float video player -->
     <div id="index_float_video_ply_move_cover" class="index_float_video_ply_move_cover" style="width:0px; height:0px; overflow:hidden;"></div>
     <div id="index_float_video_ply" class="float_video_ply uniborder" style="width:0px; height:0px; overflow:hidden;">
@@ -126,7 +153,7 @@
             </object>
         </bilibili>
     </div>
-    
+
     <!--
     <div id="sb_footend">
         <hr />

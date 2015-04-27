@@ -404,5 +404,140 @@ function sitemapArranger(response){
     
 }
 
+function baseJSload(){
+    //---------------------------------- search button-------------------
+    $('.search_button').click(function () {
+        if (document.getElementById('search_input').value == "") {
+            alert("请填写搜索内容~");
+        }else{
+            window.open('search.html#!type=s&key='+document.getElementById('search_input').value);
+        }  
+    });
+
+    $(".sitemap_download").click(function () {
+
+        var questurl = baseurl.concat("?json=get_recent_posts&count=999999&page=1");
+
+        //ajax for get recent post
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+               sitemapArranger(response)
+            }
+        });
+    });
+
+    //----------------------------------  user login ----------------------------------------
+    $('.user_login').click(function () {
+        var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
+        $(this).css('background','rgba(102, 251, 154, 0.67)');
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+                //console.log(response);
+                if (response.status == "ok") {
+                    createCookie("user", response.cookie, 14);
+                    var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
+                    $.ajax({
+                        url: questurl,
+                        jsonp: "callback",
+                        dataType: "jsonp",
+                        data: {
+                            format: "json"
+                        },
+                        success: function (response) {
+                            sucessLogin(response);
+                        }
+                    });
+                } else {
+                    alert("用户名或密码错误OwO");
+                    $(this).css('background','rgba(251, 102, 142, 0.67)');
+                }
+            }
+        });
+    });
+
+    var $user_nonce="";
+
+    $('.user_signin').click(function () {
+        var questurl = baseurl.concat("api/get_nonce/?controller=user&method=register");
+        $(this).css('background','rgba(102, 251, 154, 0.67)');
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+                //console.log(response);
+                if (response.status == "ok") {
+                   $user_nonce=response.nonce;
+                   $(".sginbox").attr("style","");
+                   $(".loginbox").attr("style","width:0px; height:0px; overflow:hidden;");
+                   $(".loginBtbox").attr("style","width:0px; height:0px; overflow:hidden;");
+                   $(".signinBtbox").attr("style","width:0px; height:0px; overflow:hidden;");
+                } else {
+                    alert("十分抱歉，注册系统暂时关闭T0T");
+                    $(this).css('background','rgba(251, 102, 142, 0.67)');
+                }
+            }
+        });
+    });
+
+    $('.user_signin_submit').click(function () {
+
+        if(document.getElementById('user_sginin_pass_input').value != document.getElementById('user_sginin_pass_input2').value){
+            alert("密码输入不相同");
+            return;
+        }
+
+        var questurl = baseurl.concat("api/user/register/?username=" + document.getElementById('user_sginin_email_input').value + "&email=" +
+    document.getElementById('user_sginin_email_input').value + "&user_pass=" + document.getElementById('user_sginin_pass_input').value + "&display_name=" +
+    document.getElementById('user_sginin_nickname_input').value + "&nickname=" +
+    document.getElementById('user_sginin_nickname_input').value + "&nonce=" + $user_nonce);
+        $(this).css('background','rgba(102, 251, 154, 0.67)');
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+                console.log(response);
+                if (response.status == "ok") {
+                    createCookie("user", response.cookie, 14);
+                    var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
+                    $.ajax({
+                        url: questurl,
+                        jsonp: "callback",
+                        dataType: "jsonp",
+                        data: {
+                            format: "json"
+                        },
+                        success: function (response) {
+                            sucessLogin(response);
+                        }
+                    });
+                } else {
+                    alert("用户名或密码错误/无效OwO");
+                    $(this).css('background','rgba(251, 102, 142, 0.67)');
+                }
+            }
+        });
+    });
+}
+
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
 var saveAs=saveAs||"undefined"!=typeof navigator&&navigator.msSaveOrOpenBlob&&navigator.msSaveOrOpenBlob.bind(navigator)||function(e){"use strict";if("undefined"==typeof navigator||!/MSIE [1-9]\./.test(navigator.userAgent)){var t=e.document,n=function(){return e.URL||e.webkitURL||e},o=t.createElementNS("http://www.w3.org/1999/xhtml","a"),r="download"in o,i=function(n){var o=t.createEvent("MouseEvents");o.initMouseEvent("click",!0,!1,e,0,0,0,0,0,!1,!1,!1,!1,0,null),n.dispatchEvent(o)},a=e.webkitRequestFileSystem,c=e.requestFileSystem||a||e.mozRequestFileSystem,s=function(t){(e.setImmediate||e.setTimeout)(function(){throw t},0)},u="application/octet-stream",f=0,d=500,l=function(t){var o=function(){"string"==typeof t?n().revokeObjectURL(t):t.remove()};e.chrome?o():setTimeout(o,d)},v=function(e,t,n){t=[].concat(t);for(var o=t.length;o--;){var r=e["on"+t[o]];if("function"==typeof r)try{r.call(e,n||e)}catch(i){s(i)}}},p=function(t,s){var d,p,w,y=this,m=t.type,S=!1,h=function(){v(y,"writestart progress write writeend".split(" "))},O=function(){if((S||!d)&&(d=n().createObjectURL(t)),p)p.location.href=d;else{var o=e.open(d,"_blank");void 0==o&&"undefined"!=typeof safari&&(e.location.href=d)}y.readyState=y.DONE,h(),l(d)},b=function(e){return function(){return y.readyState!==y.DONE?e.apply(this,arguments):void 0}},g={create:!0,exclusive:!1};return y.readyState=y.INIT,s||(s="download"),r?(d=n().createObjectURL(t),o.href=d,o.download=s,i(o),y.readyState=y.DONE,h(),void l(d)):(/^\s*(?:text\/(?:plain|xml)|application\/xml|\S*\/\S*\+xml)\s*;.*charset\s*=\s*utf-8/i.test(t.type)&&(t=new Blob(["﻿",t],{type:t.type})),e.chrome&&m&&m!==u&&(w=t.slice||t.webkitSlice,t=w.call(t,0,t.size,u),S=!0),a&&"download"!==s&&(s+=".download"),(m===u||a)&&(p=e),c?(f+=t.size,void c(e.TEMPORARY,f,b(function(e){e.root.getDirectory("saved",g,b(function(e){var n=function(){e.getFile(s,g,b(function(e){e.createWriter(b(function(n){n.onwriteend=function(t){p.location.href=e.toURL(),y.readyState=y.DONE,v(y,"writeend",t),l(e)},n.onerror=function(){var e=n.error;e.code!==e.ABORT_ERR&&O()},"writestart progress write abort".split(" ").forEach(function(e){n["on"+e]=y["on"+e]}),n.write(t),y.abort=function(){n.abort(),y.readyState=y.DONE},y.readyState=y.WRITING}),O)}),O)};e.getFile(s,{create:!1},b(function(e){e.remove(),n()}),b(function(e){e.code===e.NOT_FOUND_ERR?n():O()}))}),O)}),O)):void O())},w=p.prototype,y=function(e,t){return new p(e,t)};return w.abort=function(){var e=this;e.readyState=e.DONE,v(e,"abort")},w.readyState=w.INIT=0,w.WRITING=1,w.DONE=2,w.error=w.onwritestart=w.onprogress=w.onwrite=w.onabort=w.onerror=w.onwriteend=null,y}}("undefined"!=typeof self&&self||"undefined"!=typeof window&&window||this.content);"undefined"!=typeof module&&module.exports?module.exports.saveAs=saveAs:"undefined"!=typeof define&&null!==define&&null!=define.amd&&define([],function(){return saveAs});

@@ -139,6 +139,7 @@
     display: block;
     font-size:42px;
     margin: 5px;
+    margin-bottom: 60px;
     color:rgba(251, 102, 134, 1);
     cursor: pointer;
 }

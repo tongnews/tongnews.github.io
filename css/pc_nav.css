@@ -115,10 +115,12 @@ div{
     height: 20px;
 }
 
-.search_container a{
+.search_button {
     color: #adadad;
     font-size: 18px;
     z-index: 100;
+    display: inline;
+    cursor: pointer;
 }
 
 .search_container a:hover{
