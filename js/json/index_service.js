@@ -158,11 +158,7 @@ function divMove(e) {
 
 function updateRank(rankCount) {
     var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
-    var $rank_container = $('#index_rank_contianer'),
-        $rank_cells = $rank_container.find('.rank_cell');
-    
     logTimeNow('RankJSON start');
-    
     //ajax for get recent post
     $.ajax({
         url: questurl,
@@ -172,20 +168,7 @@ function updateRank(rankCount) {
             format: "json"
         },
         success: function (response) {
-            
-            logTimeNow('RankJSON back');
-
-            //set post basic title info and other
-            for (var i = 0; i < rankCount; i++) {
-                //replace title
-                $rank_cells.eq(i).find('a').text(response.posts[i].post_title.substring(0, 31));
-                $rank_cells.eq(i).find('a').attr("href", "tongpost.html?id=" + encodeId(response.posts[i].ID));
-                $("<div class='ref_id' post_id=" + response.posts[i].ID + "></div>").insertAfter($rank_cells.eq(i).find('a'))
-                    //console.log(response.posts[i].ID)   
-                get_rank_image(response.posts[i].ID, $rank_cells.eq(i));
-            }
-            
-            logTimeNow('RankJSON end');
+             rankArranger(response, rankCount, "index");
         }
     });
 }
@@ -222,7 +205,7 @@ $('.search_button').click(function () {
         alert("请填写搜索内容~")
         return;
     }
-     window.open('search.html?type=s&key='+document.getElementById('search_input').value);
+     window.open('search.html#!type=s&key='+document.getElementById('search_input').value);
 });
 
 $(".sitemap_download").click(function () {

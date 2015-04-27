@@ -273,7 +273,7 @@ function postArranger(response,postCount,source){
     
     //control click event of tag searching
     $('.tag').click(function () {
-          window.open('search.html?type=t&key='+$(this).text());
+          window.open('search.html#!type=t&key='+$(this).text());
     });
 
     //control click event of float video button
@@ -366,6 +366,23 @@ function postArranger(response,postCount,source){
     logTimeNow('PostJSON end');
 }
 
+function rankArranger(response, rankCount, source) {
+    logTimeNow('RankJSON back');
+    var $rank_container = $('#index_rank_contianer'),
+    $rank_cells = $rank_container.find('.rank_cell');
+    
+    //set post basic title info and other
+    for (var i = 0; i < rankCount; i++) {
+        //replace title
+        $rank_cells.eq(i).find('a').text(response.posts[i].post_title.substring(0, 31));
+        $rank_cells.eq(i).find('a').attr("href", "tongpost.html#!id=" + encodeId(response.posts[i].ID));
+        $("<div class='ref_id' post_id=" + response.posts[i].ID + "></div>").insertAfter($rank_cells.eq(i).find('a'))
+            //console.log(response.posts[i].ID)   
+        get_rank_image(response.posts[i].ID, $rank_cells.eq(i));
+    }
+    logTimeNow('RankJSON end');
+}
+    
 function sitemapArranger(response){
     
     //console.log(response);
