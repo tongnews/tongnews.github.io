@@ -99,7 +99,15 @@ $(document).ready(function () {
                         }
                     });
                 } catch (err) {};
-
+                
+                //control image hover
+                $('p').hover(function () {
+                    if($(this).find("img").length>0){
+                        $notOnImage=false;
+                    };
+                },function () {
+                    $notOnImage=true;
+                });
             }
         });
     }
@@ -126,16 +134,26 @@ function getY(obj) {
 
 var $mp_x = 0;
 var $mp_y = 0;
-
+var $hideCursor=true;
+var $notOnImage=true;
+    
 function DisplayCoord(event) {
     var top, left, oDiv;
     oDiv = document.getElementById('tongpost_container');
     top = getY(oDiv);
     left = getX(oDiv);
-    $mp_x = (event.clientX - left + document.body.scrollLeft) - 2 + $('.menu_container').width() + 'px';
-    $mp_y = (event.clientY - top + document.body.scrollTop) - 2 + 'px';
+    $mp_x = (event.clientX - left + document.body.scrollLeft) - 2 + $('.menu_container').width();
+    $mp_y = (event.clientY - top + document.body.scrollTop) - 2;
+    if($notOnImage){
+        if($mp_x<800){$mp_x=800};
+    }
+    
     console.log("("+$mp_x+","+$mp_y+")");
-    $('#floating_cursor').attr("style", "left:" + $mp_x + ";top:" + $mp_y);
+    $('#floating_cursor').attr("style", "left:" + $mp_x + 'px' + ";top:" + $mp_y + 'px');
+    if($hideCursor){
+         $('#floating_cursor').attr("style","width:0px; height:0px; overflow:hidden;");
+    }
+    
 }
 
 $('#comment_submit').click(function () {
@@ -204,9 +222,13 @@ var $comment_extend_swith=0;
 $('#comment_icon').click(function () {
     if($comment_extend_swith){
         $('#comment_extend').attr("style","width:0px; height:0px; overflow:hidden;");
+        $hideCursor=true;
+        $('#floating_cursor').attr("style","width:0px; height:0px; overflow:hidden;");
         $comment_extend_swith=0;
     }else{
         $('#comment_extend').attr("style","");
+        $hideCursor=false;
+        $('#floating_cursor').attr("style","");
         $comment_extend_swith=1;
     }
     

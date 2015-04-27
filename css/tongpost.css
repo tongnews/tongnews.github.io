@@ -176,6 +176,7 @@
     width: auto;
     color: #fb6686;
     font-size: 12px;
+    overflow: hidden;
 }
 
 #comment_extend{
