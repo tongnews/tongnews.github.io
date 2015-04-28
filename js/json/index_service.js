@@ -176,25 +176,6 @@ function updateRank(rankCount) {
     });
 }
 
-function get_rank_image(posts_id, rank_cell) {
-    var questurl = baseurl.concat("?json=get_post&id=" + posts_id);
-    //ajax for add viewer_count for this post
-    $.ajax({
-        url: questurl,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-            format: "json"
-        },
-        success: function (response) {
-            //console.log(response);
-            var $tbnlurl = response.post.custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
-            rank_cell.find('img').attr('src', $tbnlurl);
-        }
-    });
-
-}
-
 $('.rank_cell').hover(function () {
     for (var i = 3; i < $rankCount; i++) {
         $('#index_rank_contianer').find('.rank_cell').eq(i).find('img').attr('style', "width:0px; height:0px; overflow:hidden;");

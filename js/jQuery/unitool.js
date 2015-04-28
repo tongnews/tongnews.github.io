@@ -14,7 +14,7 @@ function getCDNUrl() {
     return "http://7xi53n.com1.z0.glb.clouddn.com/";
 }
 function getDomain() {
-    console.log(document.domain);
+    //console.log(document.domain);
     return document.domain;
 }
 function getUrlParam(sParam) {
@@ -388,6 +388,9 @@ function postArranger(response,postCount,source){
 }
 
 function rankArranger(response, rankCount, source) {
+    
+    //console.log(response);
+    
     logTimeNow('RankJSON back');
     var $rank_container = $('#index_rank_contianer'),
     $rank_cells = $rank_container.find('.rank_cell');
@@ -395,12 +398,13 @@ function rankArranger(response, rankCount, source) {
     //set post basic title info and other
     for (var i = 0; i < rankCount; i++) {
         //replace title
-        $rank_cells.eq(i).find('a').text(response.posts[i].post_title.substring(0, 31));
+        $rank_cells.eq(i).find('a').text(response.posts[i].title.substring(0, 31));
         $rank_cells.eq(i).find('a').attr("href", urlrewrite(encodeId(response.posts[i].ID)));
-        $("<div class='ref_id' post_id=" + response.posts[i].ID + "></div>").insertAfter($rank_cells.eq(i).find('a'))
-            //console.log(response.posts[i].ID)   
-        get_rank_image(response.posts[i].ID, $rank_cells.eq(i));
+        $("<div class='ref_id' post_id=" + response.posts[i].id + "></div>").insertAfter($rank_cells.eq(i).find('a'));
+        var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+        $rank_cells.eq(i).find('img').attr('src', $tbnlurl);
     }
+    
     logTimeNow('RankJSON end');
 }
     
