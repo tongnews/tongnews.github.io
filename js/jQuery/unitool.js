@@ -166,7 +166,7 @@ function sucessLogin(response) {
     $(".login_container").attr("style", "width:0px; height:0px; overflow:hidden;");
     $(".logined_container").attr("style", "");
     managerLogin = true;
-    document.getElementById("user_welcome").innerHTML = "&nbsp; 欢迎您 | " + response.nickname +"&nbsp;";
+    document.getElementById("user_welcome").innerHTML = "&nbsp;欢迎您 | " + response.nickname +"&nbsp;";
 }
 function createCookie(name, value, days) {
     if (days) {
@@ -186,13 +186,15 @@ function readCookie(name) {
     }
     return null;
 }
+
+function resetCookie(){
+    createCookie("user","",14);
+}
+
 function logTimeNow(text){
     var time=new Date();
     console.log(text+':'+time.getMinutes()+':'+time.getSeconds());
 }
-
-
-
 
 
 //-------------------------Content Contronller ----------------//
@@ -485,13 +487,18 @@ function baseJSload(){
                         }
                     });
                 } else {
+                    $('.user_login').css('background','#FB708E');
                     alert("用户名或密码错误OwO");
-                    $(this).css('background','rgba(251, 102, 142, 0.67)');
                 }
             }
         });
     });
-
+    
+    $('#user_logout').click(function () {
+        resetCookie();
+        location.reload();
+    });
+                           
     var $user_nonce="";
 
     $('.user_signin').click(function () {

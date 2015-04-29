@@ -176,6 +176,10 @@ div{
     background: rgba(219, 47, 206, 0.93);
 }
 
+#user_logout{
+    background: rgba(170, 170, 170, 0.93);
+}
+
 .user_container li{
   border-radius: 4px 4px 4px 4px;
   margin-left: 10px;
@@ -186,7 +190,7 @@ div{
   /* font-family: '幼圆'; */
   width: auto;
   font-size: 14px;
-  padding: 2px;
+  padding: 2px 5px 2px 5px;
 }
 
 /*  nagivation  */
