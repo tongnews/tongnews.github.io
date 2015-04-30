@@ -269,22 +269,22 @@ function postArranger(response,postCount,source){
             var tagstyle='style="background-color:#FD7C98"';
             switch ($postTags[j].group) {
               case "not assigned":
-                  tagstyle = 'style="background-color:#808080"';
+                  tagstyle = 'style="border-color:rgb(253, 124, 152)"';
                   break;
               case "else":
-                  tagstyle = 'style="background-color:#FD7C98"';
+                  tagstyle = 'style="border-color:#87b5eb"';
                   break;
               case "area":
-                  tagstyle = 'style="background-color:#rgb(255, 41, 181)"';
+                  tagstyle = 'style="border-color:rgb(255, 97, 49)"';
                   break;
               case "origin":
-                  tagstyle = 'style="background-color:#bc7cfd"';
+                  tagstyle = 'style="border-color:#bc7cfd"';
                   break;
               case "character":
-                  tagstyle = 'style="background-color:#1ebbd0"';
+                  tagstyle = 'style="border-color:#1ebbd0"';
                   break;
               case "activity":
-                  tagstyle = 'style="background-color:#37d078"';
+                  tagstyle = 'style="border-color:#37d078"';
                   break;
           };
             $("<li class='tag' "+tagstyle+">" + $postTags[j].title + "</li>").insertBefore(postHtml.find('#tagend'));
