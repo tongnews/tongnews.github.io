@@ -409,7 +409,33 @@ function rankArranger(response, rankCount, source) {
     
     logTimeNow('RankJSON end');
 }
+ 
+function categoryWidgetArranger(catslug,response,postCount,pageNum) {
     
+    $curCount = response.count;
+    $maxPages = response.pages;
+
+    //set post basic title info and other
+    for (var i = 0; i < $curCount; i++) {
+        
+        var postHtml=$('<div class="post_widget uniborder"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+           
+        //replace title
+        postHtml.find('a').text(response.posts[i].title.substring(0, 31));
+        postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
+        
+        //replace intro
+
+        var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+        $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
+
+        postHtml.find('img').attr('src', $tbnlurl);
+        
+        postHtml.appendTo('#'+catslug);
+    }
+    
+}
+
 function sitemapArranger(response){
     
     //console.log(response);

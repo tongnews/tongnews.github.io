@@ -328,6 +328,11 @@ div{
 
 .nav3 a {
     background-image: url(../images/nv3.png);
+    background-color: #fb6686;
+}
+
+.nav3 a:hover{
+    background-color:#d670fb;
 }
 
 .nav4 a {
@@ -368,7 +373,7 @@ div{
 .footer-bottom{
   position: relative;
   width: 100%;
-  margin-top: 50px;
+  margin-top: 0px;
   background: #FD7C98;
   color: #f5f5f5;
   font-size: 12px;
@@ -463,4 +468,3 @@ div{
     
     
 }
-

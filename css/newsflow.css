@@ -189,6 +189,84 @@
     cursor:pointer;
 }
 
+
+.post_widget_warpper {
+    margin-top: 70px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    align-content: center;
+    border: solid;
+    border-color: rgb(255, 96, 132);
+    border-width: 0 0 0 0;
+}
+
+.post_widget_container{
+    margin-top: 0px;
+    padding-left: 7px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  
+}
+
+.post_widget {
+display: inline-block;
+    width: 162px;
+    height: auto;
+    margin-top: 5px;
+    margin-right: 31px;
+    margin-bottom: 20px;
+    position: relative;
+    border: solid #ffb2b2;
+    border-width: 0 0 2px 0;
+    border-radius: 10px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #fff;
+}
+
+.post_widget:hover {
+    
+}
+
+
+.post_widget a{
+    width: 100%;
+    text-decoration: none;
+}
+
+.post_widget a:hover{
+    color: #fff;
+}
+
+.post_widget img{
+    width: 100%;
+    height: 120px;
+    background-clip: content-box;
+    background-size: cover;
+    background-clip: border-box;
+    border-radius: 10px 0 0 0px;
+}
+
+.post_widget blockquote{
+    height: 45px;
+    overflow:hidden;
+}
+
+.post_widget blockquote:hover{
+    background-color: #ffb2b2;
+}
+
+.widget_shower{
+    padding-top: 5px;
+}
+
+.widget_shower p{
+    font-size: 15px;
+    color:rgb(255, 96, 132);
+    padding-left: 5px;
+}
+
 #second{
     width: 320px;
     position: absolute;
@@ -423,6 +501,48 @@ div#whatsnew_parent li span.date {
     padding-right: 1px;
 }
 
+
+/*  staff   */
+.staff_container{
+    margin-top: 20px;
+    height: auto;
+    width: 100%;
+    background-image: url(../images/bk-0.png);
+}
+.staff_show{
+    padding-top: 0px;
+    position: relative;
+    width: 1120px;
+    height: 540px;
+    margin: auto;
+    
+}
+
+.staff_shower{
+    background-image: url(../images/chengyuanjieshao.png);
+    width: 1090px;
+    height: 31px;
+    margin-bottom: 20px;
+}
+
+.staff_pic{
+    position: absolute;
+    left: 0px;
+    background-image: url(../images/staff_paint.png);
+    width: 1100px;
+    height: 501px;
+    z-index: 400;
+}
+
+.ly_pic1{
+    position: absolute;
+    left: 50px;
+    top:100px;
+    background-image: url(../images/bk-6.png);
+    width: 0;
+    height: 0;
+    z-index: 0;
+}
 /*   responsive design    */
 @media only screen and (max-width: 1223px){
     .news_body{
