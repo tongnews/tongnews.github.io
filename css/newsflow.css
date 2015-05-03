@@ -267,6 +267,48 @@ display: inline-block;
     padding-left: 5px;
 }
 
+.post_wtnail img{
+    float:left;
+    width: 95px;
+    height: 70px;
+    background-clip: content-box;
+    background-size: cover;
+    background-clip: border-box;
+    border-radius: 10px;
+}
+
+.post_wtnail img:first-child{
+    width: 190px;
+    height: 150px;
+}
+
+.post_wtnail{
+    float: left;
+    width: 385px;
+    margin-bottom: 20px;
+}
+
+.post_wtnail_warpper {
+    margin-top: 70px;
+    width: 100%;
+    height: auto;
+    position: relative;
+    align-content: center;
+    border: solid;
+    border-color: rgb(255, 96, 132);
+    border-width: 0 0 0 0;
+}
+
+.post_wtnail_container{
+    margin-top: 0px;
+    padding-left: 7px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  
+}
+
+
 #second{
     width: 320px;
     position: absolute;

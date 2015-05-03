@@ -25,3 +25,103 @@ $(document).ready(function () {
     checkCookie();
  
 });
+
+
+//---------------------each catergory--------------
+
+function  updateCategory(catslug,postCount,pageNum){
+    
+    switch (catslug){
+            
+        case "widget_news":
+            var questurl = baseurl.concat("?json=get_category_posts&category_slug=news&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    console.log(response);
+                    categoryWidgetArranger("widget_news",response,postCount,pageNum);
+                }
+
+            });
+            break;
+            
+        case "widget_daily":
+            var questurl = baseurl.concat("?json=get_category_posts&category_slug=daily&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    console.log(response);
+                    categoryWidgetArranger("widget_daily",response,postCount,pageNum);
+                }
+
+            });
+            break;
+            
+        case "widget_daily":
+            var questurl = baseurl.concat("?json=get_category_posts&category_slug=daily&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    console.log(response);
+                    categoryWidgetArranger("widget_daily",response,postCount,pageNum);
+                }
+
+            });
+            break;
+        
+       case "widget_activity":
+            var questurl = baseurl.concat("?json=get_category_posts&category_slug=activity&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    console.log(response);
+                    categoryWidgetArranger("widget_activity",response,postCount,pageNum);
+                }
+
+            });
+            break;
+            
+       case "widget_pilgrimage":
+            var questurl = baseurl.concat("?json=get_category_posts&category_slug=pilgrimage&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    console.log(response);
+                    categoryWidgetArranger("widget_pilgrimage",response,postCount,pageNum);
+                }
+
+            });
+            break;
+    }
+    
+};

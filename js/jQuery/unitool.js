@@ -436,6 +436,29 @@ function categoryWidgetArranger(catslug,response,postCount,pageNum) {
     
 }
 
+function categoryTnailArranger(catslug,response,postCount,pageNum) {
+    
+    $curCount = response.count;
+    $maxPages = response.pages;
+
+    //set post basic title info and other
+    for (var i = 0; i < $curCount; i++) {
+        
+        var postHtml=$('<div class="post_wtnail uniborder"><img><img><img><img><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+           
+        //replace title
+        postHtml.find('a').text(response.posts[i].title.substring(0, 31));
+        postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
+
+        for (var j = 0; j < 5; j++) { 
+ postHtml.find('img').eq(j).attr('src',response.posts[i].attachments[j].images.thumbnail.url.replace(getRegBaseUrl(), cdnurl));
+        }
+        
+        postHtml.appendTo('#'+catslug);
+    }
+    
+}
+
 function sitemapArranger(response){
     
     //console.log(response);
