@@ -51,7 +51,15 @@ $(document).ready(function () {
 
                 //insert content
                 $(response.post.content.toString().replace(getRegBaseUrl(), cdnurl)).insertAfter($tongpost_container.find('p'));
-
+                
+                //regularize image width
+                var imgset = $tongpost_container.find('img');
+                for (var k=0; k<imgset.length ;k++){
+                    var aspratio = imgset.eq(k).attr('height')/imgset.eq(k).attr('width');
+                    imgset.eq(k).attr('width',600+'px');
+                    imgset.eq(k).attr('height',600*aspratio+'px');
+                }
+                
                 var $postCategories = response.post.categories;
                 for (var j = 0; j < $postCategories.length; j++) {
                     if ($postCategories[j].slug == "video") {

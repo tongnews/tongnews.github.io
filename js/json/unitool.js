@@ -298,7 +298,15 @@ function postArranger(response,postCount,source){
     $('.tag').click(function () {
           window.open('search.html#!type=t&key='+$(this).text());
     });
-
+    
+    $('.tag').hover(function () {
+          $(this).css('background-color',$(this).css('border-color'));
+            $(this).css('color','#fff');
+    },function () {
+          $(this).css('background-color','');
+            $(this).css('color','#000000');
+    });
+    
     //control click event of float video button
     $('.float_video_link').click(function () {
         var questurl = baseurl.concat("?json=view_post&id=" + $(this).attr('post_id'));
@@ -444,10 +452,10 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         
-        var postHtml=$('<div class="post_wtnail uniborder"><img><img><img><img><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+        var postHtml=$('<div class="post_wtnail uniborder"><img><img><img><img><img><blockquote><a target="_blank"><td><p></p></td></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
            
         //replace title
-        postHtml.find('a').text(response.posts[i].title.substring(0, 31));
+        postHtml.find('a').find('p').text(response.posts[i].title.substring(6, 31));
         postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
 
         for (var j = 0; j < 5; j++) { 

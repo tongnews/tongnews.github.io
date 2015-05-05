@@ -53,6 +53,7 @@
     margin-top: 18px;
     position: relative;
     background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px 0 0 10px;
 }
 
 .loading_cover{
@@ -135,6 +136,7 @@
     margin-right:10px;
     width: auto;
     cursor:pointer;
+    
 }
 
 .post_cell tags{
@@ -269,8 +271,48 @@ display: inline-block;
     font-size: 20px;
 }
 
+.post_wtnail{
+    background-color: white;
+    float: left;
+    width: 320px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.post_wtnail a{
+    position: relative;
+    width: 80px;
+    height: 66px;
+    background-color: rgba(255, 65, 109, 0.85);
+    font-size: 14px;
+    
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 0 10px 3px 10px;
+    margin: 5px;
+    float:left;
+    overflow: hidden;
+}
+
+.post_wtnail a p{
+    display: table-cell;
+    width: 80px;
+    height: 66px;
+    overflow: hidden;
+    vertical-align: middle; 
+    text-align: center;
+    line-height: 160%;
+}
+
+.post_wtnail img:first-child{
+    width: 200px;
+    height: 150px;
+}
+
 .post_wtnail img{
     float:left;
+    margin: 5px;
     width: 95px;
     height: 70px;
     background-clip: content-box;
@@ -279,16 +321,8 @@ display: inline-block;
     border-radius: 10px;
 }
 
-.post_wtnail img:first-child{
-    width: 190px;
-    height: 150px;
-}
 
-.post_wtnail{
-    float: left;
-    width: 385px;
-    margin-bottom: 20px;
-}
+
 
 .post_wtnail_warpper {
     margin-top: 70px;
@@ -359,8 +393,9 @@ display: inline-block;
 .rank_cell img {
     display: inline;
     float: right;
-    margin: 2px 2px 2px -2px;
+    margin: 2px 2px 2px 8px;
     width: 95px;
+    border: dashed rgb(216, 216, 216) 1px;
 }
 
 .rank_cell blockquote {

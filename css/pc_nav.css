@@ -277,7 +277,7 @@ div{
 
 .nava1 a{
     width: 0px;
-    margin-left: 10px;
+    margin-left: 0px;
     margin-right: 4px;
     color:rgba(0,0,0,0);
     font-size: 24px;
@@ -322,6 +322,7 @@ div{
 .navb2 a{
     width: 0px;
     margin-left: 4px;
+    margin-right: 10px;
     color:rgba(0,0,0,0);
     font-size: 24px;
     border-style: solid solid solid solid;

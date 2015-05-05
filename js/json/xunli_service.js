@@ -29,7 +29,7 @@ function  updateCategoryThumbnail(catslug,postCount,pageNum){
     
     switch (catslug){
        case "widget_pilgrimage":
-            var questurl = baseurl.concat("?json=get_category_posts&category_slug=pilgrimage&count=" + postCount + "&page=" + pageNum);
+            var questurl = baseurl.concat("?json=get_category_posts_breif_att&category_slug=pilgrimage&count=" + postCount + "&page=" + pageNum);
             //ajax for get recent post
             $.ajax({
                 url: questurl,

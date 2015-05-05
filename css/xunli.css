@@ -1,0 +1,17 @@
+#xunli_post_container{
+    padding-right: 0px;
+}
+
+.xunli_map{
+    width: 1127px;
+    margin: auto;
+    height: auto;
+    position: relative;
+}
+.xmap{
+    float:right;
+}
+
+.post_wtnail_warpper {
+    margin-top: 0px;
+}

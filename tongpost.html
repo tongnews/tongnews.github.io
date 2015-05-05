@@ -9,114 +9,125 @@
     <title>痛新闻｜日本动漫文化最in潮流站</title>
     <meta name="viewport" content=" width=width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <script type="text/javascript">
-        (function () {
-            var _UA = navigator.userAgent;
-            if (_UA.indexOf('iPhone') > 0 || _UA.indexOf('iPod') > 0 || _UA.indexOf('Android') > 0) {
-                document.write('<link href="css/pc_nav.css" rel="stylesheet" type="text/css" />');
-            } else {
-                document.write('<link rel="stylesheet" type="text/css" href="css/pc_nav.css" />');
-            }
-        })();
-    </script>
     <script src="js/jQuery/jquery.js"></script>
-    <script src="js/jQuery/unitool.js"></script>
+    <script src="js/json/unitool.js"></script>
     <!--    CSS-->
+    <link href="css/pc_nav.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/tongpost.css" />
-    <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="css/slider_styleNoJS.css" />
-    </noscript>
 </head>
 
 <body>
 
     <div class="content_container">
 
-        <!-- RRR Top Bar  (User)  -->
-        <div class="top_container">
-            <div class="user_container">
-                <div class="login_container" style="width:0px; height:0px; overflow:hidden;">
+    <!-- RRR Top Bar  (User)  -->
+    <div class="top_container">
+       <div class="user_container">
+                    <div class="login_container" style="width:0px; height:0px; overflow:hidden;">
+                        <div class="sginbox" style="width:0px; height:0px; overflow:hidden;">
+                            <li>邮箱</li>
+                            <input type="text" id="user_sginin_email_input">
+                            <li>昵称</li>
+                            <input type="text" id="user_sginin_nickname_input">
+                            <li>密码</li>
+                            <input type="password" id="user_sginin_pass_input">
+                            <li>密码确认</li>
+                            <input type="password" id="user_sginin_pass_input2">
+                            <li class="user_signin_submit">提交</li>
+                        </div>
 
-                    <div class="sginbox" style="width:0px; height:0px; overflow:hidden;">
-                        <li>邮箱</li>
-                        <input type="text" id="user_sginin_email_input">
-                        <li>昵称</li>
-                        <input type="text" id="user_sginin_nickname_input">
-                        <li>密码</li>
-                        <input type="password" id="user_sginin_pass_input">
-                        <li>密码确认</li>
-                        <input type="password" id="user_sginin_pass_input2">
-                        <li class="user_signin_submit">提交</li>
+                        <div class="loginbox">
+                            <li>用户名</li>
+                            <input type="text" id="user_name_input">
+                            <li>密码</li>
+                            <input type="password" id="user_pass_input">
+                        </div>
+
+                        <div class="loginBtbox">
+                            <li class="user_login" id="user_login">登陆</li>
+                        </div>
+
+                        <div class="signinBtbox">
+                            <li class="user_signin" id="user_signin">极速注册</li>
+                        </div>
+
+
                     </div>
-
-                    <div class="loginbox">
-                        <li>用户名</li>
-                        <input type="text" id="user_name_input">
-                        <li>密码</li>
-                        <input type="password" id="user_pass_input">
+                    <div class="logined_container" style="width:0px; height:0px; overflow:hidden;">
+                        <li id="user_welcome">欢迎</li>
+                        <li id="user_logout">登出</li>
                     </div>
-
-                    <div class="loginBtbox">
-                        <li class="user_login" id="user_login">登陆</li>
-                    </div>
-
-                    <div class="signinBtbox">
-                        <li class="user_signin" id="user_signin">极速注册</li>
-                    </div>
-
-
                 </div>
-                <div class="logined_container" style="width:0px; height:0px; overflow:hidden;">
-                    <li id="user_welcome">欢迎</li>
+    </div>
+    <!--  RRR  Title   -->
+    <div class="title_container">
+        <div class="sheadin-container container">
+            <div class="title_content">
+                <div class="navs"><span class="hide">sakura</span>
                 </div>
-            </div>
-        </div>
-        <!--  RRR  Title   -->
-        <div class="title_container">
-            <div class="sheadin-container container">
-                <div class="title_content">
-                    <div class="navs"><span class="hide">sakura</span>
-                    </div>
-                    <div class="uri"><span class="hide">标题</span>
-                    </div>
-                    <div class="navs" style="left:360px"><span class="hide">sakura</span>
-                    </div>
-                    <div class="search_container">
-                        <input id="search_input"></input>
-                        <div class="search_button"><i class="fa fa-search"></i></div>
-                    </div>
+                <div class="uri"><span class="hide">标题</span>
+                </div>
+                <div class="navs" style="left:360px"><span class="hide">sakura</span>
+                </div>
 
-                </div>
 
             </div>
+
         </div>
-        <!--  RRR Navigation bar  -->
-        <div class="nav_container">
-            <div class="nav container">
-                <div class="nav_content">
-                    <div class="nav1"><a href="index.html"><span class="hide">bar1</span></a>
+    </div>
+    <!--  RRR Navigation bar  -->
+    <div class="nav_container">
+        <div class="nav container">
+            <div class="nav_content">
+                
+                <div class="nava1"><a></a>
+                </div>
+                <div class="nav1"><a href="index.html"><span class="hide">index</span></a>
+                </div>
+                <div class="navb1"><a></a>
+                </div>
+                <div class="nava2"><a></a>
+                </div>
+                <div class="nav2"><a href="reading.html"><span class="hide">bar2</span></a>
+                </div>
+                <div class="navb2"><a></a>
+                </div>
+                <div class="nava1"><a></a>
+                </div>
+                <div class="nav3"><a href="xunli.html"><span class="hide">bar3</span></a>
+                </div>
+                <div class="navb1"><a></a>
+                </div>
+                <div class="nava2"><a></a>
+                </div>
+<!--
+                <div class="nav4"><a href="category.html"><span class="hide">bar4</span></a>
+                </div>
+                <div class="nav5"><a href="category.html"><span class="hide">bar5</span></a>
+                </div>
+                <div class="nav6"><a href="category.html"><span class="hide">bar6</span></a>
+                </div>
+-->
+                <div class="nav7"><a href="about.html"><span class="hide">bar7</span></a>
+                </div>
+                
+                <div class="navb2"><a></a>
+                </div>
+
+                
+                <div class="search_container">
+                    <input id="search_input"></input>
+                    <div class="search_button"><i class="fa fa-search"></i>
                     </div>
-                    <div class="nav2"><a href="category.html"><span class="hide">bar2</span></a>
-                    </div>
-                    <div class="nav3"><a href="category.html"><span class="hide">bar3</span></a>
-                    </div>
-                    <div class="nav4"><a href="category.html"><span class="hide">bar4</span></a>
-                    </div>
-                    <div class="nav5"><a href="category.html"><span class="hide">bar5</span></a>
-                    </div>
-                    <div class="nav6"><a href="category.html"><span class="hide">bar6</span></a>
-                    </div>
-                    <div class="nav7"><a href="news/"><span class="hide">bar7</span></a>
-                    </div>
-                    <!--
+                </div>
+                <!--
                 <div class="dokileft"></div>
                 <div class="dokiright"></div>
 -->
-                </div>
             </div>
         </div>
+    </div>
 
         <div id="tongpost_body" class="tongpost_body">
 
