@@ -93,13 +93,13 @@ $(document).ready(function () {
                 try {
                     var comments = response.post.custom_fields.float_comment[0];
                     var cmarray = comments.split('$');
+                    var cmarray = comments.split('$');
                     for (var i = 0; i < (cmarray.length - 1); i++) {
-                        cmsubarray = cmarray[i].split(']');
-                        coord2 = cmsubarray[0].substring(1);
-                        coordxy = coord2.split(",");
-                        //console.log(cmsubarray[1]);
-                        $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($tongpost_container.find('.end'));
+                        cmjson = JSON.parse(cmarray[i]);
+                        //console.log(cmjson);
+                        $("<h3 class='flcomment' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
                     }
+                        
                     //manager float event
                     $('.flcomment').click(function () {
                         if (getManagerlogin()) {
@@ -155,9 +155,10 @@ function DisplayCoord(event) {
     if($notOnImage){
         if($mp_x<800){$mp_x=800};
     }
-    
+    $mp_x=$mp_x + 'px';
+    $mp_y=$mp_y + 'px';
     console.log("("+$mp_x+","+$mp_y+")");
-    $('#floating_cursor').attr("style", "left:" + $mp_x + 'px' + ";top:" + $mp_y + 'px');
+    $('#floating_cursor').attr("style", "left:" + $mp_x + ";top:" + $mp_y);
     if($hideCursor){
          $('#floating_cursor').attr("style","width:0px; height:0px; overflow:hidden;");
     }
@@ -165,6 +166,11 @@ function DisplayCoord(event) {
 }
 
 $('#comment_submit').click(function () {
+    if(usernickname===null){
+        alert("请先登录~")
+        return;
+    }
+    
     if ($mp_x == 0) {
         alert("请鼠标单击选择弹幕位置~")
         return;
@@ -173,7 +179,10 @@ $('#comment_submit').click(function () {
         alert("快填写弹幕吧~")
         return;
     }
-    var $float_comment = "[" + $mp_x + "," + $mp_y + "]" + document.getElementById('comment_input').value + "$";
+    var $float_comment = "{"+"\"user\":" + "\""+usernickname+"\","+
+                             "\"x_pos\":" + "\""+$mp_x +"\","+
+                             "\"y_pos\":" + "\""+$mp_y +"\","+
+                             "\"text\":" + "\""+document.getElementById('comment_input').value+"\"}$";
     var questurl = baseurl.concat("?json=add_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
     $.ajax({
         url: questurl,
@@ -192,11 +201,9 @@ $('#comment_submit').click(function () {
     var comments = $float_comment;
     var cmarray = comments.split('$');
     for (var i = 0; i < (cmarray.length - 1); i++) {
-        cmsubarray = cmarray[i].split(']');
-        coord2 = cmsubarray[0].substring(1);
-        coordxy = coord2.split(",");
-        console.log(cmsubarray[1]);
-        $("<h3 class='flcomment' style='left:" + coordxy[0] + ";top:" + coordxy[1] + "'>" + cmsubarray[1] + "</h3>").insertAfter($('#tongpost_container').find('.end'));
+        cmjson = JSON.parse(cmarray[i]);
+        //console.log(cmjson);
+        $("<h3 class='flcomment' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " +cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
     }
 
 });

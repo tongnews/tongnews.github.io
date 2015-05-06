@@ -167,7 +167,9 @@
     font-size: 12px;
     color: #fff;
     font-family: '微软雅黑';
-    background: rgba(251, 102, 134, 0.67);
+    max-width: 100px;
+    background: rgba(251, 102, 134, 0.93);
+      box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .floating_cursor{

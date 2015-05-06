@@ -19,7 +19,7 @@ $(document).ready(function () {
     updateCategory("widget_news",12,1);
     updateCategory("widget_activity",12,1);
     updateCategory("widget_daily",12,1);
-    
+    updateCategory("widget_pilgrimage",12,1);
     //user management
     //createCookie("user","",14);
     checkCookie();

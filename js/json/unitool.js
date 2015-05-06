@@ -96,9 +96,6 @@ function videorefanlayse(refstr) {
 
 
 
-
-
-
 //-------------------------Animation Contronller ----------------//
 function pageScroll() {
     window.scrollBy(0, -800);
@@ -111,9 +108,11 @@ function pageScroll() {
 
 
 //-------------------------User Contronller --------------------//
-var managerLogin = false;
+var userLogin = false;
+var userlevel = 0;
+var usernickname = null;
 function getManagerlogin() {
-    return managerLogin;
+    return userLogin;
 }
 function getCookie() {
     if (readCookie("user")) {
@@ -165,7 +164,9 @@ function checkCookie() {
 function sucessLogin(response) {
     $(".login_container").attr("style", "width:0px; height:0px; overflow:hidden;");
     $(".logined_container").attr("style", "");
-    managerLogin = true;
+    userLogin = true;
+    userlevel = response.wp_user_level;
+    usernickname = response.nickname;
     document.getElementById("user_welcome").innerHTML = "&nbsp;欢迎您 | " + response.nickname +"&nbsp;";
 }
 function createCookie(name, value, days) {
@@ -195,6 +196,9 @@ function logTimeNow(text){
     var time=new Date();
     console.log(text+':'+time.getMinutes()+':'+time.getSeconds());
 }
+
+
+
 
 
 //-------------------------Content Contronller ----------------//
@@ -426,7 +430,7 @@ function categoryWidgetArranger(catslug,response,postCount,pageNum) {
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         
-        var postHtml=$('<div class="post_widget uniborder"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+        var postHtml=$('<div class="post_widget"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
            
         //replace title
         postHtml.find('a').text(response.posts[i].title.substring(0, 31));
@@ -452,7 +456,7 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         
-        var postHtml=$('<div class="post_wtnail uniborder"><img><img><img><img><img><blockquote><a target="_blank"><td><p></p></td></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+        var postHtml=$('<div class="post_wtnail"><img><img><img><img><img><blockquote><a target="_blank"><td><p></p></td></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
            
         //replace title
         postHtml.find('a').find('p').text(response.posts[i].title.substring(6, 31));
@@ -488,15 +492,22 @@ function sitemapArranger(response){
     
 }
 
+
+
+
+
+
+
+//---------------------------------- search button-------------------
+function searchformOnsubmit() {
+    if (document.getElementById('search-box').value == "") {
+        alert("请填写搜索内容~");
+    }else{
+        window.open('search.html#!type=s&key='+document.getElementById('search-box').value);
+    }  
+};
+
 function baseJSload(){
-    //---------------------------------- search button-------------------
-    $('.search_button').click(function () {
-        if (document.getElementById('search_input').value == "") {
-            alert("请填写搜索内容~");
-        }else{
-            window.open('search.html#!type=s&key='+document.getElementById('search_input').value);
-        }  
-    });
 
     $(".sitemap_download").click(function () {
 
@@ -551,6 +562,20 @@ function baseJSload(){
         });
     });
     
+    $('.user_login_enter').click(function () {
+         $(".sginbox").attr("style","width:0px; height:0px; overflow:hidden;");
+         $(".loginbox").attr("style","");
+         $(".loginBtbox").attr("style","width:0px; height:0px; overflow:hidden;");
+         $(".signinBtbox").attr("style","width:0px; height:0px; overflow:hidden;");
+    });
+         
+    $('.user_back').click(function () {
+         $(".sginbox").attr("style","width:0px; height:0px; overflow:hidden;");
+         $(".loginbox").attr("style","width:0px; height:0px; overflow:hidden;");
+         $(".loginBtbox").attr("style","");
+         $(".signinBtbox").attr("style","");
+    });
+    
     $('#user_logout').click(function () {
         resetCookie();
         location.reload();
@@ -576,9 +601,10 @@ function baseJSload(){
                    $(".loginbox").attr("style","width:0px; height:0px; overflow:hidden;");
                    $(".loginBtbox").attr("style","width:0px; height:0px; overflow:hidden;");
                    $(".signinBtbox").attr("style","width:0px; height:0px; overflow:hidden;");
+                    $('.user_signin').css('background','rgba(219, 47, 206, 0.93)');
                 } else {
                     alert("十分抱歉，注册系统暂时关闭T0T");
-                    $(this).css('background','rgba(251, 102, 142, 0.67)');
+                    $('.user_signin').css('background','rgba(219, 47, 206, 0.93)');
                 }
             }
         });
@@ -621,7 +647,7 @@ function baseJSload(){
                     });
                 } else {
                     alert("用户名或密码错误/无效OwO");
-                    $(this).css('background','rgba(251, 102, 142, 0.67)');
+                    $('.user_signin_submit').css('background','#FB708E');
                 }
             }
         });

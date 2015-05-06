@@ -213,17 +213,13 @@
 }
 
 .post_widget {
-display: inline-block;
+    display: inline-block;
     width: 162px;
     height: auto;
     margin-top: 5px;
     margin-right: 25px;
     margin-bottom: 20px;
     position: relative;
-    border: solid #ffb2b2;
-    border-width: 0 0 2px 0;
-    border-radius: 10px 0;
-    background-color: rgba(255, 255, 255, 0.9);
     color: #fff;
 }
 
@@ -252,44 +248,45 @@ display: inline-block;
 
 .widget_shower{
     padding-top: 5px;
+    position: relative;
 }
 
 .widget_shower p{
+    position: relative;
     font-size: 20px;
     color:rgb(255, 96, 132);
     font-weight: bold;
     padding-left: 5px;
 }
 
-.widget_shower p:before{
-   content: '\25CF---';
-    font-size: 20px;
-}
-
-.widget_shower p:after{
-   content: '---\25CF';
-    font-size: 20px;
+.rectline{
+    background-color:rgb(255, 96, 132);
+    top: 20px;
+    right: 20px;
+    height: 5px;
+    width: 98%;
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 .post_wtnail{
-    background-color: white;
     float: left;
     width: 320px;
-    margin-right: 20px;
-    margin-top: 20px;
+    margin-right: 55px;
+    margin-bottom: 40px;
 }
 
 .post_wtnail a{
     position: relative;
     width: 80px;
     height: 66px;
-    background-color: rgba(255, 65, 109, 0.85);
+    background-color: rgba(253, 253, 253, 0.85);
     font-size: 14px;
-    
+    border: solid 2px rgb(255, 96, 132);
     border-radius: 10px;
     text-decoration: none;
-    color: white;
-    padding: 0 10px 3px 10px;
+    color: rgb(255, 96, 132);
+    padding: 0 8px 3px 8px;
     margin: 5px;
     float:left;
     overflow: hidden;
@@ -338,6 +335,7 @@ display: inline-block;
 .post_wtnail_container{
     margin-top: 0px;
     padding-left: 7px;
+    min-height: 800px;
     width: 100%;
     height: auto;
     margin-bottom: 10px;
@@ -393,9 +391,10 @@ display: inline-block;
 .rank_cell img {
     display: inline;
     float: right;
-    margin: 2px 2px 2px 8px;
+    margin: 2px 2px 6px 8px;
+    padding: 2px;
     width: 95px;
-    border: dashed rgb(216, 216, 216) 1px;
+    border: dashed rgb(195, 195, 195) 1px;
 }
 
 .rank_cell blockquote {
