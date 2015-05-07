@@ -116,8 +116,26 @@ $(document).ready(function () {
                 },function () {
                     $notOnImage=true;
                 });
+                
+                //successor function
+                $tongpost_id = decodeIdfromAddr();
+                var questurl = baseurl.concat("?json=get_related_posts&id=" + $tongpost_id);
+                //ajax for add viewer_count for this post
+                $.ajax({
+                    url: questurl,
+                    jsonp: "callback",
+                    dataType: "jsonp",
+                    data: {
+                        format: "json"
+                    },
+                    success: function (response) {
+                        //console.log(response);
+                        relatedpostArranger(response);
+                    }
+                });
             }
         });
+        
     }
 });
 

@@ -192,3 +192,41 @@
     padding-right: 5px;
     color: #fff;
 }
+
+#relatedpost{
+    width:630px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.post_widget {
+    display: inline-block;
+    width: 180px;
+    height: auto;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
+    position: relative;
+    color: #fff;
+}
+
+.post_widget a{
+    pointer-events: all;
+    cursor: pointer;
+    width: 100%;
+    font-size: 14px;
+}
+
+.post_widget img{
+    width: 100%;
+    height: 130px;
+    background-clip: content-box;
+    background-size: cover;
+    background-clip: border-box;
+}
+
+.post_widget blockquote{
+    height: 50px;
+    width: 100%;
+    overflow:hidden;
+}

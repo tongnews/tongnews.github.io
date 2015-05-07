@@ -467,6 +467,29 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
     
 }
 
+function relatedpostArranger(response){
+    
+    $('<h2>相关推荐</h2>').appendTo('#relatedpost');
+    
+    for(var i=0;i<response.message.count;i++){
+        
+        var postHtml=$('<div class="post_widget"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+           
+        //replace title
+        postHtml.find('a').text(response.message.posts[i].title.substring(0, 31));
+        postHtml.find('a').attr("href", urlrewrite(encodeId(response.message.posts[i].id)));
+        
+        //replace thumbnail
+        var $tbnlurl = response.message.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+        $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
+        postHtml.find('img').attr('src', $tbnlurl);
+        
+        postHtml.appendTo('#relatedpost');
+        
+    }
+    
+}
+
 function sitemapArranger(response){
     
     //console.log(response);
