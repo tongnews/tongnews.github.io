@@ -98,7 +98,7 @@ function videorefanlayse(refstr) {
 
 //-------------------------Animation Contronller ----------------//
 function pageScroll() {
-    window.scrollBy(0, -800);
+    window.scrollBy(0, -2200);
     scrolldelay = setTimeout('pageScroll()', 1000);
     if (document.documentElement.scrollTop == 0) clearTimeout(scrolldelay);
 }
@@ -350,10 +350,6 @@ function postArranger(response,postCount,source){
     });
     
     $('.loading_cover').attr("style","width:0px; height:0px; overflow:hidden;");
-
-    for (var i = $curCount; i < postCount; i++) {
-        $post_cells.eq(i).attr("style", "width:0px; height:0px; overflow:hidden;");
-    }
 
     //control click event of tag searching
     $('.tag').click(function () {

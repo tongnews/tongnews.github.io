@@ -5,13 +5,21 @@ var baseurl = getBaseUrl();
 var cdnurl = getCDNUrl();
 var bkurl = getBkdomainUrl();
 
-var $postCount = 7,
+var $postCount = 12,
     $pageNum = 1;
 var $rankCount = 10;
 var $fly_video_right = 20;
 
 $(document).ready(function () {
     
+    if(getUrlParam("p")){
+        $pageNum=Number(getUrlParam("p"));
+        if($pageNum>1){
+            $('.prevPostPage').attr("style", "");
+        }
+    };
+    
+        
     //nav footer function JS
     baseJSload();
     
@@ -61,13 +69,15 @@ function updatePosts(postCount, pageNum) {
 
 $('.nextPostPage').click(function () {
     $pageNum = $pageNum + 1;
-    if ($pageNum >= ($maxPages - 1)) {
+    if ($pageNum >= $maxPages) {
         $pageNum = $maxPages;
         $('.nextPostPage').attr("style", "width:0px; height:0px; overflow:hidden;");
     }
+    window.location = '#!p='+$pageNum;
     $('.prevPostPage').attr("style", "");
     updatePosts($postCount, $pageNum);
     pageScroll();
+    
 });
 
 $('.prevPostPage').click(function () {
@@ -76,9 +86,11 @@ $('.prevPostPage').click(function () {
         $pageNum = 1;
         $('.prevPostPage').attr("style", "width:0px; height:0px; overflow:hidden;");
     }
+    window.location = '#!p='+$pageNum;
     $('.nextPostPage').attr("style", "");
     updatePosts($postCount, $pageNum);
     pageScroll();
+    
 });
 
 function updateSlides() {

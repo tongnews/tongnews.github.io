@@ -19,6 +19,7 @@
 
 .tongpost_container {
     height: auto;
+    min-height: 600px;
     width: 920px;
     display: inline-block;
     background: url(../images/tongpost_bk.jpg);

@@ -318,9 +318,6 @@
     border-radius: 10px;
 }
 
-
-
-
 .post_wtnail_warpper {
     margin-top: 70px;
     width: 100%;
@@ -363,6 +360,26 @@
     height: 39px;
     background: url(../images/zuixindongtai.png);
     background-repeat: no-repeat;
+}
+
+.rad_con_1{
+    background-image: url(../images/rad_1.jpg);
+    width: 320px;
+    height: 480px;
+    margin-top: 20px;
+}
+
+.rad_con_2{
+    background-image: url(../images/rad_2.jpg);
+    width: 320px;
+    height: 155px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.rad_con a{
+    height: auto;
+    width: 100%;
 }
 
 .rank_shower {
