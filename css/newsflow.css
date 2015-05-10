@@ -271,9 +271,9 @@
 
 .post_wtnail{
     float: left;
-    width: 320px;
+    width: 230px;
     margin-right: 55px;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
 }
 
 .post_wtnail a{
@@ -302,10 +302,12 @@
     line-height: 160%;
 }
 
+/*
 .post_wtnail img:first-child{
     width: 200px;
     height: 150px;
 }
+*/
 
 .post_wtnail img{
     float:left;

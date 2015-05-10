@@ -8,9 +8,11 @@ body{
 
 
 .xunli_map{
-    width: 1127px;
+    width: 870px;
     margin: auto;
-    height: auto;
+    margin-top: 30px;
+    height: 500px;
+    padding-right: 250px;
     position: relative;
 }
 .xmap{
@@ -19,4 +21,34 @@ body{
 
 .post_wtnail_warpper {
     margin-top: 0px;
+}
+
+#map-canvas {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0px;
+  border: dashed #fa3a7d 2px;
+}
+
+.markerinfo{
+    color: #fa3a7d;
+    font-size: 12px;
+}
+
+#second{
+    margin-top: 30px;
+    width: 244px;
+    height: 500px;
+    overflow: auto;
+}
+
+.news_body{
+    margin-top: 0px;
+    padding-bottom: 55px;
+}
+
+.mCSB_inside>.mCSB_container {
+  margin-right: 5px;
 }
