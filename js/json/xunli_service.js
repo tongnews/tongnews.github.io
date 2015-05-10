@@ -82,6 +82,38 @@ function mapMarkerLoader(response){
     map_initialize(); 
 }
 
+var markers=[];
+var makerlisteners=[];
+
+function map_makeradder(map,post_id,marker_index){
+    
+    var mstop_1= new google.maps.LatLng(Number($mmarkerarray[post_id][marker_index].Lat), Number($mmarkerarray[post_id][marker_index].Lng));
+    var marker_1 = new google.maps.Marker({
+        position: mstop_1,
+        map:map,
+        title: "loc_1",
+        icon: "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Flag-4-Left-Pink-icon.png"
+    });
+    markers.push(marker_1);
+    
+    var mstring_1= "<div class='markerinfo'>"+$mmarkerarray[post_id][marker_index].Content +"</div>"+"<img src='"+$mmarkerarray[post_id][marker_index].Img.replace(getRegBaseUrl(), cdnurl) +"' height='180px' >";
+    var minfo_1 = new google.maps.InfoWindow({
+        content:mstring_1
+    });
+    var mlistener=google.maps.event.addListener(marker_1,'click',function(){minfo_1.open(map,marker_1)});
+    makerlisteners.push(mlistener);
+    
+}
+
+function markers_clear(){
+    for (var i=0;i<markers.length;i++){
+        markers[i].setMap(null);
+        google.maps.event.removeListener(makerlisteners[i]);
+    }
+    markers=[];
+    makerlisteners=[];
+}
+
 function map_initialize() {
 
     var styleArray2 = [{"featureType":"road","stylers":[{"hue":"#9300ff"},{"saturation":-79}]},{"featureType":"poi","stylers":[{"saturation":-78},{"hue":"#b100ff"},{"lightness":-47},{"visibility":"off"}]},{"featureType":"road.local","stylers":[{"lightness":22}]},{"featureType":"landscape","stylers":[{"hue":"#b100ff"},{"saturation":-11}]},{},{},{"featureType":"water","stylers":[{"saturation":-65},{"hue":"#9300ff"},{"lightness":8}]},{"featureType":"road.local","stylers":[{"weight":1.3},{"lightness":30}]},{"featureType":"transit","stylers":[{"visibility":"simplified"},{"hue":"#9300ff"},{"saturation":-16}]},{"featureType":"transit.line","stylers":[{"saturation":-72}]},{}];
@@ -90,7 +122,7 @@ function map_initialize() {
     
     var mapOptions = {
         zoom: 12,
-        center: new google.maps.LatLng(Number($mmarkerarray["929"][0].Lag), Number($mmarkerarray["929"][0].Lng)),
+        center: new google.maps.LatLng(Number($mmarkerarray["929"][0].Lat), Number($mmarkerarray["929"][0].Lng)),
         disableDefaultUI: true,
         styles: styleArray
     };
@@ -98,24 +130,7 @@ function map_initialize() {
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
     
-    
-    
-    var mstop_1= new google.maps.LatLng(Number($mmarkerarray["929"][0].Lag), Number($mmarkerarray["929"][0].Lng));
-    var mstring_1= "<div class='markerinfo'>"+$mmarkerarray["929"][0].Content +"</div>"+"<img src='"+$mmarkerarray["929"][0].Img.replace(getRegBaseUrl(), cdnurl) +"' height='180px' >";
-    
-    var marker_1 = new google.maps.Marker({
-        position: mstop_1,
-        map:map,
-        title: "loc_1",
-        icon: "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Flag-4-Left-Pink-icon.png"
-    });
-        
-    var minfo_1 = new google.maps.InfoWindow({
-        content:mstring_1
-    });
-    
-    google.maps.event.addListener(marker_1,'click',function(){minfo_1.open(map,marker_1)});
-    
+    map_makeradder(map,"929",0);    
 }
 
 //google.maps.event.addDomListener(window, 'load', map_initialize);
