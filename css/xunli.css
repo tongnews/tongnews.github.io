@@ -11,10 +11,11 @@ body{
     width: 870px;
     margin: auto;
     margin-top: 30px;
-    height: 500px;
+    height: 495px;
     padding-right: 250px;
     position: relative;
 }
+
 .xmap{
     float:right;
 }
@@ -29,7 +30,7 @@ body{
   border-radius: 20px;
   margin: 0;
   padding: 0px;
-  border: dashed #fa3a7d 2px;
+  border: solid #fa3a7d 2px;
 }
 
 .markerinfo{
@@ -51,4 +52,10 @@ body{
 
 .mCSB_inside>.mCSB_container {
   margin-right: 5px;
+}
+
+.post_wtnail:hover{
+    border: solid rgba(250, 58, 125, 0.75);
+    border-width: 0 0 0 3px;
+    
 }
