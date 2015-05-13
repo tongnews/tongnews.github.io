@@ -57,5 +57,6 @@ body{
 .post_wtnail:hover{
     border: solid rgba(250, 58, 125, 0.75);
     border-width: 0 0 0 3px;
+    cursor: pointer;
     
 }

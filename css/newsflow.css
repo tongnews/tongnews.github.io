@@ -292,6 +292,11 @@
     overflow: hidden;
 }
 
+.post_wtnail a:hover{
+    background: rgb(255, 96, 132);
+    color: #fff;
+}
+
 .post_wtnail a p{
     display: table-cell;
     width: 80px;

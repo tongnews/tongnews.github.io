@@ -84,6 +84,7 @@ function mapMarkerLoader(response){
 
 var markers=[];
 var makerlisteners=[];
+var bounds = new google.maps.LatLngBounds();
 
 function map_makeradder(map,post_id,marker_index){
     
@@ -95,6 +96,7 @@ function map_makeradder(map,post_id,marker_index){
         icon: "http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Flag-4-Left-Pink-icon.png"
     });
     markers.push(marker_1);
+    bounds.extend(marker_1.position);
     
     var mstring_1= "<div class='markerinfo'>"+$mmarkerarray[post_id][marker_index].Content +"</div>"+"<img src='"+$mmarkerarray[post_id][marker_index].Img.replace(getRegBaseUrl(), cdnurl) +"' height='180px' >";
     var minfo_1 = new google.maps.InfoWindow({
@@ -105,7 +107,20 @@ function map_makeradder(map,post_id,marker_index){
     
 }
 
+function map_makeradderLoop(map,post_id){
+    
+    if(typeof ($mmarkerarray[post_id]) == "undefined") return;
+    
+    for(var i=0;i<$mmarkerarray[post_id].length;i++){
+        map_makeradder(map,post_id,i);
+    }
+    
+    map.fitBounds(bounds);
+    
+}
+
 function markers_clear(){
+    bounds = new google.maps.LatLngBounds();
     for (var i=0;i<markers.length;i++){
         markers[i].setMap(null);
         google.maps.event.removeListener(makerlisteners[i]);
@@ -130,7 +145,14 @@ function map_initialize() {
     var map = new google.maps.Map(document.getElementById("map-canvas"),
         mapOptions);
     
-    map_makeradder(map,"929",0);    
+    map_makeradderLoop(map,$(".post_wtnail").eq(0).attr('pid').toString());
+    
+    $('.post_wtnail').click(function () {
+        markers_clear();
+        map_makeradderLoop(map,$(this).attr('pid').toString());
+    });
 }
+
+
 
 //google.maps.event.addDomListener(window, 'load', map_initialize);
