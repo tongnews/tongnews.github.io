@@ -170,26 +170,60 @@
     border-style: dashed;
 }
 
+.page_control{
+    margin-top: 20px;
+    height: auto;
+    position: relative;
+}
+
+.pagelink{
+  margin-right: 60px;
+  display:inline-block;
+  vertical-align:middle;
+  border-radius:100%;
+  width:25px;
+  height:24px;
+  background:rgb(255, 96, 132);
+  cursor:pointer;
+  color:white;
+  text-align: center;
+ text-decoration: none;
+  font-size: 13px;
+    font-weight: bold;
+  position:relative;
+  z-index:2;
+    
+    -webkit-transition: width 0.3s, border-radius 0.6s, background 0.3s, box-shadow 0.6s, color 0.3s;
+          transition: width 0.3s, border-radius 0.6s, background 0.3s, box-shadow 0.6s, color 0.3s;
+}
+
+.pagelink:hover{
+    background:rgb(255, 255, 255);
+    color:rgb(255, 96, 132);
+}
+
 .prevPostPage{
     width: 48px;
-    height: 48px;
-    margin-top: 10px;
+    height: 24px;
+    margin-right: 60px;
     display: inline-block;
     float:left; 
     background: url(../images/arrow-18-48-left.png);
+    background-position: 0 -13px;
     cursor:pointer;
 }
 
 
 .nextPostPage{
     width: 48px;
-    height: 48px;
-    margin-top: 10px; 
+    height: 24px;
     float: right;
     display: inline-block;
     background: url(../images/arrow-18-48.png);
+    background-position: 0 -13px;
     cursor:pointer;
 }
+
 
 
 .post_widget_warpper {
@@ -382,6 +416,15 @@
     height: 155px;
     margin-top: 0px;
     margin-bottom: 20px;
+}
+
+.rad_con_3{
+    background-image: url(http://i2.hdslb.com/u_user/890ad8b6b92b558192501c231b51b51f.jpg);
+    width: 320px;
+    height: 160px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-size: contain;
 }
 
 .rad_con a{

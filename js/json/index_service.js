@@ -36,6 +36,8 @@ $(document).ready(function () {
     //createCookie("user","",14);
     checkCookie();
  
+    
+    
 });
 
 function scrollbarCustom(){
@@ -61,6 +63,7 @@ function updatePosts(postCount, pageNum) {
         },
         success: function (response) {
             postArranger(response,postCount,"index");
+            pagelinkrefresh(response.pages);
         }
 
     });
@@ -139,6 +142,27 @@ function updateSlides() {
 $('.bg-img').click(function () {
     window.location.href = $(this).attr('ref');
 });
+
+function pagelinkrefresh($pagemax) {
+    $('.page_control').find('a').remove();
+    var page_start = Math.max($pageNum - 3, 1);
+    var page_end = Math.min($pageNum + 4, $pagemax);
+    for (var i = page_end; i >= page_start; i--) {
+        
+        if(i==$pageNum){
+            style='style="background-color:rgba(149, 53, 219, 0.9);color:white"';
+        }else{
+            style='';
+        }
+        
+        $('<a class="pagelink" '+style+' href="index.html#!p=' + i + '">' + i + '</a>').insertAfter($('.page_control').find('.prevPostPage'));
+    }
+
+    $('.pagelink').click(function () {
+        window.location.href = $(this).attr('href');
+        location.reload();
+    });
+}
 
 //----------------------------------video ply---------------------
 

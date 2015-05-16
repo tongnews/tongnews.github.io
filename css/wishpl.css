@@ -1,0 +1,46 @@
+
+#text{
+   position: absolute;
+  margin: 0; padding: 0;
+    display: none;
+}
+
+#stage{
+   position: absolute;
+  margin: 0; padding: 0;
+}
+
+#inputText {
+    position: absolute;
+  margin: 0; padding: 0;
+  border: 1px solid #ddd;
+  padding: 6px;
+  font-size: 12px;
+  width: 200px;
+  text-transform: uppercase;
+  top: 30px;
+  left: 130px;
+}
+
+#submitText{
+    position: absolute;
+  margin: 0; padding: 0;
+  display: block;
+  width: 100px;
+  border: 0;
+  line-height: 35px;
+  height: 35px;
+  color: #fff;
+  background: mediumpurple;
+  font-size: 12px;
+  top: 30px;
+  left: 350px;
+  cursor: pointer;
+}
+
+#formR {
+    position: absolute;
+  margin: 0; padding: 0;
+  width: 600px;
+  height: 100px;
+}

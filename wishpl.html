@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <meta name="description" content="痛新闻">
+    <meta name="keywords" content="痛新闻,软软冰,日本,动漫,圣地巡礼" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>痛新闻｜祈愿台</title>
+    <meta name="viewport" content=" width=width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!--    JS  -->
+    <script src="js/jQuery/jquery.js"></script>
+    <script src="js/json/unitool.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/EasePack.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/TweenLite.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/easeljs-0.7.1.min.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/53148/requestAnimationFrame.js"></script>
+    <!--    CSS-->
+    <link href="css/pc_nav.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/newsflow.css" />
+    <link rel="stylesheet" type="text/css" href="css/wishpl.css" />
+</head>
+
+<body>
+    
+    <canvas id="text" width="500" height="100"></canvas>
+    <canvas id="stage" width="500" height="100"></canvas>
+    <form id="formR">
+        <input type="text" id="inputText" value="祈愿台" />
+        <input type="submit" id="submitText" value="TRY IT" />
+    </form>
+    
+    <!-- RRR Top Bar  (User)  -->
+    <div class="top_container">
+       <div class="user_container">
+                    <div class="login_container" style="width:0px; height:0px; overflow:hidden;">
+                        <div class="sginbox" style="width:0px; height:0px; overflow:hidden;">
+                            <input type="text" id="user_sginin_email_input"  class="btshadow" placeholder="(邮箱)">
+                            <input type="text" id="user_sginin_nickname_input"  class="btshadow" placeholder="(昵称)">
+                            <input type="password" id="user_sginin_pass_input"  class="btshadow" placeholder="(密码)">
+                            <input type="password" id="user_sginin_pass_input2"  class="btshadow" placeholder="(密码确认)">
+                            <li class="user_signin_submit btshadow">提交</li>
+                            <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left fa-fw"></i></li>
+                        </div>
+
+                        <div class="loginbox" style="width:0px; height:0px; overflow:hidden;">
+                            <input type="text" id="user_name_input" class="btshadow" placeholder="(邮箱)">
+                            <input type="password" id="user_pass_input" class="btshadow" placeholder="(密码)">
+                            <li class="user_login btshadow" id="user_login">登入</li>
+                            <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left  fa-fw"></i></li>
+                        </div>
+
+                        <div class="loginBtbox">
+                            <li class="user_login_enter btshadow" id="user_login_enter">登陆</li>
+                        </div>
+
+                        <div class="signinBtbox">
+                            <li class="user_signin btshadow" id="user_signin">极速注册</li>
+                        </div>
+
+
+                    </div>
+                    <div class="logined_container" style="width:0px; height:0px; overflow:hidden;">
+                        <li id="user_welcome"  class="btshadow">欢迎</li>
+                        <li id="user_logout"  class="btshadow">登出</li>
+                    </div>
+                </div>
+    </div>
+    <!--  RRR  Title   -->
+    <div class="title_container">
+        <div class="sheadin-container container">
+            <div class="title_content">
+                <div class="navs"><span class="hide">sakura</span>
+                </div>
+                <div class="uri"><span class="hide">标题</span>
+                </div>
+                <div class="navs" style="left:360px"><span class="hide">sakura</span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!--  RRR Navigation bar  -->
+    <div class="nav_container">
+        <div class="nav container">
+            <div class="nav_content">
+                
+                <div class="nava1"><a></a>
+                </div>
+                <div class="nav1"><a href="index.html"><span class="hide">index</span></a>
+                </div>
+                <div class="navb1"><a></a>
+                </div>
+                <div class="nava2"><a></a>
+                </div>
+                <div class="nav2"><a href="reading.html"><span class="hide">bar2</span></a>
+                </div>
+                <div class="navb2"><a></a>
+                </div>
+                <div class="nava1"><a></a>
+                </div>
+                <div class="nav3"><a href="xunli.html"><span class="hide">bar3</span></a>
+                </div>
+                <div class="navb1"><a></a>
+                </div>
+                <div class="nava2"><a></a>
+                </div>
+<!--
+                <div class="nav4"><a href="category.html"><span class="hide">bar4</span></a>
+                </div>
+                <div class="nav5"><a href="category.html"><span class="hide">bar5</span></a>
+                </div>
+                <div class="nav6"><a href="category.html"><span class="hide">bar6</span></a>
+                </div>
+-->
+                <div class="nav7"><a href="about.html"><span class="hide">bar7</span></a>
+                </div>
+                
+                <div class="navb2"><a></a>
+                </div>
+                
+
+                
+                <div class="search_container" onsubmit="searchformOnsubmit()">
+                    <form class="search-form">
+                                      <input id="search-box" type="text" class="search-box uniborder" name="q" />
+                      <label for="search-box"><span><i class="fa fa-search fa-fw search-icon"></i></span></label>
+                      <input type="submit" id="search-submit" />
+                    </form>    
+                </div>
+                <!--
+                <div class="dokileft"></div>
+                <div class="dokiright"></div>
+-->
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!--    JSON API for index_html    -->
+    <script src="js/json/wishpl_service.js"></script>
+
+
+</body>
+
+
+
+</html>

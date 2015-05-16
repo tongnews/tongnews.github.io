@@ -86,9 +86,34 @@ $(document).ready(function () {
                 $tongpost_container.eq(i).find(".tag").remove();
                 var $postTags = response.post.tags;
                 for (var j = 0; j < $postTags.length; j++) {
-                    $("<li class='tag'>" + $postTags[j].title + "</li>").insertBefore($tongpost_container.find('#tagend'));
+                    var tagstyle='style="background-color:#FD7C98"';
+                    switch ($postTags[j].group) {
+                      case "not assigned":
+                          tagstyle = 'style="background-color:rgb(253, 124, 152)"';
+                          break;
+                      case "else":
+                          tagstyle = 'style="background-color:#87b5eb"';
+                          break;
+                      case "area":
+                          tagstyle = 'style="background-color:rgb(255, 97, 49)"';
+                          break;
+                      case "origin":
+                          tagstyle = 'style="background-color:#bc7cfd"';
+                          break;
+                      case "character":
+                          tagstyle = 'style="background-color:#1ebbd0"';
+                          break;
+                      case "activity":
+                          tagstyle = 'style="background-color:#37d078"';
+                          break;
+                  };
+                    $("<li class='tag' "+tagstyle+">" + $postTags[j].title + "</li>").insertBefore($tongpost_container.find('#tagend'));
                 }
-
+                
+                $('.tag').click(function () {
+                    window.open('search.html#!type=t&key=' + $(this).text());
+                });
+                
                 //add comments
                 try {
                     var comments = response.post.custom_fields.float_comment[0];
