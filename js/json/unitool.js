@@ -423,7 +423,7 @@ function categoryWidgetArranger(catslug,response,postCount,pageNum) {
     
     $curCount = response.count;
     $maxPages = response.pages;
-
+    
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         

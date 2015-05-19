@@ -5,10 +5,16 @@ var baseurl = getBaseUrl();
 var cdnurl = getCDNUrl();
 var bkurl = getBkdomainUrl();
 
-var $postCount = 7,
-    $pageNum = 1;
-var $rankCount = 10;
 var $fly_video_right = 20;
+
+var $pagenumper =12;
+
+var $pagecur=[];
+var $pagecount=[];
+$pagecur["widget_news"]=1;
+$pagecur["widget_activity"]=1;
+$pagecur["widget_daily"]=1;
+$pagecur["widget_pilgrimage"]=1;
 
 $(document).ready(function () {
     
@@ -16,16 +22,46 @@ $(document).ready(function () {
     baseJSload();
     
     //console.log("Starting JSON POSTS engine!");
-    updateCategory("widget_news",12,1);
-    updateCategory("widget_activity",12,1);
-    updateCategory("widget_daily",12,1);
-    updateCategory("widget_pilgrimage",12,1);
+    updateCategory("widget_news",$pagenumper,$pagecur["widget_news"]);
+    updateCategory("widget_activity",$pagenumper,$pagecur["widget_activity"]);
+    updateCategory("widget_daily",$pagenumper,$pagecur["widget_daily"]);
+    updateCategory("widget_pilgrimage",$pagenumper,$pagecur["widget_pilgrimage"]);
     //user management
     //createCookie("user","",14);
     checkCookie();
  
 });
 
+
+$('.nextPostPage').click(function () {
+    var cat=$(this).attr('cat');
+    $pagecur[cat]=$pagecur[cat]+1;
+    if ($pagecur[cat] >= $pagecount[cat]) {
+        $pagecur[cat] = $pagecount[cat];
+    }
+    $('#'+cat).find('.post_widget').remove();
+    updateCategory(cat,$pagenumper,$pagecur[cat]);
+});
+
+$('.prevPostPage').click(function () {
+    var cat=$(this).attr('cat');
+    $pagecur[cat]=$pagecur[cat]-1;
+    if ($pagecur[cat] <= 1) {
+        $pagecur[cat] = 1;
+    }
+    $('#'+cat).find('.post_widget').remove();
+    updateCategory(cat,$pagenumper,$pagecur[cat]);
+});
+
+
+$('.addPostPage').click(function () {
+    var cat=$(this).attr('cat');
+    $pagecur[cat]=$pagecur[cat]+1;
+    if ($pagecur[cat] >= $pagecount[cat]) {
+        $(this).attr("style","width:0px; height:0px; overflow:hidden;")
+    }
+    updateCategory(cat,$pagenumper,$pagecur[cat]);
+});
 
 //---------------------each catergory--------------
 
@@ -45,6 +81,7 @@ function  updateCategory(catslug,postCount,pageNum){
                 },
                 success: function (response) {
                     console.log(response);
+                    $pagecount["widget_news"]=response.pages;
                     categoryWidgetArranger("widget_news",response,postCount,pageNum);
                 }
 
@@ -63,6 +100,7 @@ function  updateCategory(catslug,postCount,pageNum){
                 },
                 success: function (response) {
                     console.log(response);
+                    $pagecount["widget_daily"]=response.pages;
                     categoryWidgetArranger("widget_daily",response,postCount,pageNum);
                 }
 
@@ -81,6 +119,7 @@ function  updateCategory(catslug,postCount,pageNum){
                 },
                 success: function (response) {
                     console.log(response);
+                    $pagecount["widget_activity"]=response.pages;
                     categoryWidgetArranger("widget_activity",response,postCount,pageNum);
                 }
 
@@ -99,6 +138,7 @@ function  updateCategory(catslug,postCount,pageNum){
                 },
                 success: function (response) {
                     console.log(response);
+                    $pagecount["widget_pilgrimage"]=response.pages;
                     categoryWidgetArranger("widget_pilgrimage",response,postCount,pageNum);
                 }
 
