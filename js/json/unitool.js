@@ -453,7 +453,7 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         
-        var postHtml=$('<div class="post_wtnail" pid="1"><img><img><img><blockquote><a target="_blank"><td><p></p></td></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+        var postHtml=$('<div class="post_wtnail" pid="1"><img><img><img><img><blockquote><a target="_blank"><td><p></p></td></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
            
         //replace title
         postHtml.find('a').find('p').text(response.posts[i].title.substring(6, 31));
@@ -461,7 +461,7 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
         
         postHtml.attr("pid",response.posts[i].id);
          
-        for (var j = 0; j < 3; j++) { 
+        for (var j = 0; j < 4; j++) { 
  postHtml.find('img').eq(j).attr('src',response.posts[i].attachments[j].images.thumbnail.url.replace(getRegBaseUrl(), cdnurl));
         }
         

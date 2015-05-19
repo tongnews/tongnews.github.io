@@ -288,9 +288,10 @@
 .widget_shower p{
     position: relative;
     font-size: 20px;
-    color:rgb(255, 96, 132);
+    color:white;
     font-weight: bold;
-    padding-left: 5px;
+    padding-left: 10px;
+    margin-bottom: 15px;
 }
 
 .rectline{
@@ -305,8 +306,9 @@
 
 .post_wtnail{
     float: left;
-    width: 230px;
-    margin-right: 55px;
+    width: 530px;
+    margin-left: 5px;
+    margin-right: 20px;
     margin-bottom: 5px;
 }
 
@@ -359,6 +361,13 @@
     border-radius: 10px;
 }
 
+/*
+.post_wtnail img:first-child{
+    width: 195px;
+    height: 150px;
+}
+*/
+
 .post_wtnail_warpper {
     margin-top: 70px;
     width: 100%;
@@ -394,6 +403,17 @@
     margin-top: 20px;
     margin-bottom: 30px;
     width: 100%;
+    position: relative;
+}
+
+.weibo_container:after{
+    content: "";
+    width: 200px;
+    height: 158px;
+    background-image: url(../images/weibo_ac1.png);
+    position: absolute;
+    top: -30px;
+    right: -30px;
 }
 
 .weibo_shower {

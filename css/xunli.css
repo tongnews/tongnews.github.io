@@ -1,18 +1,23 @@
 #xunli_post_container{
     padding-right: 0px;
+    
 }
-
+.post_wtnail_container{
+    min-height: 200px;
+}
 body{
     background-image: url("");
 }
 
+.news_body{
+/*    width: 100%;*/
+}
 
 .xunli_map{
-    width: 870px;
+    width: 1100px;
     margin: auto;
-    margin-top: 30px;
-    height: 495px;
-    padding-right: 250px;
+    margin-top: 10px;
+    height: 485px;
     position: relative;
 }
 
@@ -24,13 +29,14 @@ body{
     margin-top: 0px;
 }
 
+
 #map-canvas {
   height: 100%;
   width: 100%;
   border-radius: 20px;
   margin: 0;
   padding: 0px;
-  border: solid #fa3a7d 2px;
+/*  border: solid #fa3a7d 2px;*/
 }
 
 .markerinfo{
@@ -39,10 +45,19 @@ body{
 }
 
 #second{
-    margin-top: 30px;
-    width: 244px;
-    height: 500px;
+    padding-top:20px;
+    position: relative;
+    white-space:nowrap;
+    width: 100%;
+    height: auto;
     overflow: auto;
+    opacity: 0.9;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+}
+
+#second:hover{
+    opacity: 1;
 }
 
 .news_body{
@@ -60,3 +75,15 @@ body{
     cursor: pointer;
     
 }
+
+.maplabels{
+
+    font-size: 16px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    background-color: #fa3a7d;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    font-family:  "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+  

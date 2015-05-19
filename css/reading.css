@@ -11,6 +11,45 @@ body{
     background-image: url("");
 }
 
+.rect_1 {
+  border-radius: 1px;
+  opacity: 0.702;
+  position: absolute;
+  left: 4px;
+  top: 8px;
+  width: 100px;
+  height: 36px;
+  z-index: -4;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.rect_2 {
+  border-radius: 1px;
+  opacity: 0.702;
+  position: absolute;
+  left: 0px;
+  top: 4px;
+  width: 100px;
+  height: 35px;
+  z-index: -4;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+.r1{
+    background-color: rgb(77, 222, 183);
+}
+
+.r2 {
+    background-color: rgb(182, 96, 255);
+}
+
+.r3 {
+    background-color: rgb(255, 96, 132);
+}
+
+.r4 {
+    background-color: rgb(255, 163, 96);
+}
+
 
 .bg-bubbles {
   position: absolute;
@@ -108,6 +147,7 @@ body{
   -webkit-animation-delay: 11s;
           animation-delay: 11s;
 }
+
 
 @-webkit-keyframes square {
   0% {
