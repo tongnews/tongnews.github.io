@@ -308,14 +308,14 @@
 .post_wtnail{
     float: left;
     width: 530px;
-    margin-left: 5px;
-    margin-right: 20px;
+    margin-left: 22px;
+    margin-right: 0px;
     margin-bottom: 5px;
 }
 
 .post_wtnail a{
     position: relative;
-    width: 80px;
+    width: 285px;
     height: 66px;
     background-color: rgba(253, 253, 253, 0.85);
     font-size: 14px;
@@ -336,7 +336,7 @@
 
 .post_wtnail a p{
     display: table-cell;
-    width: 80px;
+    width: 285px;
     height: 66px;
     overflow: hidden;
     vertical-align: middle; 
@@ -344,12 +344,10 @@
     line-height: 160%;
 }
 
-/*
 .post_wtnail img:first-child{
     width: 200px;
     height: 150px;
 }
-*/
 
 .post_wtnail img{
     float:left;

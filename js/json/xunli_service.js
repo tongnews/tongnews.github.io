@@ -5,11 +5,6 @@ var baseurl = getBaseUrl();
 var cdnurl = getCDNUrl();
 var bkurl = getBkdomainUrl();
 
-var $postCount = 7,
-    $pageNum = 1;
-var $rankCount = 10;
-var $fly_video_right = 20;
-
 $(document).ready(function () {
     
     //nav footer function JS

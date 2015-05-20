@@ -14,7 +14,7 @@ body{
 }
 
 .xunli_map{
-    width: 1100px;
+    width: 1060px;
     margin: auto;
     margin-top: 10px;
     height: 485px;
@@ -36,12 +36,16 @@ body{
   border-radius: 20px;
   margin: 0;
   padding: 0px;
-/*  border: solid #fa3a7d 2px;*/
+  border: solid #fa3a7d 2px;
 }
 
 .markerinfo{
     color: #fa3a7d;
     font-size: 12px;
+}
+
+#first{
+    width:100%;
 }
 
 #second{
