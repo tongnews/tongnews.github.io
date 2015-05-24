@@ -4,18 +4,11 @@
 }
 
 .post_widget_container{
-    min-height: 200px;
+    min-height: 400px;
 }
 
 body{
-/*
-      height: 100%;
-  width: 100%;
-  background-image: linear-gradient(33.5deg, #fff3ed 10%, #ffffff 10%, #ffffff 20%, #fff8e1 20%, #fff8e1 30%, #ffffff 30%, #ffffff 40%, #fbe8ff 40%, #fbe8ff 50%, #ffffff 50%, #ffffff 60%, #f2fff8 60%, #f2fff8 70%, #ffffff 70%, #ffffff 80%, #fff3ed 80%, #fff3ed 90%, #ffffff 90%);
-background-size: 1240px 1240px;
-    background-repeat: repeat;
-*/
-    background:url("");
+    background:white;
 }
 
 .rect_1 {
@@ -76,5 +69,3 @@ background-size: 1240px 1240px;
     padding-right: 20px;
     cursor: pointer;
 }
-
-
