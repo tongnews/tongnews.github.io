@@ -56,6 +56,40 @@ body{
    
 }
 
+.catm{
+    font-weight: bold;
+    margin-left: 5px;
+    display: inline;
+    font-size: 21px;
+    color:#c15eff;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.catm:hover{
+    font-weight: bold;
+    display: inline;
+    font-size: 21px;
+    background-color: #c15eff;
+    color:white;
+    cursor: pointer;
+}
+
+/*
+
+.corem{
+    color:#5e89ff;
+}
+
+.editorm{
+    color:#54e36a;
+}
+
+.authorm{
+    color:#e354c7;
+}
+*/
+
 .introcell blockquote{
     align-items: center;
     float: left;
@@ -110,7 +144,7 @@ margin-left: 295px;
 }
 
 #i2{
-    background: url(../images/about/fl.jpg) no-repeat;
+    background: url(../images/about/fl2.jpg) no-repeat;
     background-size: cover;
 }
 #i3{
