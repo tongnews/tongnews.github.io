@@ -8,18 +8,44 @@
 background:url(http://nonnontv.com/img/common/nline_pk.gif);
     padding: 10px;
     border: 21px solid #ff5e6a;
-    border-image: 60 round url(../images/12058548_p13.jpg);
+    border-width: 21px 21px 21px 21px;
+    border-image: 58 round url(../images/12058548_p25.jpg);
     box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 body{
+    
 }
 
 .tongnewsintro{
     font-size: 18px;
     color: black;
-    border: 4px solid #ff5e6a;
-    border-width: 0 0 4px 0;
+    margin-left: 10px;
+/*    border: 4px solid #ff5e6a;*/
+/*    border-width: 0 0 4px 0;*/
+}
+
+.tongnewsintro name{
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.tongnewsintro h3{
+    font-weight: bold;
+    color:#ff5e6a;
+    display: inline;
+    font-size: 38px;
+}
+
+.tongnewsintro h1{
+    font-weight: bold;
+    color:#ff5e6a;
+    display: inline;
+    font-size: 23px;
+}
+
+.tongnewsintro h1:nth-child(even){
+    color:#c15eff;
 }
 
 .introcell{
