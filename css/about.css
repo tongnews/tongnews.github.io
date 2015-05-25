@@ -161,7 +161,7 @@ margin-left: 295px;
 }
 
 #i7{
-    background: url(../images/about/e57.jpg) no-repeat;
+    background: url(../images/about/e572.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -176,12 +176,12 @@ margin-left: 295px;
 }
 
 #i10{
-    background: url(../images/about/mie.jpg) no-repeat;
+    background: url(../images/about/mie.png) no-repeat;
     background-size: cover;
 }
 
 #i11{
-    background: url(../images/about/pp.jpg) no-repeat;
+    background: url(../images/about/pp2.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -192,6 +192,11 @@ margin-left: 295px;
 
 #i13{
     background: url(../images/about/kl.jpg) no-repeat;
+    background-size: cover;
+}
+
+#i14{
+    background: url(../images/about/zgl.jpg) no-repeat;
     background-size: cover;
 }
 
