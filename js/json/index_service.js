@@ -116,7 +116,7 @@ function updateSlides() {
 
             logTimeNow('SlideJSON back');
 
-            var $slide_counts = 4;
+            var $slide_counts = 5;
 
             for (var i = 0; i < $slide_counts; i++) {
                 //replace title
