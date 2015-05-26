@@ -410,7 +410,7 @@ function rankArranger(response, rankCount, source) {
     for (var i = 0; i < rankCount; i++) {
         //replace title
         $rank_cells.eq(i).find('a').text(response.posts[i].title.substring(0, 31));
-        $rank_cells.eq(i).find('a').attr("href", urlrewrite(encodeId(response.posts[i].ID)));
+        $rank_cells.eq(i).find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
         $("<div class='ref_id' post_id=" + response.posts[i].id + "></div>").insertAfter($rank_cells.eq(i).find('a'));
         var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
         $rank_cells.eq(i).find('img').attr('src', $tbnlurl);

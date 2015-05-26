@@ -116,19 +116,19 @@ function updateSlides() {
 
             logTimeNow('SlideJSON back');
 
-            var $slide_counts = 5;
+            var $slide_counts = 4;
 
             for (var i = 0; i < $slide_counts; i++) {
                 //replace title
-                $slide_cells.eq(i).find('p').text(response.posts[0].title);
+                $slide_cells.eq(i).find('p').text(response.posts[i].title);
                 //replace intro
-                $slide_cells.eq(i).find('h2').text(response.posts[0].custom_fields.series[0]);
-                var $tbnlurl = response.posts[0].attachments[0].images.full.url.replace(baseurl, cdnurl);
+                $slide_cells.eq(i).find('h2').text(response.posts[i].custom_fields.series[0]);
+                var $tbnlurl = response.posts[i].attachments[0].images.full.url.replace(baseurl, cdnurl);
                 $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
                     'background-image', 'url(' + $tbnlurl + ')'
                 );
                 var att = document.createAttribute("ref");
-                att.value = response.posts[0].custom_fields.linkaddr[0];
+                att.value = response.posts[i].custom_fields.linkaddr[0];
                 $slide_cells.eq(i).find('.bg-img-'.concat(i + 1))[0].setAttributeNode(att);
             }
             

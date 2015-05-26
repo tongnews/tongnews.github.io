@@ -36,13 +36,13 @@
 
 .demo-2 .sl-slider h2 {
     left: 0px;
-	font-size: 21px;
+	font-size: 19px;
 }
 
 .demo-2 .sl-slider blockquote {
     right: 0px;
     bottom: 0px;
-	font-size: 21px;
+	font-size: 19px;
 	padding-top: 0px;
 	font-weight: 100;
 }
@@ -66,9 +66,9 @@
 	left: -200px;
 	width: 100%;
 	height: 100%;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	background-size: contain;
 	background-position: center center;
     cursor: pointer;
 }
