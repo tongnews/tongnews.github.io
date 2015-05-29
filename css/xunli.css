@@ -6,9 +6,8 @@
     min-height: 200px;
 }
 body{
-    background-image: url("");
+    background:url("http://jitsuwata.tv/common/images/bg_dott01.png");
 }
-
 .news_body{
 /*    width: 100%;*/
 }

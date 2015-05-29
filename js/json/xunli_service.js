@@ -57,6 +57,7 @@ function mapMarkerLoader(response){
     $curCount = response.count;
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
+
         try{
             var mapmarkers=response.posts[i].custom_fields.mapapp[0];
             //console.log(mapmarkers);
@@ -70,7 +71,7 @@ function mapMarkerLoader(response){
 
             }
             $mmarkerarray[response.posts[i].id.toString()]=marklist;
-            labellist.push([response.posts[i].id,response.posts[i].title,mparray.length-1]);
+            labellist.push([response.posts[i].id,response.posts[i].custom_fields.originality[0],mparray.length-1]);
         }catch(err){};
     }
     console.log($mmarkerarray);
@@ -159,7 +160,7 @@ function map_initialize() {
 
 function mapLabelInit(map,id,text,len){
     var idstr=id.toString();
-    text=text.split("【圣地巡礼】")[1];
+    text=text;
     
     var mbounds = new google.maps.LatLngBounds();
     for(var i=0;i<len;i++){
