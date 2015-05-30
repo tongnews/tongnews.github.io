@@ -36,6 +36,9 @@ $(document).ready(function () {
 
                 var $tongpost_container = $('#tongpost_container');
                 $tongpost_container.find('h2').text(response.post.title);
+                
+                $('#memo').attr('value','很喜欢文章:'+response.post.title+"，再接再厉!");
+                
                 document.title=response.post.title;
                 //replace info
                 try {

@@ -230,3 +230,30 @@
     width: 100%;
     overflow:hidden;
 }
+
+.dashang_bar{
+    position: relative;
+    margin-top: 20px;
+    width: 630px;
+}
+
+.dashang_bar h6{
+    width: 245px;
+    margin-left: auto;
+    margin-right: auto;
+    color:#4e4e4e;
+    font-size: 14px;
+}
+
+.btn_dashang{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 82px;
+                        height: 82px;
+                        background: url("http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif") no-repeat;
+    
+    
+}
+
+.btn_dashang:hover{ background-position: 0px -82px;}

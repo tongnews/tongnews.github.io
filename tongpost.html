@@ -145,11 +145,25 @@
                     <p class="intro"></p>
                 </blockquote>
                 
+                <div class="dashang_bar">
+                    <a class="btn_dashang" href="javascript:;" title="打赏" 
+                        onclick="document.getElementById('dashang_10').submit()" style="pointer-events: all;cursor: pointer;"></a>
+                    <h6>朕觉得文章写得不错，特此赏你十两！</h6>
+                    
+                    <form action="https://shenghuo.alipay.com/send/payment/fill.htm" method="POST" id="dashang_10" target="_blank" accept-charset="GBK" style="display: none;">
+                        <input name="optEmail" type="hidden" value="支付宝邮箱" />
+                        <input name="payAmount" type="hidden" value="10" />
+                        <input id="title" name="title" type="hidden" value="痛新闻打赏10元" />
+                        <input id="memo" name="memo" type="hidden" value="喜欢作者的文章,希望有更好的作品~" />
+                        <input name="pay" type="image" value="转账" src="http://file.arefly.com/alipay.png" />
+                    </form>
+                </div>
+                
                 
                 <div id="relatedpost"></div>
                 <div id="floating_cursor" class="floating_cursor"><i class="fa fa-map-marker fa-fw" style="font-size: 24px;"></i>
                 </div>
-
+                
                 <div class="rollingcomment_container">
                     <div class="end"></div>
                 </div>
