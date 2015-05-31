@@ -123,7 +123,9 @@ function updateSlides() {
                 $slide_cells.eq(i).find('p').text(response.posts[i].title);
                 //replace intro
                 $slide_cells.eq(i).find('h2').text(response.posts[i].custom_fields.series[0]);
-                var $tbnlurl = response.posts[i].attachments[0].images.full.url.replace(baseurl, cdnurl);
+                var $tbnlurl =response.posts[i].custom_fields.screen_image_url[0].replace(baseurl, cdnurl).replace(bkurl, cdnurl);
+                var $tbnlurlshort=$tbnlurl.substring($tbnlurl.length-4,$tbnlurl.length);
+                $tbnlurl=$tbnlurl.substring(0,$tbnlurl.length-12)+$tbnlurlshort;
                 $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
                     'background-image', 'url(' + $tbnlurl + ')'
                 );

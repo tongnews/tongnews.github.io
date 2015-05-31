@@ -24,6 +24,19 @@ body{
     float:right;
 }
 
+#xunliview{
+    position: absolute;
+    bottom: -2px;
+    left: 0px;
+    background-color: rgba(250, 58, 125, 0.76);
+    border-radius:  0 0 0 20px;
+    height: auto;
+    width: auto;
+    color: white;
+    font-size: 18px;
+    padding: 5px 10px 5px 10px;
+    text-decoration: none;
+}
 .post_wtnail_warpper {
     margin-top: 0px;
 }

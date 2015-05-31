@@ -446,6 +446,15 @@
     background-size: contain;
 }
 
+.rad_con_4{
+    background-image: url(../images/baidutong.gif);
+    width: 320px;
+    height: 66px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-size: cover;
+}
+
 .rad_con a{
     height: auto;
     width: 100%;

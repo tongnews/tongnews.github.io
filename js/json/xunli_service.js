@@ -151,6 +151,8 @@ function map_initialize() {
     $('.post_wtnail').click(function () {
         markers_clear();
         map_makeradderLoop(map,$(this).attr('pid').toString());
+        $("#xunliview").attr("href",$(this).find('a').attr('href'));
+        $("#xunliview").attr("style","");
     });
     
     for(var i=0;i<labellist.length;i++){
