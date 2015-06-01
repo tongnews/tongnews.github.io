@@ -75,6 +75,16 @@ body{
     cursor: pointer;
 }
 
+.lianxiwomen{
+    position: absolute;
+    right: 30px;
+    top: 240px;
+    display: block;
+    background: url(../images/contact.gif);
+    width: 200px;
+    height: 130px;
+    background-size: cover;
+}
 /*
 
 .corem{
