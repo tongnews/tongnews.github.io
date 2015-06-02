@@ -132,19 +132,20 @@ $(document).ready(function () {
                         
                     //manager float event
                     $('.flcomment').hover(function () {
-                        console.log(usernickname+"="+$(this).attr('user'));
-                        if(usernickname==$(this).attr('user')){
+                        //console.log(usernickname+"="+$(this).attr('user'));
+                        //console.log(userlevel);
+                        if(usernickname==$(this).attr('user') || userlevel==10){
                             $(this).css('background', 'rgba(126, 128, 127, 0.67)');
                             $(this).attr('cont', '(点击删除)');
                         }
                     },function () {
-                        if(usernickname==$(this).attr('user')){
+                        if(usernickname==$(this).attr('user') || userlevel==10){
                             $(this).css('background', 'rgba(251, 102, 134, 0.93)');
                             $(this).attr('cont', '');
                         }
                     });
                     $('.flcomment').click(function () {
-                        if (usernickname==$(this).attr('user')) {
+                        if (usernickname==$(this).attr('user') || userlevel==10) {
                             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
                             console.log($float_comment);
                             var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
