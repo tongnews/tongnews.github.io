@@ -132,6 +132,7 @@ $(document).ready(function () {
                         
                     //manager float event
                     $('.flcomment').hover(function () {
+                        console.log(usernickname+"="+$(this).attr('user'));
                         if(usernickname==$(this).attr('user')){
                             $(this).css('background', 'rgba(126, 128, 127, 0.67)');
                             $(this).attr('cont', '(点击删除)');
