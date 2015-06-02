@@ -5,6 +5,8 @@ var bkurl = getBkdomainUrl();
 var $tongpost_id = 0;
 var $commenton = 1;
 
+var $commarray=[];
+
 $(document).ready(function () {
     
     //nav footer function JS
@@ -121,19 +123,47 @@ $(document).ready(function () {
                 try {
                     var comments = response.post.custom_fields.float_comment[0];
                     var cmarray = comments.split('$');
-                    var cmarray = comments.split('$');
                     for (var i = 0; i < (cmarray.length - 1); i++) {
+                        $commarray[i]=cmarray[i];
                         cmjson = JSON.parse(cmarray[i]);
                         //console.log(cmjson);
-                        $("<h3 class='flcomment' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
+                        $("<h3 class='flcomment' cont='' cid='"+i+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
                     }
                         
                     //manager float event
-                    $('.flcomment').click(function () {
-                        if (getManagerlogin()) {
-                            $(this).css('background', 'rgba(102, 251, 154, 0.67)');
+                    $('.flcomment').hover(function () {
+                        if(usernickname==$(this).attr('user')){
+                            $(this).css('background', 'rgba(126, 128, 127, 0.67)');
+                            $(this).attr('cont', '(点击删除)');
+                        }
+                    },function () {
+                        if(usernickname==$(this).attr('user')){
+                            $(this).css('background', 'rgba(251, 102, 134, 0.93)');
+                            $(this).attr('cont', '');
                         }
                     });
+                    $('.flcomment').click(function () {
+                        if (usernickname==$(this).attr('user')) {
+                            var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
+                            console.log($float_comment);
+                            var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
+                            $.ajax({
+                                url: questurl,
+                                jsonp: "callback",
+                                dataType: "jsonp",
+                                data: {
+                                    format: "json"
+                                },
+                                success: function (response) {
+                                    console.log(response);
+                                }
+                            });
+                            $(this).attr("style","width:0px; height:0px; overflow:hidden;");
+                        }
+                        
+                    });
+                    
+                    //end
                 } catch (err) {};
                 
                 //control image hover
@@ -247,10 +277,45 @@ $('#comment_submit').click(function () {
     var comments = $float_comment;
     var cmarray = comments.split('$');
     for (var i = 0; i < (cmarray.length - 1); i++) {
+        $commarray.push(cmarray[i]);
         cmjson = JSON.parse(cmarray[i]);
         //console.log(cmjson);
-        $("<h3 class='flcomment' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " +cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
+        $("<h3 class='flcomment' cont='' cid='"+($commarray.length-1)+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
     }
+    
+    //manager float event
+    $('.flcomment').hover(function () {
+        if(usernickname==$(this).attr('user')){
+            $(this).css('background', 'rgba(126, 128, 127, 0.67)');
+            $(this).attr('cont', '(点击删除)');
+        }
+    },function () {
+        if(usernickname==$(this).attr('user')){
+            $(this).css('background', 'rgba(251, 102, 134, 0.93)');
+            $(this).attr('cont', '');
+        }
+    });
+    $('.flcomment').click(function () {
+        if (usernickname==$(this).attr('user')) {
+            console.log($commarray[$(this).attr('cid')]);
+            var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
+            console.log($float_comment);
+            var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    console.log(response);
+                }
+            });
+            $(this).attr("style","width:0px; height:0px; overflow:hidden;");
+        }
+        
+    });
 
 });
 
