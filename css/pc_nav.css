@@ -423,7 +423,7 @@ div{
 } 
 
 .nav2 a {
-    background-image: url(../images/nv2.png);
+    background-image: url(../images/nv3.png);
     background-color: #d670fb;
 }
 .nav2 a:hover:before{
@@ -431,7 +431,7 @@ div{
 }
 
 .nav3 a {
-    background-image: url(../images/nv3.png);
+    background-image: url(../images/nv2.png);
     background-color: #fb6686;
 }
 

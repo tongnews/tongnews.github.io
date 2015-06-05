@@ -686,7 +686,7 @@ div#whatsnew_parent li span.date {
     padding-top: 0px;
     position: relative;
     width: 1120px;
-    height: 540px;
+    height: 440px;
     margin: auto;
     
 }
@@ -701,9 +701,10 @@ div#whatsnew_parent li span.date {
 .staff_pic{
     position: absolute;
     left: 0px;
-    background-image: url(../images/staff_paint.png);
-    width: 1100px;
-    height: 501px;
+    background-image: url(../images/staff_paint3.png);
+    background-size: contain;
+    width: 1127px;
+    height: 400px;
     z-index: 400;
 }
 
