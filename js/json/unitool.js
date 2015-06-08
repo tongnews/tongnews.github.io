@@ -638,12 +638,9 @@ function baseJSload(){
             alert("密码输入不相同");
             return;
         }
-
-        var questurl = baseurl.concat("api/user/register/?username=" + document.getElementById('user_sginin_email_input').value + "&email=" +
-    document.getElementById('user_sginin_email_input').value + "&user_pass=" + document.getElementById('user_sginin_pass_input').value + "&display_name=" +
-    document.getElementById('user_sginin_nickname_input').value + "&nickname=" +
-    document.getElementById('user_sginin_nickname_input').value + "&nonce=" + $user_nonce);
+        
         $(this).css('background','rgba(102, 251, 154, 0.67)');
+        var questurl = baseurl.concat("api/check_invitation_code/?code=" + document.getElementById('user_sginin_code_input').value);
         $.ajax({
             url: questurl,
             jsonp: "callback",
@@ -653,9 +650,13 @@ function baseJSload(){
             },
             success: function (response) {
                 console.log(response);
-                if (response.status == "ok") {
-                    createCookie("user", response.cookie, 14);
-                    var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
+                
+                //code success
+                if (response.message == "success") {
+                    var questurl = baseurl.concat("api/user/register/?username=" + document.getElementById('user_sginin_email_input').value + "&email=" +
+                        document.getElementById('user_sginin_email_input').value + "&user_pass=" + document.getElementById('user_sginin_pass_input').value + "&display_name=" +
+                        document.getElementById('user_sginin_nickname_input').value + "&nickname=" +
+                        document.getElementById('user_sginin_nickname_input').value + "&nonce=" + $user_nonce);
                     $.ajax({
                         url: questurl,
                         jsonp: "callback",
@@ -664,15 +665,46 @@ function baseJSload(){
                             format: "json"
                         },
                         success: function (response) {
-                            sucessLogin(response);
+                            console.log(response);
+                            if (response.status == "ok") {
+                                createCookie("user", response.cookie, 14);
+                                var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
+                                $.ajax({
+                                    url: questurl,
+                                    jsonp: "callback",
+                                    dataType: "jsonp",
+                                    data: {
+                                        format: "json"
+                                    },
+                                    success: function (response) {
+                                        sucessLogin(response);
+                                    }
+                                });
+                            } else {
+                                alert("用户名或密码错误/无效OwO");
+                                $('.user_signin_submit').css('background', '#FB708E');
+                            }
                         }
                     });
-                } else {
-                    alert("用户名或密码错误/无效OwO");
-                    $('.user_signin_submit').css('background','#FB708E');
                 }
+                
+                //code invalid
+                if (response.message == "invalid") {
+                    alert("邀请码错误OwO");
+                    $('.user_signin_submit').css('background', '#FB708E');
+                }
+                
+                //code invalid
+                if (response.message == "soldout") {
+                    alert("不好意思>0< 邀请码已达到次数上线/注册关闭");
+                    $('.user_signin_submit').css('background', '#FB708E');
+                }
+                
             }
         });
+        
+        
+        
     });
 }
 
