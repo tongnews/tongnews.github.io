@@ -243,6 +243,9 @@ div{
     padding-left: 2px;
 }
 
+#user_forget{
+    background: #ffc646;
+}
 .loginbox input, .sginbox input{
   appearance: none;
   outline: 0;
@@ -260,21 +263,76 @@ div{
     display: inline;
     	    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+.pwresetbox input{
+    appearance: none;
+  outline: 20;
+  border: 6px solid rgb(255, 255, 255,0.4);
+  background-color: #fb6686;
+  width:    300px;
+  border-radius: 6px;
+  padding: 3px 15px;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+    	    font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
 
 ::-webkit-input-placeholder {
    color: white;
 }
 
-.loginbox input:hover , .sginbox input:hover {
+.pwresetbox input:hover, .loginbox input:hover , .sginbox input:hover {
     background-color: rgba(232, 232, 232, 0.4);
 }
 
 
-.loginbox input:focus , .sginbox input:focus {
+.pwresetbox input:focus, .loginbox input:focus , .sginbox input:focus {
     background-color: white;
     width: 150px;
     color: #d670fb;
 }
+
+.pwreset_container{
+    margin: auto;
+    width: 1140px;
+    height: 650px;
+}
+
+.pwreset_box{
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    width: 340px;
+    height: auto;
+    background: rgb(248, 248, 248);
+}
+
+.pwreset_box p{
+    font-size: 24px;
+    color:#fb6686;
+}
+
+.pwreset_box li{
+    padding-left: 5px;
+    margin-right: 10px;
+    font-size: 18px;
+    color:#6671fb;
+    cursor: pointer;
+}
+
+.pwreset_box li:hover{
+    font-size: 18px;
+    color:white;
+    background: #6671fb;
+    cursor: pointer;
+}
+
+
 
 /*  nagivation  */
 .dokileft{

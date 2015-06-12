@@ -584,6 +584,37 @@ function baseJSload(){
         });
     });
     
+    $('.user_forget').click(function () {
+        
+        if(document.getElementById('user_name_input').value==""){
+            alert('请填写邮箱进行密码找回');
+            return;
+        }
+        
+        var questurl = baseurl.concat("api/send_user_pwresetemail/?email="+document.getElementById('user_name_input').value);
+        console.log(questurl);
+        $(this).css('background','rgba(102, 251, 154, 0.67)');
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+                console.log(response);
+                if (response.message == "ok") {
+                    $('.user_forget').css('background','#b7b7b7');
+                    alert("请查看您的邮箱进行密码修改~");
+                } else {
+                    $('.user_forget').css('background','#FB708E');
+                    alert("用户名或密码错误OwO");
+                }
+            }
+        });
+        
+    });
+    
     $('.user_login_enter').click(function () {
          $(".sginbox").attr("style","width:0px; height:0px; overflow:hidden;");
          $(".loginbox").attr("style","");
@@ -706,6 +737,48 @@ function baseJSload(){
         
         
     });
+
+    $('.user_pwreset').click(function () {
+         
+        if(document.getElementById('pw_pass_input').value!=             document.getElementById('pw_pass2_input').value){
+            alert("两次密码输入不一致");
+            return;
+        }
+        
+        var $token="";
+        if(getUrlParam("token")){
+            $token=getUrlParam("token");
+        };
+        
+        var questurl = baseurl.concat("api/set_user_password?email=" + document.getElementById('pw_name_input').value + "&password=" + document.getElementById('pw_pass_input').value + "&token=" + $token);
+        $(this).css('background','rgba(102, 251, 154, 0.67)');
+        $(this).css('color','rgb(255, 255, 255)');
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+               console.log(response);
+               $('.user_pwreset').attr('style', '');
+               if (response.message == "success") {
+                   $('.success').attr('style', '');
+                   $('.failure').attr('style', 'width:0px; height:0px; overflow:hidden;');
+               }
+               if (response.message == "invalid") {
+                   $('.success').attr('style', 'width:0px; height:0px; overflow:hidden;');
+                   $('.failure').attr('style', '');
+               }
+
+           }
+        });
+        
+        
+    });
+    
+
 }
 
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */
