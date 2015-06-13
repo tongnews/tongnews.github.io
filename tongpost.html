@@ -39,6 +39,7 @@
                             <input type="text" id="user_name_input" class="btshadow" placeholder="(邮箱)">
                             <input type="password" id="user_pass_input" class="btshadow" placeholder="(密码)">
                             <li class="user_login btshadow" id="user_login">登入</li>
+                            <li class="user_forget btshadow" id="user_forget">忘记密码</li>
                             <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left  fa-fw"></i></li>
                         </div>
 
@@ -58,6 +59,24 @@
                     </div>
                 </div>
     </div>
+        
+    <!--  RRR  Title   -->
+    <div class="title_container">
+        <div class="sheadin-container container">
+            <div class="title_content">
+                <div class="navs"><span class="hide">sakura</span>
+                </div>
+                <div class="uri"><span class="hide">标题</span>
+                </div>
+                <div class="navs" style="left:360px"><span class="hide">sakura</span>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+        
     <!--  RRR Navigation bar  -->
     <div class="nav_container">
         <div class="nav container">
@@ -130,6 +149,11 @@
                     <p class="intro"></p>
                 </blockquote>
                 
+                <div class="xunli_map" style="width:0px; height:0px; overflow:hidden;">
+                    <div id="map-canvas" class=""></div>
+                    <a id="xunliview" target="_blank">巡礼小地图</a>
+                </div>
+
                 <div class="dashang_bar">
                     <a class="btn_dashang" href="javascript:;" title="打赏" 
                         onclick="document.getElementById('dashang_10').submit()" style="pointer-events: all;cursor: pointer;"></a>
@@ -153,6 +177,7 @@
                     <div class="end"></div>
                 </div>
             </div>
+            
 
         </div>
 
@@ -185,7 +210,10 @@
     
     <!--JSON API for tongpost_html    -->
     <script src="js/json/tongpost_service.js"></script>
-
+    
+    <script src="https://ditu.gdgdocs.org/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.8/src/markerwithlabel.js"></script>
+    
 </body>
 
 </html>

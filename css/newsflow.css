@@ -308,9 +308,9 @@
 .post_wtnail{
     float: left;
     width: 530px;
-    margin-left: 22px;
-    margin-right: 0px;
-    margin-bottom: 5px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 25px;
 }
 
 .post_wtnail a{
@@ -347,6 +347,7 @@
 .post_wtnail img:first-child{
     width: 200px;
     height: 150px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 .post_wtnail img{
@@ -355,9 +356,10 @@
     width: 95px;
     height: 70px;
     background-clip: content-box;
-    background-size: cover;
+    background-size: contain;
     background-clip: border-box;
     border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.5);
 }
 
 /*

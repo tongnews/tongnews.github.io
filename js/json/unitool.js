@@ -462,7 +462,12 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
         postHtml.attr("pid",response.posts[i].id);
          
         for (var j = 0; j < 4; j++) { 
- postHtml.find('img').eq(j).attr('src',response.posts[i].attachments[j].images.thumbnail.url.replace(getRegBaseUrl(), cdnurl));
+ postHtml.find('img').eq(j).attr('src',response.posts[i].attachments[j].images.thumbnail.url.replace(getRegBaseUrl(), cdnurl)); 
+            postHtml.find('img').eq(j).css({
+//                "-ms-transform": "rotate("+Math.floor((Math.random() * 20) -10)+"deg)", /* IE 9 */
+//                "-webkit-transform": "rotate("+Math.floor((Math.random() * 20) -10)+"deg)", /* Safari */
+//                "transform": "rotate("+Math.floor((Math.random() * 20) -10)+"deg)"
+            })
         }
         
         postHtml.appendTo('#'+catslug);

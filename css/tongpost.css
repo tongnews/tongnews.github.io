@@ -268,3 +268,49 @@
 }
 
 .btn_dashang:hover{ background-position: 0px -82px;}
+
+
+
+#map-canvas {
+  height: 400px;
+  width: 600px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  padding: 0px;
+  border: solid #fa3a7d 1px;
+}
+
+.markerinfo{
+    color: #fa3a7d;
+    font-size: 12px;
+}
+
+.maplabels{
+
+    font-size: 16px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: white;
+    background-color: #fa3a7d;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    font-family:  "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+#xunliview{
+    position: absolute;
+    bottom: 0px;
+    left: 20px;
+    background-color: rgba(250, 58, 125, 0.76);
+    border-radius:  0 0 0 20px;
+    height: auto;
+    width: auto;
+    color: white;
+    font-size: 12px;
+    padding: 2px 10px 2px 10px;
+    text-decoration: none;
+}
+
+.xunli_map{
+    position: relative;
+}

@@ -6,22 +6,14 @@
     min-height: 200px;
 }
 body{
-    background:url("http://jitsuwata.tv/common/images/bg_dott01.png");
+/*
+    background:url("http://subtlepatterns.com/patterns/sativa.png");
+    
+*/
+/*    background:url("http://jitsuwata.tv/common/images/bg_dott01.png");*/
 }
 .news_body{
 /*    width: 100%;*/
-}
-
-.xunli_map{
-    width: 1060px;
-    margin: auto;
-    margin-top: 10px;
-    height: 485px;
-    position: relative;
-}
-
-.xmap{
-    float:right;
 }
 
 #xunliview{
@@ -39,21 +31,6 @@ body{
 }
 .post_wtnail_warpper {
     margin-top: 0px;
-}
-
-
-#map-canvas {
-  height: 100%;
-  width: 100%;
-  border-radius: 20px;
-  margin: 0;
-  padding: 0px;
-  border: solid #fa3a7d 2px;
-}
-
-.markerinfo{
-    color: #fa3a7d;
-    font-size: 12px;
 }
 
 #first{
@@ -92,14 +69,5 @@ body{
     
 }
 
-.maplabels{
 
-    font-size: 16px;
-    padding-left: 3px;
-    padding-right: 3px;
-    color: white;
-    background-color: #fa3a7d;
-    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
-    font-family:  "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-}
   
