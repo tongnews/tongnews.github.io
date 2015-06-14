@@ -392,7 +392,9 @@ function mapMarkerLoader(response){
             }
             $mmarkerarray[response.post.id]=marklist;
             labellist.push([response.post.id,response.post.custom_fields.originality[0],mparray.length-1]);
-        }catch(err){};
+        }catch(err){
+            console.log(err);
+        };
     }
 //    console.log($mmarkerarray);
     
