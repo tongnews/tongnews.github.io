@@ -491,33 +491,34 @@ function map_initialize() {
 //    }
 }
 
-function mapLabelInit(map,id,text,len){
-    var idstr=id.toString();
-    text=text;
-    
-    var mbounds = new google.maps.LatLngBounds();
-    for(var i=0;i<len;i++){
-        var mstop=  new google.maps.LatLng(Number($mmarkerarray[idstr][i].Lat), Number($mmarkerarray[idstr][i].Lng));
-        mbounds.extend(mstop);
-    }
-        
-    var mapLabel = new MarkerWithLabel({
-       position: mbounds.getCenter(),
-       draggable: false,
-       raiseOnDrag: false,
-       map: map,
-       icon: "images/tp.png",
-       labelContent: "<div class='lab' id='"+id+"'>"+text,
-       labelAnchor: new google.maps.Point(24, 40),
-       labelClass: "maplabels", // the CSS class for the label
-       labelStyle: {opacity: 0.85}
-     });
-    google.maps.event.addListener(mapLabel, "click", globalMakerLabelHandler);
-}
-
-function globalMakerLabelHandler() { 
-        markers_clear();
-    console.log($(this.labelContent).attr('id').toString());
-    map_makeradderLoop(this.map,$(this.labelContent).attr('id').toString());
-};
-                                  
+//
+//function mapLabelInit(map,id,text,len){
+//    var idstr=id.toString();
+//    text=text;
+//    
+//    var mbounds = new google.maps.LatLngBounds();
+//    for(var i=0;i<len;i++){
+//        var mstop=  new google.maps.LatLng(Number($mmarkerarray[idstr][i].Lat), Number($mmarkerarray[idstr][i].Lng));
+//        mbounds.extend(mstop);
+//    }
+//        
+//    var mapLabel = new MarkerWithLabel({
+//       position: mbounds.getCenter(),
+//       draggable: false,
+//       raiseOnDrag: false,
+//       map: map,
+//       icon: "images/tp.png",
+//       labelContent: "<div class='lab' id='"+id+"'>"+text,
+//       labelAnchor: new google.maps.Point(24, 40),
+//       labelClass: "maplabels", // the CSS class for the label
+//       labelStyle: {opacity: 0.85}
+//     });
+//    google.maps.event.addListener(mapLabel, "click", globalMakerLabelHandler);
+//}
+//
+//function globalMakerLabelHandler() { 
+//        markers_clear();
+//    console.log($(this.labelContent).attr('id').toString());
+//    map_makeradderLoop(this.map,$(this.labelContent).attr('id').toString());
+//};
+//                                  
