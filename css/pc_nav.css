@@ -612,16 +612,16 @@ div{
 
     #a_03{
         position:absolute;
-        left: -200px;
+        left: -160px;
         top: 1700px;
-        opacity: 0.7;
+        width: 140px;
     }
 
     #a_04{
         position:absolute;
         top:0px;
-        left:-250px;
-        opacity: 0.7;
+        left:-190px;
+        width: 270px;
     }
 
     #a_05{
