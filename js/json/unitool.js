@@ -692,7 +692,7 @@ function baseJSload(){
                     var questurl = baseurl.concat("api/user/register/?username=" + document.getElementById('user_sginin_email_input').value + "&email=" +
                         document.getElementById('user_sginin_email_input').value + "&user_pass=" + document.getElementById('user_sginin_pass_input').value + "&display_name=" +
                         document.getElementById('user_sginin_nickname_input').value + "&nickname=" +
-                        document.getElementById('user_sginin_nickname_input').value + "&nonce=" + $user_nonce);
+                        document.getElementById('user_sginin_nickname_input').value + "&nonce=" + $user_nonce + "&notify=no");
                     $.ajax({
                         url: questurl,
                         jsonp: "callback",
