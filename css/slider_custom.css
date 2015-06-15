@@ -15,7 +15,7 @@
 }
 
 .demo-2 .slider_bk{
-    background: url(images/%E7%9F%A9%E5%BD%A2-1.png);
+    background: white;
     width: 100%;
     height: 372px;
     position: absolute;
@@ -587,6 +587,18 @@
     margin-top: 20px;
     height: 460px;
 }
+
+@media only screen and (max-width: 1400px){
+    .demo-2{
+        width: 1000px;
+    }
+    .demo-2 .bg-img {
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+}   
+
 
 /*
  responsive media 

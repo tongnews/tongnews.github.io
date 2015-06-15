@@ -552,8 +552,8 @@ div{
 
 #img2dcode{
     position: absolute;
-    top:230px;
-    right: 212px;
+    top:280px;
+    right: -160px;
     width: 150px;
 }
 
@@ -586,6 +586,24 @@ div{
   float: right;
   border-left: 0px!important;
 }
+
+@media only screen and (max-width: 1400px){
+    .top_container{
+        width: 1000px;
+    }
+    .sheadin-container{
+        width: 1000px;
+    }
+    .sheadin-container{
+        width: 1000px;
+    }
+    .bk_accsorsy_container{
+        width: 1000px;
+    }
+    .nav{
+        width: 1000px;
+    }
+}   
 
 /*
  responsive media 
