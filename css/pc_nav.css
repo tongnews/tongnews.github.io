@@ -365,8 +365,7 @@ div{
 .nav {
     width: 1120px;
     position: relative;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto !important;
 }
 
 .nav_content{
