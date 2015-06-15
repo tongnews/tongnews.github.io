@@ -365,7 +365,8 @@ div{
 .nav {
     width: 1120px;
     position: relative;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nav_content{
@@ -551,7 +552,14 @@ div{
 
 #img2dcode{
     position: absolute;
-    bottom:70px;
+    top:30px;
+    right: 212px;
+    height: 150px;
+}
+
+#img2dcode2{
+    position: absolute;
+    top:30px;
     right: 10px;
     height: 150px;
 }

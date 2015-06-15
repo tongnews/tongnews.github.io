@@ -717,7 +717,15 @@ function baseJSload(){
                                     }
                                 });
                             } else {
-                                alert("用户名或密码错误/无效OwO");
+                                console.log(response.error);
+                                switch(response.error){
+                                    case "E-mail address is already in use.": 
+                                        alert("邮箱曾被注册过,快来登录吧"); 
+                                        break;
+                                    default: 
+                                        alert("用户名或密码错误/无效OwO"); 
+                                        break;
+                                }
                                 $('.user_signin_submit').css('background', '#FB708E');
                             }
                         }

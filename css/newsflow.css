@@ -719,7 +719,9 @@ div#whatsnew_parent li span.date {
     height: 0;
     z-index: 0;
 }
-/*   responsive design    */
+
+/*
+   responsive design    
 @media only screen and (max-width: 1223px){
     .news_body{
         width: 85%;
@@ -798,4 +800,4 @@ div#whatsnew_parent li span.date {
     #first{
         margin-top: 20px;
     }
-}
+}*/

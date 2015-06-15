@@ -588,7 +588,8 @@
     height: 460px;
 }
 
-/* responsive media */
+/*
+ responsive media 
 @media only screen and (max-width: 1224px){
     .demo-2{
         width: 85%;
@@ -612,4 +613,4 @@
 
 @media only screen and (max-width: 479px){
     
-}
+}*/
