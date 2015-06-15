@@ -603,7 +603,35 @@ div{
     .nav{
         width: 1000px;
     }
+    #a_02{
+        position:absolute;
+        top:800px;
+        right: -160px;
+        width: 150px;
+    }
+
+    #a_03{
+        position:absolute;
+        left: -200px;
+        top: 1700px;
+        opacity: 0.7;
+    }
+
+    #a_04{
+        position:absolute;
+        top:0px;
+        left:-250px;
+        opacity: 0.7;
+    }
+
+    #a_05{
+        position:absolute;
+        top:500px;
+        right:-250px;
+        opacity: 0.7;
+    }
 }   
+
 
 /*
  responsive media 
