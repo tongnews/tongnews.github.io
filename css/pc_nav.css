@@ -478,11 +478,13 @@ div{
 .nav1 a {
     background-image: url(../images/nv1.png);
     margin-left: 0px;
+    background-size: 85%;
 } 
 
 .nav2 a {
     background-image: url(../images/nv3.png);
     background-color: #d670fb;
+    background-size: 70%;
 }
 .nav2 a:hover:before{
     background-color: #fb6686;
@@ -491,6 +493,7 @@ div{
 .nav3 a {
     background-image: url(../images/nv2.png);
     background-color: #fb6686;
+    background-size: 70%;
 }
 
 .nav3 a:hover:before{
@@ -525,6 +528,7 @@ div{
 .nav7 a {
     background-image: url(../images/nv7.png);
     background-color:#d670fb;
+    background-size: 70%;
 }
 
 .nav7 a:hover:before{
