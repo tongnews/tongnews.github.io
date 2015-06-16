@@ -65,6 +65,18 @@ $(document).ready(function () {
                     imgset.eq(k).attr('height',600*aspratio+'px');
                 }
                 
+                //forbidden all image link
+                var ahrefset = $tongpost_container.find('a');
+                for (var k=0; k<ahrefset.length ;k++){
+                    var ahref = ahrefset.eq(k).attr('href');
+                    if(ahref!=null){
+                        if(ahref.indexOf('.jpg')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                    }
+                }
+                
                 var $postCategories = response.post.categories;
                 for (var j = 0; j < $postCategories.length; j++) {
                     if ($postCategories[j].slug == "video") {
@@ -248,7 +260,8 @@ function DisplayCoord(event) {
 
 $('#comment_submit').click(function () {
     if(usernickname===null){
-        alert("请先登录~")
+        alert("请先登录~");
+        window.scrollTo(0, 0);
         return;
     }
     
