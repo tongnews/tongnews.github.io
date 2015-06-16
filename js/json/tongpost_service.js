@@ -74,6 +74,18 @@ $(document).ready(function () {
                             ahrefset.eq(k).attr('alt',ahref);
                             ahrefset.eq(k).removeAttr("href");
                         }
+                        if(ahref.indexOf('.JPG')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.png')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.PNG')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
                     }
                 }
                 
