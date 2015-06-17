@@ -82,16 +82,19 @@ $(document).ready(function () {
                     imgset.eq(k).attr('height',preheight+'px');
                     
                     //change to img full attchment to medium attachment
-                    var isrc=imgset.eq(k).attr('src');
-                    var imclass= imgset.eq(k).attr('class');
-                    if(imclass.indexOf('medium')>-1 || imclass.indexOf('large')>-1 || jQuery.inArray(isrc,mediumurls)>-1){
-                            //pass do not resize
-                    }else{
-                        var splits=isrc.split('.');
-                        var send=splits.length-1;
-                        imgset.eq(k).attr('src', mediumurls[jQuery.inArray(isrc,fullurls)]);
+                    try{
+                        var isrc=imgset.eq(k).attr('src');
+                        var imclass= imgset.eq(k).attr('class');
+                        if(imclass.indexOf('medium')>-1 || imclass.indexOf('large')>-1 || jQuery.inArray(isrc,mediumurls)>-1){
+                                //pass do not resize
+                        }else{
+                            var splits=isrc.split('.');
+                            var send=splits.length-1;
+                            imgset.eq(k).attr('src', mediumurls[jQuery.inArray(isrc,fullurls)]);
+                        }
+                    }catch(err){
+                        
                     }
-                    
                 }
                 
                 
