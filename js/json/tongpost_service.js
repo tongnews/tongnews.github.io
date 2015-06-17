@@ -53,17 +53,48 @@ $(document).ready(function () {
                 $tongpost_container.find('p').text(response.post.custom_fields.intro[0]);
                 //                var $tbnlurl = response.post.attachments[0].images.thumbnail.url;
                 //                $tongpost_container.find('img').attr('src', $tbnlurl);
-
-                //insert content
+                
+                //replace content
                 $(response.post.content.toString().replace(getRegBaseUrl(), cdnurl)).insertAfter($tongpost_container.find('p'));
+                
+                //get attachment info
+                var attarray=response.post.attachments;
+                var mediumurls=[];
+                var fullurls=[];
+                for (var k = 0; k < attarray.length; k++) {
+                    try {
+                    mediumurls.push( attarray[k].images.medium.url.replace(getRegBaseUrl(), cdnurl));
+                    } catch (err) {
+                    mediumurls.push(attarray[k].images.full.url.replace(getRegBaseUrl(), cdnurl));
+                    }
+                    fullurls.push(attarray[k].images.full.url.replace(getRegBaseUrl(), cdnurl));
+                }
                 
                 //regularize image width
                 var imgset = $tongpost_container.find('img');
                 for (var k=0; k<imgset.length ;k++){
-                    var aspratio = imgset.eq(k).attr('height')/imgset.eq(k).attr('width');
+                    
+                    var imwidth = imgset.eq(k).attr('width');
+                    //resize all to equal width
+                    var aspratio = imgset.eq(k).attr('height')/imwidth;
+                    var preheight = Math.floor(600*aspratio)+1;
                     imgset.eq(k).attr('width',600+'px');
-                    imgset.eq(k).attr('height',600*aspratio+'px');
+                    imgset.eq(k).attr('height',preheight+'px');
+                    
+                    //change to img full attchment to medium attachment
+                    var isrc=imgset.eq(k).attr('src');
+                    var imclass= imgset.eq(k).attr('class');
+                    if(imclass.indexOf('medium')>-1 || imclass.indexOf('large')>-1 || jQuery.inArray(isrc,mediumurls)>-1){
+                            //pass do not resize
+                    }else{
+                        var splits=isrc.split('.');
+                        var send=splits.length-1;
+                        imgset.eq(k).attr('src', mediumurls[jQuery.inArray(isrc,fullurls)]);
+                    }
+                    
                 }
+                
+                
                 
                 //forbidden all image link
                 var ahrefset = $tongpost_container.find('a');
