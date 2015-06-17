@@ -28,21 +28,20 @@
 	max-width: 960px;
 	position: absolute;
 	z-index: 100;
-    color: #fff;
-	font-family: "幼圆";   
+    color: #fff; 
     background: #fb6686;
 }
 
 
 .demo-2 .sl-slider h2 {
     left: 0px;
-	font-size: 19px;
+	font-size: 18px;
 }
 
 .demo-2 .sl-slider blockquote {
     right: 0px;
     bottom: 0px;
-	font-size: 19px;
+	font-size: 18px;
 	padding-top: 0px;
 	font-weight: 100;
 }
@@ -569,14 +568,6 @@
 
 	.demo-2 .sl-slider-wrapper {
 		height: 460px;
-	}
-
-	.demo-2 .sl-slider h2 {
-		font-size: 36px;
-	}
-
-	.demo-2 .sl-slider blockquote {
-		font-size: 16px;
 	}
 
 }
