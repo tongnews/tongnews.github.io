@@ -11,8 +11,6 @@ $(document).ready(function () {
     
     //nav footer function JS
     baseJSload();
-    
-    console.log("Starting JSON POSTS engine for Tongpost!");
     $('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().right -250 +'px');
     
     //user management
@@ -34,7 +32,7 @@ $(document).ready(function () {
             },
             success: function (response) {
 
-                console.log(response.post);
+                if(debug)console.log(response.post);
 
                 var $tongpost_container = $('#tongpost_container');
                 $tongpost_container.find('h2').text(response.post.title);
@@ -184,14 +182,14 @@ $(document).ready(function () {
                     for (var i = 0; i < (cmarray.length - 1); i++) {
                         $commarray[i]=cmarray[i];
                         cmjson = JSON.parse(cmarray[i]);
-                        //console.log(cmjson);
+                        //if(debug)console.log(cmjson);
                         $("<h3 class='flcomment' cont='' cid='"+i+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
                     }
                         
                     //manager float event
                     $('.flcomment').hover(function () {
-                        //console.log(usernickname+"="+$(this).attr('user'));
-                        //console.log(userlevel);
+                        //if(debug)console.log(usernickname+"="+$(this).attr('user'));
+                        //if(debug)console.log(userlevel);
                         if(usernickname==$(this).attr('user') || userlevel==10){
                             $(this).css('background', 'rgba(126, 128, 127, 0.67)');
                             $(this).attr('cont', '(点击删除)');
@@ -205,7 +203,7 @@ $(document).ready(function () {
                     $('.flcomment').click(function () {
                         if (usernickname==$(this).attr('user') || userlevel==10) {
                             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
-                            console.log($float_comment);
+                            if(debug)console.log($float_comment);
                             var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
                             $.ajax({
                                 url: questurl,
@@ -215,7 +213,7 @@ $(document).ready(function () {
                                     format: "json"
                                 },
                                 success: function (response) {
-                                    console.log(response);
+                                    if(debug)console.log(response);
                                 }
                             });
                             $(this).attr("style","width:0px; height:0px; overflow:hidden;");
@@ -247,13 +245,14 @@ $(document).ready(function () {
                         format: "json"
                     },
                     success: function (response) {
-                        //console.log(response);
+                        //if(debug)console.log(response);
                         relatedpostArranger(response);
                     }
                 });
                 
                 //for primgage map load
                 mapMarkerLoader(response);
+                
             }
         });
         
@@ -296,13 +295,19 @@ function DisplayCoord(event) {
     }
     $mp_x=$mp_x + 'px';
     $mp_y=$mp_y + 'px';
-    console.log("("+$mp_x+","+$mp_y+")");
+    if(debug)console.log("("+$mp_x+","+$mp_y+")");
     $('#floating_cursor').attr("style", "left:" + $mp_x + ";top:" + $mp_y);
     if($hideCursor){
          $('#floating_cursor').attr("style","width:0px; height:0px; overflow:hidden;");
     }
     
 }
+
+$("#comment_input").keyup(function(event){
+    if(event.keyCode == 13){
+        $('#comment_submit').click();
+    }
+});
 
 $('#comment_submit').click(function () {
     if(usernickname===null){
@@ -332,7 +337,7 @@ $('#comment_submit').click(function () {
             format: "json"
         },
         success: function (response) {
-            console.log(response);
+            if(debug)console.log(response);
         }
     });
     document.getElementById('comment_input').value = "";
@@ -343,7 +348,7 @@ $('#comment_submit').click(function () {
     for (var i = 0; i < (cmarray.length - 1); i++) {
         $commarray.push(cmarray[i]);
         cmjson = JSON.parse(cmarray[i]);
-        //console.log(cmjson);
+        //if(debug)console.log(cmjson);
         $("<h3 class='flcomment' cont='' cid='"+($commarray.length-1)+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
     }
     
@@ -361,9 +366,9 @@ $('#comment_submit').click(function () {
     });
     $('.flcomment').click(function () {
         if (usernickname==$(this).attr('user')) {
-            console.log($commarray[$(this).attr('cid')]);
+            if(debug)console.log($commarray[$(this).attr('cid')]);
             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
-            console.log($float_comment);
+            if(debug)console.log($float_comment);
             var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
             $.ajax({
                 url: questurl,
@@ -373,7 +378,7 @@ $('#comment_submit').click(function () {
                     format: "json"
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(debug)console.log(response);
                 }
             });
             $(this).attr("style","width:0px; height:0px; overflow:hidden;");
@@ -402,7 +407,7 @@ switchcomment = function () {
 $('#comment_switch').click(switchcomment);
 
 function onCkeydown(event) {
-    //console.log(String.fromCharCode(event.keyCode) );
+    //if(debug)console.log(String.fromCharCode(event.keyCode) );
     if (String.fromCharCode(event.keyCode) == "E") {
         switchcomment();
     }
@@ -438,8 +443,14 @@ function mapMarkerLoader(response){
     for (var i = 0; i < $curCount; i++) {
 
         try{
+            
+            if(typeof (response.post.custom_fields.mapapp) == "undefined"){
+                return;
+            }
+            
             var mapmarkers=response.post.custom_fields.mapapp[0];
-            //console.log(mapmarkers);
+
+            //if(debug)console.log(mapmarkers);
             if(mapmarkers=="") continue;
 
             var mparray = mapmarkers.split('$');
@@ -452,10 +463,10 @@ function mapMarkerLoader(response){
             $mmarkerarray[response.post.id]=marklist;
             labellist.push([response.post.id,response.post.custom_fields.originality[0],mparray.length-1]);
         }catch(err){
-            console.log(err);
+            if(debug)console.log(err);
         };
     }
-//    console.log($mmarkerarray);
+//    if(debug)console.log($mmarkerarray);
     
     if($mmarkerarray.length>0){
         $(".xunli_map").attr("style","");
@@ -577,7 +588,7 @@ function map_initialize() {
 //
 //function globalMakerLabelHandler() { 
 //        markers_clear();
-//    console.log($(this.labelContent).attr('id').toString());
+//    if(debug)console.log($(this.labelContent).attr('id').toString());
 //    map_makeradderLoop(this.map,$(this.labelContent).attr('id').toString());
 //};
 //                                  

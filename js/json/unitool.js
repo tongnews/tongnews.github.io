@@ -92,9 +92,7 @@ function videorefanlayse(refstr) {
     return $videolink;
 }
 
-
-
-
+var debug=true;
 
 //-------------------------Animation Contronller ----------------//
 function pageScroll() {
@@ -590,6 +588,39 @@ function baseJSload(){
     });
 
     //----------------------------------  user login ----------------------------------------
+    //enter event control
+    $("#user_name_input").keyup(function(event){
+        if(event.keyCode == 13){
+            $('.user_login').click();
+        }
+    });
+    $("#user_pass_input").keyup(function(event){
+        if(event.keyCode == 13){
+            $('.user_login').click();
+        }
+    });
+    $("#user_sginin_email_input").keyup(function(event){
+        if(event.keyCode == 13){
+            $('.user_signin_submit').click();
+        }
+    });
+    $("#user_sginin_nickname_input").keyup(function(event){
+        if(event.keyCode == 13){
+            $('.user_signin_submit').click();
+        }
+    });
+    $("#user_sginin_pass_input").keyup(function(event){
+        if(event.keyCode == 13){
+            $('.user_signin_submit').click();
+        }
+    });
+    $("#user_sginin_pass_input2").keyup(function(event){
+        if(event.keyCode == 13){
+            $('.user_signin_submit').click();
+        }
+    });
+    
+    
     $('.user_login').click(function () {
         var questurl = baseurl.concat("api/user/generate_auth_cookie/?username=" + document.getElementById('user_name_input').value + "&password=" + document.getElementById('user_pass_input').value);
         $(this).css('background','rgba(102, 251, 154, 0.67)');

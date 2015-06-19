@@ -35,7 +35,7 @@ $(document).ready(function () {
     //user management
     //createCookie("user","",14);
     checkCookie();
- 
+
     
     
 });
