@@ -100,29 +100,37 @@ $(document).ready(function () {
                 //forbidden all image link
                 var ahrefset = $tongpost_container.find('a');
                 for (var k=0; k<ahrefset.length ;k++){
-//                    var ahref = ahrefset.eq(k).attr('href');
-//                    if(ahref!=null){
-//                        if(ahref.indexOf('.jpg')>-1){
-//                            ahrefset.eq(k).attr('alt',ahref);
-//                            ahrefset.eq(k).removeAttr("href");
-//                        }
-//                        if(ahref.indexOf('.JPG')>-1){
-//                            ahrefset.eq(k).attr('alt',ahref);
-//                            ahrefset.eq(k).removeAttr("href");
-//                        }
-//                        if(ahref.indexOf('.png')>-1){
-//                            ahrefset.eq(k).attr('alt',ahref);
-//                            ahrefset.eq(k).removeAttr("href");
-//                        }
-//                        if(ahref.indexOf('.PNG')>-1){
-//                            ahrefset.eq(k).attr('alt',ahref);
-//                            ahrefset.eq(k).removeAttr("href");
-//                        }
-//                    }
-                    if(ahrefset.eq(k).find('img')!=null){
-                        var cnt = ahrefset.eq(k).contents();
-                        ahrefset.eq(k).replaceWith(cnt);
+                    var ahref = ahrefset.eq(k).attr('href');
+                    if(ahref!=null){
+                        if(ahref.indexOf('.jpg')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.JPG')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.png')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.PNG')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.jpeg')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
+                        if(ahref.indexOf('.JPEG')>-1){
+                            ahrefset.eq(k).attr('alt',ahref);
+                            ahrefset.eq(k).removeAttr("href");
+                        }
                     }
+//                    if(ahrefset.eq(k).find('img')!=null){
+//                        var cnt = ahrefset.eq(k).contents();
+//                        ahrefset.eq(k).replaceWith(cnt);
+//                    }
                 }
                 
                 var $postCategories = response.post.categories;
