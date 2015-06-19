@@ -273,12 +273,12 @@ $(document).ready(function () {
                         "height":"300px",
                     },
                     "share": {},
-                    "image": {
-                        "viewList": ["tsina", "qzone", "weixin", "tieba"],
-                        "viewText": "分享到：",
-                        "viewSize": "24",
-                        "viewColor" : 'rgba(231,231,231,0.1)',
-                    }
+//                    "image": {
+//                        "viewList": ["tsina", "qzone", "weixin", "tieba"],
+//                        "viewText": "分享到：",
+//                        "viewSize": "24",
+//                        "viewColor" : 'rgba(231,231,231,0.1)',
+//                    }
 //                    slide : [{	   
 //                        bdImg : 0,
 //                        bdPos : "right",
