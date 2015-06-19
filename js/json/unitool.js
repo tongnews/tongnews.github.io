@@ -562,6 +562,30 @@ function detectIE() {
 
 function baseJSload(){
     
+    
+    // hide #back-top first
+    $('body').prepend('<p id="back-top"><a href="#top"><span></span>叮铃叮铃~</a></p>');
+    
+	$("#back-top").hide();
+	
+	// fade in #back-top
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 1400) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('#back-top a').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+    
+    //--------------------------IE check--------------------------------------
     var ieversion=detectIE();
     
     if(ieversion!=false && ieversion<11){
