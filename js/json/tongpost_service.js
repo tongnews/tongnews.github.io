@@ -53,7 +53,7 @@ $(document).ready(function () {
                 //                $tongpost_container.find('img').attr('src', $tbnlurl);
                 
                 //replace content
-                $(response.post.content.toString().replace(getRegBaseUrl(), cdnurl)).insertAfter($tongpost_container.find('p'));
+                $(response.post.content.toString().replace(getRegBaseUrl(), cdnurl).replace(bkurl, cdnurl)).insertAfter($tongpost_container.find('p'));
                 
                 //get attachment info
                 var attarray=response.post.attachments;
@@ -252,6 +252,39 @@ $(document).ready(function () {
                 
                 //for primgage map load
                 mapMarkerLoader(response);
+                
+                //sharing button
+                window._bd_share_config = {
+                    "common": {
+                        "bdSnsKey": {
+                            "tsina": "3566249745"
+                        },
+                        "bdText": "#痛新闻官网#"+response.post.title+"(@痛新闻_圣地巡礼)",
+                        "bdMini": "2",
+                        "bdMiniList": false,
+                        "bdPic":                response.post.custom_fields.thumbnail_url[0].replace(baseurl, cdnurl).replace(bkurl, cdnurl),
+                        "bdStyle": "1",
+                        "bdSize": "32",
+                        "width":"400px",
+                        "height":"300px",
+                    },
+                    "share": {},
+                    "image": {
+                        "viewList": ["tsina", "qzone", "weixin", "tieba"],
+                        "viewText": "分享到：",
+                        "viewSize": "24"
+                    }
+//                    slide : [{	   
+//                        bdImg : 0,
+//                        bdPos : "right",
+//                        bdTop : 100
+//                    },{
+//                        bdImg : 0,
+//                        bdPos : "left",
+//                        bdTop : 100
+//                    }]
+                };
+                with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
                 
             }
         });

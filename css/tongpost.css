@@ -314,3 +314,10 @@
 .xunli_map{
     position: relative;
 }
+
+/*sharing*/
+
+.WB_share_button .ico_share_btn_mini{
+    height: 32px;
+    width: 32px;
+}
