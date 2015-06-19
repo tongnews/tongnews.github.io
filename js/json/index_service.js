@@ -27,7 +27,7 @@ $(document).ready(function () {
     scrollbarCustom();
     addSliderMoveListeners();
     
-    //console.log("Starting JSON POSTS engine!");
+    //if(tdbg)console.log("Starting JSON POSTS engine!");
     updateSlides();
     updatePosts($postCount, $pageNum);
     updateRank($rankCount);

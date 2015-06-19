@@ -57,11 +57,11 @@ function checkload() {
     var windowHeight = $(window).height(); //窗口的高度
     var dbHiht = $('body').height(); //整个页面文件的高度
     
-//    console.log((windowHeight + srollPos) + " "+ dbHiht);
+//    if(tdbg)console.log((windowHeight + srollPos) + " "+ dbHiht);
     
     s = setTimeout(function () {
         if ((windowHeight + srollPos) >= (dbHiht-20) && $pageNum != $maxPages) {
-//            console.log($pageNum);
+//            if(tdbg)console.log($pageNum);
             $('#loading_cover').attr("style","");
             $pageNum = $pageNum + 1;
             if ($pageNum >= ($maxPages - 1)) {

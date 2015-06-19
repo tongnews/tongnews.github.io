@@ -21,7 +21,7 @@ $(document).ready(function () {
     //nav footer function JS
     baseJSload();
     
-    //console.log("Starting JSON POSTS engine!");
+    //if(tdbg)console.log("Starting JSON POSTS engine!");
     updateCategory("widget_news",$pagenumper,$pagecur["widget_news"]);
     updateCategory("widget_activity",$pagenumper,$pagecur["widget_activity"]);
     updateCategory("widget_daily",$pagenumper,$pagecur["widget_daily"]);
@@ -80,7 +80,7 @@ function  updateCategory(catslug,postCount,pageNum){
                     format: "json"
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(tdbg)console.log(response);
                     $pagecount["widget_news"]=response.pages;
                     categoryWidgetArranger("widget_news",response,postCount,pageNum);
                 }
@@ -99,7 +99,7 @@ function  updateCategory(catslug,postCount,pageNum){
                     format: "json"
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(tdbg)console.log(response);
                     $pagecount["widget_daily"]=response.pages;
                     categoryWidgetArranger("widget_daily",response,postCount,pageNum);
                 }
@@ -118,7 +118,7 @@ function  updateCategory(catslug,postCount,pageNum){
                     format: "json"
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(tdbg)console.log(response);
                     $pagecount["widget_activity"]=response.pages;
                     categoryWidgetArranger("widget_activity",response,postCount,pageNum);
                 }
@@ -137,7 +137,7 @@ function  updateCategory(catslug,postCount,pageNum){
                     format: "json"
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(tdbg)console.log(response);
                     $pagecount["widget_pilgrimage"]=response.pages;
                     categoryWidgetArranger("widget_pilgrimage",response,postCount,pageNum);
                 }

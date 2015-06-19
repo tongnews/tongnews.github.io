@@ -11,7 +11,7 @@ $(document).ready(function () {
     baseJSload();
     scrollbarCustom();
     
-    //console.log("Starting JSON POSTS engine!");
+    //if(tdbg)console.log("Starting JSON POSTS engine!");
     updateCategoryThumbnail("widget_pilgrimage",8,1);
     
     //user management
@@ -39,7 +39,7 @@ function  updateCategoryThumbnail(catslug,postCount,pageNum){
                     format: "json"
                 },
                 success: function (response) {
-                    console.log(response);
+                    if(tdbg)console.log(response);
                     categoryTnailArranger("widget_pilgrimage",response,postCount,pageNum);
                 }
 

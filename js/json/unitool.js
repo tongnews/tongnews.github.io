@@ -14,7 +14,7 @@ function getCDNUrl() {
     return "http://7xi53n.com1.z0.glb.clouddn.com/";
 }
 function getDomain() {
-    //console.log(document.domain);
+    //if(tdbg)console.log(document.domain);
     return document.domain;
 }
 function getUrlParam(sParam) {
@@ -34,14 +34,14 @@ function getRewriteParam() {
 }
 
 function encodeId(postid) {
-//    console.log(postid);
+//    if(tdbg)console.log(postid);
 //    var x = postid;
 //    var y = x.toString();
 //    var z = y.split("").reverse().join("");
 //    z = z.concat(y);
 //    var aa = Number(z);
 //    var encod = aa ^ 942857;
-//    //console.log(encod);
+//    //if(tdbg)console.log(encod);
 //    return encod;
     return postid;
     //return encodedString = Base64.encode(postid+12345);
@@ -51,10 +51,10 @@ function decodeIdfromAddr() {
 //    var y = "0000000000"+x.toString();
 //    var y = y.substr(y.length-6);
 //    var z = y.substring(y.length / 2);
-//    console.log(y);
-//    console.log(Number(z));
+//    if(tdbg)console.log(y);
+//    if(tdbg)console.log(Number(z));
     var id=getUrlParam("id");
-    //console.log("post"+id);
+    //if(tdbg)console.log("post"+id);
     if(typeof id == 'undefined'){
         id=getRewriteParam();
     }
@@ -81,18 +81,18 @@ function videorefanlayse(refstr) {
         if ($linkstr[i].indexOf("tudo") > -1) {
             $videolink["tudo"] = $linkstr[i];
             $videolink["avaliable"] = "tudo";
-            //console.log("this is tudo"+$linkstr[i]);
+            //if(tdbg)console.log("this is tudo"+$linkstr[i]);
         }
         if ($linkstr[i].indexOf("hdslb") > -1) {
             $videolink["bilibili"] = $linkstr[i];
             $videolink["avaliable"] = "bilibili";
-            //console.log("this is bilibili"+$linkstr[i]);
+            //if(tdbg)console.log("this is bilibili"+$linkstr[i]);
         }
     }
     return $videolink;
 }
 
-var debug=true;
+var tdbg=false;
 
 //-------------------------Animation Contronller ----------------//
 function pageScroll() {
@@ -123,7 +123,7 @@ function checkCookie() {
     //user handler
     var curcookie = getCookie();
     if (curcookie != -1) {
-        //console.log("cookie " + curcookie);
+        //if(tdbg)console.log("cookie " + curcookie);
         var questurl = getBaseUrl().concat("api/user/validate_auth_cookie/?cookie=" + curcookie);
         $.ajax({
             url: questurl,
@@ -133,8 +133,8 @@ function checkCookie() {
                 format: "json"
             },
             success: function (response) {
-                //console.log('check_cookie');
-                //console.log(response.valid);
+                //if(tdbg)console.log('check_cookie');
+                //if(tdbg)console.log(response.valid);
                 if (response.valid == true) {
                     var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + curcookie);
                     $.ajax({
@@ -145,12 +145,12 @@ function checkCookie() {
                             format: "json"
                         },
                         success: function (response) {
-                            //console.log(response);
+                            //if(tdbg)console.log(response);
                             sucessLogin(response);
                         }
                     });
                 } else {
-                    //console.log('not');
+                    //if(tdbg)console.log('not');
                     $(".login_container").attr("style", "");
                 }
             }
@@ -192,7 +192,7 @@ function resetCookie(){
 
 function logTimeNow(text){
     var time=new Date();
-    console.log(text+':'+time.getMinutes()+':'+time.getSeconds());
+    if(tdbg)console.log(text+':'+time.getMinutes()+':'+time.getSeconds());
 }
 
 
@@ -322,12 +322,12 @@ function postArranger(response,postCount,source){
                 format: "json"
             },
             success: function (response) {
-                console.log("viewing post " + response.post.title);
+                if(tdbg)console.log("viewing post " + response.post.title);
             }
         });
         //connect to post video frame
         var $videolink = videorefanlayse($(this).attr('ref'));
-        //console.log($(this).attr('ref'));
+        //if(tdbg)console.log($(this).attr('ref'));
         var linktype = getVideoLinkref();
         if (typeof $videolink[linktype] == 'undefined') {
             linktype = $videolink["avaliable"];
@@ -367,12 +367,12 @@ function postArranger(response,postCount,source){
                 format: "json"
             },
             success: function (response) {
-                console.log("viewing post " + response.post.title);
+                if(tdbg)console.log("viewing post " + response.post.title);
             }
         });
         //connect to post video frame
         var $videolink = videorefanlayse($(this).attr('ref'));
-        //console.log($(this).attr('ref'));
+        //if(tdbg)console.log($(this).attr('ref'));
         var linktype = getVideoLinkref();
         if (typeof $videolink[linktype] == 'undefined') {
             linktype = $videolink["avaliable"];
@@ -398,7 +398,7 @@ function postArranger(response,postCount,source){
 
 function rankArranger(response, rankCount, source) {
     
-    //console.log(response);
+    //if(tdbg)console.log(response);
     
     logTimeNow('RankJSON back');
     var $rank_container = $('#index_rank_contianer'),
@@ -498,7 +498,7 @@ function relatedpostArranger(response){
 
 function sitemapArranger(response){
     
-    //console.log(response);
+    //if(tdbg)console.log(response);
     
     var $scurCount = response.count;
     var sitemapHtml=$('<div><div class="sitelinks"></div></div>');
@@ -511,7 +511,7 @@ function sitemapArranger(response){
         postHtml.appendTo(sitemapHtml.find('.sitelinks'));
     }
     
-    //console.log(sitemapHtml.prop('outerHTML'));
+    //if(tdbg)console.log(sitemapHtml.prop('outerHTML'));
     var blob = new Blob([sitemapHtml.prop('outerHTML')], {type: "text/html;charset=utf-8"});
     saveAs(blob, "sitemaplist.html");
     
@@ -632,7 +632,7 @@ function baseJSload(){
                 format: "json"
             },
             success: function (response) {
-                //console.log(response);
+                //if(tdbg)console.log(response);
                 if (response.status == "ok") {
                     createCookie("user", response.cookie, 14);
                     var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
@@ -663,7 +663,7 @@ function baseJSload(){
         }
         
         var questurl = baseurl.concat("api/send_user_pwresetemail/?email="+document.getElementById('user_name_input').value);
-        console.log(questurl);
+        if(tdbg)console.log(questurl);
         $(this).css('background','rgba(102, 251, 154, 0.67)');
         $.ajax({
             url: questurl,
@@ -673,7 +673,7 @@ function baseJSload(){
                 format: "json"
             },
             success: function (response) {
-                console.log(response);
+                if(tdbg)console.log(response);
                 if (response.message == "ok") {
                     $('.user_forget').css('background','#b7b7b7');
                     alert("请查看您的邮箱进行密码修改~");
@@ -718,7 +718,7 @@ function baseJSload(){
                 format: "json"
             },
             success: function (response) {
-                //console.log(response);
+                //if(tdbg)console.log(response);
                 if (response.status == "ok") {
                    $user_nonce=response.nonce;
                    $(".sginbox").attr("style","");
@@ -751,7 +751,7 @@ function baseJSload(){
                 format: "json"
             },
             success: function (response) {
-                console.log(response);
+                if(tdbg)console.log(response);
                 
                 //code success
                 if (response.message == "success") {
@@ -767,7 +767,7 @@ function baseJSload(){
                             format: "json"
                         },
                         success: function (response) {
-                            console.log(response);
+                            if(tdbg)console.log(response);
                             if (response.status == "ok") {
                                 createCookie("user", response.cookie, 14);
                                 var questurl = baseurl.concat("api/user/get_user_meta/?cookie=" + response.cookie);
@@ -783,7 +783,7 @@ function baseJSload(){
                                     }
                                 });
                             } else {
-                                console.log(response.error);
+                                if(tdbg)console.log(response.error);
                                 switch(response.error){
                                     case "E-mail address is already in use.": 
                                         alert("邮箱曾被注册过,快来登录吧"); 
@@ -840,7 +840,7 @@ function baseJSload(){
                 format: "json"
             },
             success: function (response) {
-               console.log(response);
+               if(tdbg)console.log(response);
                $('.user_pwreset').attr('style', '');
                if (response.message == "success") {
                    $('.success').attr('style', '');

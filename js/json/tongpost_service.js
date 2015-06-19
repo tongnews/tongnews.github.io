@@ -31,8 +31,8 @@ $(document).ready(function () {
                 format: "json"
             },
             success: function (response) {
-
-                if(debug)console.log(response.post);
+                
+                if(tdbg)console.log(response.post);
 
                 var $tongpost_container = $('#tongpost_container');
                 $tongpost_container.find('h2').text(response.post.title);
@@ -100,24 +100,28 @@ $(document).ready(function () {
                 //forbidden all image link
                 var ahrefset = $tongpost_container.find('a');
                 for (var k=0; k<ahrefset.length ;k++){
-                    var ahref = ahrefset.eq(k).attr('href');
-                    if(ahref!=null){
-                        if(ahref.indexOf('.jpg')>-1){
-                            ahrefset.eq(k).attr('alt',ahref);
-                            ahrefset.eq(k).removeAttr("href");
-                        }
-                        if(ahref.indexOf('.JPG')>-1){
-                            ahrefset.eq(k).attr('alt',ahref);
-                            ahrefset.eq(k).removeAttr("href");
-                        }
-                        if(ahref.indexOf('.png')>-1){
-                            ahrefset.eq(k).attr('alt',ahref);
-                            ahrefset.eq(k).removeAttr("href");
-                        }
-                        if(ahref.indexOf('.PNG')>-1){
-                            ahrefset.eq(k).attr('alt',ahref);
-                            ahrefset.eq(k).removeAttr("href");
-                        }
+//                    var ahref = ahrefset.eq(k).attr('href');
+//                    if(ahref!=null){
+//                        if(ahref.indexOf('.jpg')>-1){
+//                            ahrefset.eq(k).attr('alt',ahref);
+//                            ahrefset.eq(k).removeAttr("href");
+//                        }
+//                        if(ahref.indexOf('.JPG')>-1){
+//                            ahrefset.eq(k).attr('alt',ahref);
+//                            ahrefset.eq(k).removeAttr("href");
+//                        }
+//                        if(ahref.indexOf('.png')>-1){
+//                            ahrefset.eq(k).attr('alt',ahref);
+//                            ahrefset.eq(k).removeAttr("href");
+//                        }
+//                        if(ahref.indexOf('.PNG')>-1){
+//                            ahrefset.eq(k).attr('alt',ahref);
+//                            ahrefset.eq(k).removeAttr("href");
+//                        }
+//                    }
+                    if(ahrefset.eq(k).find('img')!=null){
+                        var cnt = ahrefset.eq(k).contents();
+                        ahrefset.eq(k).replaceWith(cnt);
                     }
                 }
                 
@@ -182,14 +186,14 @@ $(document).ready(function () {
                     for (var i = 0; i < (cmarray.length - 1); i++) {
                         $commarray[i]=cmarray[i];
                         cmjson = JSON.parse(cmarray[i]);
-                        //if(debug)console.log(cmjson);
+                        //if(tdbg)console.log(cmjson);
                         $("<h3 class='flcomment' cont='' cid='"+i+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
                     }
                         
                     //manager float event
                     $('.flcomment').hover(function () {
-                        //if(debug)console.log(usernickname+"="+$(this).attr('user'));
-                        //if(debug)console.log(userlevel);
+                        //if(tdbg)console.log(usernickname+"="+$(this).attr('user'));
+                        //if(tdbg)console.log(userlevel);
                         if(usernickname==$(this).attr('user') || userlevel==10){
                             $(this).css('background', 'rgba(126, 128, 127, 0.67)');
                             $(this).attr('cont', '(点击删除)');
@@ -203,7 +207,7 @@ $(document).ready(function () {
                     $('.flcomment').click(function () {
                         if (usernickname==$(this).attr('user') || userlevel==10) {
                             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
-                            if(debug)console.log($float_comment);
+                            if(tdbg)console.log($float_comment);
                             var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
                             $.ajax({
                                 url: questurl,
@@ -213,7 +217,7 @@ $(document).ready(function () {
                                     format: "json"
                                 },
                                 success: function (response) {
-                                    if(debug)console.log(response);
+                                    if(tdbg)console.log(response);
                                 }
                             });
                             $(this).attr("style","width:0px; height:0px; overflow:hidden;");
@@ -245,7 +249,7 @@ $(document).ready(function () {
                         format: "json"
                     },
                     success: function (response) {
-                        //if(debug)console.log(response);
+                        //if(tdbg)console.log(response);
                         relatedpostArranger(response);
                     }
                 });
@@ -272,7 +276,8 @@ $(document).ready(function () {
                     "image": {
                         "viewList": ["tsina", "qzone", "weixin", "tieba"],
                         "viewText": "分享到：",
-                        "viewSize": "24"
+                        "viewSize": "24",
+                        "viewColor" : 'rgba(231,231,231,0.1)',
                     }
 //                    slide : [{	   
 //                        bdImg : 0,
@@ -328,7 +333,7 @@ function DisplayCoord(event) {
     }
     $mp_x=$mp_x + 'px';
     $mp_y=$mp_y + 'px';
-    if(debug)console.log("("+$mp_x+","+$mp_y+")");
+    if(tdbg)console.log("("+$mp_x+","+$mp_y+")");
     $('#floating_cursor').attr("style", "left:" + $mp_x + ";top:" + $mp_y);
     if($hideCursor){
          $('#floating_cursor').attr("style","width:0px; height:0px; overflow:hidden;");
@@ -370,7 +375,7 @@ $('#comment_submit').click(function () {
             format: "json"
         },
         success: function (response) {
-            if(debug)console.log(response);
+            if(tdbg)console.log(response);
         }
     });
     document.getElementById('comment_input').value = "";
@@ -381,7 +386,7 @@ $('#comment_submit').click(function () {
     for (var i = 0; i < (cmarray.length - 1); i++) {
         $commarray.push(cmarray[i]);
         cmjson = JSON.parse(cmarray[i]);
-        //if(debug)console.log(cmjson);
+        //if(tdbg)console.log(cmjson);
         $("<h3 class='flcomment' cont='' cid='"+($commarray.length-1)+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
     }
     
@@ -399,9 +404,9 @@ $('#comment_submit').click(function () {
     });
     $('.flcomment').click(function () {
         if (usernickname==$(this).attr('user')) {
-            if(debug)console.log($commarray[$(this).attr('cid')]);
+            if(tdbg)console.log($commarray[$(this).attr('cid')]);
             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
-            if(debug)console.log($float_comment);
+            if(tdbg)console.log($float_comment);
             var questurl = baseurl.concat("?json=remove_float_comment&id=" + $tongpost_id + "&comment=" + $float_comment);
             $.ajax({
                 url: questurl,
@@ -411,7 +416,7 @@ $('#comment_submit').click(function () {
                     format: "json"
                 },
                 success: function (response) {
-                    if(debug)console.log(response);
+                    if(tdbg)console.log(response);
                 }
             });
             $(this).attr("style","width:0px; height:0px; overflow:hidden;");
@@ -440,7 +445,7 @@ switchcomment = function () {
 $('#comment_switch').click(switchcomment);
 
 function onCkeydown(event) {
-    //if(debug)console.log(String.fromCharCode(event.keyCode) );
+    //if(tdbg)console.log(String.fromCharCode(event.keyCode) );
     if (String.fromCharCode(event.keyCode) == "E") {
         switchcomment();
     }
@@ -483,7 +488,7 @@ function mapMarkerLoader(response){
             
             var mapmarkers=response.post.custom_fields.mapapp[0];
 
-            //if(debug)console.log(mapmarkers);
+            //if(tdbg)console.log(mapmarkers);
             if(mapmarkers=="") continue;
 
             var mparray = mapmarkers.split('$');
@@ -496,10 +501,10 @@ function mapMarkerLoader(response){
             $mmarkerarray[response.post.id]=marklist;
             labellist.push([response.post.id,response.post.custom_fields.originality[0],mparray.length-1]);
         }catch(err){
-            if(debug)console.log(err);
+            if(tdbg)console.log(err);
         };
     }
-//    if(debug)console.log($mmarkerarray);
+//    if(tdbg)console.log($mmarkerarray);
     
     if($mmarkerarray.length>0){
         $(".xunli_map").attr("style","");
@@ -621,7 +626,7 @@ function map_initialize() {
 //
 //function globalMakerLabelHandler() { 
 //        markers_clear();
-//    if(debug)console.log($(this.labelContent).attr('id').toString());
+//    if(tdbg)console.log($(this.labelContent).attr('id').toString());
 //    map_makeradderLoop(this.map,$(this.labelContent).attr('id').toString());
 //};
 //                                  
