@@ -315,9 +315,47 @@
     position: relative;
 }
 
+.videoshower{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index:2000;
+}
+
 /*sharing*/
 
 .WB_share_button .ico_share_btn_mini{
     height: 32px;
     width: 32px;
+}
+
+/*video kuanping*/
+.kuanping{
+    width: auto;
+    height: auto;
+    padding: 2px;
+    bottom: 0px;
+    left: 14px;
+    line-height: 16px;
+    font-size: 12px;
+    position: absolute;
+    background-color: rgba(199, 199, 199, 0.83);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+
+.quanping{
+    width: auto;
+    height: auto;
+    padding: 2px;
+    bottom: 0px;
+    left: 68px;
+    line-height: 16px;
+    font-size: 12px;
+    position: absolute;
+    background-color: rgba(199, 199, 199, 0.83);
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
 }
