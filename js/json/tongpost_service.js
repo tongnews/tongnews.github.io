@@ -73,11 +73,14 @@ $(document).ready(function () {
                 for (var k=0; k<imgset.length ;k++){
                     
                     var imwidth = imgset.eq(k).attr('width');
-                    //resize all to equal width
-                    var aspratio = imgset.eq(k).attr('height')/imwidth;
-                    var preheight = Math.floor(600*aspratio)+1;
-                    imgset.eq(k).attr('width',600+'px');
-                    imgset.eq(k).attr('height',preheight+'px');
+                    
+                    if(imwidth>200){
+                        //resize all to equal width
+                        var aspratio = imgset.eq(k).attr('height')/imwidth;
+                        var preheight = Math.floor(600*aspratio)+1;
+                        imgset.eq(k).attr('width',600+'px');
+                        imgset.eq(k).attr('height',preheight+'px');
+                    }
                     
                     //change to img full attchment to medium attachment
                     try{
