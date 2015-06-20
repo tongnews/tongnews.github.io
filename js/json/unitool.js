@@ -64,7 +64,7 @@ function decodeIdfromAddr() {
 }
 
 //Video referrence
-var $videolinkpref = "tudo";
+var $videolinkpref = "bilibili";
 function getVideoLinkref() {
     return $videolinkpref;
 }

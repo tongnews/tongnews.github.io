@@ -141,115 +141,117 @@ $(document).ready(function () {
                         if (typeof $videolink[linktype] == 'undefined') {
                             linktype = $videolink["avaliable"];
                         }
+                        var return_left="10%";
+                        var return_bottom="1%";
                         if (linktype == "tudo") {
                             $('<div class="videoshower">'+$videolink[linktype]+'</div>').insertAfter($tongpost_container.find('.intro'));
                             $tongpost_container.find('iframe').attr("style", "");
                             $tongpost_container.find('iframe').attr("id", "videoframe");
-                            
-                            
-                            $('.videoshower').prepend('<div class="kuanping" t="1">宽屏显示</div>');
-                            $('.kuanping').click(function () {
-                                
-                              if ($(this).attr('t') == 1) {
-                                    $('#videoframe').css({
-                                        'position': "fixed",
-                                        'width': "1100px",
-                                        'height': "670px",
-                                        'margin-top': "-335px",
-                                        'margin-left': "-550px",
-                                        'top': "50%",
-                                        'left': "50%",
-
-                                    });
-                                    $(this).css({
-                                        'position': "fixed",
-                                        'margin-bottom': "-360px",
-                                        'margin-left': "-550px",
-                                        'bottom': "50%",
-                                        'left': "50%",
-                                        'background-color': "rgba(157, 157, 157, 0.83)",
-                                    });
-                                    $(this).attr('t',2);
-                                    $(this).text("返回");
-                                }else{
-                                    $('#videoframe').css({
-                                        'position': "",
-                                        'width': "",
-                                        'height': "",
-                                        'margin-top': "",
-                                        'margin-left': "",
-                                        'top': "",
-                                        'left': "",
-
-                                    });
-                                    $(this).css({
-                                        'position': "",
-                                        'margin-bottom': "",
-                                        'margin-left': "",
-                                        'bottom': "",
-                                        'left': "",
-                                        'background-color':"",
-                                    });
-                                    $(this).attr('t',1);
-                                    $(this).text("宽屏显示");
-                                }
-                               
-                            });
-                            
-                            $('.videoshower').prepend('<div class="quanping" t="1">网页全屏</div>');
-                            $('.quanping').click(function () {
-                                
-                              if ($(this).attr('t') == 1) {
-                                    $('#videoframe').css({
-                                        'position': "fixed",
-                                        'width': "100%",
-                                        'height': "100%",
-                                        'top': "-20px",
-                                        'left': "0%",
-                                    });
-                                    $(this).css({
-                                        'position': "fixed",
-                                        'bottom': "1%",
-                                        'left': "10%",
-                                        'z-index':"2001",
-                                        'background-color': "rgba(157, 157, 157, 0.83)",
-                                    });
-                                    $(this).attr('t',2);
-                                    $(this).text("返回");
-                                }else{
-                                    $('#videoframe').css({
-                                        'position': "",
-                                        'width': "",
-                                        'height': "",
-                                        'margin-top': "",
-                                        'margin-left': "",
-                                        'top': "",
-                                        'left': "",
-                                        
-                                    });
-                                    $(this).css({
-                                        'position': "",
-                                        'margin-bottom': "",
-                                        'margin-left': "",
-                                        'bottom': "",
-                                        'left': "",
-                                        'z-index':"",
-                                        'background-color':"",
-                                    });
-                                    $(this).attr('t',1);
-                                    $(this).text("网页全屏");
-                                }
-                               
-                            });
-                            
-                            break;
                         }
                         if (linktype == "bilibili") {
-                            $('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">' + $videolink[linktype] + '</object>').insertAfter($tongpost_container.find('.intro'));
-                            $('#index_float_video_ply').find('embed').eq(0).attr("width", "");
-                            $('#index_float_video_ply').find('embed').eq(0).attr("height", "");
-                            break;
+                            $('<div class="videoshower"><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">' + $videolink[linktype] + '</object></div>').insertAfter($tongpost_container.find('.intro'));
+                            $tongpost_container.find('embed').eq(0).attr("width", "");
+                            $tongpost_container.find('embed').eq(0).attr("height", "");
+                            $tongpost_container.find('embed').attr("style", "");
+                            $tongpost_container.find('embed').attr("id", "videoframe");
+                            return_left="0px";
+                            return_bottom="20px";
                         }
+                        //add function button
+                        $('.videoshower').prepend('<div class="kuanping" t="1">宽屏显示</div>');
+                        $('.kuanping').click(function () {
+
+                            if ($(this).attr('t') == 1) {
+                                $('#videoframe').css({
+                                    'position': "fixed",
+                                    'width': "1150px",
+                                    'height': "670px",
+                                    'margin-top': "-335px",
+                                    'margin-left': "-575px",
+                                    'top': "50%",
+                                    'left': "50%",
+
+                                });
+                                $(this).css({
+                                    'position': "fixed",
+                                    'margin-bottom': "-360px",
+                                    'margin-left': "-575px",
+                                    'bottom': "50%",
+                                    'left': "50%",
+                                    'background-color': "rgba(157, 157, 157, 0.83)",
+                                });
+                                $(this).attr('t', 2);
+                                $(this).text("返回");
+                            } else {
+                                $('#videoframe').css({
+                                    'position': "",
+                                    'width': "",
+                                    'height': "",
+                                    'margin-top': "",
+                                    'margin-left': "",
+                                    'top': "",
+                                    'left': "",
+
+                                });
+                                $(this).css({
+                                    'position': "",
+                                    'margin-bottom': "",
+                                    'margin-left': "",
+                                    'bottom': "",
+                                    'left': "",
+                                    'background-color': "",
+                                });
+                                $(this).attr('t', 1);
+                                $(this).text("宽屏显示");
+                            }
+
+                        });
+                        $('.videoshower').prepend('<div class="quanping" t="1">网页全屏</div>');
+                        $('.quanping').click(function () {
+
+                            if ($(this).attr('t') == 1) {
+                                $('#videoframe').css({
+                                    'position': "fixed",
+                                    'width': "100%",
+                                    'height': "100%",
+                                    'top': "-20px",
+                                    'left': "0%",
+                                });
+                                $(this).css({
+                                    'position': "fixed",
+                                    'bottom': return_bottom,
+                                    'left': return_left,
+                                    'z-index': "2001",
+                                    'background-color': "rgba(157, 157, 157, 0.83)",
+                                });
+                                $(this).attr('t', 2);
+                                $(this).text("返回");
+                            } else {
+                                $('#videoframe').css({
+                                    'position': "",
+                                    'width': "",
+                                    'height': "",
+                                    'margin-top': "",
+                                    'margin-left': "",
+                                    'top': "",
+                                    'left': "",
+
+                                });
+                                $(this).css({
+                                    'position': "",
+                                    'margin-bottom': "",
+                                    'margin-left': "",
+                                    'bottom': "",
+                                    'left': "",
+                                    'z-index': "",
+                                    'background-color': "",
+                                });
+                                $(this).attr('t', 1);
+                                $(this).text("网页全屏");
+                            }
+
+                        });
+                        
                     }
                 }
 

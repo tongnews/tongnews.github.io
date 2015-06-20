@@ -80,7 +80,7 @@
 		// slideshow on / off
 		autoplay : true,
 		// keyboard navigation
-		keyboard : true,
+		keyboard : false,
 		// time between transitions
 		interval : 4000,
 		// callbacks
