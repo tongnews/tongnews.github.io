@@ -21,7 +21,7 @@
   font-weight: 100;
 }
 
-.photo_body_container input::-webkit-input-placeholder {
+.photo_body_container input::-webkit-input-placeholder,.photo_body_container textarea::-webkit-input-placeholder{
   color: #cccccc;
 }
 .photo_body_container table {
@@ -104,6 +104,14 @@
   width: 100px;
 }
 
+#infoinput{
+    width: 520px;
+    height: 60px;
+      border-radius: 3px;
+  border: 0; 
+    padding: 10px;  
+}
+
 #type {
   width: 50px;
 }
@@ -123,4 +131,13 @@
 .photo_body_container .center {
   margin: auto;
   text-align: center;
+}
+
+#introvideo{
+    margin-top: 20px;
+    margin-left: -300px;
+    left: 50%;
+    position: relative;
+    width: 600px;
+    height: 400px;
 }

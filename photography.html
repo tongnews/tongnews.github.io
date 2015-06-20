@@ -31,6 +31,9 @@
 
     <!--    news body-->
     <div class="photo_body_container container">
+        
+        <iframe id="introvideo" src="http://www.tudou.com/programs/view/html5embed.action?type=0&code=MLywl6j3ScQ&lcode=&resourceId=0_06_05_99" allowtransparency="true" allowfullscreen="true" allowfullscreenInteractive="true" scrolling="no" border="0" frameborder="0" ></iframe>
+        
         <div class="intro">
         </div>
         
@@ -39,9 +42,11 @@
 
         <div id="form-box">
         <form>
+            
           <div>
-            <span>你的摄影师:</span> 
+            <span>偏好摄影师:</span> 
               <select name="type">
+                  <option value="card">均可</option>
                   <option value="card">风铃</option>
                   <option value="cash">水铃</option>
                   <option value="cryptocoin">火铃</option>
@@ -49,25 +54,35 @@
               </select>
           </div>
 
-          <div>
-            <span>您的姓名:</span> <input type="text" name="item-name" placeholder="">
-          </div>
+            <div>
+                <span>您的姓名:</span>
+                <input type="text" name="item-name" placeholder="">
+            </div>
 
-          <div>
-            <span>约拍日期:</span> <input type="date" name="date">
-          </div>
+            <div>
+                <span>约拍日期:</span>
+                <input type="date" name="date">
+            </div>
 
-          <div>
-            <span>拍摄地点:</span> <input type="text" name="place">
-          </div>
-            
-          <div>
-            <span>拍摄风格:</span> <input type="text" name="style" placeholder="日常/Cosplay/街拍/其他">
-          </div>
+            <div>
+                <span>拍摄地点:</span>
+                <input type="text" name="place" placeholder="新宿/暂未定">
+            </div>
+
+            <div>
+                <span>拍摄风格:</span>
+                <input type="text" name="style" placeholder="日常/Cosplay/街拍/其他">
+            </div>
+
+            <div>
+                <span>联系方式:</span>
+                <input type="text" name="contact" placeholder="微信/微博/QQ/其他">
+            </div>
             
             <div>
-            <span>联系方式:</span> <input type="text" name="info" placeholder="微信/微博/QQ/其他">
-          </div>
+                <span>详细备注:</span>
+                <textarea type="text" name="info" id="infoinput" placeholder="摄影对象人数/拍摄主题/其他"></textarea>
+            </div>
             
         </form>
         </div>
