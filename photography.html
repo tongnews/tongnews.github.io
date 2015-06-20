@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+    <meta name="description" content="痛新闻">
+    <meta name="keywords" content="痛新闻,软软冰,日本,动漫,圣地巡礼" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <title>痛新闻｜关于我们</title>
+    <!--    CSS-->
+    <link rel="stylesheet" type="text/css" href="css/default.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pc_nav.css" />
+    <link rel="stylesheet" type="text/css" href="css/photography.css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!--    JS  -->
+    <script src="js/jQuery/jquery.js"></script>
+    <script src="js/json/unitool.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-64276529-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+
+    <!--    news body-->
+    <div class="photo_body_container container">
+        <div class="intro">
+        </div>
+        
+        <h1>想约片吗~</h1>
+        <h2>私人定制摄影申请表</h2>
+
+        <div id="form-box">
+        <form>
+          <div>
+            <span>你的摄影师:</span> 
+              <select name="type">
+                  <option value="card">风铃</option>
+                  <option value="cash">水铃</option>
+                  <option value="cryptocoin">火铃</option>
+                  <option value="other">地铃</option>
+              </select>
+          </div>
+
+          <div>
+            <span>您的姓名:</span> <input type="text" name="item-name" placeholder="">
+          </div>
+
+          <div>
+            <span>约拍日期:</span> <input type="date" name="date">
+          </div>
+
+          <div>
+            <span>拍摄地点:</span> <input type="text" name="place">
+          </div>
+            
+          <div>
+            <span>拍摄风格:</span> <input type="text" name="style" placeholder="日常/Cosplay/街拍/其他">
+          </div>
+            
+            <div>
+            <span>联系方式:</span> <input type="text" name="info" placeholder="微信/微博/QQ/其他">
+          </div>
+            
+        </form>
+        </div>
+
+        <div id="fbutton"><span>点击我发送信息吧~</span></div>
+
+<!--
+        <table>
+          <tr>
+            <th id="type" class="center">type</th>
+            <th>name</th>
+            <th id="date">date</th>
+            <th style="text-align: right" id="amount">amount</th>
+          </tr>
+          <tr id="if-empty">
+            <td colspan="4"><span>Your added items will show up here!</span></td>
+          </tr>
+
+        </table>
+-->
+        
+    </div>
+
+    <!--RRR footer    -->
+    <div class="footer-bottom">
+        <div class="inner-footer">
+            <div id="footer-left">
+                <div class="left">
+                    © 2015 痛新闻网站制作组
+                    <a href="about.html">关于我们</a>
+                    <a class="sitemap_download">网站地图</a>
+                </div>
+                <a href="about.html" class="footerCopyright">Designed by 小T酱</a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+
+    <!--JSON API for index_html    -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script>
+        var baseurl = getBaseUrl();
+        var cdnurl = getCDNUrl();
+        var bkurl = getBkdomainUrl();
+        baseJSload();
+        $(".catm").click(function () {
+            $(".catn").attr("style", "width:0px; height:0px; overflow:hidden;");
+            $(".catm").css({"background-color": "", "color": ""});
+            $("."+$(this).attr('con').toString()).attr("style", "");
+            $(this).css({"background-color": "#c15eff", "color": "white"});
+        });
+        checkCookie();
+    </script>
+    
+</body>
+
+
+</html>

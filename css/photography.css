@@ -1,0 +1,126 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300&subset=latin,latin-ext);
+
+.photo_body_container * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.photo_body_container h1, .photo_body_container h2 {
+  color: #ff7d9b;
+  text-align: center;
+}
+
+.photo_body_container h1 {
+  font-size: 2.5em;
+  margin-top: 20px;
+}
+
+.photo_body_container h2 {
+  margin: 20px 0;
+  font-weight: 100;
+}
+
+.photo_body_container input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+.photo_body_container table {
+  text-align: left;
+  width: 640px;
+  margin: 30px auto;
+  border-radius: 3px;
+  background-color: #fff;
+}
+.photo_body_container table th {
+  padding: 10px;
+}
+.photo_body_container table tr:nth-child(odd) {
+  background-color: #F5F7FA;
+}
+.photo_body_container table td {
+  padding: 10px 15px;
+  color: #434A54;
+}
+
+.amount {
+  color: #DA4453;
+  text-align: right;
+}
+
+#fbutton {
+  position: relative;
+  top: 0;
+  color: #F5F7FA;
+  padding: 20px;
+  text-align: center;
+  line-height: 24px;
+  width: 200px;
+  background-color: #4FC1E9;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: auto;
+  box-shadow: 0 3px #4A89DC;
+  transition: 0.1s ease;
+    margin-bottom: 440px;
+}
+#fbutton:active {
+  position: relative;
+  box-shadow: 0 0px #4A89DC;
+  top: 3px;
+  box-shadow: 0 0;
+}
+
+#form-box {
+  width: 650px;
+  margin: 30px auto;
+  padding-left: 15px;
+}
+
+.photo_body_container form {
+  color: #fff;
+  margin: auto;
+}
+.photo_body_container form select,.photo_body_container form input {
+  margin-bottom: 25px;
+  color: #434A54;
+  padding: 10px;
+  width: 200px;
+  border-radius: 3px;
+  border: 0;    
+}
+.photo_body_container form selectactive, form inputactive {
+  border: 1px solid #4FC1E9;
+  transition: 0.2s ease;
+}
+.photo_body_container form div {
+  display: inline-block;
+  margin-right: 10px;
+}
+.photo_body_container form span {
+      color: #ff8989;
+  font-size: 1.3em;
+  font-weight: 100;
+  display: inline-block;
+  width: 100px;
+}
+
+#type {
+  width: 50px;
+}
+
+#date {
+  width: 141px;
+}
+
+#amount {
+  width: 100px;
+}
+
+#if-empty {
+  text-align: center;
+}
+
+.photo_body_container .center {
+  margin: auto;
+  text-align: center;
+}

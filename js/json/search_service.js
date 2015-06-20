@@ -11,12 +11,16 @@ var $type="s"; //t for tag; s for search
 var $key="";
 
 $(document).ready(function () {
-        
+    
+    //nav footer function JS
+    baseJSload();
+    
     $type = getUrlParam("type");
     $key = getUrlParam("key");
     updatePosts($postCount, $pageNum);
     addSliderMoveListeners();
-
+    
+    checkCookie();
 });
 
 //?json=get_tong_category_posts&category_slug=pilgrimage-post&count= +pageNum+ &cuskey=area&cusval=东京
