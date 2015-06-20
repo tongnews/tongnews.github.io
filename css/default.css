@@ -1,5 +1,13 @@
 @charset "utf-8";
 
+body {
+	height: 100%;
+	width: 100%;
+    overflow: auto;
+    background: url(../images/bk-0.png) no-repeat;
+    background-color: rgba(252,252,252,1);
+}
+
 /* --------- RESET --------- */
 
 body,div,dl,dt,dd,ul,ol,li,p,
