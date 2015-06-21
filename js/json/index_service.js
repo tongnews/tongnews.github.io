@@ -7,7 +7,7 @@ var bkurl = getBkdomainUrl();
 
 var $postCount = 12,
     $pageNum = 1;
-var $rankCount = 10;
+var $rankCount=10;
 var $fly_video_right = 20;
 
 $(document).ready(function () {
@@ -28,15 +28,12 @@ $(document).ready(function () {
     addSliderMoveListeners();
     
     //if(tdbg)console.log("Starting JSON POSTS engine!");
-    updateSlides();
+    updateAllinOne();
     updatePosts($postCount, $pageNum);
-    updateRank($rankCount);
     
     //user management
     //createCookie("user","",14);
     checkCookie();
-
-    
     
 });
                   
@@ -96,60 +93,6 @@ $('.prevPostPage').click(function () {
     
 });
 
-function updateSlides() {
-
-    var questurl = baseurl.concat("?json=get_category_posts_indexslide&category_slug=slide");
-    //ajax for get recent post
-    var $slide_container = $('#sl-slider'),
-        $slide_cells = $slide_container.find('.sl-slide');
-    
-    logTimeNow('SlideJSON start');
-    
-    $.ajax({
-        url: questurl,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-            format: "json"
-        },
-        success: function (response) {
-
-            logTimeNow('SlideJSON back');
-
-            var $slide_counts = 5;
-
-            for (var i = 0; i < $slide_counts; i++) {
-                //replace title
-                $slide_cells.eq(i).find('p').text(response.posts[i].title);
-                //replace intro
-                $slide_cells.eq(i).find('h2').text(response.posts[i].custom_fields.series[0]);
-                var $tbnlurl =response.posts[i].custom_fields.screen_image_url[0].replace(baseurl, cdnurl).replace(bkurl, cdnurl);
-                
-                
-                var imgPreload = new Image();
-                imgPreload.src = $tbnlurl;
-                
-//                var $tbnlurlshort=$tbnlurl.substring($tbnlurl.length-4,$tbnlurl.length);
-//                $tbnlurl=$tbnlurl.substring(0,$tbnlurl.length-12)+$tbnlurlshort;
-                $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
-                    'background-image', 'url(' + $tbnlurl + ')'
-                );
-                var att = document.createAttribute("ref");
-                att.value = response.posts[i].custom_fields.linkaddr[0];
-                $slide_cells.eq(i).find('.bg-img-'.concat(i + 1))[0].setAttributeNode(att);
-            }
-            
-            logTimeNow('SlideJSON end');
-        }
-
-    });
-
-}
-
-$('.bg-img').click(function () {
-    window.location.href = $(this).attr('ref');
-});
-
 function pagelinkrefresh($pagemax) {
     $('.page_control').find('a').remove();
     var page_start = Math.max($pageNum - 3, 1);
@@ -202,12 +145,14 @@ function divMove(e) {
 }
 
 
-//--------------------- rank ---------------------------------------------------
+//--------------------- others ---------------------------------------------------
 
-function updateRank(rankCount) {
-    var questurl = baseurl.concat("?json=get_rank_posts_viewer_count");
-    logTimeNow('RankJSON start');
-    //ajax for get recent post
+function updateAllinOne() {
+    
+    var $slide_container = $('#sl-slider'),
+    $slide_cells = $slide_container.find('.sl-slide');
+    
+    var questurl = baseurl.concat("?json=get_index_static_all_in_one");
     $.ajax({
         url: questurl,
         jsonp: "callback",
@@ -216,9 +161,36 @@ function updateRank(rankCount) {
             format: "json"
         },
         success: function (response) {
-             rankArranger(response, rankCount, "index");
+
+            if (tdbg) console.log(response);
+            
+            //update rank
+            rankArranger(response.ranks, 10, "index");
+            
+            $('#newscotainer_content').prepend(response.agenda.posts[0].custom_fields.content[0]);
+            
+            //update slides
+            response=response.slides;
+            var $slide_counts = 5;
+            for (var i = 0; i < $slide_counts; i++) {
+                //replace title
+                $slide_cells.eq(i).find('p').text(response.posts[i].title);
+                //replace intro
+                $slide_cells.eq(i).find('h2').text(response.posts[i].custom_fields.series[0]);
+                var $tbnlurl = response.posts[i].custom_fields.screen_image_url[0].replace(baseurl, cdnurl).replace(bkurl, cdnurl);
+                var imgPreload = new Image();
+                imgPreload.src = $tbnlurl;
+                $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
+                    'background-image', 'url(' + $tbnlurl + ')'
+                );
+                var att = document.createAttribute("ref");
+                att.value = response.posts[i].custom_fields.linkaddr[0];
+                $slide_cells.eq(i).find('.bg-img-'.concat(i + 1))[0].setAttributeNode(att);
+            }
+            
         }
     });
+
 }
 
 $('.rank_cell').hover(function () {
@@ -226,4 +198,8 @@ $('.rank_cell').hover(function () {
         $('#index_rank_contianer').find('.rank_cell').eq(i).find('img').attr('style', "width:0px; height:0px; overflow:hidden;");
     }
     $(this).find('img').attr('style', "");
+});
+
+$('.bg-img').click(function () {
+    window.location.href = $(this).attr('ref');
 });

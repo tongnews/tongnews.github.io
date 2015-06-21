@@ -156,6 +156,7 @@ div{
     width: 279px;
     height: 87px;
     float: left;
+    cursor: pointer;
 }
 
 .navs {
