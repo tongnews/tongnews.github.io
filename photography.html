@@ -32,14 +32,17 @@
     <!--    news body-->
     <div class="photo_body_container container">
         
-        <iframe id="introvideo" src="http://www.tudou.com/programs/view/html5embed.action?type=0&code=MLywl6j3ScQ&lcode=&resourceId=0_06_05_99" allowtransparency="true" allowfullscreen="true" allowfullscreenInteractive="true" scrolling="no" border="0" frameborder="0" ></iframe>
-        <div class="weiboshower">
-            <iframe width="100%" height="800" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=800&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=5186475269&verifier=d0e29b40&dpc=1"></iframe>
+        <div class="intro_container">
+<iframe id="introvideo" src="http://www.tudou.com/programs/view/html5embed.action?type=0&code=MLywl6j3ScQ&lcode=&resourceId=0_06_05_99" allowtransparency="true" allowfullscreen="true" allowfullscreenInteractive="true" scrolling="no" border="0" frameborder="0"></iframe>
+            <div class="weiboshower">
+                <iframe width="100%" height="400" class="share_self" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=800&fansRow=1&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=5186475269&verifier=d0e29b40&dpc=1"></iframe>
+            </div>
         </div>
-        
+                    
         <div class="intro">
         </div>
         
+        <div class="contactform">
         <h1>想约片吗~</h1>
         <h2>私人定制摄影申请表</h2>
 
@@ -49,17 +52,17 @@
           <div>
             <span>偏好摄影师:</span> 
               <select name="type">
-                  <option value="card">均可</option>
-                  <option value="card">风铃</option>
-                  <option value="cash">水铃</option>
-                  <option value="cryptocoin">火铃</option>
-                  <option value="other">地铃</option>
+                  <option value="均可">均可</option>
+                  <option value="风铃">风铃</option>
+                  <option value="水铃">水铃</option>
+                  <option value="火铃">火铃</option>
+                  <option value="地铃">地铃</option>
               </select>
           </div>
 
             <div>
                 <span>您的姓名:</span>
-                <input type="text" name="item-name" placeholder="">
+                <input type="text" name="customer" placeholder="">
             </div>
 
             <div>
@@ -79,7 +82,7 @@
 
             <div>
                 <span>联系方式:</span>
-                <input type="text" name="contact" placeholder="微信/微博/QQ/其他">
+                <input type="text" name="contact" placeholder="微信/微博/QQ/其他(请注明类型)">
             </div>
             
             <div>
@@ -91,7 +94,7 @@
         </div>
 
         <div id="fbutton"><span>点击我发送信息吧~</span></div>
-
+        </div>
 <!--
         <table>
           <tr>
@@ -109,22 +112,6 @@
         
     </div>
 
-    <!--RRR footer    -->
-    <div class="footer-bottom">
-        <div class="inner-footer">
-            <div id="footer-left">
-                <div class="left">
-                    © 2015 痛新闻网站制作组
-                    <a href="about.html">关于我们</a>
-                    <a class="sitemap_download">网站地图</a>
-                </div>
-                <a href="about.html" class="footerCopyright">Designed by 小T酱</a>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-
-
     <!--JSON API for index_html    -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     <script>
@@ -132,11 +119,34 @@
         var cdnurl = getCDNUrl();
         var bkurl = getBkdomainUrl();
         baseJSload();
-        $(".catm").click(function () {
-            $(".catn").attr("style", "width:0px; height:0px; overflow:hidden;");
-            $(".catm").css({"background-color": "", "color": ""});
-            $("."+$(this).attr('con').toString()).attr("style", "");
-            $(this).css({"background-color": "#c15eff", "color": "white"});
+        $(document).ready(function (){
+          $name = $('select[name="type"'); 
+          $customer = $('input[name="customer"'); 
+          $contact = $('input[name="contact"');
+          $place = $('input[name="place"'); 
+          $info = $('textarea[name="info"');
+          $style = $('input[name="style"');
+          $date = $('input[name="date"');
+        });
+        $("#fbutton").click(function () {
+            $("#fbutton").css("background-color",'#e94f73');
+            $("#fbutton").text("正在发送中");
+            var msg="摄影组来活啦,快快开工吧~~~~<br><br>顾客姓名: "+$customer.val()+"<br>联系方式: "+$contact.val()+"<br>拍摄地点: "+$place.val()+"<br>偏好摄影师: "+$name.val()+"<br>拍摄风格: "+$style.val()+"<br>拍摄日期: "+$date.val()+"<br>备注: "+$info.val();
+            if(tdbg)console.log(msg);
+            var questurl = baseurl.concat("?json=send_cameracontact_email&message="+msg);
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    if(tdbg)console.log(response);
+                    $("#fbutton").css("background-color",'#4fe9a2');
+                    $("#fbutton").text("发送成功");
+                }
+            });
         });
         checkCookie();
     </script>

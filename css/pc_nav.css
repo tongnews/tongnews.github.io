@@ -207,7 +207,7 @@ div{
   box-shadow: none;
   padding-left: 15px;
   cursor: text;
-  width: 300px;
+  width: 200px;
   border-radius: auto;
   background: #ebebeb;
   color: black;
@@ -535,21 +535,21 @@ div{
 
 .nav2 a {
     background-image: url(../images/nv3.png);
-    background-color: #d670fb;
+    background-color: #fb6686;
     background-size: 70%;
 }
 .nav2 a:hover:before{
-    background-color: #fb6686;
+    background-color: #d670fb;
 }
 
 .nav3 a {
     background-image: url(../images/nv2.png);
-    background-color: #fb6686;
+    background-color: #d670fb;
     background-size: 70%;
 }
 
 .nav3 a:hover:before{
-    background-color:#d670fb;
+    background-color:#fb6686;
 }
 
 .nav4 a {
@@ -571,20 +571,21 @@ div{
 
 .nav6 a {
     background-image: url(../images/nv6.png);
+    background-color:#d670fb;
 }
 
 .nav6 a:hover:after{
-    background:#fb6686;
+    background-color:#fb6686;
 }
 
 .nav7 a {
     background-image: url(../images/nv7.png);
-    background-color:#d670fb;
+    background-color:#fb6686;
     background-size: 70%;
 }
 
 .nav7 a:hover:before{
-    background-color:#fb6686;
+    background-color:#d670fb;
 }
 
 /* -----------------footer--------------*/
