@@ -63,6 +63,7 @@ div{
 .accsorsy_container{
     position: absolute;
     width:100%;
+    margin-top: -169px;
     left: 0px;
     top: 0px;
 }
@@ -71,11 +72,22 @@ div{
     position:relative;
 }
 
+.bk_accsorsy_container{
+    position: relative;
+    width: 1130px;
+    margin: auto;
+    height: 0px;
+    z-index: 0;
+}
+
 #a_01{
     position:absolute;
     top:0px;
     right:-200px;
     opacity: 0.7;
+    background: url(../images/a_01_S.png);
+    width: 178px;
+    height: 220px;
 }
 
 #a_02{
@@ -83,6 +95,9 @@ div{
     top:800px;
     right: -240px;
     opacity: 0.7;
+    background: url(../images/a_02_S.png);
+    width: 160px;
+    height: 163px;
 }
 
 #a_03{
@@ -90,6 +105,9 @@ div{
     left: -200px;
     top: 1700px;
     opacity: 0.7;
+    background: url(../images/a_03_S.png);
+    width: 173px;
+    height: 237px;
 }
 
 #a_04{
@@ -97,6 +115,9 @@ div{
     top:0px;
     left:-250px;
     opacity: 0.7;
+    background: url(../images/bk-4.png);
+    width: 359px;
+    height: 1044px;
 }
 
 #a_05{
@@ -104,6 +125,9 @@ div{
     top:500px;
     right:-250px;
     opacity: 0.7;
+    background: url(../images/bk-3.png);
+    width: 293px;
+    height: 831px;
 }
 
 
@@ -225,17 +249,9 @@ div{
     z-index: 200;
 }
 
-.bk_accsorsy_container{
-    position: relative;
-    width: 1130px;
-    margin: auto;
-    height: 0px;
-    z-index: 0;
-}
-
 .user_container {
     width: auto;
-    height: auto;
+    height: 27px;
     float:right;
 }
 
@@ -264,8 +280,7 @@ div{
     width: auto;
     border-radius: 3px;
     padding: 3px 15px;
-    margin: 0 auto 10px auto;
-    
+    margin: 0 auto 0px auto;
     display: inline;
     cursor: pointer;
     color: #ffffff;
@@ -279,17 +294,17 @@ div{
 }
 
 #user_forget{
-    background: #ffc646;
+    background: #96A1B7;
 }
 .loginbox input, .sginbox input{
   appearance: none;
   outline: 0;
   border: 1px solid rgb(255, 255, 255,0.4);
-  background-color: #63ebad;
+  background-color: #D670FB;
   width:    100px;
   border-radius: 3px;
   padding: 3px 15px;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 0px auto;
   text-align: center;
   font-size: 14px;
   color: white;
