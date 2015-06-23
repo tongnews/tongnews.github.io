@@ -85,7 +85,7 @@ div{
     top:0px;
     right:-200px;
     opacity: 0.7;
-    background: url(../images/a_01_S.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/a_01_S.png);
     width: 178px;
     height: 220px;
 }
@@ -95,7 +95,7 @@ div{
     top:800px;
     right: -240px;
     opacity: 0.7;
-    background: url(../images/a_02_S.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/a_02_S.png);
     width: 160px;
     height: 163px;
 }
@@ -105,7 +105,7 @@ div{
     left: -200px;
     top: 1700px;
     opacity: 0.7;
-    background: url(../images/a_03_S.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/a_03_S.png);
     width: 173px;
     height: 237px;
 }
@@ -115,7 +115,7 @@ div{
     top:0px;
     left:-250px;
     opacity: 0.7;
-    background: url(../images/bk-4.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-4.png);
     width: 359px;
     height: 1044px;
 }
@@ -125,7 +125,7 @@ div{
     top:500px;
     right:-250px;
     opacity: 0.7;
-    background: url(../images/bk-3.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-3.png);
     width: 293px;
     height: 831px;
 }
@@ -528,13 +528,13 @@ div{
 }
 
 .nav1 a {
-    background-image: url(../images/nv1.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv1.png);
     margin-left: 0px;
     background-size: 85%;
 } 
 
 .nav2 a {
-    background-image: url(../images/nv3.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv3.png);
     background-color: #fb6686;
     background-size: 70%;
 }
@@ -543,7 +543,7 @@ div{
 }
 
 .nav3 a {
-    background-image: url(../images/nv2.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv2.png);
     background-color: #d670fb;
     background-size: 70%;
 }
@@ -553,7 +553,7 @@ div{
 }
 
 .nav4 a {
-    background-image: url(../images/nv4.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv4.png);
 
 }
 
@@ -570,7 +570,7 @@ div{
 }
 
 .nav6 a {
-    background-image: url(../images/nv6.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv6.png);
     background-color:#d670fb;
 }
 
@@ -579,7 +579,7 @@ div{
 }
 
 .nav7 a {
-    background-image: url(../images/nv7.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv7.png);
     background-color:#fb6686;
     background-size: 70%;
 }
