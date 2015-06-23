@@ -1,5 +1,5 @@
 <?php
-$url = "http://bk.tongnews.org?json=view_post&id=1377";
+$url = "http://bk.tongnews.org?json=view_post&id=".$_GET["id"] ;
 $json = file_get_contents($url);
 $json_data = json_decode($json, true);
 $php_title = $json_data['post']['title'];

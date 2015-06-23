@@ -17,8 +17,8 @@ function getDomain() {
     //if(tdbg)console.log(document.domain);
     return document.domain;
 }
-function getUrlParam(sParam) {
-    var sPageURL = window.location.hash.substr(2);
+function getUrlParam(sParam) { 
+    var sPageURL = window.location.search.substring(1); //window.location.hash.substr(2);
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++) {
         var sParameterName = sURLVariables[i].split('=');
@@ -207,7 +207,7 @@ function urlrewrite(id){
     if(getDomain()=="www.tongnews.org" || getDomain()=="tongnews.org"){
         return "rp"+id;
     }else{
-        return "tongpost.html#!id=" +id;
+        return "tongpost.html?id=" +id;
     }
 }
 
