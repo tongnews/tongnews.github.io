@@ -2,8 +2,8 @@
 $url = "http://bk.tongnews.org?json=get_single_post_title_content&id=".$_GET["id"] ;
 $json = file_get_contents($url);
 $json_data = json_decode($json, true);
-$php_title = $json_data['post']['title'];
-$php_content= $json_data['post']['content'];
+$php_title = $json_data['posts'][0]['title'];
+$php_content= $json_data['posts'][0]['content'];
 ?> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
