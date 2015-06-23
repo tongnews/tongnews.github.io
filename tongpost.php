@@ -1,8 +1,9 @@
 <?php
-$url = "http://bk.tongnews.org?json=view_post&id=".$_GET["id"] ;
+$url = "http://bk.tongnews.org?json=get_single_post_title_content&id=".$_GET["id"] ;
 $json = file_get_contents($url);
 $json_data = json_decode($json, true);
 $php_title = $json_data['post']['title'];
+$php_content= $json_data['post']['content'];
 ?> 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -107,7 +108,10 @@ $php_title = $json_data['post']['title'];
             </div>
         </div>
     </div>
-
+    
+    <noscript>
+        <?php echo '<div>'.$php_content.'</div>'; ?> 
+    </noscript>
 
     <!--JSON API for tongpost_html    -->
     <script src="js/json/tongpost_service.js"></script>
