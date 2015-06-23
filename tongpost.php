@@ -118,6 +118,11 @@ $php_content= $json_data['posts'][0]['content'];
     </div>
     
     <noscript>
+        <a href="index.html"><span class="hide">痛新闻首页</span></a> 
+        <a href="photography.html"><span class="hide">摄影联盟</span></a>
+        <a href="xunli.html"><span class="hide">圣地巡礼</span></a> 
+        <a href="reading.html"><span class="hide">资讯浏览</span></a> 
+        <a href="about.html"><span class="hide">关于我们</span></a> 
         <?php echo '<div>'.$php_content.'</div>'; ?> 
     </noscript>
 
