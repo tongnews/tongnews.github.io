@@ -39,7 +39,7 @@ $(document).ready(function () {
                 
                 $('#memo').attr('value','很喜欢文章:'+response.post.title+"，再接再厉!");
                 
-                //document.title=response.post.title;
+                document.title=response.post.title;
                 //replace info
                 try {
                     var flt_comment_count = response.post.custom_fields.float_comment[0].split('$').length - 1;
