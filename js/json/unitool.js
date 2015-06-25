@@ -18,7 +18,11 @@ function getDomain() {
     return document.domain;
 }
 function getUrlParam(sParam) { 
-    var sPageURL = window.location.search.substring(1); //window.location.hash.substr(2);
+    if(window.location.hash) {
+       var sPageURL = window.location.hash.substr(2);
+    } else {
+       var sPageURL = window.location.search.substring(1);
+    }
     var sURLVariables = sPageURL.split('&');
     for (var i = 0; i < sURLVariables.length; i++) {
         var sParameterName = sURLVariables[i].split('=');
@@ -227,16 +231,17 @@ function postArranger(response,postCount,source){
     for (var i = 0; i < $curCount; i++) {
         
         if(i<($curCount-1)){
-            var postHtml=$('<div class="post_cell uniborder"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div><div class="postslider"></div>');
+            var postHtml=$('<div class="post_cell uniborder"><img class="post_img"><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div><div class="postslider"></div>');
         }else{
-            var postHtml=$('<div class="post_cell uniborder"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+            var postHtml=$('<div class="post_cell uniborder"><img class="post_img"><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
         }
            
         //replace title
         postHtml.find('a').text(response.posts[i].title.substring(0, 31));
         
-
-        postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
+        var $linkurl=urlrewrite(encodeId(response.posts[i].id));
+        postHtml.find('a').attr("href",$linkurl);
+        
         //replace info
         try {
             var flt_comment_count = response.posts[i].custom_fields.float_comment[0].split('$').length - 1;
@@ -251,7 +256,8 @@ function postArranger(response,postCount,source){
         $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
 
         postHtml.find('img').attr('src', $tbnlurl);
-
+        postHtml.find('img').attr('tar', $linkurl);
+        
         //remove addional attribute
         postHtml.find(".float_video_link").remove();
 
@@ -308,6 +314,10 @@ function postArranger(response,postCount,source){
     },function () {
           $(this).css('background-color','');
             $(this).css('color','#000000');
+    });
+    
+    $('.post_img').click(function () {
+        window.open($(this).attr('tar'));
     });
     
     //control click event of float video button
@@ -455,22 +465,24 @@ function categoryTnailArranger(catslug,response,postCount,pageNum) {
            
         //replace title
         postHtml.find('a').find('p').text(response.posts[i].title.substring(6, 31));
-        postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
+        var $linkurl=urlrewrite(encodeId(response.posts[i].id));
+        postHtml.find('a').attr("href",$linkurl);
         
+        postHtml.attr('tar',$linkurl);   
         postHtml.attr("pid",response.posts[i].id);
          
         for (var j = 0; j < 4; j++) { 
+            try{
  postHtml.find('img').eq(j).attr('src',response.posts[i].attachments[j].images.thumbnail.url.replace(getRegBaseUrl(), cdnurl)); 
-            postHtml.find('img').eq(j).css({
-//                "-ms-transform": "rotate("+Math.floor((Math.random() * 20) -10)+"deg)", /* IE 9 */
-//                "-webkit-transform": "rotate("+Math.floor((Math.random() * 20) -10)+"deg)", /* Safari */
-//                "transform": "rotate("+Math.floor((Math.random() * 20) -10)+"deg)"
-            })
+                }catch(err){}
         }
-        
+
         postHtml.appendTo('#'+catslug);
     }
     
+    $('.post_wtnail').click(function () {
+        window.open($(this).attr('tar'));
+    });
 }
 
 function relatedpostArranger(response){
@@ -774,8 +786,13 @@ function baseJSload(){
             return;
         }
         
+        if(document.getElementById('user_sginin_nickname_input').value.indexOf(' ')>=0){
+            alert("昵称含有空格等非法字符");
+            return;
+        }
+        
         $(this).css('background','rgba(102, 251, 154, 0.67)');
-        var questurl = baseurl.concat("api/check_invitation_code/?code=" + document.getElementById('user_sginin_code_input').value);
+        var questurl = baseurl.concat("api/check_invitation_code/?code=" + document.getElementById('user_sginin_code_input').value+"&display_name=" + document.getElementById('user_sginin_nickname_input').value);
         $.ajax({
             url: questurl,
             jsonp: "callback",
@@ -829,6 +846,12 @@ function baseJSload(){
                             }
                         }
                     });
+                }
+                
+                //code invalid
+                if (response.message == "name_exist") {
+                    alert("该昵称已被注册");
+                    $('.user_signin_submit').css('background', '#FB708E');
                 }
                 
                 //code invalid

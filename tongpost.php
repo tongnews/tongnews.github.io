@@ -32,6 +32,15 @@ $php_content= $json_data['posts'][0]['content'];
     <script src="js/jQuery/jquery.js"></script>
     <script src="js/json/unitool.js"></script>
     <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?d92cb1542026b4138b0bfff49b758251";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {

@@ -80,6 +80,7 @@
     background-size: cover;
     background-clip: border-box;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .post_cell blockquote {

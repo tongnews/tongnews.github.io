@@ -152,7 +152,7 @@ div{
 }
 
 .uri {
-    background-image: url(../images/title.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/title.png);
     width: 279px;
     height: 87px;
     float: left;
@@ -160,7 +160,7 @@ div{
 }
 
 .navs {
-    background-image: url(../images/nv_before.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/nv_before.png);
     background-size: cover;
     width: 25px;
     height: 22.5px;
@@ -383,28 +383,6 @@ div{
     cursor: pointer;
 }
 
-
-
-/*  nagivation  */
-.dokileft{
-    background: url(../images/dokidoki.png);
-    position:absolute;
-    left: -240px;
-    height: 134px;
-    width: 250px;
-    margin-top: -55px;
-    z-index: -1;
-}
-
-.dokiright{
-    background: url(../images/dokidoki2.png);
-    position: absolute;
-    right:-240px;
-    height: 134px;
-    width: 250px;
-    margin-top: -55px;
-    z-index: -1;
-}
 
 .nav_container {
     width: 100%;
@@ -673,7 +651,7 @@ right: 30px;
 	width: 60px;
 	height: 120px;
 	display: block;
-	background: url(../images/backtotop.png) no-repeat center center;
+	background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/backtotop.png) no-repeat center center;
     background-size: contain;
 	/* rounded corners */
 	-webkit-border-radius: 15px;
@@ -728,6 +706,10 @@ right: 30px;
         top:500px;
         right:-250px;
         opacity: 0.7;
+    }
+    
+    .search-box:focus {
+        width: 110px;
     }
 }   
 

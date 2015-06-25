@@ -68,13 +68,13 @@
 
 	$.Slitslider.defaults = {
 		// transitions speed
-		speed : 800,
+		speed : 1600,
 		// if true the item's slices will also animate the opacity value
-		optOpacity : false,
+		optOpacity : true,
 		// amount (%) to translate both slices - adjust as necessary
-		translateFactor : 230,
+		translateFactor : 220,
 		// maximum possible angle
-		maxAngle : 25,
+		maxAngle : 15,
 		// maximum possible scale
 		maxScale : 2,
 		// slideshow on / off

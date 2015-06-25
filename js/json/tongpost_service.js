@@ -541,14 +541,12 @@ switchcomment = function () {
     if ($commenton == 1) {
         $('#comment_switch').text('弹幕OFF');
         $('#comment_switch').css("background", "#acacac");
-        $('.rollingcomment_container').find('h3').css('color', 'rgba(0,0,0,0)');
-        $('.rollingcomment_container').find('h3').css('background', 'rgba(0,0,0,0)');
+        $('.rollingcomment_container').attr("style","width:0px; height:0px; overflow:hidden;");
         $commenton = 0;
     } else {
         $('#comment_switch').text('弹幕ON');
         $('#comment_switch').css("background", "#fb6686");
-        $('.rollingcomment_container').find('h3').css('color', '#fff');
-        $('.rollingcomment_container').find('h3').css('background', 'rgba(251, 102, 134, 0.67)');
+        $('.rollingcomment_container').attr("style","");
         $commenton = 1;
     }
 };
