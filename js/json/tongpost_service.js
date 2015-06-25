@@ -6,12 +6,13 @@ var $tongpost_id = 0;
 var $commenton = 1;
 
 var $commarray=[];
+var floatcommentnamedic=[];
 
 $(document).ready(function () {
     
     //nav footer function JS
     baseJSload();
-    $('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().right -250 +'px');
+    $('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().left -195 +'px');
     
     //user management
     checkCookie();
@@ -290,32 +291,84 @@ $(document).ready(function () {
                     window.open('search.html#!type=t&key=' + $(this).text());
                 });
                 
+
                 //add comments
+                var space=new Array();
                 try {
                     var comments = response.post.custom_fields.float_comment[0];
                     var cmarray = comments.split('$');
+                    var intvalx=120;
+                    var intvaly=135;
                     for (var i = 0; i < (cmarray.length - 1); i++) {
                         $commarray[i]=cmarray[i];
                         cmjson = JSON.parse(cmarray[i]);
-                        //if(tdbg)console.log(cmjson);
-                        $("<h3 class='flcomment' cont='' cid='"+i+"' user='"+cmjson.user+"' style='left:" + cmjson.x_pos + ";top:" + cmjson.y_pos + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
-                    }
                         
+                        var xcoord=Math.round(parseInt(cmjson.x_pos, 10)/intvalx);
+                        var yccord=Math.round(parseInt(cmjson.y_pos, 10)/intvaly);          
+                        while(space[xcoord+"_"+yccord]){
+                            if(xcoord<=8) {
+                                xcoord=xcoord+1;
+                            }else{
+                                break
+                            };
+                        }
+
+                        space[xcoord+"_"+yccord]=1;
+                        
+                        var roundx=xcoord*intvalx+'px';
+                        var roundy=yccord*intvaly+'px';    
+                        
+                        //if(tdbg)console.log(cmjson);
+                        $("<h3 class='flcomment' cont='' cid='"+i+"' user='"+cmjson.user+"' style='left:" + roundx + ";top:" + roundy + "'>" + "@" + cmjson.user + ": " + cmjson.text + "</h3>").insertAfter($('#tongpost_container').find('.end'));
+                        
+                        if(floatcommentnamedic[cmjson.user]){
+                    floatcommentnamedic[cmjson.user]=floatcommentnamedic[cmjson.user]+1;
+                        }else{
+                            floatcommentnamedic[cmjson.user]=1;
+                        }
+                    }
+                     
+                    //if(tdbg)console.log(floatcommentnamedic);
+                    
                     //manager float event
                     $('.flcomment').hover(function () {
                         //if(tdbg)console.log(usernickname+"="+$(this).attr('user'));
                         //if(tdbg)console.log(userlevel);
                         if(usernickname==$(this).attr('user') || userlevel==10){
-                            $(this).css('background', 'rgba(126, 128, 127, 0.67)');
-                            $(this).attr('cont', '(点击删除)');
+                            $(this).css({
+                                'background': 'rgba(126, 128, 127, 0.67)',
+                                'overflow': 'visible',
+                                'max-height': '425px',
+                                'z-index': '400'
+                            });
+                            $(this).attr('cont', '(双击删除)');
+                        }else{
+                            $(this).css({
+                                'background': 'rgba(235, 235, 235, 0.95)',
+                                'overflow': 'visible',
+                                'max-height': '425px',
+                                'z-index': '400'
+                            });
                         }
                     },function () {
                         if(usernickname==$(this).attr('user') || userlevel==10){
-                            $(this).css('background', 'rgba(251, 102, 134, 0.93)');
+                            $(this).css({
+                                'background': '',
+                                'overflow': '',
+                                'max-height': '',
+                                'z-index': ''
+                            });
                             $(this).attr('cont', '');
+                        }else{
+                            $(this).css({
+                                'background': '',
+                                'overflow': '',
+                                'max-height': '',
+                                'z-index': ''
+                            });
                         }
                     });
-                    $('.flcomment').click(function () {
+                    $('.flcomment').dblclick(function () {
                         if (usernickname==$(this).attr('user') || userlevel==10) {
                             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
                             if(tdbg)console.log($float_comment);
@@ -329,6 +382,7 @@ $(document).ready(function () {
                                 },
                                 success: function (response) {
                                     if(tdbg)console.log(response);
+                                    floatcommentnamedic[usernickname]=floatcommentnamedic[usernickname]-1;
                                 }
                             });
                             $(this).attr("style","width:0px; height:0px; overflow:hidden;");
@@ -406,6 +460,8 @@ $(document).ready(function () {
         });
         
     }
+    
+    
 });
 
 //------------------floating comment-----------------------
@@ -473,6 +529,14 @@ $('#comment_submit').click(function () {
         alert("快填写弹幕吧~")
         return;
     }
+    
+    if (floatcommentnamedic[usernickname]>=3){
+        alert("目前每个基本用户每个文章只能发3条弹幕哟~")
+        return;
+    }
+    
+    floatcommentnamedic[usernickname]=floatcommentnamedic[usernickname]+1;
+    
     var $float_comment = "{"+"\"user\":" + "\""+usernickname+"\","+
                              "\"x_pos\":" + "\""+$mp_x +"\","+
                              "\"y_pos\":" + "\""+$mp_y +"\","+
@@ -503,17 +567,42 @@ $('#comment_submit').click(function () {
     
     //manager float event
     $('.flcomment').hover(function () {
-        if(usernickname==$(this).attr('user')){
-            $(this).css('background', 'rgba(126, 128, 127, 0.67)');
-            $(this).attr('cont', '(点击删除)');
+        if(usernickname==$(this).attr('user') || userlevel==10){
+            $(this).css({
+                'background': 'rgba(126, 128, 127, 0.67)',
+                'overflow': 'visible',
+                'max-height': '425px',
+                'z-index': '400'
+            });
+            $(this).attr('cont', '(双击删除)');
+        }else{
+            $(this).css({
+                'background': 'rgba(235, 235, 235, 0.95)',
+                'overflow': 'visible',
+                'max-height': '425px',
+                'z-index': '400'
+            });
         }
     },function () {
-        if(usernickname==$(this).attr('user')){
-            $(this).css('background', 'rgba(251, 102, 134, 0.93)');
+        if(usernickname==$(this).attr('user') || userlevel==10){
+            $(this).css({
+                'background': '',
+                'overflow': '',
+                'max-height': '',
+                'z-index': ''
+            });
             $(this).attr('cont', '');
+        }else{
+            $(this).css({
+                'background': '',
+                'overflow': '',
+                'max-height': '',
+                'z-index': ''
+            });
         }
     });
-    $('.flcomment').click(function () {
+    
+    $('.flcomment').dblclick(function () {
         if (usernickname==$(this).attr('user')) {
             if(tdbg)console.log($commarray[$(this).attr('cid')]);
             var $float_comment = $commarray[$(this).attr('cid')].replace(/"/g,'$');
@@ -528,6 +617,7 @@ $('#comment_submit').click(function () {
                 },
                 success: function (response) {
                     if(tdbg)console.log(response);
+                    floatcommentnamedic[usernickname]=floatcommentnamedic[usernickname]-1;
                 }
             });
             $(this).attr("style","width:0px; height:0px; overflow:hidden;");
@@ -541,7 +631,7 @@ switchcomment = function () {
     if ($commenton == 1) {
         $('#comment_switch').text('弹幕OFF');
         $('#comment_switch').css("background", "#acacac");
-        $('.rollingcomment_container').attr("style","width:0px; height:0px; overflow:hidden;");
+        $('.rollingcomment_container').attr("style","width:0px; height:0px; overflow:hidden;position:relative;");
         $commenton = 0;
     } else {
         $('#comment_switch').text('弹幕ON');
@@ -576,6 +666,36 @@ $('#comment_icon').click(function () {
     
 });
 
+function ta(obj){
+	var val=$(obj).val().length;
+	if(val>60){
+		alert("至多输入30个字~");
+		$(obj).val($(obj).val().substring(0,60))
+     }
+}
+
+var overlaps = (function () {
+    function getPositions(elem) {
+        var pos, width, height;
+        pos = $(elem).position();
+        width = $(elem).width() / 2;
+        height = $(elem).height();
+        return [[pos.left, pos.left + width], [pos.top, pos.top + height]];
+    }
+
+    function comparePositions(p1, p2) {
+        var r1, r2;
+        r1 = p1[0] < p2[0] ? p1 : p2;
+        r2 = p1[0] < p2[0] ? p2 : p1;
+        return r1[1] > r2[0] || r1[0] === r2[0];
+    }
+
+    return function (a, b) {
+        var pos1 = getPositions(a),
+            pos2 = getPositions(b);
+        return comparePositions(pos1[0], pos2[0]) && comparePositions(pos1[1], pos2[1]);
+    };
+})();
 
 //-----------------------------MAP api-------------------------------
 

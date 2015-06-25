@@ -252,7 +252,7 @@ function postArranger(response,postCount,source){
         
         //replace intro
         postHtml.find('p').text(response.posts[i].custom_fields.intro[0]);
-        var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+        var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl).replace(getBkdomainUrl(), cdnurl);
         $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
 
         postHtml.find('img').attr('src', $tbnlurl);
@@ -420,7 +420,7 @@ function rankArranger(response, rankCount, source) {
         $rank_cells.eq(i).find('a').text(response.posts[i].title.substring(0, 31));
         $rank_cells.eq(i).find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
         $("<div class='ref_id' post_id=" + response.posts[i].id + "></div>").insertAfter($rank_cells.eq(i).find('a'));
-        var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
+        var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl).replace(getBkdomainUrl(), cdnurl);
         $rank_cells.eq(i).find('img').attr('src', $tbnlurl);
     }
     

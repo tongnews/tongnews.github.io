@@ -135,11 +135,11 @@
 
 .rollingcomment_input{
     position: fixed;
-    left: 1090px;
     bottom: 70px;
     background: rgba(255, 255, 255, 0.0);
     width: auto;
     height: auto;
+    z-index: 400;
 }
 
 .rollingcomment_input i{
@@ -151,10 +151,11 @@
     cursor: pointer;
 }
 
-.rollingcomment_input input{
+.rollingcomment_input textarea{
     display: inline;
     margin: 5px;
-    width: 150px;
+    width: 170px;
+    height: 30px;
     margin-bottom: 0px;
 }
 
@@ -175,8 +176,10 @@
     color: #2a2a2a;
     font-family: '微软雅黑';
     max-width: 100px;
+    max-height: 125px;
     border: dotted 1px #626262;
     box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+    overflow:hidden;
 }
 
 .rollingcomment_container h3:nth-child(4n+1) {  

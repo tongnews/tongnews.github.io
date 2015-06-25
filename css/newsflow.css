@@ -36,7 +36,7 @@
 .post_shower {
     width: auto;
     height: 39px;
-    background: url(../images/zuixintougao.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/zuixintougao.png);
     background-repeat: no-repeat;
     overflow: hidden;
 }
@@ -63,7 +63,7 @@
     height: 100%;   
     position: absolute;
     background-color: rgba(255, 255, 255, 0.66);
-    background-image: url(../images/ajax-loader.gif);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/ajax-loader.gif);
     background-size: 64px;
     background-position: 50% 240px;
     background-repeat: no-repeat;
@@ -210,7 +210,7 @@
     margin-right: 60px;
     display: inline-block;
     float:left; 
-    background: url(../images/arrow-18-48-left.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/arrow-18-48-left.png);
     background-position: 0 -13px;
     cursor:pointer;
 }
@@ -221,7 +221,7 @@
     height: 24px;
     float: right;
     display: inline-block;
-    background: url(../images/arrow-18-48.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/arrow-18-48.png);
     background-position: 0 -13px;
     cursor:pointer;
 }
@@ -413,7 +413,7 @@
     content: "";
     width: 200px;
     height: 158px;
-    background-image: url(../images/weibo_ac1.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/weibo_ac1.png);
     position: absolute;
     top: -30px;
     right: -30px;
@@ -422,19 +422,19 @@
 .weibo_shower {
     width: 100%;
     height: 39px;
-    background: url(../images/zuixindongtai.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/zuixindongtai.png);
     background-repeat: no-repeat;
 }
 
 .rad_con_1{
-    background-image: url(../images/rad_1.jpg);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_1.jpg);
     width: 320px;
     height: 480px;
     margin-top: 20px;
 }
 
 .rad_con_2{
-    background-image: url(../images/rad_2.jpg);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_2.jpg);
     width: 320px;
     height: 155px;
     margin-top: 0px;
@@ -451,7 +451,7 @@
 }
 
 .rad_con_4{
-    background-image: url(../images/baidutong.gif);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/baidutong.gif);
     width: 320px;
     height: 66px;
     margin-top: 20px;
@@ -467,7 +467,7 @@
 .rank_shower {
     width: 100%;
     height: 39px;
-    background: url(../images/rankshower.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rankshower.png);
     background-repeat: no-repeat;
 }
 
@@ -555,7 +555,7 @@
     width: 24px;
     height: 24px;
     position: absolute;
-    background: url(../images/close-window-24.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/close-window-24.png);
     cursor:pointer;
     z-index: 1000;
 }
@@ -587,7 +587,7 @@
     width: 16px;
     height: 16px;
     position: absolute;
-    background: url(../images/tv-16.png);
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/tv-16.png);
     cursor:pointer;
     z-index: 500;
 }
@@ -664,6 +664,7 @@ div#whatsnew_parent li span.date {
   color: #00a1e9;
   font-weight: 100;
 }
+
 /* customr scroll bar*/
 
 ._mCS_1 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
@@ -684,7 +685,7 @@ div#whatsnew_parent li span.date {
     margin-top: 20px;
     height: auto;
     width: 100%;
-    background-image: url(../images/bk-0.jpg);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-0.jpg);
 }
 .staff_show{
     padding-top: 0px;
@@ -696,7 +697,7 @@ div#whatsnew_parent li span.date {
 }
 
 .staff_shower{
-    background-image: url(../images/chengyuanjieshao.png);
+    background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/chengyuanjieshao.png);
     width: 100%;
     height: 31px;
     margin-bottom: 20px;
