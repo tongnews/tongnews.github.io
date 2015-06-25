@@ -43,7 +43,6 @@ body{
     white-space:nowrap;
     width: 100%;
     height: auto;
-    overflow: auto;
     opacity: 0.9;
     -webkit-transition: opacity 0.3s;
     transition: opacity 0.3s;
