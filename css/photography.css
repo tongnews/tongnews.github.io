@@ -5,10 +5,25 @@
     width: 1000px;
     margin: 20px auto;
     height: 400px;
-     text-align: center;
+    text-align: center;
 }
 
-#introvideo{
+.intro_img{
+    margin-top: 50px;
+    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/sylm.jpg);
+    width: 1087px;
+    height: 3346px;
+    background-size: contain;
+    margin-left: auto;
+    margin-right: auto;
+        border: 21px solid #ff5e6a;
+    border-width: 21px 21px 21px 21px;
+    border-image: 58 round url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/12058548_p25.jpg);
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
+}
+}
+
+.introvideo2{
     float: left;
     position: relative;
     width: 600px;
@@ -82,7 +97,7 @@
   margin: auto;
   box-shadow: 0 3px #4A89DC;
   transition: 0.1s ease;
-    margin-bottom: 440px;
+    margin-bottom: 40px;
     font-size:16px;
 }
 #fbutton:active {
@@ -128,7 +143,7 @@
 
 #infoinput{
     width: 520px;
-    height: 60px;
+    height: 70px;
       border-radius: 3px;
   border: 0; 
     padding: 10px;  

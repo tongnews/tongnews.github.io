@@ -858,7 +858,7 @@ div{
     background-color:#d670fb;
 }
 
-.nav6 a:hover:after{
+.nav6 a:hover:before{
     background-color:#fb6686;
 }
 
