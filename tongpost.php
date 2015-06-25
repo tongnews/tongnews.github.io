@@ -24,12 +24,11 @@ $php_content= $json_data['posts'][0]['content'];
     <link rel="shortcut icon" href="images/favicon.ico">
     <?php echo '<title>痛新闻｜'.$php_title.'</title>'; ?> 
     <!--    CSS-->
-    <link rel="stylesheet" type="text/css" href="css/default.css" />
     <link rel="stylesheet" type="text/css" href="css/pc_nav.css" />
     <link rel="stylesheet" type="text/css" href="css/tongpost.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--    JS  -->
-    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.js"></script>
     <script src="js/json/unitool.js"></script>
     <script>
         var _hmt = _hmt || [];
