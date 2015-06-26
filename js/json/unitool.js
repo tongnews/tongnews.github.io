@@ -96,7 +96,7 @@ function videorefanlayse(refstr) {
     return $videolink;
 }
 
-var tdbg=true;
+var tdbg=false;
 
 //-------------------------Animation Contronller ----------------//
 function pageScroll() {
@@ -584,6 +584,13 @@ function baseJSload(){
     $('.uri').click(function () {
         window.location='index.html';
     });
+    
+    if(getDomain()=="www.tongnews.org" || getDomain()=="tongnews.org"){
+        tdbg=false;
+    }else{
+        tdbg=true;
+    }
+    
     //-------------------------------back-top-------------------------------
     $('body').prepend('<p id="back-top"><a href="#top"><span></span>叮铃叮铃~</a></p>');
     

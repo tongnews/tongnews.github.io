@@ -234,3 +234,10 @@ margin-left: 295px;
     background: url(../images/about/dd.jpg) no-repeat;
     background-size: cover;
 }
+
+#i19{
+    background: url(../images/about/dmj.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
