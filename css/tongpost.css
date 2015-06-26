@@ -7,6 +7,7 @@
     margin-bottom: 70px;
     position: relative;
     font-size: 100%;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
 .menu_container{
@@ -47,9 +48,9 @@
 .tongpost_container h2 {
     margin-top: 5px;
     display: block;
-    font-size: 2.4em;
+    font-size: 2em;
     color: #f75986;
-    font-family: '微软雅黑';
+    
     margin-left:3px;
     overflow: hidden;
     padding-left: 15px;
@@ -58,9 +59,8 @@
 .tongpost_container h3 {
     margin-top: 2px;
     display: block;
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #4081d9;
-    font-family: '微软雅黑';
     margin-left:20px;
 }
 
@@ -69,16 +69,14 @@
     display: block;
     font-size: 1.2em;
     color: rgba(126, 126, 126, 0.85);
-    font-family: '微软雅黑';
     margin-left:20px;
 }
 
 
 .tongpost_container .tag{
     display: inline;
-    font-size: 1.4em;
+    font-size: 1.2em;
     color: #fff;
-    font-family: '微软雅黑';
     background: rgba(203, 70, 227, 0.85);
     border-radius: 4px;
     padding-left: 4px;
@@ -99,9 +97,13 @@
     display: block;
     margin-left:20px;
     margin-right:10px;
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: #000000;
-    font-family: '微软雅黑'；
+}
+
+.tongpost_container blockquote img{
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .tongpost_container iframe {
@@ -165,7 +167,6 @@
     display: block;
     font-size: 12px;
     color: #fb6686;
-    font-family: '微软雅黑';
     cursor:pointer;
 }
 
@@ -175,7 +176,6 @@
     padding-right: 5px;  
     font-size: 12px;
     color: #2a2a2a;
-    font-family: '微软雅黑';
     max-width: 100px;
     max-height: 125px;
     border: dotted 1px #626262;

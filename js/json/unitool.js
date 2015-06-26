@@ -435,10 +435,10 @@ function categoryWidgetArranger(catslug,response,postCount,pageNum) {
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         
-        var postHtml=$('<div class="post_widget"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+        var postHtml=$('<div class="post_widget"><a target="_blank"><img><blockquote><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></a></div>');
            
         //replace title
-        postHtml.find('a').text(response.posts[i].title.substring(0, 31));
+        postHtml.find('p').text(response.posts[i].title.substring(0, 31));
         postHtml.find('a').attr("href", urlrewrite(encodeId(response.posts[i].id)));
         
         //replace intro
