@@ -22,6 +22,7 @@ $php_content= $json_data['posts'][0]['content'];
     <meta name="keywords" content="痛新闻,软软冰" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="shortcut icon" href="images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php echo '<title>痛新闻｜'.$php_title.'</title>'; ?> 
     <!--    CSS-->
     <link rel="stylesheet" type="text/css" href="css/pc_nav.css" />

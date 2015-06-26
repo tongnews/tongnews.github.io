@@ -6,6 +6,7 @@ body {
     overflow: auto;
     background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-0.jpg) no-repeat;
     background-color: rgba(252,252,252,1);
+    -webkit-text-size-adjust: 100%;
 }
 
 /* --------- RESET --------- */
@@ -1821,8 +1822,6 @@ div#whatsnew_parent li span.date {
 }   
 
 
-/*
-   responsive design    
 @media only screen and (max-width: 1223px){
     .news_body{
         width: 85%;
@@ -1851,6 +1850,10 @@ div#whatsnew_parent li span.date {
         display: block;
     }
     
+    .post_cell p{
+        display: block;
+    }
+    
     .post_cell tags{
         margin-top: 1px; 
         margin-left: 10px;
@@ -1858,10 +1861,15 @@ div#whatsnew_parent li span.date {
         width: auto;
         height: auto;
         display: block;
+        font-size:12px;
         overflow: none;
     }
     
 }
+
+/*
+   responsive design    
+
 
 @media only screen and (min-width: 767px) and (max-width: 1223px){
 
