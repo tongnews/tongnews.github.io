@@ -209,8 +209,8 @@ var $curCount = 0,
 
 function urlrewrite(id){
     if(getDomain()=="www.tongnews.org" || getDomain()=="tongnews.org"){
-        return "tongpost.html?id=" +id;
-        //return "rp"+id;
+        //return "tongpost.html?id=" +id;
+        return "rp"+id;
     }else{
         return "tongpost.html?id=" +id;
     }
