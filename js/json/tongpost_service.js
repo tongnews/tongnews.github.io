@@ -8,6 +8,10 @@ var $commenton = 1;
 var $commarray=[];
 var floatcommentnamedic=[];
 
+window.onresize = function(event) {
+$('.rollingcomment_input').css('left',document.getElementById('tongpost_container').getBoundingClientRect().left -195 +'px');
+};
+    
 $(document).ready(function () {
     
     //nav footer function JS
