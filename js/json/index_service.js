@@ -47,6 +47,13 @@ function scrollbarCustom(){
 function updatePosts(postCount, pageNum) {
     
     $('.loading_cover').attr("style", "");
+    
+    if(pageNum<=1){
+        var response = index_m;
+        postArranger(response,postCount,"index");
+        pagelinkrefresh(response.pages);
+    }else{
+    
     var questurl = baseurl.concat("?json=get_category_posts_main&category_slug=post&count=" + postCount + "&page=" + pageNum);
     //ajax for get recent post
     logTimeNow('PostJSON start');
@@ -65,6 +72,7 @@ function updatePosts(postCount, pageNum) {
 
     });
 
+    }
 }
 
 $('.nextPostPage').click(function () {
@@ -149,48 +157,59 @@ function divMove(e) {
 
 function updateAllinOne() {
     
-    var $slide_container = $('#sl-slider'),
-    $slide_cells = $slide_container.find('.sl-slide');
-    
-    var questurl = baseurl.concat("?json=get_index_static_all_in_one");
-    $.ajax({
-        url: questurl,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-            format: "json"
-        },
-        success: function (response) {
+    var response = index_o;
+    processojson(response);
 
-            if (tdbg) console.log(response);
-            
-            //update rank
-            rankArranger(response.ranks, 10, "index");
-            
-            $('#newscotainer_content').prepend(response.agenda.posts[0].custom_fields.content[0]);
-            
-            //update slides
-            response=response.slides;
-            var $slide_counts = 5;
-            for (var i = 0; i < $slide_counts; i++) {
-                //replace title
-                $slide_cells.eq(i).find('p').text(response.posts[i].title);
-                //replace intro
-                $slide_cells.eq(i).find('h2').text(response.posts[i].custom_fields.series[0]);
-                var $tbnlurl = response.posts[i].custom_fields.screen_image_url[0].replace(baseurl, cdnurl).replace(bkurl, cdnurl);
-                var imgPreload = new Image();
-                imgPreload.src = $tbnlurl;
-                $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
-                    'background-image', 'url(' + $tbnlurl + ')'
-                );
-                var att = document.createAttribute("ref");
-                att.value = response.posts[i].custom_fields.linkaddr[0];
-                $slide_cells.eq(i).find('.bg-img-'.concat(i + 1))[0].setAttributeNode(att);
+    if(response=null){
+        var questurl = baseurl.concat("?json=get_index_static_all_in_one");
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+                
+                    processojson(response);
+
             }
-            
-        }
-    });
+        });
+    }
+    
+}
 
+
+function processojson(response) {
+
+    var $slide_container = $('#sl-slider'),
+        $slide_cells = $slide_container.find('.sl-slide');
+
+    if (tdbg) console.log(response);
+
+    //update rank
+    rankArranger(response.ranks, 10, "index");
+
+    $('#newscotainer_content').prepend(response.agenda.posts[0].custom_fields.content[0]);
+
+    //update slides
+    response = response.slides;
+    var $slide_counts = 5;
+    for (var i = 0; i < $slide_counts; i++) {
+        //replace title
+        $slide_cells.eq(i).find('p').text(response.posts[i].title);
+        //replace intro
+        $slide_cells.eq(i).find('h2').text(response.posts[i].custom_fields.series[0]);
+        var $tbnlurl = response.posts[i].custom_fields.screen_image_url[0].replace(baseurl, cdnurl).replace(bkurl, cdnurl);
+        var imgPreload = new Image();
+        imgPreload.src = $tbnlurl;
+        $slide_cells.eq(i).find('.bg-img-'.concat(i + 1)).css(
+            'background-image', 'url(' + $tbnlurl + ')'
+        );
+        var att = document.createAttribute("ref");
+        att.value = response.posts[i].custom_fields.linkaddr[0];
+        $slide_cells.eq(i).find('.bg-img-'.concat(i + 1))[0].setAttributeNode(att);
+    }
 }
 
 $('.rank_cell').hover(function () {
