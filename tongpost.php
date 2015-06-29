@@ -139,8 +139,8 @@ $php_content= $json_data['posts'][0]['content'];
 
     <!--JSON API for tongpost_html    -->
     <script src="js/json/tongpost_service.js"></script>
-    <script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
-    <!--    <script src="https://ditu.gdgdocs.org/maps/api/js?v=3.exp&sensor=false"></script>-->
+<!--    <script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>-->
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 
     <!--    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.8/src/markerwithlabel.js"></script>-->
 

@@ -21,7 +21,7 @@ $(document).ready(function () {
     //user management
     checkCookie();
     //add event listener
-    document.addEventListener("keydown", onCkeydown);
+    //document.addEventListener("keydown", onCkeydown);
     //pull post
     $tongpost_id = decodeIdfromAddr();
 
@@ -646,13 +646,6 @@ switchcomment = function () {
 };
 
 $('#comment_switch').click(switchcomment);
-
-function onCkeydown(event) {
-    //if(tdbg)console.log(String.fromCharCode(event.keyCode) );
-    if (String.fromCharCode(event.keyCode) == "E") {
-        switchcomment();
-    }
-}
 
 var $comment_extend_swith=0;
 $('#comment_icon').click(function () {

@@ -893,7 +893,10 @@ function baseJSload(){
             $token=getUrlParam("token");
         };
         
-        var questurl = baseurl.concat("api/set_user_password?email=" + document.getElementById('pw_name_input').value + "&password=" + document.getElementById('pw_pass_input').value + "&token=" + $token);
+        var questurl = baseurl.concat("api/set_user_password?email=" + document.getElementById('pw_name_input').value.replace('@','%40') + "&password=" + document.getElementById('pw_pass_input').value + "&token=" + $token);
+        
+        if(tdbg)console.log(document.getElementById('pw_name_input').value);
+        
         $(this).css('background','rgba(102, 251, 154, 0.67)');
         $(this).css('color','rgb(255, 255, 255)');
         $.ajax({
