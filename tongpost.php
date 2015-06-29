@@ -1,6 +1,6 @@
 <?php
 
-$filepath='seocache\tpcache'.$_GET["id"].'.json';
+$filepath='seocache/tpcache'.$_GET["id"].'.json';
 if(file_exists($filepath)){
     $json = file_get_contents($filepath);
 }else{
