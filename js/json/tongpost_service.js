@@ -423,9 +423,6 @@ $(document).ready(function () {
                     }
                 });
                 
-                //for primgage map load
-                mapMarkerLoader(response);
-                
                 //sharing button
                 window._bd_share_config = {
                     "common": {
@@ -467,6 +464,9 @@ $(document).ready(function () {
                 window.WBComment.init({
                     "id": "WBCommentFrame"
                 });
+                
+                //for primgage map load
+                mapMarkerLoader(response);
                 
                 
             }
