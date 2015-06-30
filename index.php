@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--    JS  -->
-    <?php echo '<script type="text/javascript" src="jcache/index_o.json?v='.date("Ymdn").'"></script>'; ?> 
-    <?php echo '<script type="text/javascript" src="jcache/index_m.json?v='.date("Ymdn").'"></script>'; ?> 
+    <?php echo '<script type="text/javascript" src="jcache/index_o.json?v='.date("Ymdh").'"></script>'; ?> 
+    <?php echo '<script type="text/javascript" src="jcache/index_m.json?v='.date("Ymdh").'"></script>'; ?> 
     <script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.js"></script>
     <script src="js/json/unitool.js"></script>
