@@ -49,28 +49,52 @@ function updatePosts(postCount, pageNum) {
     $('.loading_cover').attr("style", "");
     
     if(pageNum<=1){
-        var response = index_m;
-        postArranger(response,postCount,"index");
-        pagelinkrefresh(response.pages);
-    }else{
-    
-    var questurl = baseurl.concat("?json=get_category_posts_main&category_slug=post&count=" + postCount + "&page=" + pageNum);
-    //ajax for get recent post
-    logTimeNow('PostJSON start');
-    
-    $.ajax({
-        url: questurl,
-        jsonp: "callback",
-        dataType: "jsonp",
-        data: {
-            format: "json"
-        },
-        success: function (response) {
+        
+        try{
+            var response = index_m;
             postArranger(response,postCount,"index");
             pagelinkrefresh(response.pages);
-        }
+        }catch(err){
+            
+            var questurl = baseurl.concat("?json=get_category_posts_main&category_slug=post&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            logTimeNow('PostJSON start');
 
-    });
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    postArranger(response,postCount,"index");
+                    pagelinkrefresh(response.pages);
+                }
+
+            });
+            
+        }
+        
+    }else{
+    
+        var questurl = baseurl.concat("?json=get_category_posts_main&category_slug=post&count=" + postCount + "&page=" + pageNum);
+        //ajax for get recent post
+        logTimeNow('PostJSON start');
+
+        $.ajax({
+            url: questurl,
+            jsonp: "callback",
+            dataType: "jsonp",
+            data: {
+                format: "json"
+            },
+            success: function (response) {
+                postArranger(response,postCount,"index");
+                pagelinkrefresh(response.pages);
+            }
+
+        });
 
     }
 }
@@ -157,10 +181,15 @@ function divMove(e) {
 
 function updateAllinOne() {
     
-    var response = index_o;
-    processojson(response);
+    try{
+        var response = index_o;
+        processojson(response);
+    }catch(err){
+        var response =null;
+    }
+    
 
-    if(response=null){
+    if(response==null){
         var questurl = baseurl.concat("?json=get_index_static_all_in_one");
         $.ajax({
             url: questurl,

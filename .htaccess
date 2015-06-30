@@ -1,0 +1,6 @@
+DirectoryIndex index.php index.html
+RewriteEngine On
+RewriteBase /
+RewriteRule ^rp([0-9]+)$	tongpost.php?id=$1 [NE,L]
+RewriteRule ^hp([0-9]+)$	tongpost.html [NE,L]
+RewriteRule ^index.php$	/ [NE,R,L]
