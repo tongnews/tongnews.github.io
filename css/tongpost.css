@@ -235,7 +235,7 @@
 
 .post_widget {
     display: inline-block;
-    width: 180px;
+    width: 175px;
     height: auto;
     margin-top: 20px;
     margin-left: 20px;
@@ -244,11 +244,24 @@
     color: #fff;
 }
 
+.tongrelated{
+    border: solid 1px pink;
+}
+.post_widget img {
+  border-radius: 0px;   
+}
 .post_widget a{
     pointer-events: all;
     cursor: pointer;
     width: 100%;
     font-size: 14px;
+}
+
+.post_widget p{
+    font-size: 14px;
+    float: left;
+    overflow: hidden;
+    margin: 0px;
 }
 
 .post_widget img{
@@ -381,6 +394,14 @@
     border-radius: 3px;
     color: white;
     cursor: pointer;
+}
+
+#post_weibo_comment{
+    width: 600px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+    float: left;
 }
 
 @media only screen and (max-width: 724px){

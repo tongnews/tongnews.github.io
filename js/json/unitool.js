@@ -490,12 +490,12 @@ function relatedpostArranger(response){
     
     $('<h2>相关推荐</h2>').appendTo('#relatedpost');
     
-    for(var i=0;i<response.message.count;i++){
+    for(var i=0;i<Math.min(response.message.count,6);i++){
         
-        var postHtml=$('<div class="post_widget"><img><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+        var postHtml=$('<div class="post_widget tongrelated"><a target="_blank"><img><blockquote><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></a></div>');
            
         //replace title
-        postHtml.find('a').text(response.message.posts[i].title.substring(0, 31));
+        postHtml.find('p').text(response.message.posts[i].title.substring(0, 31));
         postHtml.find('a').attr("href", urlrewrite(encodeId(response.message.posts[i].id)));
         
         //replace thumbnail

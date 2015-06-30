@@ -459,6 +459,15 @@ $(document).ready(function () {
 //                    }]
                 };
                 with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+
+                var url = "http://widget.weibo.com/distribution/comments.php?width=0&url=http%3A%2F%2Fwww.tongnews.org%2Frp"+$tongpost_id+"&border=0&appkey=3566249745&dpc=1";
+                $("#post_weibo_comment").before('<h2>相关评论</h2>');
+                $("#post_weibo_comment").append('<iframe id="WBCommentFrame" src="' + url + '" scrolling="yes" frameborder="0" style="width:100%"></iframe>');
+
+                window.WBComment.init({
+                    "id": "WBCommentFrame"
+                });
+                
                 
             }
         });

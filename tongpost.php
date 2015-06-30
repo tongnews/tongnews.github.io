@@ -100,6 +100,9 @@ $php_content= $json_data['posts'][0]['content'];
 
 
                 <div id="relatedpost"></div>
+                                
+                <div id="post_weibo_comment" class="container"></div>
+                
                 <div id="floating_cursor" class="floating_cursor"><i class="fa fa-map-marker fa-fw" style="font-size: 24px;"></i>
                 </div>
 
@@ -141,7 +144,8 @@ $php_content= $json_data['posts'][0]['content'];
     <script src="js/json/tongpost_service.js"></script>
 <!--    <script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>-->
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-
+    <script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
+    
     <!--    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.8/src/markerwithlabel.js"></script>-->
 
 </body>
