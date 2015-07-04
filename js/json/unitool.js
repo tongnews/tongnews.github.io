@@ -576,8 +576,19 @@ function detectIE() {
 function baseJSload(){
     
     if(true){
-    $('body').prepend('<div class="top_container"> <div class="user_container"> <div class="login_container" style="width:0px; height:0px; overflow:hidden;"> <div class="sginbox" style="width:0px; height:0px; overflow:hidden;"> <input type="text" id="user_sginin_code_input" class="btshadow" placeholder="(邀请码)"> <input type="text" id="user_sginin_email_input" class="btshadow" placeholder="(邮箱)"> <input type="text" id="user_sginin_nickname_input" class="btshadow" placeholder="(昵称)"> <input type="password" id="user_sginin_pass_input" class="btshadow" placeholder="(密码)"> <input type="password" id="user_sginin_pass_input2" class="btshadow" placeholder="(密码确认)"> <li class="user_signin_submit btshadow">提交</li> <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left fa-fw"></i></li> </div> <div class="loginbox" style="width:0px; height:0px; overflow:hidden;"> <input type="text" id="user_name_input" class="btshadow" placeholder="(邮箱)"> <input type="password" id="user_pass_input" class="btshadow" placeholder="(密码)"> <li class="user_login btshadow" id="user_login">登入</li> <li class="user_forget btshadow" id="user_forget">忘记密码</li> <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left fa-fw"></i></li> </div> <div class="loginBtbox"> <li class="user_login_enter btshadow" id="user_login_enter">登陆</li> </div> <div class="signinBtbox"> <li class="user_signin btshadow" id="user_signin">极速注册</li> </div> </div> <div class="logined_container" style="width:0px; height:0px; overflow:hidden;"> <li id="user_welcome" class="btshadow">欢迎</li> <li id="user_logout" class="btshadow">登出</li> </div> </div> </div> <div class="title_container"> <div class="sheadin-container container"> <div class="title_content"> <div class="navs"><span class="hide">sakura</span> </div> <div class="uri"><span class="hide">标题</span> </div> <div class="navs" style="left:360px"><span class="hide">sakura</span> </div> </div> </div> </div> <div class="nav_container"> <div class="nav container"> <div class="nav_content"><div class="nava1"> <a></a> </div> <div class="nav1"><a href="index.php"><span class="hide">index</span></a> </div> <div class="navb1"> <a></a> </div> <div class="nava2"> <a></a> </div> <div class="nav6"><a href="photography.html"><span class="hide">photography</span></a> </div> <div class="navb2"> <a></a> </div> <div class="nava1"> <a></a> </div> <div class="nav2"><a href="xunli.html"><span class="hide">xunli</span></a> </div> <div class="navb1"> <a></a> </div> <div class="nava2"> <a></a> </div> <div class="nav3"><a href="reading.html"><span class="hide">reading</span></a> </div> <div class="navb2"> <a></a> </div> <div class="nava1"> <a></a> </div> <div class="nav7"><a href="about.html"><span class="hide">about</span></a> </div> <div class="navb1"> <a></a> </div><div class="search_container" onsubmit="searchformOnsubmit()"> <form class="search-form"> <input id="search-box" type="text" class="search-box uniborder" name="q" /> <label for="search-box"><span><i class="fa fa-search fa-fw search-icon"></i></span></label> <input type="submit" id="search-submit" /> </form> </div> </div> </div> </div>');
+    $('body').prepend('<canvas id="canvas"></canvas><div class="top_container"> <div class="user_container"> <div class="login_container" style="width:0px; height:0px; overflow:hidden;"> <div class="sginbox" style="width:0px; height:0px; overflow:hidden;"> <input type="text" id="user_sginin_code_input" class="btshadow" placeholder="(邀请码)"> <input type="text" id="user_sginin_email_input" class="btshadow" placeholder="(邮箱)"> <input type="text" id="user_sginin_nickname_input" class="btshadow" placeholder="(昵称)"> <input type="password" id="user_sginin_pass_input" class="btshadow" placeholder="(密码)"> <input type="password" id="user_sginin_pass_input2" class="btshadow" placeholder="(密码确认)"> <li class="user_signin_submit btshadow">提交</li> <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left fa-fw"></i></li> </div> <div class="loginbox" style="width:0px; height:0px; overflow:hidden;"> <input type="text" id="user_name_input" class="btshadow" placeholder="(邮箱)"> <input type="password" id="user_pass_input" class="btshadow" placeholder="(密码)"> <li class="user_login btshadow" id="user_login">登入</li> <li class="user_forget btshadow" id="user_forget">忘记密码</li> <li class="user_back btshadow" id="user_back"><i class="fa fa-arrow-left fa-fw"></i></li> </div> <div class="loginBtbox"> <li class="user_login_enter btshadow" id="user_login_enter">登陆</li> </div> <div class="signinBtbox"> <li class="user_signin btshadow" id="user_signin">极速注册</li> </div> </div> <div class="logined_container" style="width:0px; height:0px; overflow:hidden;"> <li id="user_welcome" class="btshadow">欢迎</li> <li id="user_logout" class="btshadow">登出</li> </div> </div> </div> <div class="title_container"> <div class="sheadin-container container"> <div class="title_content"> <div class="navs"><span class="hide">sakura</span> </div> <div class="uri"><span class="hide">标题</span> </div> <div class="navs" style="left:360px"><span class="hide">sakura</span> </div> </div> </div> </div> <div class="nav_container"> <div class="nav container"> <div class="nav_content"><div class="nava1"> <a></a> </div> <div class="nav1"><a href="index.php"><span class="hide">index</span></a> </div> <div class="navb1"> <a></a> </div> <div class="nava2"> <a></a> </div> <div class="nav6"><a href="photography.html"><span class="hide">photography</span></a> </div> <div class="navb2"> <a></a> </div> <div class="nava1"> <a></a> </div> <div class="nav2"><a href="xunli.html"><span class="hide">xunli</span></a> </div> <div class="navb1"> <a></a> </div> <div class="nava2"> <a></a> </div> <div class="nav3"><a href="reading.html"><span class="hide">reading</span></a> </div> <div class="navb2"> <a></a> </div> <div class="nava1"> <a></a> </div> <div class="nav7"><a href="about.html"><span class="hide">about</span></a> </div> <div class="navb1"> <a></a> </div><div class="search_container" onsubmit="searchformOnsubmit()"> <form class="search-form"> <input id="search-box" type="text" class="search-box uniborder" name="q" /> <label for="search-box"><span><i class="fa fa-search fa-fw search-icon"></i></span></label> <input type="submit" id="search-submit" /> </form> </div> </div> </div> </div>');
     };
+    
+    
+    canvas = document.getElementById('canvas');
+    Bigcontext = canvas.getContext('2d');
+    height = canvas.height = 600;
+    width = canvas.width = document.body.offsetWidth;
+    clouds = [];
+    speed = 1.11;
+    cloudCount = width * .2666666;
+    setTimeout(init, 10);
+    
     
     $('body').append('<div class="footer-bottom"><div class="inner-footer"><div id="footer-left"><div class="left">© 2015 痛新闻网站制作组<a href="about.html">关于我们</a></div><a href="about.html" class="footerCopyright">Designed by 小T酱</a></div><div class="clear"></div></div></div>');
 
@@ -925,6 +936,142 @@ function baseJSload(){
     });
     
 
+}
+
+//--------------------------Cloud animation----------------------------------
+
+if (typeof Object.extend !== 'function') {
+    Object.extend = function (d, s) {
+        for (var k in s) {
+            if (s.hasOwnProperty(k)) {
+                var v = s[k];
+                if (d.hasOwnProperty(k) && typeof d[k] === "object" && typeof v === "object") {
+                    Object.extend(d[k], v);
+                } else {
+                    d[k] = v;
+                }
+            }
+        }
+        return d;
+    };
+}
+
+function Cloud(properties) {
+    var defaults = {
+        puffRadius: 32,
+        puffColor: {
+            r: 255,
+            g: 255,
+            b: 255
+        },
+        opacity: 0.33,
+        count: 32
+    };
+    properties = Object.extend(defaults, typeof properties === 'undefined' ? {} : properties);
+    this.count = properties.count;
+    this.points = [];
+    this.minX = 0;
+    this.minY = 0;
+    this.maxX = 0;
+    this.maxY = 0;
+    this.puff = new Puff({
+        radius: properties.puffRadius,
+        color: properties.puffColor,
+        opacity: properties.opacity
+    });
+    this.img = document.createElement('canvas');
+    this.ctx = this.img.getContext('2d');
+    for (var i = 0; i < this.count; i++) {
+        var seed = Math.random();
+        var x = seed * (properties.puffRadius + seed) * Math.cos(1 + i + seed) * Math.PI;
+        var y = seed * (properties.puffRadius + seed) * Math.sin(1 + i + seed) * Math.PI / 2;
+        this.minX = Math.min(this.minX, x - properties.puffRadius);
+        this.maxX = Math.max(this.maxX, x + properties.puffRadius);
+        this.minY = Math.min(this.minY, y - properties.puffRadius);
+        this.maxY = Math.max(this.maxY, y + properties.puffRadius);
+        this.points.push([x, y]);
+    }
+    this.img.height = (this.maxY - this.minY) + properties.puffRadius * 2;
+    this.img.width = (this.maxX - this.minX) + properties.puffRadius * 2;
+    this.render();
+}
+
+function Puff(properties) {
+    var color = function (obj) {
+        return obj.r + ',' + obj.g + ',' + obj.b;
+    }
+    this.img = document.createElement('canvas');
+    var context = this.img.getContext('2d');
+    this.img.height = this.img.width = properties.radius * 2;
+    var grad = context.createRadialGradient(properties.radius, properties.radius, 0, properties.radius, properties.radius, properties.radius);
+    grad.addColorStop(0, 'rgba(' + color(properties.color) + ',' + properties.opacity + ')');
+    grad.addColorStop(1, 'rgba(' + color(properties.color) + ',0)');
+    context.fillStyle = grad;
+    context.beginPath();
+    context.arc(properties.radius, properties.radius, properties.radius, 0, Math.PI * 2, true);
+    context.fill();
+    context.closePath();
+}
+Cloud.prototype = {
+    constructor: Cloud,
+    render: function () {
+        var cX = this.img.width / 2 - this.puff.img.width / 2,
+            cY = this.img.height / 2 - this.puff.img.height / 2;
+        for (var i = 0; i < this.count; i++) {
+            this.ctx.drawImage(this.puff.img, cX + this.points[i][0], cY + this.points[i][1]);
+        }
+    }
+};
+
+var canvas = null,
+    Bigcontext = null,
+    height = 0,
+    width = 0,
+    clouds = [],
+    speed = 1.11,
+    cloudCount = width * .3666666
+    setTimeout(init, 10);
+
+function init() {
+    for (var i = 0; i < cloudCount; i++) {
+        var count = Math.random() * 64 + 32,
+            rad = Math.random() * 32 + 32,
+            cloud = new Cloud({
+                count: count,
+                puffRadius: rad,
+                opacity: Math.random() * 0.1
+            });
+        cloud.x = Math.random() * (width * 2) - width;
+        cloud.y = cloud.img.height - Math.random() * height / 2;
+        cloud.speed = speed * .6 + Math.random() * (speed * .4);
+        clouds.push(cloud);
+
+    }
+    update();
+    render();
+}
+
+function update() {
+    for (var i = 0; i < cloudCount; i++) {
+        if (clouds[i].x + clouds[i].img.width < 0) {
+            clouds[i].x = width + clouds[i].img.width;
+        } else {
+            clouds[i].x -= clouds[i].speed;
+        }
+    }
+    //setTimeout(update, 1000 / 1);
+}
+
+function render() {
+    //setTimeout(function() {requestAnimationFrame(render)}, 1000 / 1);
+    if(Bigcontext==null) return;
+    Bigcontext.clearRect(0, 0, width, height);
+    for (var i = 0; i < cloudCount; i++) {
+        Bigcontext.drawImage(clouds[i].img, clouds[i].x - clouds[i].img.width / 2, clouds[i].y - clouds[i].img.height / 2);
+    }
+    //  Bigcontext.beginPath();
+    //  Bigcontext.fillText(Math.floor(cloudCount) + ' total clouds', 10, 10);
+    //  Bigcontext.closePath();
 }
 
 /*! @source http://purl.eligrey.com/github/FileSaver.js/blob/master/FileSaver.js */

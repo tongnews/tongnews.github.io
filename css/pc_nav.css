@@ -4,9 +4,28 @@ body {
 	height: 100%;
 	width: 100%;
     overflow: auto;
-    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-0.jpg) no-repeat;
-    background-color: rgba(252,252,252,1);
+/*    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-0.jpg) no-repeat;*/
+/*    background-color: rgba(252,252,252,1);*/
     -webkit-text-size-adjust: 100%;
+
+background: -moz-linear-gradient(top,  rgba(214,249,255,1) 0%, rgba(252,252,252,1) 13%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,249,255,1)), color-stop(13%,rgba(252,252,252,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
+
+}
+
+canvas{
+    position: absolute;
+    z-index: -1110;
+}
+
+#canvas{
+    width: 100%;
+    top: 0px;
 }
 
 /* --------- RESET --------- */
@@ -359,7 +378,7 @@ div{
     border-width: 1px;
     border-color:rgba(251, 102, 134, 0.83);
 */
-    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.1);
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0);
 }
 
 .btshadow{
@@ -1136,7 +1155,7 @@ right: 30px;
     height: auto;
     margin-top: 18px;
     position: relative;
-    background-color: rgba(255, 255, 255, 0.9);
+/*    background-color: rgba(255, 255, 255, 0.9);*/
     border-radius: 10px 0 0 10px;
 }
 
@@ -1251,7 +1270,7 @@ right: 30px;
     /* background: url(../images/postslider.png); */
     
     border-color: rgb(255, 96, 132);
-    border-width: 0px 0px 3px 0px;
+    border-width: 0px 0px 2px 0px;
     border-style: dashed;
 }
 
@@ -1490,6 +1509,7 @@ right: 30px;
     margin-bottom: 30px;
     width: 100%;
     position: relative;
+    border:  2px dotted #FC7A96;
 }
 
 .weibo_container:after{
@@ -1512,16 +1532,20 @@ right: 30px;
 .rad_con_1{
     background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_1.jpg);
     width: 320px;
-    height: 480px;
+    height: 420px;
     margin-top: 20px;
+    border:  1px solid #FC7A96;
+    border-radius: 20px;
 }
 
 .rad_con_2{
     background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_2.jpg);
     width: 320px;
     height: 155px;
-    margin-top: 0px;
+    margin-top: 20px;
     margin-bottom: 20px;
+    border:  1px solid #FC7A96;
+    border-radius: 20px;
 }
 
 .rad_con_3{
@@ -1531,8 +1555,11 @@ right: 30px;
     margin-top: 20px;
     margin-bottom: 0px;
     background-size: contain;
+    border:  1px solid #D670FB;
+    border-radius: 20px;
 }
 
+/*
 .rad_con_4{
     background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/baidutong.gif);
     width: 320px;
@@ -1540,7 +1567,10 @@ right: 30px;
     margin-top: 20px;
     margin-bottom: 0px;
     background-size: cover;
+    border:  2px solid #FC7A96;
+    border-radius: 10px;
 }
+*/
 
 .rad_con a{
     height: auto;
@@ -1558,7 +1588,7 @@ right: 30px;
     margin-top: 20px;
     width: 100%;
     height: auto;
-    background:  rgba(255, 255, 255, 0.9);
+/*    background:  rgba(255, 255, 255, 0.9);*/
     padding-top: 5px;
 }
 
@@ -1589,7 +1619,7 @@ right: 30px;
     border-bottom: 2px dashed #DADADA;
 }
 
-.rank_cell h1 {
+.rank_cell h3 {
     display: inline;
     font-size: 15px;
     color: #FEFCFD;
@@ -1679,7 +1709,7 @@ right: 30px;
 div#whatsnew_parent {
   margin-top: 20px;
   margin-bottom: 30px;
-  background:  rgba(255, 255, 255, 0.9);
+/*  background:  rgba(255, 255, 255, 0.9);*/
   padding-left: 5px;
   width: auto;
   height: auto;
