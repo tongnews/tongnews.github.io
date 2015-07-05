@@ -10,6 +10,7 @@
     <!--    CSS-->
     <link rel="stylesheet" type="text/css" href="css/pc_nav.css" />
     <link rel="stylesheet" type="text/css" href="css/photography.css"/>
+    <link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--    JS  -->
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.js"></script>
@@ -40,7 +41,6 @@
 <body>
 
     <!--    news body-->
-    <div class="photo_body_container container">
         
 <!--
         <div class="intro_container">
@@ -50,59 +50,64 @@
             </div>
         </div>
 -->
+        
+<!--
                     
         <div class="intro_img">
         </div>
+-->
         
-        <div class="contactform">
-        <h1>想约片吗~</h1>
-        <h2>私人定制摄影申请表</h2>
+        <div class="img_wall">
             
-        <div id="form-box">
-        <form>
+            <div class="contactform">
+            <h1>想约片吗~</h1>
+            <h2>私人定制摄影申请表</h2>           
+            <div id="form-box">
+            <form>
+              <div class="hidden">
+                <span>偏好摄影师:</span> 
+                  <select name="type">
+                      <option value="均可">均可</option>
+                  </select>
+              </div>
+
+                <div>
+                    <span>您的姓名:</span>
+                    <input type="text" name="customer" placeholder="">
+                </div>
+
+                <div>
+                    <span>约拍日期:</span>
+                    <input type="date" name="date">
+                </div>
+
+                <div>
+                    <span>拍摄地点:</span>
+                    <input type="text" name="place" placeholder="新宿/涩谷/其他/暂未定">
+                </div>
+
+                <div>
+                    <span>拍摄风格:</span>
+                    <input type="text" name="style" placeholder="日常/Cosplay/街拍/其他">
+                </div>
+
+                <div>
+                    <span>联系方式:</span>
+                    <input type="text" name="contact" placeholder="微信/微博/QQ/其他(请注明类型)">
+                </div>
+
+                <div>
+                    <span>详细备注:</span>
+                    <textarea type="text" name="info" id="infoinput" placeholder="摄影对象人数/拍摄主题/其他"></textarea>
+                </div>
+
+            </form>
+            </div>
+            <div id="fbutton">点击我发送信息吧~</div>
+            </div>
             
-          <div>
-            <span>偏好摄影师:</span> 
-              <select name="type">
-                  <option value="均可">均可</option>
-              </select>
-          </div>
-
-            <div>
-                <span>您的姓名:</span>
-                <input type="text" name="customer" placeholder="">
-            </div>
-
-            <div>
-                <span>约拍日期:</span>
-                <input type="date" name="date">
-            </div>
-
-            <div>
-                <span>拍摄地点:</span>
-                <input type="text" name="place" placeholder="新宿/涩谷/其他/暂未定">
-            </div>
-
-            <div>
-                <span>拍摄风格:</span>
-                <input type="text" name="style" placeholder="日常/Cosplay/街拍/其他">
-            </div>
-
-            <div>
-                <span>联系方式:</span>
-                <input type="text" name="contact" placeholder="微信/微博/QQ/其他(请注明类型)">
-            </div>
-            
-            <div>
-                <span>详细备注:</span>
-                <textarea type="text" name="info" id="infoinput" placeholder="摄影对象人数/拍摄主题/其他"></textarea>
-            </div>
-            
-        </form>
         </div>
-
-        <div id="fbutton"><span>点击我发送信息吧~</span></div>
-        </div>
+        
 <!--
         <table>
           <tr>
@@ -118,7 +123,6 @@
         </table>
 -->
         
-    </div>
 
     <noscript>
         <a href="index.html"><span class="hide">痛新闻首页</span></a> 
@@ -129,7 +133,14 @@
     </noscript>
     
     <!--JSON API for index_html    -->
+    <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mousewheel-3.0.6.min.js"></script>
+    <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mCustomScrollbar.min.js"></script>
     <script>
+                  
+        
+        $(window).resize(function() {
+            $(".wallimg").attr('height',$(window).height()-270 +'px');
+        });
         var baseurl = getBaseUrl();
         var cdnurl = getCDNUrl();
         var bkurl = getBkdomainUrl();
@@ -142,6 +153,19 @@
           $info = $('textarea[name="info"');
           $style = $('input[name="style"');
           $date = $('input[name="date"');
+          
+            
+          var total=77;
+          var len=12;
+          var start=Math.floor((Math.random() * (total-len)) + 1);
+          for(i=start;i<(start+len+1);i++){
+              $(".img_wall").append('<img class="wallimg" src="images/photo/pcp'+(i+1)+'.jpg">');
+          }
+          
+          $(".img_wall").mCustomScrollbar({theme: 'light', autoHideScrollbar: true, axis:'x',advanced:{autoExpandHorizontalScroll:true}});
+            
+          $('img').attr('height',$(window).height()-270 +'px');     
+            
         });
         $("#fbutton").click(function () {
             $("#fbutton").css("background-color",'#e94f73');

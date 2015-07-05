@@ -582,7 +582,7 @@ function baseJSload(){
     
     canvas = document.getElementById('canvas');
     Bigcontext = canvas.getContext('2d');
-    height = canvas.height = 600;
+    height = canvas.height = 400;
     width = canvas.width = document.body.offsetWidth;
     clouds = [];
     speed = 1.11;

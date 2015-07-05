@@ -5,17 +5,8 @@ body {
 	width: 100%;
     overflow: auto;
 /*    background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-0.jpg) no-repeat;*/
-/*    background-color: rgba(252,252,252,1);*/
+    background-color: rgba(252,252,252,1);
     -webkit-text-size-adjust: 100%;
-
-background: -moz-linear-gradient(top,  rgba(214,249,255,1) 0%, rgba(252,252,252,1) 13%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,249,255,1)), color-stop(13%,rgba(252,252,252,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 13%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
-
 }
 
 canvas{
@@ -26,6 +17,19 @@ canvas{
 #canvas{
     width: 100%;
     top: 0px;
+    background: -moz-linear-gradient(top,  rgba(214,249,255,1) 0%, rgba(252,252,252,1) 23%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(214,249,255,1)), color-stop(23%,rgba(252,252,252,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 23%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 23%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 23%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(214,249,255,1) 0%,rgba(252,252,252,1) 23%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6f9ff', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */    
+}
+
+.hidden{
+    width: 0px;
+    height: 0px;
+    overflow: hidden;
 }
 
 /* --------- RESET --------- */
@@ -1555,7 +1559,7 @@ right: 30px;
     margin-top: 20px;
     margin-bottom: 0px;
     background-size: contain;
-    border:  1px solid #D670FB;
+    border:  1px solid #FC7A96;
     border-radius: 20px;
 }
 

@@ -1,4 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300&subset=latin,latin-ext);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300&subset=latin,latin-ext);*/
+
+.footer-bottom{
+    position: fixed;
+    bottom: 0px;
+    height: 30px;
+}
 
 .intro_container{
     position: relative;
@@ -6,6 +12,23 @@
     margin: 20px auto;
     height: 400px;
     text-align: center;
+}
+
+.img_wall{
+    position: relative;
+    top: 40px;
+    width: 100%;
+    height: auto;
+    white-space:nowrap;
+}
+
+.wallimg{
+    display: inline-block;
+    margin-left: 40px;
+    border: 0px;
+/*    background: url(../images/photo/psb.jpg);*/
+    background-size: cover;
+    border-radius: 10px;
 }
 
 .intro_img{
@@ -36,6 +59,14 @@
     width: 350px;
     padding-left:50px; 
 }
+.contactform{
+    width: 700px;
+    position: relative;
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .contactform * {
   margin: 0;
   padding: 0;
@@ -84,8 +115,9 @@
 }
 
 #fbutton {
-  position: relative;
-  top: 0;
+  position: absolute;
+  bottom: -60px;
+    left:250px;
   color: #F5F7FA;
   padding: 20px;
   text-align: center;
@@ -94,11 +126,9 @@
   background-color: #4FC1E9;
   border-radius: 3px;
   cursor: pointer;
-  margin: auto;
   box-shadow: 0 3px #4A89DC;
   transition: 0.1s ease;
-    margin-bottom: 40px;
-    font-size:16px;
+  font-size:16px;
 }
 #fbutton:active {
   position: relative;
@@ -108,8 +138,9 @@
 }
 
 #form-box {
-  width: 650px;
-  margin: 30px auto;
+  display: block;
+  position: relative;
+  width: 750px;
   padding-left: 15px;
 }
 
@@ -130,23 +161,30 @@
   transition: 0.2s ease;
 }
 .contactform form div {
-  display: inline-block;
-  margin-right: 10px;
+  float: left;
+  width: 300px;
+  margin-left: 25px;
+  margin-right: 25px;
 }
+
+
+
 .contactform form span {
-      color: #ff8989;
+  color: #ff8989;
   font-size: 1.3em;
   font-weight: 100;
-  display: inline-block;
+  float: left;
   width: 100px;
 }
 
 #infoinput{
-    width: 520px;
+    float: left;
+    width: 200px;
     height: 70px;
       border-radius: 3px;
   border: 0; 
     padding: 10px;  
+    resize: none;
 }
 
 #type {
