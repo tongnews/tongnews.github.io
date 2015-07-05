@@ -136,11 +136,6 @@
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mousewheel-3.0.6.min.js"></script>
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mCustomScrollbar.min.js"></script>
     <script>
-                  
-        
-        $(window).resize(function() {
-            $(".wallimg").attr('height',$(window).height()-270 +'px');
-        });
         var baseurl = getBaseUrl();
         var cdnurl = getCDNUrl();
         var bkurl = getBkdomainUrl();
@@ -154,19 +149,21 @@
           $style = $('input[name="style"');
           $date = $('input[name="date"');
           
-            
+          //img wall setting
           var total=77;
           var len=12;
           var start=Math.floor((Math.random() * (total-len)) + 1);
           for(i=start;i<(start+len+1);i++){
               $(".img_wall").append('<img class="wallimg" src="images/photo/pcp'+(i+1)+'.jpg">');
           }
-          
           $(".img_wall").mCustomScrollbar({theme: 'light', autoHideScrollbar: true, axis:'x',advanced:{autoExpandHorizontalScroll:true}});
-            
-          $('img').attr('height',$(window).height()-270 +'px');     
+          $('img').attr('height',Math.max($(window).height()-270,400) +'px'); 
+          $(window).resize(function() {
+                $(".wallimg").attr('height',$(window).height()-270 +'px');
+          });
             
         });
+
         $("#fbutton").click(function () {
             $("#fbutton").css("background-color",'#e94f73');
             $("#fbutton").text("正在发送中");
