@@ -23,7 +23,7 @@
 }
 
 .wallimg{
-    display: inline-block;
+    float: left;
     margin-left: 40px;
     border: 0px;
 /*    background: url(../images/photo/psb.jpg);*/
