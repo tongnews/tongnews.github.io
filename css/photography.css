@@ -3,7 +3,8 @@
 .footer-bottom{
     position: fixed;
     bottom: 0px;
-    height: 30px;
+    height: 0px;
+    overflow: hidden;
 }
 
 .intro_container{
@@ -20,15 +21,73 @@
     width: 100%;
     height: auto;
     white-space:nowrap;
+    overflow-y: hidden;
+}
+
+.img_wall a{
+    pointer-events: none;
 }
 
 .wallimg{
     float: left;
-    margin-left: 40px;
-    border: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
 /*    background: url(../images/photo/psb.jpg);*/
     background-size: cover;
     border-radius: 10px;
+    vertical-align: middle;
+}
+
+.authorlabel{
+    position: relative;
+    width: 250px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+/*    background: url(../images/photo/psb.jpg);*/
+    background-size: cover;
+    border-radius: 10px;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.56);
+    
+}
+
+.authorwrapper{
+    padding-top: auto;
+    padding-bottom: auto;
+}
+
+.authorname{
+    display: block;
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    color: #ff7d9b;
+}
+
+.authorintro{
+    display: block;
+    width: 220px;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal;
+    margin-bottom: 20px;
+    color: rgb(62, 62, 62);
+}
+
+.workshow{
+    display: block;
+    width: 220px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: normal;
+    margin-bottom: 20px;
+    color: #ff7d9b;
 }
 
 .intro_img{
@@ -60,7 +119,7 @@
     padding-left:50px; 
 }
 .contactform{
-    width: 700px;
+    width: 730px;
     position: relative;
     float: left;
     margin-top: auto;
@@ -116,8 +175,8 @@
 
 #fbutton {
   position: absolute;
-  bottom: -60px;
-    left:250px;
+  bottom: -70px;
+    left:260px;
   color: #F5F7FA;
   padding: 20px;
   text-align: center;
@@ -140,7 +199,7 @@
 #form-box {
   display: block;
   position: relative;
-  width: 750px;
+  width: 100%;
   padding-left: 15px;
 }
 
