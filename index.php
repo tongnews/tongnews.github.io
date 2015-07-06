@@ -42,9 +42,9 @@
     </script>
 -->
 </head>
-
-<body>
     
+<body>
+
     <h1 class="hidden">介绍日本有趣好玩的动漫活动的综艺节目X喜爱动漫的在日中国留学生同好会</h1>
     <h2 class="hidden">以5~20分钟的网络视频的形式，每天对日本各地举办的最受关注的动漫、游戏活动进行现场报道。同时不定期制作 《圣地巡礼》 系列专题，动漫业内名人访谈等，致力于打造面向中国动漫爱好者的内容最丰富最有趣的综艺节目。</h2>
     
@@ -168,70 +168,70 @@
                     <div class="rank_cell">
                         <blockquote>
                             <img>
-                            <h1>1</h1>
+                            <h3>1</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img>
-                            <h1>2</h1>
+                            <h3>2</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img>
-                            <h1>3</h1>
+                            <h3>3</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>4</h1>
+                            <h3>4</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>5</h1>
+                            <h3>5</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>6</h1>
+                            <h3>6</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>7</h1>
+                            <h3>7</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>8</h1>
+                            <h3>8</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote>
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>9</h1>
+                            <h3>9</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
                     <div class="rank_cell">
                         <blockquote style="border-style: none">
                             <img style="width:0px; height:0px; overflow:hidden;">
-                            <h1>10</h1>
+                            <h3>10</h3>
                             <a target="_blank"></a>
                         </blockquote>
                     </div>
@@ -375,7 +375,7 @@
     <noscript>
         <h1>痛新闻</h1>
         <h2>介绍日本有趣好玩的动漫活动的综艺节目X喜爱动漫的在日中国留学生同好会</h2>
-        <h3>节目宗旨：以5~20分钟的网络视频的形式，每天对日本各地举办的最受关注的动漫、游戏活动进行现场报道。<br> 同时不定期制作 《圣地巡礼》 系列专题，动漫业内名人访谈等，致力于打造面向中国动漫爱好者的内容最丰富最有趣的综艺节目。</h3> 
+        <h3>节目宗旨： 以5~20分钟的网络视频的形式，每天对日本各地举办的最受关注的动漫、游戏活动进行现场报道。<br> 同时不定期制作 《圣地巡礼》 系列专题，动漫业内名人访谈等，致力于打造面向中国动漫爱好者的内容最丰富最有趣的综艺节目。</h3>
         <a href="index.html"><span class="hide">痛新闻首页</span></a> 
         <a href="photography.html"><span class="hide">摄影联盟</span></a>
         <a href="xunli.html"><span class="hide">圣地巡礼</span></a> 
