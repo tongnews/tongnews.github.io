@@ -1,5 +1,8 @@
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300&subset=latin,latin-ext);*/
 
+body{
+    overflow: hidden;
+}
 .footer-bottom{
     position: fixed;
     bottom: 0px;
