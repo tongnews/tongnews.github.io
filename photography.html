@@ -159,7 +159,7 @@
             
             baseJSload();
            
-            alert(window.mobilecheck());
+            //alert(window.mobilecheck());
             
             $name = $('select[name="type"');
             $customer = $('input[name="customer"');
@@ -189,15 +189,21 @@
                     }
                 }
             });
-
+            
+            alert('自定义滚动加载完成');
+            
             addimg(cid);
             cid=cid+1;
+            
+            alert('图片加载完成');
             
             $(window).resize(function () {
                 $(".wallimg").attr('height', $(window).height() - 250 + 'px');
                 $(".authorlabel").css('height', $(window).height() - 250 + 'px');
             });
 
+            alert('resize事件完成');
+            
             checkCookie();
         });
 
