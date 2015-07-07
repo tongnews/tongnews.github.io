@@ -160,7 +160,6 @@
             baseJSload();
            
             //alert(window.mobilecheck());
-            alert('开始填表');
             
             $name = $('select[name="type"]');
             $customer = $('input[name="customer"]');
@@ -170,7 +169,6 @@
             $style = $('input[name="style"]');
             $date = $('input[name="date"]');
 
-            alert('开始加载滚动条');
             
             //control resize event and responsive design     
             $(".img_wall").mCustomScrollbar({
@@ -192,20 +190,14 @@
                 }
             });
             
-            alert('自定义滚动加载完成');
-            
             addimg(cid);
             cid=cid+1;
-            
-            alert('图片加载完成');
             
             $(window).resize(function () {
                 $(".wallimg").attr('height', $(window).height() - 250 + 'px');
                 $(".authorlabel").css('height', $(window).height() - 250 + 'px');
             });
-
-            alert('resize事件完成');
-            
+     
             checkCookie();
         });
 
