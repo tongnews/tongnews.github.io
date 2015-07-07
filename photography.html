@@ -169,11 +169,13 @@
             $style = $('input[name="style"');
             $date = $('input[name="date"');
 
+            alert('开始加载滚动条');
+            
             //control resize event and responsive design     
             $(".img_wall").mCustomScrollbar({
                 theme: 'rounded-dark',
                 autoHideScrollbar: true,
-                mouseWheelPixels: 350 ,
+                mouseWheelPixels: 350,
                 axis: 'x',
                 advanced: {
                     autoExpandHorizontalScroll: true,
@@ -181,7 +183,6 @@
                 },
                 callbacks: {
                     whileScrolling: function () {
-                        if (tdbg) console.log(this.mcs.leftPct);
                         if (this.mcs.leftPct > 80) {
                             addimg(cid);
                             cid=cid+1;
