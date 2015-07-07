@@ -13,10 +13,14 @@ function getBkdomainUrl() {
 function getCDNUrl() {
     return "http://7xi53n.com1.z0.glb.clouddn.com/";
 }
+function getFECDNUrl() {
+    return "http://7xk7dq.com1.z0.glb.clouddn.com/";
+}
 function getDomain() {
     //if(tdbg)console.log(document.domain);
     return document.domain;
 }
+
 function getUrlParam(sParam) { 
     if(window.location.hash) {
        var sPageURL = window.location.hash.substr(2);

@@ -153,7 +153,7 @@
         var ranNums = shuffle([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
         var cid = 0;
         var baseurl = getBaseUrl();
-        var cdnurl = getCDNUrl();
+        var fecdnurl = getFECDNUrl();
         var bkurl = getBkdomainUrl();
 
         baseJSload();
@@ -224,7 +224,7 @@
             $("#mCSB_1_container").append('<a><div class="wallimg authorlabel"><div class="authorwrapper"><p class="authorname">' + cm[ranNums[cid]][0] + '</p><div class="authorintro"><p>' + cm[ranNums[cid]][1] + '</p></div><div class="workshow">作品展示 →</div></div></div></a>');
             var imgary = cm[ranNums[cid]][2];
             for (i = 0; i < imgary.length; i++) {
-                $("#mCSB_1_container").append('<a><img class="wallimg" src="images/photo/pcp' + imgary[i] + '.jpg"></a>');
+                $("#mCSB_1_container").append('<a><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg"></a>');
             }
             $(".wallimg").attr('height', $(window).height() - 250 + 'px');
             $(".authorlabel").css('height', $(window).height() - 250 + 'px');
