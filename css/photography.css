@@ -2,6 +2,8 @@
 
 body{
     overflow: hidden;
+    background-position: top;
+    background-position: 0 -900px;
 }
 .footer-bottom{
     position: fixed;
@@ -18,14 +20,58 @@ body{
     text-align: center;
 }
 
+.content_container{
+    position: relative;
+}
+
+.authorlist_container{
+    position: absolute;
+    float: left;
+    height: 100%;
+    width:50px;
+    z-index: 300;
+    margin-top: 40px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.author_icon{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 25px; 
+    margin-bottom: 10px;
+}
+
+.author_icon p{
+    position:absolute;
+    display: block;
+    left: 0px;
+    bottom: 0px;
+    text-align: right;
+    background: rgba(255, 125, 155, 0.97);
+    z-index: 300;
+    color: #fff;
+    font-size: 12px;
+    padding-left: 2px;
+    padding-right: 2px;
+    -webkit-transition: all 1s;
+    transition: all 1s;
+    overflow:hidden;
+} 
+
 .img_wall{
     position: relative;
     top: 40px;
     width: 100%;
+    padding-left: 65px;
     height: auto;
     white-space:nowrap;
     overflow-y: hidden;
 }
+
+
 
 .img_wall a{
     pointer-events: none;
@@ -37,7 +83,7 @@ body{
     margin-right: 20px;
 /*    background: url(../images/photo/psb.jpg);*/
     background-size: cover;
-    border-radius: 10px;
+    border-radius: 0px;
     vertical-align: middle;
 }
 
@@ -193,10 +239,7 @@ body{
   font-size:16px;
 }
 #fbutton:active {
-  position: relative;
   box-shadow: 0 0px #4A89DC;
-  top: 3px;
-  box-shadow: 0 0;
 }
 
 #form-box {
@@ -269,4 +312,3 @@ body{
   margin: auto;
   text-align: center;
 }
-
