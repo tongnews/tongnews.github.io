@@ -1,9 +1,10 @@
 /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,300&subset=latin,latin-ext);*/
 
 body{
-    overflow: hidden;
     background-position: top;
     background-position: 0 -900px;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 .footer-bottom{
     position: fixed;
@@ -22,6 +23,8 @@ body{
 
 .content_container{
     position: relative;
+    margin-top: 40px;
+    height: auto;
 }
 
 .authorlist_container{
@@ -63,12 +66,9 @@ body{
 
 .img_wall{
     position: relative;
-    top: 40px;
-    width: 100%;
+
     padding-left: 65px;
     height: auto;
-    white-space:nowrap;
-    overflow-y: hidden;
 }
 
 

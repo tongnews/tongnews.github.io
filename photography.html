@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!--    JS  -->
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.js"></script>
+    <script src="js/jQuery/jquery.mousewheel-3.0.6.min.js"></script>
     <script src="js/json/unitool.js"></script>
     <script>
         var _hmt = _hmt || [];
@@ -148,7 +149,7 @@
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mCustomScrollbar.min.js"></script>
     <script>
         var cm = [
-            ["风铃", "佳能党一个（16-35mm/35L） <br><br> 比较开朗，各种傻笑。 <br><br> 拍摄范围：人像摄影&视频拍摄。每次拍到新鲜的东西都会感觉很兴奋，在不同的地方用不同的角度可以发现更多的美真的很开心。请多关照。", [51,52,53,54,55,56,57,58,59,60],"fl"],
+            ["风铃", "佳能党一个<br><br> 比较开朗，各种傻笑。 <br><br> 拍摄范围：人像摄影&视频拍摄。每次拍到新鲜的东西都会感觉很兴奋，在不同的地方用不同的角度可以发现更多的美真的很开心。请多关照。", [51,52,53,54,55,56,57,58,59,60],"fl"],
             ["好米", "90后旅日摄影师，定居于东京都。<br><br> 擅长旅拍风、唯美系、清新类人像摄影。<br><br> 长期接拍私人定制、情侣、闺蜜、婚纱、Cos、亲子、儿童等题材。<br><br> 希望与大家成为好朋友。", [20,21,12,26,16,17,18,19],"hm"],
             ["僖然", " 在日摄影师。非典型器材党，目前在东京范围活动。<br><br>擅长旅拍，时尚，COS，JK，lolita等题材。<br><br>比起记录性，更加注重写真的艺术表现。", [14,27,28,29,30,31,32,33,39,40],"xr"],
             ["周姑娘", "【关于周姑娘】35mm/film/girls/lover/travel<br><br>爱笑，单细胞，少女癖，恋物癖。。。。。<br><br>喜欢女孩原本的面貌，也爱发掘女孩不同的面貌<br><br>古着偏好者，菲林使用者，期待每一位与我相遇的女孩<br><br>", [7,8,9,10,11,35,36,37,38,67],"zgn"],
@@ -166,6 +167,18 @@
         var fecdnurl = getFECDNUrl();
         var bkurl = getBkdomainUrl();
 
+        $(function() {
+
+           $("body").mousewheel(function(event, delta) {
+
+              $(this).scrollLeft -= (delta * 30);
+
+              event.preventDefault();
+
+           });
+
+        });
+
         $(document).ready(function () {
             
             baseJSload();
@@ -182,7 +195,7 @@
 
             
             //control resize event and responsive design     
-            $(".img_wall").mCustomScrollbar({
+            $("body").mCustomScrollbar({
                 theme: 'rounded-dark',
                 autoHideScrollbar: true,
                 mouseWheelPixels: 350,
@@ -216,6 +229,7 @@
             cid=cid+1;
             
             $(window).resize(function () {
+                $(".img_wall").css('height', $(window).height() - 250 + 'px');
                 $(".wallimg").attr('height', $(window).height() - 250 + 'px');
                 $(".authorlabel").css('height', $(window).height() - 250 + 'px');
                 $(".authorlist_container").css('height', $(window).height() - 250 + 'px');
@@ -289,15 +303,15 @@
             if(cid>=ranNums.length) return;
             
             //insert img    
-            $("#mCSB_1_container").append('<a class="wall_a"><div class="wallimg authorlabel"><div class="authorwrapper"><p class="authorname">' + cm[ranNums[cid]][0] + '</p><div class="authorintro"><p>' + cm[ranNums[cid]][1] + '</p></div><div class="workshow">作品展示 →</div></div></div></a>');
+            $(".img_wall").append('<a class="wall_a"><div class="wallimg authorlabel"><div class="authorwrapper"><p class="authorname">' + cm[ranNums[cid]][0] + '</p><div class="authorintro"><p>' + cm[ranNums[cid]][1] + '</p></div><div class="workshow">作品展示 →</div></div></div></a>');
             var imgary = cm[ranNums[cid]][2];
             for (i = 0; i < imgary.length; i++) {
-                $("#mCSB_1_container").append('<a class="wall_a"><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg"></a>');
+                $(".img_wall").append('<a class="wall_a"><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg"></a>');
             }
             $(".wallimg").attr('height', $(window).height() - 250 + 'px');
             $(".authorlabel").css('height', $(window).height() - 250 + 'px');
             $(".authorlist_container").css('height', $(window).height() - 250 + 'px');
-            
+            $(".img_wall").css('height', $(window).height() - 250 + 'px');
         }
 
         $("#fbutton").click(function () {
