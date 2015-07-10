@@ -305,9 +305,13 @@
             //insert img    
             $(".img_wall").append('<a class="wall_a"><div class="wallimg authorlabel"><div class="authorwrapper"><p class="authorname">' + cm[ranNums[cid]][0] + '</p><div class="authorintro"><p>' + cm[ranNums[cid]][1] + '</p></div><div class="workshow">作品展示 →</div></div></div></a>');
             var imgary = cm[ranNums[cid]][2];
+            var picstr='';
             for (i = 0; i < imgary.length; i++) {
-                $(".img_wall").append('<a class="wall_a"><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg"></a>');
+                var imgPreload = new Image();
+                imgPreload.src = fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg';
+                picstr=picstr+'<a class="wall_a"><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg"></a>';
             }
+            $(".img_wall").append(picstr);
             $(".wallimg").attr('height', $(window).height() - 250 + 'px');
             $(".authorlabel").css('height', $(window).height() - 250 + 'px');
             $(".authorlist_container").css('height', $(window).height() - 250 + 'px');
