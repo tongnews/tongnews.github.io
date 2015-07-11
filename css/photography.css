@@ -2,10 +2,26 @@
 
 body{
     background-position: top;
-    background-position: 0 -900px;
-    overflow-y: hidden;
+    background-position: -1420px -900px;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
+
+.py_title{
+    top: 20px;
+    position: fixed;
+    width: auto;
+    height: 80px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    font-size: 36px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 10px;
+    color: #ff7d9b;
+    font-weight: 100;
+}
+
 .footer-bottom{
     position: fixed;
     bottom: 0px;
@@ -23,28 +39,33 @@ body{
 
 .content_container{
     position: relative;
-    margin-top: 40px;
+    margin-top: 120px;
     height: auto;
 }
 
 .authorlist_container{
-    position: absolute;
-    float: left;
-    height: 100%;
-    width:50px;
+    position: fixed;
+    left: 0px;
+    padding-left: 380px;
+    top: 0px;
+    height: 90px;
+    width: 100%;
     z-index: 300;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 5px;
     overflow: hidden;
 }
 
 .author_icon{
+    float: left;
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
-    border-radius: 25px; 
+    border-radius: 40px; 
     margin-bottom: 10px;
+    margin-left: 15px;
+    box-shadow: 1px 1px 2px 1px rgba(106, 106, 106, 0.46);
 }
 
 .author_icon p{
@@ -66,7 +87,7 @@ body{
 
 .img_wall{
     position: relative;
-    padding-left: 65px;
+    padding-left: 0px;
     height: auto;
 }
 
@@ -83,8 +104,9 @@ body{
     margin-right: 20px;
 /*    background: url(../images/photo/psb.jpg);*/
     background-size: cover;
-    border-radius: 0px;
+    border-radius: 10px;
     vertical-align: middle;
+    overflow: hidden;
 }
 
 .authorlabel{

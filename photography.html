@@ -58,18 +58,15 @@
         <div class="intro_img">
         </div>
 -->
-
-    <div class="content_container">
-        
+    <h1 class="py_title">痛新闻x东京摄影联盟</h1>
+    
     <div class="authorlist_container">
         
     </div>
     
-    <div class="img_wall">
-        
-        
-        
-        <div class="contactform" id="contactform">
+    <div class="content_container">
+                
+    <div class="contactform" id="contactform" style="height:0px;width:0px;overflow:hidden;">
             <h1>想约片吗~</h1>
             <h2>私人定制摄影申请表</h2>
             <div id="form-box">
@@ -115,6 +112,10 @@
             </div>
             <div id="fbutton">点击我发送信息吧~</div>
         </div>
+
+    <div class="img_wall">
+        
+        
 
     </div>
 
@@ -166,7 +167,8 @@
         var baseurl = getBaseUrl();
         var fecdnurl = getFECDNUrl();
         var bkurl = getBkdomainUrl();
-
+        var imgunload=0;
+        
         $(function() {
 
            $("body").mousewheel(function(event, delta) {
@@ -181,7 +183,7 @@
 
         $(document).ready(function () {
             
-            baseJSload();
+            //baseJSload();
            
             //alert(window.mobilecheck());
             
@@ -208,33 +210,21 @@
                 callbacks: {
                     whileScrolling: function () {
                         if (this.mcs.leftPct > 80) {
-                            addimg(cid);
-                            cid=cid+1;
+                            addimg();
                         }
                     }
                 }
             });
-            
+        
+            //add author
             for (i = 0; i < cm.length; i++) {
                 $(".authorlist_container").append('<div class="author_icon" indexa="'+i+'" style="background: url('+fecdnurl+'images/photo/author/'+cm[i][3]+'.jpg);background-size: contain;"><p style="height: 0px;">'+cm[i][0]+'</p></div>');
-            }
-            
+            }         
             $(".authorlist_container").mCustomScrollbar({
                 theme: "dark",
                 scrollbarPosition: "outside",
                 autoHideScrollbar: true
             });
-            
-            addimg(cid);
-            cid=cid+1;
-            
-            $(window).resize(function () {
-                $(".img_wall").css('height', $(window).height() - 250 + 'px');
-                $(".wallimg").attr('height', $(window).height() - 250 + 'px');
-                $(".authorlabel").css('height', $(window).height() - 250 + 'px');
-                $(".authorlist_container").css('height', $(window).height() - 250 + 'px');
-            });
-            
             $(".author_icon").click(function (){
                 
                 if(tdbg)console.log('start adding');
@@ -264,18 +254,20 @@
                 },500);
                 
             });
-            
             $(".author_icon").hover(function (){
-                $(this).find('p').css(
-                    {
-                        height:"",
-                    }
-                );},function (){
-                $(this).find('p').css({
-                        height:"0px",
-                    });}
+                $(this).find('p').css({height:""});},
+                                    function (){
+                $(this).find('p').css({height:"0px"});}
             );
             
+            //add first set of images
+            addimg();
+            
+            //set resize function
+            $(window).resize(function () {
+                $(".img_wall").css('height', $(window).height() - 150 + 'px');
+                $(".wallimg").attr('height', $(window).height() - 150 + 'px');
+            });
             checkCookie();
         });
 
@@ -298,37 +290,27 @@
             return array;
         }
         
-        function addimg(cid) {
+        function addimg() {
             
             if(cid>=ranNums.length) return;
             
             //insert img    
             var picstr='<a class="wall_a"><div class="wallimg authorlabel"><div class="authorwrapper"><p class="authorname">' + cm[ranNums[cid]][0] + '</p><div class="authorintro"><p>' + cm[ranNums[cid]][1] + '</p></div><div class="workshow">作品展示 →</div></div></div></a>';
             var imgary = cm[ranNums[cid]][2];
-            
             for (i = 0; i < imgary.length; i++) {
-                var iw=preloadImage(fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg');
-                picstr=picstr+'<a class="wall_a"><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg"></a>';
+                picstr=picstr+'<a class="wall_a"><img class="wallimg" src="'+fecdnurl+'images/photo/pcp' + imgary[i] + '.jpg" width="0px"></a>';
+                imgunload=imgunload+1;
             }
-            $(".img_wall").css('width', 999999 + 'px');
             $(".img_wall").append(picstr);
-            $(".wallimg").attr('height', $(window).height() - 250 + 'px');
-            $(".authorlabel").css('height', $(window).height() - 250 + 'px');
-            $(".authorlist_container").css('height', $(window).height() - 250 + 'px');
-            $(".img_wall").css({
-                'height': $(window).height() - 250 + 'px',
-                'width': ''
+            $(".wallimg").attr('height', $(window).height() - 150 + 'px').load(function(){
+                   imgunload=imgunload-1;
+                    if(imgunload<=0)$(".wallimg").attr('width','');
             });
-        }
-        
-        function preloadImage(url)
-        {
-            var img=new Image();
-            img.src=url;
+            $(".content_container").css('height', $(window).height() - 150 + 'px');
             
-            return img.clientWidth;
+            cid=cid+1;
         }
-        
+
         $("#fbutton").click(function () {
             
             if($customer.val()=="" || $contact.val()=="" || $place.val()=="" || $name.val()=="" || $style.val()=="" || $date.val()=="") {
