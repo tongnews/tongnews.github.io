@@ -53,16 +53,7 @@
         </div>
 -->
 
-    <!--
-                    
-        <div class="intro_img">
-        </div>
--->
-    <h1 class="py_title">痛新闻x东京摄影联盟</h1>
-    
-    <div class="authorlist_container">
-        
-    </div>
+    <div class="authorlist_container"></div>
     
     <div class="content_container">
                 
@@ -183,7 +174,7 @@
 
         $(document).ready(function () {
             
-            //baseJSload();
+            baseJSload();
            
             //alert(window.mobilecheck());
             
@@ -222,14 +213,13 @@
             }         
             $(".authorlist_container").mCustomScrollbar({
                 theme: "dark",
-                scrollbarPosition: "outside",
                 autoHideScrollbar: true
             });
             $(".author_icon").click(function (){
                 
                 if(tdbg)console.log('start adding');
                 
-                $(".img_wall").mCustomScrollbar("scrollTo","#contactform",{scrollInertia :1000});
+                $(".img_wall").mCustomScrollbar("scrollTo","left",{scrollInertia :1000});
                 
                 ranNums=[];
                 for (i = 0; i < cm.length; i++) {
@@ -267,6 +257,8 @@
             $(window).resize(function () {
                 $(".img_wall").css('height', $(window).height() - 150 + 'px');
                 $(".wallimg").attr('height', $(window).height() - 150 + 'px');
+                $(".authorlist_container").css('height', $(window).height() - 150 + 'px');
+                
             });
             checkCookie();
         });
@@ -306,7 +298,7 @@
                    imgunload=imgunload-1;
                     if(imgunload<=0)$(".wallimg").attr('width','');
             });
-            $(".content_container").css('height', $(window).height() - 150 + 'px');
+            $(".authorlist_container").css('height', $(window).height() - 150 + 'px');
             
             cid=cid+1;
         }
