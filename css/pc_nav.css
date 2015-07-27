@@ -6,6 +6,7 @@ body {
     overflow: auto;
     background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/bk-0.jpg) no-repeat;
     background-color: rgba(252,252,252,1);
+    background-position: 0 -900px;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -384,6 +385,14 @@ div{
 */
     box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0);
 }
+
+.pinkborder{
+    border-style: solid;
+    border-width: 1px;
+    border-color:rgba(251, 102, 134, 0.83);
+}
+
+
 
 .btshadow{
     box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
@@ -1297,7 +1306,8 @@ right: 30px;
   text-align: center;
  text-decoration: none;
   font-size: 13px;
-    font-weight: bold;
+    padding-top: 1px;
+    font-weight: 100;
   position:relative;
   z-index:2;
     
@@ -1536,10 +1546,11 @@ right: 30px;
 .rad_con_1{
     background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_1.jpg);
     width: 320px;
-    height: 420px;
+    height: 160px;
     margin-top: 20px;
     border:  1px solid #FC7A96;
     border-radius: 20px;
+    background-position: 0 -50px;
 }
 
 .rad_con_2{
@@ -1563,6 +1574,30 @@ right: 30px;
     border-radius: 20px;
 }
 
+.rad_con_5{
+    background-image: url(../images/hzx_ad.jpg);
+    width: 320px;
+    height: 200px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    background-size: contain;
+    border:  1px solid #FC7A96;
+    border-radius: 20px;
+}
+
+.rad_con_6{
+    background-image: url(../images/wf2015.jpg);
+    width: 310px;
+    height: 155px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    background-size: contain;
+    border:  1px solid #FC7A96;
+    border-radius: 20px;
+}
+
+
+
 /*
 .rad_con_4{
     background-image: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/baidutong.gif);
@@ -1584,6 +1619,7 @@ right: 30px;
 .rank_shower {
     width: 100%;
     height: 39px;
+    margin-top: 30px;
     background: url(http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rankshower.png);
     background-repeat: no-repeat;
 }

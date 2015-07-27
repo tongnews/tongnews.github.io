@@ -56,8 +56,10 @@
     <div class="authorlist_container"></div>
     
     <div class="content_container">
-                
-    <div class="contactform" id="contactform" style="height:0px;width:0px;overflow:hidden;">
+    
+    <div class="yuepian">想约片吗~</div>
+        
+    <div class="contactform" id="contactform" style="width:0px;height:0px;overflow:hidden;">
             <h1>想约片吗~</h1>
             <h2>私人定制摄影申请表</h2>
             <div id="form-box">
@@ -159,6 +161,7 @@
         var fecdnurl = getFECDNUrl();
         var bkurl = getBkdomainUrl();
         var imgunload=0;
+        var yueflag=false;
         
         $(function() {
 
@@ -171,7 +174,29 @@
            });
 
         });
+        
 
+        $(".yuepian").click(function (){
+            event.stopPropagation();
+            if(!yueflag){
+                $(".contactform").attr('style',"");
+                yueflag=true;
+            }
+            
+        });
+        
+        $(".contactform").click(function (){
+            event.stopPropagation();
+        });
+        
+        $('html').click(function (){
+            if(yueflag){
+                $(".contactform").attr('style',"width:0px;height:0px;overflow:hidden;");
+                yueflag=false;
+            }
+        });
+        
+        
         $(document).ready(function () {
             
             baseJSload();
@@ -185,7 +210,7 @@
             $info = $('textarea[name="info"]');
             $style = $('input[name="style"]');
             $date = $('input[name="date"]');
-
+            
             
             //control resize event and responsive design     
             $("body").mCustomScrollbar({
@@ -260,6 +285,7 @@
                 $(".authorlist_container").css('height', $(window).height() - 150 + 'px');
                 
             });
+            
             checkCookie();
         });
 
