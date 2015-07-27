@@ -65,7 +65,7 @@
     
 
     <!--  slider  -->
-    <div class="container demo-2 uniborder">
+    <div class="container demo-2 pinkborder">
 
         <div id="slider" class="sl-slider-wrapper">
 
@@ -141,6 +141,8 @@
 
                 <!--    weibo container -->
                 <div class="weibo_shower"></div>
+
+                <a href="http://www.bilibili.com/topic/766.html" name="WonderFestival2015"><div class="rad_con_6 dashedborder"></div></a>
                 
                 <!-- news container -->
                 <div id="whatsnew_parent" class="uniborder">
@@ -161,6 +163,21 @@
                 </div>
                 
 
+                                
+                <a href="http://www.bilibili.com/topic/736.html" name="虎之穴20年庆"><div class="rad_con_5 dashedborder"></div></a>
+                
+                <!--   rr advertismenet-->
+
+                <a href="http://www.bilibili.com/topic/685.html" name="2015神田祭Bilibili独家特约报道"><div class="rad_con_3 dashedborder"></div></a>
+                
+                <a href="http://www.bilibili.com/topic/656.html" name="niconico超会议"><div class="rad_con_2"></div></a>
+                
+
+                
+                <a href="http://www.tudou.com/albumcover/3OwRHGCBKLI.html" name="土豆动漫inJapan"><div class="rad_con_1 dashedborder"></div></a>
+                
+                
+                <a href="http://tieba.baidu.com/f?kw=%E7%97%9B%E6%96%B0%E9%97%BB&ie=utf-8" name="百度痛新闻吧"><div class="rad_con_4 dashedborder"></div></a>
                 
                 <!--   rank container -->
                 <div class="rank_shower"></div>
@@ -238,14 +255,7 @@
 
                 </div>
                 
-                <!--   rr advertismenet-->
-                <a href="http://www.tudou.com/albumcover/3OwRHGCBKLI.html" name="土豆动漫inJapan"><div class="rad_con_1 dashedborder"></div></a>
-                
-                <a href="http://www.bilibili.com/topic/685.html" name="2015神田祭Bilibili独家特约报道"><div class="rad_con_3 dashedborder"></div></a>
-                
-                <a href="http://www.bilibili.com/topic/656.html" name="niconico超会议"><div class="rad_con_2"></div></a>
-                
-                <a href="http://tieba.baidu.com/f?kw=%E7%97%9B%E6%96%B0%E9%97%BB&ie=utf-8" name="百度痛新闻吧"><div class="rad_con_4 dashedborder"></div></a>
+
                 
             </div>
             <div id="first">
@@ -501,7 +511,5 @@
 -->
     
 </body>
-
-
 
 </html>
