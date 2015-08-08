@@ -515,7 +515,7 @@ div{
     height: 22.5px;
     float: left;
     margin-left: 3px;
-    -webkit-animation: animate-stripes 5s linear infinite;
+/*    -webkit-animation: animate-stripes 5s linear infinite;*/
 }
 
 .search_container{
