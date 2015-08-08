@@ -3,13 +3,13 @@
     margin: auto;
     height: auto;
     position: relative;
-    margin-top: 50px;
+    margin-top: 10px;
     margin-bottom: 50px;
 background:url(http://nonnontv.com/wp/wp-content/themes/twentyfifteen/img/common/nline_pk.gif);
     padding: 10px;
-    border: 21px solid #ff5e6a;
+    border: 21px solid #ebebeb;
     border-width: 21px 21px 21px 21px;
-    border-image: 58 round url(../images/12058548_p25.jpg);
+    border-image: url(../images/head_pt.gif)  45% round;
     box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.1);
 }
 

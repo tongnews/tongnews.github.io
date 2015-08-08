@@ -10,6 +10,16 @@ var $postCount = 12,
 var $rankCount=10;
 var $fly_video_right = 20;
 
+var $pagenumper =12;
+
+var $pagecur=[];
+var $pagecount=[];
+$pagecur["widget_news"]=1;
+$pagecur["widget_activity"]=1;
+$pagecur["widget_daily"]=1;
+$pagecur["widget_pilgrimage"]=1;
+
+
 $(document).ready(function () {
     
     if(getUrlParam("p")){
@@ -35,11 +45,49 @@ $(document).ready(function () {
     //createCookie("user","",14);
     checkCookie();
     
+    updateCategory("widget_news",$pagenumper,$pagecur["widget_news"]);
+    updateCategory("widget_activity",$pagenumper,$pagecur["widget_activity"]);
+    updateCategory("widget_daily",$pagenumper,$pagecur["widget_daily"]);
+    updateCategory("widget_pilgrimage",$pagenumper,$pagecur["widget_pilgrimage"]);
+    
 });
                   
 function scrollbarCustom(){
     $(".customScrollBox").mCustomScrollbar();
 }
+
+$(window).scroll(function () {
+    
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight-500)) {
+        $('#second').css({
+                position:"absolute",
+                left:"inherit",
+                right: "0px",
+                top: "inherit",
+                bottom: "0px"
+        })
+        
+    }else{
+        
+        if ($(this).scrollTop() > 1700) {
+            $('#second').css({
+                position:"fixed",
+                left: ($('#first').offset().left+$('#first').width()-320)+"px",
+                rigth: "inherit",
+                top: "-1600px",
+            })
+        } else {
+            $('#second').css({
+                position:"absolute",
+                left:"inherit",
+                right: "0px",
+                top: "0px",
+            })
+        }
+    
+    }
+        
+});
 
 
 //--------------------------------post ----------------------------------------------
@@ -250,4 +298,99 @@ $('.rank_cell').hover(function () {
 
 $('.bg-img').click(function () {
     window.location.href = $(this).attr('ref');
+});
+
+
+//---------------------each catergory--------------
+
+function  updateCategory(catslug,postCount,pageNum){
+    
+    switch (catslug){
+            
+        case "widget_news":
+            var questurl = baseurl.concat("?json=get_category_posts_breif&category_slug=news&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    if(tdbg)console.log(response);
+                    $pagecount["widget_news"]=response.pages;
+                    categoryWidgetArranger("widget_news",response,postCount,pageNum);
+                }
+
+            });
+            break;
+            
+        case "widget_daily":
+            var questurl = baseurl.concat("?json=get_category_posts_breif&category_slug=daily&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    if(tdbg)console.log(response);
+                    $pagecount["widget_daily"]=response.pages;
+                    categoryWidgetArranger("widget_daily",response,postCount,pageNum);
+                }
+
+            });
+            break;
+        
+       case "widget_activity":
+            var questurl = baseurl.concat("?json=get_category_posts_breif&category_slug=activity&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    if(tdbg)console.log(response);
+                    $pagecount["widget_activity"]=response.pages;
+                    categoryWidgetArranger("widget_activity",response,postCount,pageNum);
+                }
+
+            });
+            break;
+            
+       case "widget_pilgrimage":
+            var questurl = baseurl.concat("?json=get_category_posts_breif&category_slug=pilgrimage&count=" + postCount + "&page=" + pageNum);
+            //ajax for get recent post
+            $.ajax({
+                url: questurl,
+                jsonp: "callback",
+                dataType: "jsonp",
+                data: {
+                    format: "json"
+                },
+                success: function (response) {
+                    if(tdbg)console.log(response);
+                    $pagecount["widget_pilgrimage"]=response.pages;
+                    categoryWidgetArranger("widget_pilgrimage",response,postCount,pageNum);
+                }
+
+            });
+            break;
+    }
+    
+};
+
+$('.addPostPage').click(function () {
+    var cat=$(this).attr('cat');
+    $pagecur[cat]=$pagecur[cat]+1;
+    if ($pagecur[cat] >= $pagecount[cat]) {
+        $(this).attr("style","width:0px; height:0px; overflow:hidden;")
+    }
+    updateCategory(cat,$pagenumper,$pagecur[cat]);
 });
