@@ -74,7 +74,8 @@ $(window).scroll(function () {
                 position:"fixed",
                 left: ($('#first').offset().left+$('#first').width()-320)+"px",
                 rigth: "inherit",
-                top: "-1600px",
+                top: "inherit",
+                bottom: "10px"
             })
         } else {
             $('#second').css({
