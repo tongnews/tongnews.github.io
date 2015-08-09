@@ -476,7 +476,7 @@ div{
     margin: auto;
     height: 113px;
     position: relative;
-    background: url(../images/head_pt.gif);
+    background: url(http://7xk7dq.com1.z0.glb.clouddn.com/images/images/head_pt.gif);
     box-shadow: 2.5px 4.33px 5px 0px rgba(0, 0, 0, 0.2);
 }
 
@@ -492,7 +492,7 @@ div{
 }
 
 .uri {
-    background-image: url(../images/text_button.png);
+    background-image: url(http://7xk7dq.com1.z0.glb.clouddn.com/images/text_button.png);
     width: 195px;
     height: 52px;
     float: left;
@@ -503,7 +503,7 @@ div{
     position: relative;
     left:260px;
     top:20px;
-    background-image: url(../images/title_sub.png);
+    background-image: url(http://7xk7dq.com1.z0.glb.clouddn.com/images/title_sub.png);
     width: 485px;
     height: 23px;
 }
@@ -1335,7 +1335,7 @@ right: 30px;
 .widget_shower{
     width: auto;
     height: 39px;
-    background: url(../images/index_subcat.png);
+    background: url(http://7xk7dq.com1.z0.glb.clouddn.com/images/index_subcat.png);
     background-repeat: no-repeat;
     overflow: hidden;
     margin-bottom: 10px;
