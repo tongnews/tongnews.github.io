@@ -45,11 +45,6 @@ $(document).ready(function () {
     //createCookie("user","",14);
     checkCookie();
     
-    updateCategory("widget_news",$pagenumper,$pagecur["widget_news"]);
-    updateCategory("widget_activity",$pagenumper,$pagecur["widget_activity"]);
-    updateCategory("widget_daily",$pagenumper,$pagecur["widget_daily"]);
-    updateCategory("widget_pilgrimage",$pagenumper,$pagecur["widget_pilgrimage"]);
-    
 });
                   
 function scrollbarCustom(){
@@ -239,7 +234,7 @@ function updateAllinOne() {
     
 
     if(response==null){
-        var questurl = baseurl.concat("?json=get_index_static_all_in_one");
+        var questurl = baseurl.concat("?json=get_index_static_all_in_one_v2");
         $.ajax({
             url: questurl,
             jsonp: "callback",
@@ -248,7 +243,6 @@ function updateAllinOne() {
                 format: "json"
             },
             success: function (response) {
-                
                     processojson(response);
 
             }
@@ -265,11 +259,24 @@ function processojson(response) {
 
     if (tdbg) console.log(response);
 
-    //update rank
+    //update rank and news
     rankArranger(response.ranks, 10, "index");
-
     $('#newscotainer_content').prepend(response.agenda.posts[0].custom_fields.content[0]);
-
+    
+    //udpate each category
+    $pagecount["widget_pilgrimage"]=response.pilgrimage.pages;
+ categoryWidgetArranger("widget_pilgrimage",response.pilgrimage,$pagenumper,$pagecur["widget_pilgrimage"]);
+    
+    $pagecount["widget_news"]=response.news.pages;
+    categoryWidgetArranger("widget_news",response.news,$pagenumper,$pagecur["widget_news"]);
+    
+    $pagecount["widget_activity"]=response.activity.pages;
+categoryWidgetArranger("widget_activity",response.activity,$pagenumper,$pagecur["widget_activity"]);
+    
+    $pagecount["widget_daily"]=response.daily.pages;
+ categoryWidgetArranger("widget_daily",response.daily,$pagenumper,$pagecur["widget_daily"]);
+    
+    
     //update slides
     response = response.slides;
     var $slide_counts = 5;

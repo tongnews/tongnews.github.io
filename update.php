@@ -1,7 +1,7 @@
 <?php
 
 $filepath='jcache/index_o.json';
-$url = "http://bk.tongnews.org?json=get_index_static_all_in_one";
+$url = "http://bk.tongnews.org?json=get_index_static_all_in_one_v2";
 $json = file_get_contents($url);
 file_put_contents($filepath, 'var index_o='.$json);
 
