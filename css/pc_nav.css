@@ -417,6 +417,87 @@ div{
     z-index: -100;
 }
 
+.lazyload,
+.lazyloading {
+    opacity: 0;
+}
+.lazyloaded {
+    -webkit-animation: swing 800ms ease;
+    animation: swing 800ms ease;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    opacity: 1;
+    transition: opacity 800ms;
+}
+
+@-webkit-keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-2px);
+       transform: translateX(-2px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes swing
+{
+    15%
+    {
+        -webkit-transform: translateX(4px);
+        transform: translateX(4px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-2px);
+       transform: translateX(-2px);
+    } 
+    50%
+    {
+        -webkit-transform: translateX(1px);
+        transform: translateX(1px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
 #a_01{
     position:absolute;
     top:1260px;
@@ -700,7 +781,7 @@ div{
     display: inline-block;
     left: -165px;
     top: 1px;
-    width: 200px;
+    width: 300px;
 }
 
 #user_welcome,#user_logout{

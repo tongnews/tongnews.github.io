@@ -79,6 +79,8 @@ $(document).ready(function () {
                     
                     var imwidth = imgset.eq(k).attr('width');
                     
+
+
                     if(imwidth>200){
                         //resize all to equal width
                         var aspratio = imgset.eq(k).attr('height')/imwidth;
@@ -101,6 +103,12 @@ $(document).ready(function () {
                     }catch(err){
                         
                     }
+                    
+                    //add lazy load for all images
+                    imgset.eq(k).addClass('lazyload no-src');
+                    imgset.eq(k).attr('data-src', imgset.eq(k).attr('src'));
+                    imgset.eq(k).attr('src','');
+                    imgset.eq(k).attr('data-sizes','auto');
                 }
                 
                 

@@ -145,6 +145,7 @@ $php_content= $json_data['posts'][0]['content'];
     <script src="http://ditu.google.cn/maps/api/js?sensor=false"></script>
 <!--    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>-->
     <script src="http://tjs.sjs.sinajs.cn/open/widget/js/widget/comment.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/lazysizes.min.js" async=""></script>
     
     <!--    <script src="http://google-maps-utility-library-v3.googlecode.com/svn/tags/markerwithlabel/1.1.8/src/markerwithlabel.js"></script>-->
 
