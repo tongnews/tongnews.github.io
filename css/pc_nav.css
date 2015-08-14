@@ -900,7 +900,9 @@ div{
 } 
 
 .nav1 a:hover {
-    background-position: 0 -116px;
+    margin-top: 1px;
+    background-position: 0 -117px;
+    height: 25px;
 } 
 
 .nav6 a {
