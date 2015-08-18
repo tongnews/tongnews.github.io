@@ -101,20 +101,20 @@
                 
 
                                 
-                <a href="http://www.bilibili.com/topic/736.html" name="虎之穴20年庆"><div class="rad_con_5 dashedborder"></div></a>
+                <a href="http://www.bilibili.com/topic/736.html" name="虎之穴20年庆"><div class="rad_con_5 dashedborder lazyload"></div></a>
                 
                 <!--   rr advertismenet-->
 
-                <a href="http://www.bilibili.com/topic/685.html" name="2015神田祭Bilibili独家特约报道"><div class="rad_con_3 dashedborder"></div></a>
+                <a href="http://www.bilibili.com/topic/685.html" name="2015神田祭Bilibili独家特约报道"><div class="rad_con_3 dashedborder lazyload"></div></a>
                 
-                <a href="http://www.bilibili.com/topic/656.html" name="niconico超会议"><div class="rad_con_2"></div></a>
+                <a href="http://www.bilibili.com/topic/656.html" name="niconico超会议"><div class="rad_con_2 lazyload"></div></a>
                 
 
                 
-                <a href="http://www.tudou.com/albumcover/3OwRHGCBKLI.html" name="土豆动漫inJapan"><div class="rad_con_1 dashedborder"></div></a>
+                <a href="http://www.tudou.com/albumcover/3OwRHGCBKLI.html" name="土豆动漫inJapan"><div class="rad_con_1 dashedborder lazyload"></div></a>
                 
                 
-                <a href="http://tieba.baidu.com/f?kw=%E7%97%9B%E6%96%B0%E9%97%BB&ie=utf-8" name="百度痛新闻吧"><div class="rad_con_4 dashedborder"></div></a>
+                <a href="http://tieba.baidu.com/f?kw=%E7%97%9B%E6%96%B0%E9%97%BB&ie=utf-8" name="百度痛新闻吧"><div class="rad_con_4 dashedborder lazyload"></div></a>
                 
                 <!--   rank container -->
                 <div class="rank_shower"></div>
@@ -391,7 +391,7 @@
     <div class="staff_container">
         <div class="staff_show">
             <div class="staff_shower"></div>
-            <a href="about.html"><div class="staff_pic"></div></a>
+            <a href="about.html"><div class="staff_pic lazyload"></div></a>
             <div class="ly_pic1"></div>
         </div>
     </div>    
@@ -426,7 +426,8 @@
     <script src="js/json/index_service.js"></script>
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mousewheel-3.0.6.min.js"></script>
     <script src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jQuery/jquery.mCustomScrollbar.min.js"></script>
-
+    <script src="js/lazysizes.min.js" async=""></script>
+    
     <!--    Script for Slider-->
     <script type="text/javascript" src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/js/jquery.ba-cond.min.js"></script>
     <script type="text/javascript" src="js/jquery.slitslider.js"></script>
@@ -540,6 +541,7 @@
 -->
     
 </body>
+
 
 
 </html>

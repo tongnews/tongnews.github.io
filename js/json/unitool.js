@@ -236,9 +236,9 @@ function postArranger(response,postCount,source){
     for (var i = 0; i < $curCount; i++) {
         
         if(i<($curCount-1)){
-            var postHtml=$('<div class="post_cell uniborder"><img class="post_img"><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div><div class="postslider"></div>');
+            var postHtml=$('<div class="post_cell uniborder"><img class="post_img lazyload"><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div><div class="postslider"></div>');
         }else{
-            var postHtml=$('<div class="post_cell uniborder"><img class="post_img"><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
+            var postHtml=$('<div class="post_cell uniborder"><img class="post_img lazyload"><blockquote><a target="_blank"></a><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></div>');
         }
            
         //replace title
@@ -440,7 +440,7 @@ function categoryWidgetArranger(catslug,response,postCount,pageNum) {
     //set post basic title info and other
     for (var i = 0; i < $curCount; i++) {
         
-        var postHtml=$('<div class="post_widget"><a target="_blank"><img><blockquote><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></a></div>');
+        var postHtml=$('<div class="post_widget"><a target="_blank"><img class="lazyload"><blockquote><li></li><tags><li id="tagend"></li></tags><p></p></blockquote></a></div>');
            
         //replace title
         postHtml.find('p').text(response.posts[i].title.substring(0, 31));
