@@ -260,7 +260,7 @@ function postArranger(response,postCount,source){
         var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl).replace(getBkdomainUrl(), cdnurl);
         $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
 
-        postHtml.find('img').attr('src', $tbnlurl);
+        postHtml.find('img').attr('data-src', $tbnlurl);
         postHtml.find('img').attr('tar', $linkurl);
         
         //remove addional attribute
@@ -451,7 +451,7 @@ function categoryWidgetArranger(catslug,response,postCount,pageNum) {
         var $tbnlurl = response.posts[i].custom_fields.thumbnail_url[0].replace(baseurl, cdnurl);
         $tbnlurl = $tbnlurl.replace(bkurl, cdnurl);
 
-        postHtml.find('img').attr('src', $tbnlurl);
+        postHtml.find('img').attr('data-src', $tbnlurl);
         
         postHtml.appendTo('#'+catslug);
     }

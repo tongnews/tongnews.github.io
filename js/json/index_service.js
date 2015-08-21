@@ -20,6 +20,8 @@ $pagecur["widget_daily"]=1;
 $pagecur["widget_pilgrimage"]=1;
 
 
+var $scrolloffset=99999;
+
 $(document).ready(function () {
     
     if(getUrlParam("p")){
@@ -35,6 +37,7 @@ $(document).ready(function () {
     
     //custom scroll bar
     scrollbarCustom();
+    $scrolloffset=document.getElementById('second').offsetHeight-150;
     addSliderMoveListeners();
     
     //if(tdbg)console.log("Starting JSON POSTS engine!");
@@ -64,7 +67,7 @@ $(window).scroll(function () {
         
     }else{
         
-        if ($(this).scrollTop() > 1700) {
+        if ($(this).scrollTop() > $scrolloffset) {
             $('#second').css({
                 position:"fixed",
                 left: ($('#first').offset().left+$('#first').width()-320)+"px",

@@ -79,7 +79,7 @@
                 <!--    weibo container -->
                 <div class="weibo_shower"></div>
 
-                <a href="http://www.bilibili.com/topic/766.html" name="WonderFestival2015"><div class="rad_con_6 dashedborder"></div></a>
+                <a href="http://www.bilibili.com/topic/793.html" name="C88"><img data-src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/uploads/2015/08/c88.jpg" width="310px" class="rad_con dashedborder lazyload"></a>
                 
                 <!-- news container -->
                 <div id="whatsnew_parent" class="uniborder">
@@ -99,22 +99,22 @@
                     <iframe width="100%" height="450" class="share_self uniborder" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=480&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=3250414210&verifier=cf4d28cd&dpc=1" style="background: #fff"></iframe>
                 </div>
                 
-
+                <a href="http://www.bilibili.com/topic/766.html" name="WonderFestival2015"><img data-src="http://7xk7dq.com1.z0.glb.clouddn.com/images/wf2015.jpg" class="rad_con_6 dashedborder lazyload"></a>
                                 
-                <a href="http://www.bilibili.com/topic/736.html" name="虎之穴20年庆"><div class="rad_con_5 dashedborder lazyload"></div></a>
+                <a href="http://www.bilibili.com/topic/736.html" name="虎之穴20年庆"><img class="rad_con_5 dashedborder lazyload" data-src="http://7xk7dq.com1.z0.glb.clouddn.com/images/hzx_ad.jpg"></a>
                 
                 <!--   rr advertismenet-->
 
-                <a href="http://www.bilibili.com/topic/685.html" name="2015神田祭Bilibili独家特约报道"><div class="rad_con_3 dashedborder lazyload"></div></a>
+                <a href="http://www.bilibili.com/topic/685.html" name="2015神田祭Bilibili独家特约报道"><img class="rad_con_3 dashedborder lazyload" data-src="http://i2.hdslb.com/u_user/890ad8b6b92b558192501c231b51b51f.jpg"></a>
                 
-                <a href="http://www.bilibili.com/topic/656.html" name="niconico超会议"><div class="rad_con_2 lazyload"></div></a>
+                <a href="http://www.bilibili.com/topic/656.html" name="niconico超会议"><img class="rad_con_2 lazyload" data-src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_2.jpg"></a>
                 
 
                 
-                <a href="http://www.tudou.com/albumcover/3OwRHGCBKLI.html" name="土豆动漫inJapan"><div class="rad_con_1 dashedborder lazyload"></div></a>
+                <a href="http://www.tudou.com/albumcover/3OwRHGCBKLI.html" name="土豆动漫inJapan"><img class="rad_con_1 dashedborder lazyload" data-src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/rad_1.jpg"  width="320px" height="480px"></a>
                 
                 
-                <a href="http://tieba.baidu.com/f?kw=%E7%97%9B%E6%96%B0%E9%97%BB&ie=utf-8" name="百度痛新闻吧"><div class="rad_con_4 dashedborder lazyload"></div></a>
+                <a href="http://tieba.baidu.com/f?kw=%E7%97%9B%E6%96%B0%E9%97%BB&ie=utf-8" name="百度痛新闻吧"><img class="rad_con_4 dashedborder lazyload" data-src=""></a>
                 
                 <!--   rank container -->
                 <div class="rank_shower"></div>
@@ -391,7 +391,7 @@
     <div class="staff_container">
         <div class="staff_show">
             <div class="staff_shower"></div>
-            <a href="about.html"><div class="staff_pic lazyload"></div></a>
+            <a href="about.html"><img class="staff_pic lazyload" data-src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/fe/images/staff_paints.png" width=" 1127px" height="400px"></a>
             <div class="ly_pic1"></div>
         </div>
     </div>    
