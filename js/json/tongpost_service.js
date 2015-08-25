@@ -775,11 +775,20 @@ function map_makeradder(map,post_id,marker_index){
     markers.push(marker_1);
     bounds.extend(marker_1.position);
     
-    var mstring_1= "<div class='markerinfo'>"+$mmarkerarray[post_id][marker_index].Content +"</div>"+"<img src='"+$mmarkerarray[post_id][marker_index].Img.replace(getRegBaseUrl(), cdnurl) +"' height='180px' >";
-    var minfo_1 = new google.maps.InfoWindow({
+    var mstring_1= "<div class='markerinfo'>"+$mmarkerarray[post_id][marker_index].Content +"</div>"+"<img src='"+$mmarkerarray[post_id][marker_index].Img.replace(getRegBaseUrl(), cdnurl) +"' height='180px' >"+"<br><a class='maplink' target='_blank'  href='https://www.google.co.jp/maps/place/"+$mmarkerarray[post_id][marker_index].Content+"/?mrt=yp&t=k&q=loc:"+mstop_1['G']+","+mstop_1['K']+"'>点击进入googleMap<a/>";
+     
+    marker_1.infowindow = new google.maps.InfoWindow({
         content:mstring_1
     });
-    var mlistener=google.maps.event.addListener(marker_1,'click',function(){minfo_1.open(map,marker_1)});
+    
+    
+    var mlistener=google.maps.event.addListener(marker_1,'click',function(){
+        for (var i=0;i<markers.length;i++){
+            markers[i].infowindow.close();
+        }
+        marker_1.infowindow.open(map,marker_1);
+    });
+    
     makerlisteners.push(mlistener);
     
 }

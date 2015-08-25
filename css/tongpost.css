@@ -39,6 +39,12 @@
     height: auto;
 }
 
+.maplink{
+    pointer-events: all !important;
+    color: #fa3a7d !important;
+    cursor: pointer !important;
+}
+
 .tongpost_container a{
     pointer-events: none;
     cursor: default;
@@ -61,6 +67,14 @@
     display: block;
     font-size: 1.3em;
     color: #4081d9;
+    margin-left:20px;
+}
+
+.tongpost_container h4 {
+    margin-top: 2px;
+    display: block;
+    font-size: 1.3em;
+    color: #000000;
     margin-left:20px;
 }
 
@@ -350,6 +364,8 @@
 .xunli_map{
     position: relative;
 }
+
+
 
 .videoshower{
     position: relative;
