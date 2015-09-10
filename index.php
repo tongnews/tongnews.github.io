@@ -45,8 +45,8 @@
     
 <body>
 
-    <h1 class="hidden">介绍日本有趣好玩的动漫活动的综艺节目X喜爱动漫的在日中国留学生同好会</h1>
-    <h2 class="hidden">以5~20分钟的网络视频的形式，每天对日本各地举办的最受关注的动漫、游戏活动进行现场报道。同时不定期制作 《圣地巡礼》 系列专题，动漫业内名人访谈等，致力于打造面向中国动漫爱好者的内容最丰富最有趣的综艺节目。</h2>
+    <h3 class="hidden">介绍日本有趣好玩的动漫活动的综艺节目X喜爱动漫的在日中国留学生同好会</h3>
+    <h3 class="hidden">以5~20分钟的网络视频的形式，每天对日本各地举办的最受关注的动漫、游戏活动进行现场报道。同时不定期制作 《圣地巡礼》 系列专题，动漫业内名人访谈等，致力于打造面向中国动漫爱好者的内容最丰富最有趣的综艺节目。</h3>
     
     <!--   accessory    -->
     <div class="bk_accsorsy_container">
@@ -79,7 +79,7 @@
                 <!--    weibo container -->
                 <div class="weibo_shower"></div>
 
-                <a href="http://www.bilibili.com/topic/793.html" name="C88"><img data-src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/uploads/2015/08/c88.jpg" width="310px" class="rad_con dashedborder lazyload"></a>
+                <a href="http://www.bilibili.com/topic/824.html" name="lolita"><img data-src="http://i0.hdslb.com/promote/58a5c9b384a38f2a503377e92cf1bb63.jpg" width="310px" class="rad_con dashedborder lazyload"></a>
                 
                 <!-- news container -->
                 <div id="whatsnew_parent" class="uniborder">
@@ -98,6 +98,8 @@
                 <div class="weibo_container ">
                     <iframe width="100%" height="450" class="share_self uniborder" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=480&fansRow=1&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=3250414210&verifier=cf4d28cd&dpc=1" style="background: #fff"></iframe>
                 </div>
+                
+                <a href="http://www.bilibili.com/topic/793.html" name="C88"><img data-src="http://7xi53n.com1.z0.glb.clouddn.com/wp-content/uploads/2015/08/c88.jpg" width="310px" class="rad_con dashedborder lazyload"></a>
                 
                 <a href="http://www.bilibili.com/topic/766.html" name="WonderFestival2015"><img data-src="http://7xk7dq.com1.z0.glb.clouddn.com/images/wf2015.jpg" class="rad_con_6 dashedborder lazyload"></a>
                                 
